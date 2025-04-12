@@ -58,6 +58,22 @@ Prompt executed in 44.08 seconds
 
 NOTE: I have a 16.8GB fp8 model but I can't find the source,now fp8 models seems to be around 12GB.
 
+
+## Flux UNET GGUF
+
+<details>
+<summary>Flux UNET GGUF Workflow</summary>
+
+- [UNET GGUF](https://civitai.com/api/download/models/1532293?type=Model&format=GGUF&size=full&fp=fp8)
+- [CLIP](https://civitai.com/api/download/models/1466488?type=Model&format=SafeTensor&size=full&fp=fp8)
+- [Flux Text Encoder - default](https://huggingface.co/comfyanonymous/flux_text_encoders/blob/main/t5xxl_fp8_e4m3fn.safetensors)
+- [Flux VAE - default](https://huggingface.co/black-forest-labs/FLUX.1-dev/blob/main/ae.safetensors)
+
+
+![](/workflows/FLUX-gguf-txt2img.png)
+
+</details>
+
 ## Flux NF4 Quantization
 
 >!!! Exception during processing !!! 'NoneType' object has no attribute 'cdequantize_blockwise_bf16_nf4'
