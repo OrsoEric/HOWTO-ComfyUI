@@ -9,6 +9,8 @@ This repo documents my workflows and stack to run comfy ui GenANI assist under w
 
 # Flux
 
+## Flux FP8
+
 High performance model from for Forests Labs
 
 <details>
