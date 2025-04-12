@@ -1,6 +1,10 @@
 # HOWTO-ComfyUI
 This repo documents my workflows and stack to run comfy ui GenANI assist under windows
 
+## Hardware 
+- AMD RX 7900 XTX
+- Intel 13700F
+- DDR5 4x16GB 64GB 6400
 
 
 # Flux
@@ -51,3 +55,21 @@ Prompt executed in 44.08 seconds
 </details>
 
 NOTE: I have a 16.8GB fp8 model but I can't find the source,now fp8 models seems to be around 12GB.
+
+## Flux NF4 Quantization
+
+>!!! Exception during processing !!! 'NoneType' object has no attribute 'cdequantize_blockwise_bf16_nf4'
+
+7900XTX does not support NF4 quantization
+
+<details>
+<summary>Flux NF4 Workflow</summary>
+
+Model Links:
+- [Flux NF4 lllyasviel](https://huggingface.co/lllyasviel/flux1-dev-bnb-nf4/tree/main)
+- [VAE](https://huggingface.co/black-forest-labs/FLUX.1-schnell/blob/main/ae.safetensors)
+
+
+![](/workflows/FLUX-NF4-txt2img.png)
+
+</details>
