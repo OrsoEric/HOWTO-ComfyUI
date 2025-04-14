@@ -91,3 +91,53 @@ Model Links:
 ![](/workflows/FLUX-NF4-txt2img.png)
 
 </details>
+
+# 3D WORKFLOW
+
+This workflow generate printable stl from images.
+
+![Workflow Hunyuan 3D](/workflows/Hunyuan-img2stl-background-remove.png)
+
+![](/images/Candle-3D-good.png)
+
+[Download STL](/stl/Candle-good.stl)
+
+
+
+<details>
+<summary>Hunyuan 3D Workflow</summary>
+
+CMD output
+```
+got prompt
+/home/soraka/.local/lib/python3.10/site-packages/transparent_background/Remover.py:92: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  torch.load(os.path.join(ckpt_dir, ckpt_name), map_location="cpu"),
+Settings -> Mode=base, Device=cuda:0, Torchscript=enabled
+HiDream: ComfyUI is unloading all models, cleaning HiDream cache...
+HiDream: Cleaning up all cached models...
+HiDream: Cache cleared
+image shape torch.Size([1, 3, 518, 518])
+guidance:  None
+Diffusion Sampling:: 100%|██████████████████████████████████████████████████████████| 75/75 [01:09<00:00,  1.09it/s]
+latents shape:  torch.Size([1, 3072, 64])
+Allocated memory: memory=2.455 GB
+Max allocated memory: max_memory=5.026 GB
+Max reserved memory: max_reserved=8.416 GB
+FlashVDM Volume Decoding: 100%|███████████████████████████████████████████████████| 32/32 [00:00<00:00, 1340.76it/s]
+MC Surface Extractor
+Decoded mesh with 355584 vertices and 1373556 faces
+Removed floaters, resulting in 355536 vertices and 711068 faces
+Removed degenerate faces, resulting in 355536 vertices and 711068 faces
+Reduced faces, resulting in 25002 vertices and 50000 faces
+Prompt executed in 84.13 seconds
+```
+
+## Geometry Damage
+
+Added a section in the workflow to improve background removal, as it sometime it causes geometry artefacts like below
+
+![](/images/2025-04-14b-candle-geometry-error.png)
+
+[Download STL](/stl/Candle-geometry-damaged.stl.stl)
+
+</details>
