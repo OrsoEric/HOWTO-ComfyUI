@@ -92,15 +92,27 @@ Model Links:
 
 </details>
 
-# 3D WORKFLOW
+# 3D WORKFLOW HUNYUAN
 
 This workflow generate printable stl from images.
 
+Download:
+- [Model](https://huggingface.co/tencent/Hunyuan3D-2mini/blob/main/hunyuan3d-dit-v2-mini-turbo/model.fp16.safetensors)
+- [VAE](https://huggingface.co/tencent/Hunyuan3D-2mini/blob/main/hunyuan3d-vae-v2-mini-turbo/model.fp16.safetensors) 
+
+Workflow
+
 ![Workflow Hunyuan 3D](/workflows/Hunyuan-img2stl-background-remove.png)
+
+Example Output
+
+[Download STL](/stl/Candle-good.stl)
 
 ![](/images/Candle-3D-good.png)
 
-[Download STL](/stl/Candle-good.stl)
+
+
+
 
 
 
@@ -139,5 +151,19 @@ Added a section in the workflow to improve background removal, as it sometime it
 ![](/images/2025-04-14b-candle-geometry-error.png)
 
 [Download STL](/stl/Candle-geometry-damaged.stl.stl)
+
+## VAE dmc error
+
+Had a persistent error when trying dmc mode on VAE decode
+
+```
+AttributeError: 'NoneType' object has no attribute 'mesh_f' 
+```
+
+Found out that for me dmc doesn't work when enable_flash_vdm
+
+## Postprocess Mesh
+
+Reduces the STL size from about 750MB to about 15MB
 
 </details>
