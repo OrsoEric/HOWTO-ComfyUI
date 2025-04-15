@@ -120,6 +120,32 @@ Example Output
 <summary>Hunyuan 3D Workflow</summary>
 
 CMD output
+
+Mini Turbo model
+```
+got prompt
+HiDream: ComfyUI is unloading all models, cleaning HiDream cache...
+HiDream: Cleaning up all cached models...
+HiDream: Cache cleared
+image shape torch.Size([1, 3, 1024, 1024])
+guidance:  tensor([9.], device='cuda:0', dtype=torch.float16)
+Diffusion Sampling:: 100%|██████████████████████████████████████████████████████████| 75/75 [00:48<00:00,  1.56it/s]
+latents shape:  torch.Size([1, 3072, 64])
+Allocated memory: memory=1.434 GB
+Max allocated memory: max_memory=6.207 GB
+Max reserved memory: max_reserved=10.521 GB
+Volume Decoding: 100%|██████████████████████████████████████████████████████████| 4501/4501 [00:59<00:00, 75.89it/s]
+MC Surface Extractor
+Decoded mesh with 752601 vertices and 1505220 faces
+Removed floaters, resulting in 752601 vertices and 1505198 faces
+Removed degenerate faces, resulting in 752601 vertices and 1505198 faces
+Reduced faces, resulting in 25002 vertices and 50000 faces
+Hy3DMeshInfo: Mesh has 25002 vertices and 50000 faces
+Hy3DMeshInfo: Mesh has 752601 vertices and 1505220 faces
+Prompt executed in 126.74 seconds
+```
+
+Initial Model
 ```
 got prompt
 /home/soraka/.local/lib/python3.10/site-packages/transparent_background/Remover.py:92: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
@@ -166,4 +192,10 @@ Found out that for me dmc doesn't work when enable_flash_vdm
 
 Reduces the STL size from about 750MB to about 15MB
 
+## Default Model vs Mini Turbo Model
+
+The mini turbo model converges in far fewer steps, from 50 to less than 10. The mini turbo model also accepts 1024px images instead of 518px
+
 </details>
+
+# EOL
