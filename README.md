@@ -294,4 +294,117 @@ The mini turbo model converges in far fewer steps, from 50 to less than 10. The 
 
 </details>
 
+# AUDIO TO TEXT (whisper)
+
+This workflow uses the offical whisper nodes to translate audio to text
+
+[ComfyUI-Whisper Custom Node](https://github.com/yuvraj108c/ComfyUI-Whisper)
+
+
+![](/workflows/audio2text-whisper.png)
+
+drag and drop or load the audio in the audio loader, and execute
+
+## ERROR
+
+I encountered the following error trying to run the node
+
+```
+!!! Exception during processing !!! Cannot set attribute 'src' directly. Use '_unsafe_update_src()' and manually clear `.hash` of all callersinstead.
+```
+
+[A github issue talks about it](https://github.com/yuvraj108c/ComfyUI-Whisper/issues/13)
+
+Solution is to edit requirement.txt to add "triton==3.2.0" in the requirements, then update the requirements
+
+```
+cd ComfyUI/
+cd custom_nodes/
+cd ComfyUI-Whisper/
+cat requirements.txt
+sudo nano requirements.txt
+
+add "triton==3.2.0" in a new line and save
+
+cd
+```
+
+
+<details>
+<summary>Output</summary>
+soraka@TowerOfBabel:~$ cd ComfyUI/
+soraka@TowerOfBabel:~/ComfyUI$ ls
+CODEOWNERS       comfy_api           extra_model_paths.yaml.example  new_updater.py    script_examples
+CONTRIBUTING.md  comfy_api_nodes     fix_torch.py                    node_helpers.py   server.py
+LICENSE          comfy_execution     folder_paths.py                 nodes.py          tests
+README.md        comfy_extras        hook_breaker_ac10a0.py          notebooks         tests-unit
+__pycache__      comfyui_version.py  input                           output            user
+api_server       cuda_malloc.py      latent_preview.py               pyproject.toml    utils
+app              custom_nodes        main.py                         pytest.ini        web
+comfy            execution.py        models                          requirements.txt
+soraka@TowerOfBabel:~/ComfyUI$ cd custom_nodes/
+soraka@TowerOfBabel:~/ComfyUI/custom_nodes$ cd ComfyUI
+ComfyUI-Crystools/           ComfyUI-Whisper/
+ComfyUI-TiledDiffusion/      ComfyUI_bnb_nf4_fp4_Loaders/
+soraka@TowerOfBabel:~/ComfyUI/custom_nodes$ cd ComfyUI
+ComfyUI-Crystools/           ComfyUI-Whisper/
+ComfyUI-TiledDiffusion/      ComfyUI_bnb_nf4_fp4_Loaders/
+soraka@TowerOfBabel:~/ComfyUI/custom_nodes$ cd ComfyUI-Whisper/
+soraka@TowerOfBabel:~/ComfyUI/custom_nodes/ComfyUI-Whisper$ ls
+LICENSE      add_subtitles_to_background.py  example_workflows  readme.md                    utils.py
+__init__.py  add_subtitles_to_frames.py      fonts              requirements.txt
+__pycache__  apply_whisper.py                pyproject.toml     resize_cropped_subtitles.py
+soraka@TowerOfBabel:~/ComfyUI/custom_nodes/ComfyUI-Whisper$ cat re
+readme.md                    requirements.txt             resize_cropped_subtitles.py
+soraka@TowerOfBabel:~/ComfyUI/custom_nodes/ComfyUI-Whisper$ cat requirements.txt
+openai-whisper
+pillow
+uuidsoraka@TowerOfBabel:~/ComfyUI/custom_nodes/ComfyUI-Whisper$ sudo nano requirements.txt
+[sudo] password for soraka:
+soraka@TowerOfBabel:~/ComfyUI/custom_nodes/ComfyUI-Whisper$ pip install -r requirements.txt
+Defaulting to user installation because normal site-packages is not writeable
+Requirement already satisfied: openai-whisper in /home/soraka/.local/lib/python3.10/site-packages (from -r requirements.txt (line 1)) (20240930)
+Requirement already satisfied: pillow in /home/soraka/.local/lib/python3.10/site-packages (from -r requirements.txt (line 2)) (11.1.0)
+Requirement already satisfied: uuid in /home/soraka/.local/lib/python3.10/site-packages (from -r requirements.txt (line 3)) (1.30)
+Collecting triton==3.2.0
+  Using cached triton-3.2.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (253.1 MB)
+Requirement already satisfied: more-itertools in /usr/lib/python3/dist-packages (from openai-whisper->-r requirements.txt (line 1)) (8.10.0)
+Requirement already satisfied: torch in /home/soraka/.local/lib/python3.10/site-packages (from openai-whisper->-r requirements.txt (line 1)) (2.4.0+rocm6.3.4.git7cecbf6d)
+Requirement already satisfied: numpy in /home/soraka/.local/lib/python3.10/site-packages (from openai-whisper->-r requirements.txt (line 1)) (1.26.4)
+Requirement already satisfied: tqdm in /home/soraka/.local/lib/python3.10/site-packages (from openai-whisper->-r requirements.txt (line 1)) (4.67.1)
+Requirement already satisfied: numba in /home/soraka/.local/lib/python3.10/site-packages (from openai-whisper->-r requirements.txt (line 1)) (0.61.0)
+Requirement already satisfied: tiktoken in /home/soraka/.local/lib/python3.10/site-packages (from openai-whisper->-r requirements.txt (line 1)) (0.9.0)
+Requirement already satisfied: llvmlite<0.45,>=0.44.0dev0 in /home/soraka/.local/lib/python3.10/site-packages (from numba->openai-whisper->-r requirements.txt (line 1)) (0.44.0)
+Requirement already satisfied: requests>=2.26.0 in /home/soraka/.local/lib/python3.10/site-packages (from tiktoken->openai-whisper->-r requirements.txt (line 1)) (2.32.3)
+Requirement already satisfied: regex>=2022.1.18 in /home/soraka/.local/lib/python3.10/site-packages (from tiktoken->openai-whisper->-r requirements.txt (line 1)) (2024.11.6)
+Requirement already satisfied: pytorch-triton-rocm==3.0.0+rocm6.3.4.git75cc27c2 in /home/soraka/.local/lib/python3.10/site-packages (from torch->openai-whisper->-r requirements.txt (line 1)) (3.0.0+rocm6.3.4.git75cc27c2)
+Requirement already satisfied: filelock in /home/soraka/.local/lib/python3.10/site-packages (from torch->openai-whisper->-r requirements.txt (line 1)) (3.17.0)
+Requirement already satisfied: sympy<=1.12.1 in /home/soraka/.local/lib/python3.10/site-packages (from torch->openai-whisper->-r requirements.txt (line 1)) (1.12.1)
+Requirement already satisfied: networkx in /home/soraka/.local/lib/python3.10/site-packages (from torch->openai-whisper->-r requirements.txt (line 1)) (3.4.2)
+Requirement already satisfied: fsspec in /home/soraka/.local/lib/python3.10/site-packages (from torch->openai-whisper->-r requirements.txt (line 1)) (2024.12.0)
+Requirement already satisfied: jinja2 in /usr/lib/python3/dist-packages (from torch->openai-whisper->-r requirements.txt (line 1)) (3.0.3)
+Requirement already satisfied: typing-extensions>=4.8.0 in /home/soraka/.local/lib/python3.10/site-packages (from torch->openai-whisper->-r requirements.txt (line 1)) (4.12.2)
+Requirement already satisfied: certifi>=2017.4.17 in /usr/lib/python3/dist-packages (from requests>=2.26.0->tiktoken->openai-whisper->-r requirements.txt (line 1)) (2020.6.20)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /home/soraka/.local/lib/python3.10/site-packages (from requests>=2.26.0->tiktoken->openai-whisper->-r requirements.txt (line 1)) (1.26.20)
+Requirement already satisfied: charset-normalizer<4,>=2 in /home/soraka/.local/lib/python3.10/site-packages (from requests>=2.26.0->tiktoken->openai-whisper->-r requirements.txt (line 1)) (3.4.1)
+Requirement already satisfied: idna<4,>=2.5 in /usr/lib/python3/dist-packages (from requests>=2.26.0->tiktoken->openai-whisper->-r requirements.txt (line 1)) (3.3)
+Requirement already satisfied: mpmath<1.4.0,>=1.1.0 in /home/soraka/.local/lib/python3.10/site-packages (from sympy<=1.12.1->torch->openai-whisper->-r requirements.txt (line 1)) (1.3.0)
+Installing collected packages: triton
+  Attempting uninstall: triton
+    Found existing installation: triton 3.3.0
+    Uninstalling triton-3.3.0:
+      Successfully uninstalled triton-3.3.0
+  WARNING: The scripts proton and proton-viewer are installed in '/home/soraka/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+Successfully installed triton-3.2.0
+soraka@TowerOfBabel:~/ComfyUI/custom_nodes/ComfyUI-Whisper$ cd
+</details>
+
+
+
+
+
+
+
+
 # EOL
