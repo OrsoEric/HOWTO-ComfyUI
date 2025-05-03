@@ -6,6 +6,102 @@ This repo documents my workflows and stack to run comfy ui GenANI assist under w
 - Intel 13700F
 - DDR5 4x16GB 64GB 6400
 
+## Front End
+
+When updating Comfy UI, front end is not updated automatically
+
+```
+WARNING WARNING WARNING WARNING WARNING
+
+Installed frontend version 1.14.5 is lower than the recommended version 1.18.6.
+
+Please install the updated requirements.txt file by running:
+/usr/bin/python3 -m pip install -r /home/soraka/ComfyUI/requirements.txt
+
+This error is happening because the ComfyUI frontend is no longer shipped as part of the main repo but as a pip package instead.
+
+If you are on the portable package you can run: update\update_comfyui.bat to solve this problem
+```
+
+To update, go into the folder, and install requirements. Not like the commandline suggested.
+
+
+```
+cd ComfyUI/
+pip install -r requirements.txt
+```
+
+<details>
+<summary>Output</summary>
+soraka@TowerOfBabel:~$ cd ComfyUI/
+soraka@TowerOfBabel:~/ComfyUI$ pip install -r requirements.txt
+Defaulting to user installation because normal site-packages is not writeable
+Collecting comfyui-frontend-package==1.18.6
+  Downloading comfyui_frontend_package-1.18.6-py3-none-any.whl (9.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.0/9.0 MB 8.0 MB/s eta 0:00:00
+Collecting comfyui-workflow-templates==0.1.3
+  Downloading comfyui_workflow_templates-0.1.3-py3-none-any.whl (32.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 32.7/32.7 MB 8.0 MB/s eta 0:00:00
+Requirement already satisfied: torch in /home/soraka/.local/lib/python3.10/site-packages (from -r requirements.txt (line 3)) (2.4.0+rocm6.3.4.git7cecbf6d)
+Requirement already satisfied: torchsde in /home/soraka/.local/lib/python3.10/site-packages (from -r requirements.txt (line 4)) (0.2.6)
+Requirement already satisfied: torchvision in /home/soraka/.local/lib/python3.10/site-packages (from -r requirements.txt (line 5)) (0.19.0+rocm6.3.4.gitfab84886)
+Requirement already satisfied: torchaudio in /home/soraka/.local/lib/python3.10/site-packages (from -r requirements.txt (line 6)) (2.4.0+rocm6.3.4.git69d40773)
+Requirement already satisfied: numpy>=1.25.0 in /home/soraka/.local/lib/python3.10/site-packages (from -r requirements.txt (line 7)) (1.26.4)
+Requirement already satisfied: einops in /home/soraka/.local/lib/python3.10/site-packages (from -r requirements.txt (line 8)) (0.8.1)
+Requirement already satisfied: transformers>=4.28.1 in /home/soraka/.local/lib/python3.10/site-packages (from -r requirements.txt (line 9)) (4.49.0)
+Requirement already satisfied: tokenizers>=0.13.3 in /home/soraka/.local/lib/python3.10/site-packages (from -r requirements.txt (line 10)) (0.21.0)
+Requirement already satisfied: sentencepiece in /home/soraka/.local/lib/python3.10/site-packages (from -r requirements.txt (line 11)) (0.2.0)
+Requirement already satisfied: safetensors>=0.4.2 in /home/soraka/.local/lib/python3.10/site-packages (from -r requirements.txt (line 12)) (0.5.3)
+Requirement already satisfied: aiohttp>=3.11.8 in /home/soraka/.local/lib/python3.10/site-packages (from -r requirements.txt (line 13)) (3.11.13)
+Requirement already satisfied: yarl>=1.18.0 in /home/soraka/.local/lib/python3.10/site-packages (from -r requirements.txt (line 14)) (1.18.3)
+Requirement already satisfied: pyyaml in /home/soraka/.local/lib/python3.10/site-packages (from -r requirements.txt (line 15)) (6.0.2)
+Requirement already satisfied: Pillow in /home/soraka/.local/lib/python3.10/site-packages (from -r requirements.txt (line 16)) (11.1.0)
+Requirement already satisfied: scipy in /home/soraka/.local/lib/python3.10/site-packages (from -r requirements.txt (line 17)) (1.15.2)
+Requirement already satisfied: tqdm in /home/soraka/.local/lib/python3.10/site-packages (from -r requirements.txt (line 18)) (4.67.1)
+Requirement already satisfied: psutil in /home/soraka/.local/lib/python3.10/site-packages (from -r requirements.txt (line 19)) (7.0.0)
+Requirement already satisfied: kornia>=0.7.1 in /home/soraka/.local/lib/python3.10/site-packages (from -r requirements.txt (line 22)) (0.8.0)
+Requirement already satisfied: spandrel in /home/soraka/.local/lib/python3.10/site-packages (from -r requirements.txt (line 23)) (0.4.1)
+Requirement already satisfied: soundfile in /home/soraka/.local/lib/python3.10/site-packages (from -r requirements.txt (line 24)) (0.13.1)
+Requirement already satisfied: av>=14.2.0 in /home/soraka/.local/lib/python3.10/site-packages (from -r requirements.txt (line 25)) (14.2.0)
+Requirement already satisfied: pydantic~=2.0 in /home/soraka/.local/lib/python3.10/site-packages (from -r requirements.txt (line 26)) (2.10.6)
+Requirement already satisfied: pytorch-triton-rocm==3.0.0+rocm6.3.4.git75cc27c2 in /home/soraka/.local/lib/python3.10/site-packages (from torch->-r requirements.txt (line 3)) (3.0.0+rocm6.3.4.git75cc27c2)
+Requirement already satisfied: sympy<=1.12.1 in /home/soraka/.local/lib/python3.10/site-packages (from torch->-r requirements.txt (line 3)) (1.12.1)
+Requirement already satisfied: typing-extensions>=4.8.0 in /home/soraka/.local/lib/python3.10/site-packages (from torch->-r requirements.txt (line 3)) (4.12.2)
+Requirement already satisfied: networkx in /home/soraka/.local/lib/python3.10/site-packages (from torch->-r requirements.txt (line 3)) (3.4.2)
+Requirement already satisfied: fsspec in /home/soraka/.local/lib/python3.10/site-packages (from torch->-r requirements.txt (line 3)) (2024.12.0)
+Requirement already satisfied: filelock in /home/soraka/.local/lib/python3.10/site-packages (from torch->-r requirements.txt (line 3)) (3.17.0)
+Requirement already satisfied: jinja2 in /usr/lib/python3/dist-packages (from torch->-r requirements.txt (line 3)) (3.0.3)
+Requirement already satisfied: trampoline>=0.1.2 in /home/soraka/.local/lib/python3.10/site-packages (from torchsde->-r requirements.txt (line 4)) (0.1.2)
+Requirement already satisfied: requests in /home/soraka/.local/lib/python3.10/site-packages (from transformers>=4.28.1->-r requirements.txt (line 9)) (2.32.3)
+Requirement already satisfied: regex!=2019.12.17 in /home/soraka/.local/lib/python3.10/site-packages (from transformers>=4.28.1->-r requirements.txt (line 9)) (2024.11.6)
+Requirement already satisfied: huggingface-hub<1.0,>=0.26.0 in /home/soraka/.local/lib/python3.10/site-packages (from transformers>=4.28.1->-r requirements.txt (line 9)) (0.29.2)
+Requirement already satisfied: packaging>=20.0 in /home/soraka/.local/lib/python3.10/site-packages (from transformers>=4.28.1->-r requirements.txt (line 9)) (24.2)
+Requirement already satisfied: multidict<7.0,>=4.5 in /home/soraka/.local/lib/python3.10/site-packages (from aiohttp>=3.11.8->-r requirements.txt (line 13)) (6.1.0)
+Requirement already satisfied: async-timeout<6.0,>=4.0 in /home/soraka/.local/lib/python3.10/site-packages (from aiohttp>=3.11.8->-r requirements.txt (line 13)) (5.0.1)
+Requirement already satisfied: aiohappyeyeballs>=2.3.0 in /home/soraka/.local/lib/python3.10/site-packages (from aiohttp>=3.11.8->-r requirements.txt (line 13)) (2.5.0)
+Requirement already satisfied: attrs>=17.3.0 in /usr/lib/python3/dist-packages (from aiohttp>=3.11.8->-r requirements.txt (line 13)) (21.2.0)
+Requirement already satisfied: frozenlist>=1.1.1 in /home/soraka/.local/lib/python3.10/site-packages (from aiohttp>=3.11.8->-r requirements.txt (line 13)) (1.5.0)
+Requirement already satisfied: aiosignal>=1.1.2 in /home/soraka/.local/lib/python3.10/site-packages (from aiohttp>=3.11.8->-r requirements.txt (line 13)) (1.3.2)
+Requirement already satisfied: propcache>=0.2.0 in /home/soraka/.local/lib/python3.10/site-packages (from aiohttp>=3.11.8->-r requirements.txt (line 13)) (0.3.0)
+Requirement already satisfied: idna>=2.0 in /usr/lib/python3/dist-packages (from yarl>=1.18.0->-r requirements.txt (line 14)) (3.3)
+Requirement already satisfied: kornia_rs>=0.1.0 in /home/soraka/.local/lib/python3.10/site-packages (from kornia>=0.7.1->-r requirements.txt (line 22)) (0.1.8)
+Requirement already satisfied: cffi>=1.0 in /home/soraka/.local/lib/python3.10/site-packages (from soundfile->-r requirements.txt (line 24)) (1.17.1)
+Requirement already satisfied: annotated-types>=0.6.0 in /home/soraka/.local/lib/python3.10/site-packages (from pydantic~=2.0->-r requirements.txt (line 26)) (0.7.0)
+Requirement already satisfied: pydantic-core==2.27.2 in /home/soraka/.local/lib/python3.10/site-packages (from pydantic~=2.0->-r requirements.txt (line 26)) (2.27.2)
+Requirement already satisfied: pycparser in /home/soraka/.local/lib/python3.10/site-packages (from cffi>=1.0->soundfile->-r requirements.txt (line 24)) (2.22)
+Requirement already satisfied: mpmath<1.4.0,>=1.1.0 in /home/soraka/.local/lib/python3.10/site-packages (from sympy<=1.12.1->torch->-r requirements.txt (line 3)) (1.3.0)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /home/soraka/.local/lib/python3.10/site-packages (from requests->transformers>=4.28.1->-r requirements.txt (line 9)) (1.26.20)
+Requirement already satisfied: charset-normalizer<4,>=2 in /home/soraka/.local/lib/python3.10/site-packages (from requests->transformers>=4.28.1->-r requirements.txt (line 9)) (3.4.1)
+Requirement already satisfied: certifi>=2017.4.17 in /usr/lib/python3/dist-packages (from requests->transformers>=4.28.1->-r requirements.txt (line 9)) (2020.6.20)
+Installing collected packages: comfyui-workflow-templates, comfyui-frontend-package
+  Attempting uninstall: comfyui-frontend-package
+    Found existing installation: comfyui_frontend_package 1.14.5
+    Uninstalling comfyui_frontend_package-1.14.5:
+      Successfully uninstalled comfyui_frontend_package-1.14.5
+Successfully installed comfyui-frontend-package-1.18.6 comfyui-workflow-templates-0.1.3
+</details>
+
+
 
 # Flux
 
