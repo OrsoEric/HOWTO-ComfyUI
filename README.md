@@ -324,7 +324,11 @@ cd ComfyUI-Whisper/
 cat requirements.txt
 sudo nano requirements.txt
 
-add "triton==3.2.0" in a new line and save
+>add "triton==3.2.0" in a new line and save
+
+pip install -r requirements.txt
+
+>wait for update to complete
 
 cd
 ```
