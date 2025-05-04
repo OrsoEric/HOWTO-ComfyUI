@@ -6,6 +6,30 @@ This repo documents my workflows and stack to run comfy ui GenANI assist under w
 - Intel 13700F
 - DDR5 4x16GB 64GB 6400
 
+## Stack
+
+1) Windows 11
+2) Adrenaline
+3) HIP
+4) WSL2
+5) ROCm
+6) Comfy UI
+
+## Move files WSL VM <-> Host machine
+
+Move models inside WSL
+
+```
+cp /mnt/f/SD-Zluda/ComfyUI/models/checkpoints/RMSD-XL-Aries-Fantasy.safetensors /home/soraka/ComfyUI/models/checkpoints
+```
+
+Move outputs to Host
+
+```
+cp /ComfyUI/output /mnt/f/downloads
+```
+
+
 ## Front End
 
 When updating Comfy UI, front end is not updated automatically
