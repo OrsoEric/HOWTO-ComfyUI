@@ -430,9 +430,24 @@ soraka@TowerOfBabel:~/ComfyUI/custom_nodes/ComfyUI-Whisper$ cd
 
 
 
+# TEXT TO AUDIO
+
+## Whisper Speech
+
+![](/workflows/audio2text-whisper.png)
+
+Folder where the node stores the training sample
+
+```
+cp ComfyUI/custom_nodes/comfyui-if_ai_wishperspeechnode/whisperspeech/audio/Pigston_Banker_ill.ogg /mnt/f/downloads
+```
+
+Load a new sample in the 
+
+```
 
 
-
+```
 
 
 # EOL
