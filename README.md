@@ -125,6 +125,98 @@ Installing collected packages: comfyui-workflow-templates, comfyui-frontend-pack
 Successfully installed comfyui-frontend-package-1.18.6 comfyui-workflow-templates-0.1.3
 </details>
 
+## BUG: VAE defaults to FP32 instead of BF16
+
+At 2048x2048 Ksampler just needs around 19GB VRAM and completes successfully.
+At 2048x2048 the VAE decode far exceeed the 24GB VRAM buffer even at 1280x1280 resolution causing Adrenaline to crash into a blackscreen.
+Ofter Adrenaline can recover, but at times, the computer freezes needing reboot.
+
+<details>
+<summary>VAE Adrenaline Crash</summary>
+
+![VAE Adrenaline Crash](/workflows/txt2img-flux-2048-VAE-Adrenaline-crash.png)
+
+got prompt
+Using split attention in VAE
+Using split attention in VAE
+VAE load device: cuda:0, offload device: cpu, dtype: torch.float32
+model weight dtype torch.float8_e4m3fn, manual cast: torch.bfloat16
+model_type FLUX
+Using split attention in VAE
+Using split attention in VAE
+VAE load device: cuda:0, offload device: cpu, dtype: torch.float32
+Requested to load FluxClipModel_
+loaded completely 9.5367431640625e+25 4777.53759765625 True
+CLIP/text encoder model load device: cuda:0, offload device: cpu, current: cuda:0, dtype: torch.float16
+Token indices sequence length is longer than the specified maximum sequence length for this model (93 > 77). Running this sequence through the model will result in indexing errors
+Requested to load Flux
+0 models unloaded.
+loaded partially 6840.9091796875 6836.933654785156 0
+100%|███████████████████████████████████████████████████████████████████████████████| 20/20 [04:27<00:00, 13.37s/it]
+Requested to load AutoencodingEngine
+0 models unloaded.
+loaded completely 6478.765625 319.7467155456543 True
+</details>
+
+# ROCm acceleration flags
+
+## MIOPEN_FIND_MODE
+
+[MIOPEN_FIND_MODE](https://rocmdocs.amd.com/projects/MIOpen/en/latest/how-to/find-and-immediate.html#find-modes)
+
+<details>
+<summary>MIOPEN_FIND_MODE=FAST</summary>
+
+
+
+```
+export MIOPEN_FIND_MODE=FAST
+```
+
+soraka@TowerOfBabel:~$ export MIOPEN_FIND_MODE=FAST
+
+soraka@TowerOfBabel:~$ python3 ComfyUI/main.py
+
+[START] Security scan
+[DONE] Security scan
+## ComfyUI-Manager: installing dependencies done.
+** ComfyUI startup time: 2025-05-09 11:35:48.625
+** Platform: Linux
+** Python version: 3.10.12 (main, Feb  4 2025, 14:57:36) [GCC 11.4.0]
+** Python executable: /usr/bin/python3
+** ComfyUI Path: /home/soraka/ComfyUI
+** ComfyUI Base Folder Path: /home/soraka/ComfyUI
+** User directory: /home/soraka/ComfyUI/user
+** ComfyUI-Manager config path: /home/soraka/ComfyUI/user/default/ComfyUI-Manager/config.ini
+** Log path: /home/soraka/ComfyUI/user/comfyui.log
+
+Prestartup times for custom nodes:
+   1.0 seconds: /home/soraka/ComfyUI/custom_nodes/comfyui-manager
+
+Checkpoint files will always be loaded safely.
+Traceback (most recent call last):
+  File "/home/soraka/ComfyUI/main.py", line 137, in <module>
+    import execution
+  File "/home/soraka/ComfyUI/execution.py", line 13, in <module>
+    import nodes
+  File "/home/soraka/ComfyUI/nodes.py", line 22, in <module>
+    import comfy.diffusers_load
+  File "/home/soraka/ComfyUI/comfy/diffusers_load.py", line 3, in <module>
+    import comfy.sd
+  File "/home/soraka/ComfyUI/comfy/sd.py", line 7, in <module>
+    from comfy import model_management
+  File "/home/soraka/ComfyUI/comfy/model_management.py", line 221, in <module>
+    total_vram = get_total_memory(get_torch_device()) / (1024 * 1024)
+  File "/home/soraka/ComfyUI/comfy/model_management.py", line 172, in get_torch_device
+    return torch.device(torch.cuda.current_device())
+  File "/home/soraka/.local/lib/python3.10/site-packages/torch/cuda/__init__.py", line 882, in current_device
+    _lazy_init()
+  File "/home/soraka/.local/lib/python3.10/site-packages/torch/cuda/__init__.py", line 314, in _lazy_init
+    torch._C._cuda_init()
+RuntimeError: No HIP GPUs are available
+</details>
+
+
 
 
 # TXT2IMG, IMG2IMG: FLUX
