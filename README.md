@@ -133,29 +133,24 @@ Ofter Adrenaline can recover, but at times, the computer freezes needing reboot.
 
 <details>
 <summary>VAE Adrenaline Crash</summary>
+This is a minimum workflow meant to isolate the VAE bug. It loads an image, resize it, then VAE encode and VAE decode it.
 
-![VAE Adrenaline Crash](/workflows/txt2img-flux-2048-VAE-Adrenaline-crash.png)
+At 1024px The VAE encode and decode stages work using 10.2GB
+
+At 1536px the VAE encode succeed at around 13GB, but the VAE decode climbs to 24GB, adrenaline crashes, then the driver recovers with bug report, and after a couple of minutes, the VAE decode actually finishes rendering at around 19GB of VRAM used
+
+![VAE Adrenaline Crash](/workflows/bug-vae-decode-adrenaline-crash.png)
 
 got prompt
 Using split attention in VAE
 Using split attention in VAE
 VAE load device: cuda:0, offload device: cpu, dtype: torch.float32
-model weight dtype torch.float8_e4m3fn, manual cast: torch.bfloat16
-model_type FLUX
-Using split attention in VAE
-Using split attention in VAE
-VAE load device: cuda:0, offload device: cpu, dtype: torch.float32
-Requested to load FluxClipModel_
-loaded completely 9.5367431640625e+25 4777.53759765625 True
-CLIP/text encoder model load device: cuda:0, offload device: cpu, current: cuda:0, dtype: torch.float16
-Token indices sequence length is longer than the specified maximum sequence length for this model (93 > 77). Running this sequence through the model will result in indexing errors
-Requested to load Flux
-0 models unloaded.
-loaded partially 6840.9091796875 6836.933654785156 0
-100%|███████████████████████████████████████████████████████████████████████████████| 20/20 [04:27<00:00, 13.37s/it]
 Requested to load AutoencodingEngine
+loaded completely 10972.8359375 319.7467155456543 True
+Prompt executed in 0.77 seconds
+got prompt
 0 models unloaded.
-loaded completely 6478.765625 319.7467155456543 True
+Prompt executed in 142.60 seconds
 </details>
 
 # ROCm acceleration flags
