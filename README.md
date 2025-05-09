@@ -358,9 +358,6 @@ RuntimeError: No HIP GPUs are available
 ```
 </details>
 
-
-
-
 # TXT2IMG, IMG2IMG: FLUX
 
 ## Flux FP8
@@ -406,8 +403,8 @@ loaded completely 3662.3070312500004 319.7467155456543 True
 [Tiled VAE]: Executing Decoder Task Queue: 100%|████████████████████████████████████| 123/123 [00:00<00:00, 5941.42it/s]
 [Tiled VAE]: Done in 1.088s, max VRAM alloc 10879.680 MB
 Prompt executed in 44.08 seconds
-
 ```
+
 </details>
 
 NOTE: I have a 16.8GB fp8 model but I can't find the source,now fp8 models seems to be around 12GB.
@@ -448,6 +445,13 @@ Model Links:
 
 # TXT2IMG, IMG2IMG: Hidream
 
+HiDream seems to have superior prompt adherence
+
+![Workflow](/workflows/txt2img-hidream.png)
+
+<details>
+<summary>Hidream Model Download Links</summary>
+
 [HiDream Dev Q4](https://huggingface.co/city96/HiDream-I1-Dev-gguf/tree/main)
 
 [HiDream Clip L](https://huggingface.co/Comfy-Org/HiDream-I1_ComfyUI/blob/main/split_files/text_encoders/clip_l_hidream.safetensors)
@@ -462,16 +466,19 @@ Model Links:
 
 [HiDream VAE](https://huggingface.co/Comfy-Org/HiDream-I1_ComfyUI/tree/main/split_files/vae)
 
-![Workflow](/workflows/txt2img-hidream.png)
+</details>
 
 <details>
-<summary>Output</summary>
+<summary>CMD Line Output</summary>
+
+```
 got prompt
 Requested to load HiDreamTEModel_
 loaded partially 10597.60078125 10597.600215911865 0
 Requested to load HiDream
 loaded partially 4728.3201171875 4728.315673828125 0
-100%|███████████████████████████████████████████████████████████████████████████████████| 30/30 [02:39<00:00,  5.33s/it]
+100%|███████████████████████████████████████████████████████████████████████████████████| 30/30 [02:39<00:00,5.33s/it]
+
 Requested to load AutoencodingEngine
 0 models unloaded.
 loaded completely 5629.887500000001 319.7467155456543 True
@@ -481,6 +488,8 @@ loaded completely 5629.887500000001 319.7467155456543 True
 [Tiled VAE]: Executing Decoder Task Queue: 100%|████████████████████████████████████| 123/123 [00:00<00:00, 5947.10it/s]
 [Tiled VAE]: Done in 1.670s, max VRAM alloc 5956.383 MB
 Prompt executed in 165.04 seconds
+```
+
 </details>
 
 # IMG TO STL - 3D WORKFLOW HUNYUAN
