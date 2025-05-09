@@ -127,7 +127,7 @@ Successfully installed comfyui-frontend-package-1.18.6 comfyui-workflow-template
 
 
 
-# Flux
+# TXT2IMG, IMG2IMG: FLUX
 
 ## Flux FP8
 
@@ -179,7 +179,7 @@ Prompt executed in 44.08 seconds
 NOTE: I have a 16.8GB fp8 model but I can't find the source,now fp8 models seems to be around 12GB.
 
 
-## Flux UNET GGUF
+## TXT TO IMG - Flux UNET GGUF
 
 <details>
 <summary>Flux UNET GGUF Workflow</summary>
@@ -194,7 +194,7 @@ NOTE: I have a 16.8GB fp8 model but I can't find the source,now fp8 models seems
 
 </details>
 
-## Flux NF4 Quantization
+## TXT TO IMG - Flux NF4 Quantization
 
 >!!! Exception during processing !!! 'NoneType' object has no attribute 'cdequantize_blockwise_bf16_nf4'
 
@@ -212,7 +212,24 @@ Model Links:
 
 </details>
 
-# 3D WORKFLOW HUNYUAN
+# TXT2IMG, IMG2IMG: Hidream
+
+[HiDream Dev Q4](https://huggingface.co/city96/HiDream-I1-Dev-gguf/tree/main)
+
+[HiDream Clip L](https://huggingface.co/Comfy-Org/HiDream-I1_ComfyUI/blob/main/split_files/text_encoders/clip_l_hidream.safetensors)
+
+[HiDream CLIP G](https://huggingface.co/Comfy-Org/HiDream-I1_ComfyUI/blob/main/split_files/text_encoders/clip_g_hidream.safetensors)
+
+[Flux Text Encoder](https://huggingface.co/comfyanonymous/flux_text_encoders/blob/main/t5xxl_fp8_e4m3fn_scaled.safetensors)
+
+[Hidream Text Encoder](https://huggingface.co/Comfy-Org/HiDream-I1_ComfyUI/tree/main/split_files/text_encoders)
+
+[HiDream LLM](https://huggingface.co/Comfy-Org/HiDream-I1_ComfyUI/blob/main/split_files/text_encoders/llama_3.1_8b_instruct_fp8_scaled.safetensors)
+
+![Workflow](/workflows/txt2img-hidream.png)
+
+
+# IMG TO STL - 3D WORKFLOW HUNYUAN
 
 This workflow generate printable stl from images.
 
@@ -229,12 +246,6 @@ Example Output
 [Download STL](/stl/Candle-good.stl)
 
 ![](/images/Candle-3D-good.png)
-
-
-
-
-
-
 
 <details>
 <summary>Hunyuan 3D Workflow</summary>
@@ -329,7 +340,7 @@ This workflow uses the offical whisper nodes to translate audio to text
 
 drag and drop or load the audio in the audio loader, and execute
 
-## ERROR
+#### ERROR
 
 I encountered the following error trying to run the node
 
