@@ -125,7 +125,7 @@ Installing collected packages: comfyui-workflow-templates, comfyui-frontend-pack
 Successfully installed comfyui-frontend-package-1.18.6 comfyui-workflow-templates-0.1.3
 </details>
 
-## BUG: VAE defaults to FP32 instead of BF16
+# BUG: VAE defaults to FP32 instead of BF16
 
 At 2048x2048 Ksampler just needs around 19GB VRAM and completes successfully.
 At 2048x2048 the VAE decode far exceeed the 24GB VRAM buffer even at 1280x1280 resolution causing Adrenaline to crash into a blackscreen.
