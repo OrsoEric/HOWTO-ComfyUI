@@ -228,6 +228,24 @@ Model Links:
 
 ![Workflow](/workflows/txt2img-hidream.png)
 
+<details>
+<summary>Output</summary>
+got prompt
+Requested to load HiDreamTEModel_
+loaded partially 10597.60078125 10597.600215911865 0
+Requested to load HiDream
+loaded partially 4728.3201171875 4728.315673828125 0
+100%|███████████████████████████████████████████████████████████████████████████████████| 30/30 [02:39<00:00,  5.33s/it]
+Requested to load AutoencodingEngine
+0 models unloaded.
+loaded completely 5629.887500000001 319.7467155456543 True
+[Tiled VAE]: input_size: torch.Size([1, 16, 160, 160]), tile_size: 160, padding: 11
+[Tiled VAE]: split to 1x1 = 1 tiles. Optimal tile size 160x160, original tile size 160x160
+[Tiled VAE]: Fast mode enabled, estimating group norm parameters on 160 x 160 image
+[Tiled VAE]: Executing Decoder Task Queue: 100%|████████████████████████████████████| 123/123 [00:00<00:00, 5947.10it/s]
+[Tiled VAE]: Done in 1.670s, max VRAM alloc 5956.383 MB
+Prompt executed in 165.04 seconds
+</details>
 
 # IMG TO STL - 3D WORKFLOW HUNYUAN
 
