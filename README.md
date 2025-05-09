@@ -57,8 +57,11 @@ pip install -r requirements.txt
 
 <details>
 <summary>Output</summary>
+
 soraka@TowerOfBabel:~$ cd ComfyUI/
+
 soraka@TowerOfBabel:~/ComfyUI$ pip install -r requirements.txt
+
 Defaulting to user installation because normal site-packages is not writeable
 Collecting comfyui-frontend-package==1.18.6
   Downloading comfyui_frontend_package-1.18.6-py3-none-any.whl (9.0 MB)
@@ -125,7 +128,7 @@ Installing collected packages: comfyui-workflow-templates, comfyui-frontend-pack
 Successfully installed comfyui-frontend-package-1.18.6 comfyui-workflow-templates-0.1.3
 </details>
 
-# BUG: VAE defaults to FP32 instead of BF16
+## BUG: VAE defaults to FP32 instead of BF16
 
 At 2048x2048 Ksampler just needs around 19GB VRAM and completes successfully.
 At 2048x2048 the VAE decode far exceeed the 24GB VRAM buffer even at 1280x1280 resolution causing Adrenaline to crash into a blackscreen.
@@ -153,25 +156,168 @@ got prompt
 Prompt executed in 142.60 seconds
 </details>
 
-# ROCm acceleration flags
-
-## MIOPEN_FIND_MODE
+### MIOPEN_FIND_MODE
 
 [MIOPEN_FIND_MODE](https://rocmdocs.amd.com/projects/MIOpen/en/latest/how-to/find-and-immediate.html#find-modes)
 
+There are flags that can be exported before running ComfyUI that perhaps help
+
+E.g. with mode 2, the standalone workflow no longer crashes even at 2048px
+
 <details>
-<summary>MIOPEN_FIND_MODE=FAST</summary>
-
-
+<summary>MIOPEN_FIND_MODE=2</summary>
 
 ```
-export MIOPEN_FIND_MODE=FAST
-```
-
-soraka@TowerOfBabel:~$ export MIOPEN_FIND_MODE=FAST
-
+soraka@TowerOfBabel:~$ export MIOPEN_FIND_MODE=2
 soraka@TowerOfBabel:~$ python3 ComfyUI/main.py
+```
 
+```
+[START] Security scan
+[DONE] Security scan
+## ComfyUI-Manager: installing dependencies done.
+** ComfyUI startup time: 2025-05-09 12:24:57.498
+** Platform: Linux
+** Python version: 3.10.12 (main, Feb  4 2025, 14:57:36) [GCC 11.4.0]
+** Python executable: /usr/bin/python3
+** ComfyUI Path: /home/soraka/ComfyUI
+** ComfyUI Base Folder Path: /home/soraka/ComfyUI
+** User directory: /home/soraka/ComfyUI/user
+** ComfyUI-Manager config path: /home/soraka/ComfyUI/user/default/ComfyUI-Manager/config.ini
+** Log path: /home/soraka/ComfyUI/user/comfyui.log
+
+Prestartup times for custom nodes:
+   1.0 seconds: /home/soraka/ComfyUI/custom_nodes/comfyui-manager
+
+Checkpoint files will always be loaded safely.
+Total VRAM 24514 MB, total RAM 32012 MB
+pytorch version: 2.4.0+rocm6.3.4.git7cecbf6d
+/home/soraka/.local/lib/python3.10/site-packages/torch/cuda/__init__.py:645: UserWarning: Can't initialize amdsmi - Error code: 34
+  warnings.warn(f"Can't initialize amdsmi - Error code: {e.err_code}")
+AMD arch: gfx1100
+Set vram state to: NORMAL_VRAM
+Device: cuda:0 AMD Radeon RX 7900 XTX : native
+Using sub quadratic optimization for attention, if you have memory or speed issues try using: --use-split-cross-attention
+Python version: 3.10.12 (main, Feb  4 2025, 14:57:36) [GCC 11.4.0]
+ComfyUI version: 0.3.31
+ComfyUI frontend version: 1.18.6
+[Prompt Server] web root: /home/soraka/.local/lib/python3.10/site-packages/comfyui_frontend_package/static
+[Crystools INFO] Crystools version: 1.22.1
+[Crystools INFO] CPU: 13th Gen Intel(R) Core(TM) i7-13700F - Arch: x86_64 - OS: Linux 5.15.167.4-microsoft-standard-WSL2
+[Crystools ERROR] Could not init pynvml (Nvidia).NVML Shared Library Not Found
+[Crystools WARNING] No GPU with CUDA detected.
+Could not load bitsandbytes native library: 'NoneType' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/home/soraka/.local/lib/python3.10/site-packages/bitsandbytes/cextension.py", line 85, in <module>
+    lib = get_native_library()
+  File "/home/soraka/.local/lib/python3.10/site-packages/bitsandbytes/cextension.py", line 64, in get_native_library
+    cuda_specs = get_cuda_specs()
+  File "/home/soraka/.local/lib/python3.10/site-packages/bitsandbytes/cuda_specs.py", line 39, in get_cuda_specs
+    cuda_version_string=(get_cuda_version_string()),
+  File "/home/soraka/.local/lib/python3.10/site-packages/bitsandbytes/cuda_specs.py", line 29, in get_cuda_version_string
+    major, minor = get_cuda_version_tuple()
+  File "/home/soraka/.local/lib/python3.10/site-packages/bitsandbytes/cuda_specs.py", line 24, in get_cuda_version_tuple
+    major, minor = map(int, torch.version.cuda.split("."))
+AttributeError: 'NoneType' object has no attribute 'split'
+
+CUDA Setup failed despite CUDA being available. Please run the following command to get more information:
+
+python -m bitsandbytes
+
+Inspect the output of the command and see if you can locate CUDA libraries. You might need to add them
+to your LD_LIBRARY_PATH. If you suspect a bug, please take the information from python -m bitsandbytes
+and open an issue at: https://github.com/bitsandbytes-foundation/bitsandbytes/issues
+
+xFormers not available
+xFormers not available
+Flash attention 2 is not installed
+Web extensions folder found at /home/soraka/ComfyUI/web/extensions/ComfyLiterals
+WAS Node Suite: OpenCV Python FFMPEG support is enabled
+WAS Node Suite Warning: `ffmpeg_bin_path` is not set in `/home/soraka/ComfyUI/custom_nodes/was-node-suite-comfyui/was_suite_config.json` config file. Will attempt to use system ffmpeg binaries if available.
+WAS Node Suite: Finished. Loaded 220 nodes successfully.
+
+        "Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work." - Steve Jobs
+
+[nltk_data] Downloading package punkt_tab to /home/soraka/nltk_data...
+[nltk_data]   Package punkt_tab is already up-to-date!
+### Loading: ComfyUI-Manager (V3.31.9)
+[ComfyUI-Manager] network_mode: public
+### ComfyUI Revision: 3428 [76899171] *DETACHED | Released on '2025-05-03'
+
+Import times for custom nodes:
+   0.0 seconds: /home/soraka/ComfyUI/custom_nodes/websocket_image_save.py
+   0.0 seconds: /home/soraka/ComfyUI/custom_nodes/comfyui-inpaint-cropandstitch
+   0.0 seconds: /home/soraka/ComfyUI/custom_nodes/ComfyUI-TiledDiffusion
+   0.0 seconds: /home/soraka/ComfyUI/custom_nodes/comfyui-custom-scripts
+   0.0 seconds: /home/soraka/ComfyUI/custom_nodes/comfyui-depthanythingv2
+   0.0 seconds: /home/soraka/ComfyUI/custom_nodes/comfyliterals
+   0.0 seconds: /home/soraka/ComfyUI/custom_nodes/gguf
+   0.0 seconds: /home/soraka/ComfyUI/custom_nodes/comfyui_essentials
+   0.0 seconds: /home/soraka/ComfyUI/custom_nodes/comfyui-web-viewer
+   0.0 seconds: /home/soraka/ComfyUI/custom_nodes/comfyui_ttp_toolset
+   0.0 seconds: /home/soraka/ComfyUI/custom_nodes/ComfyUI_bnb_nf4_fp4_Loaders
+   0.1 seconds: /home/soraka/ComfyUI/custom_nodes/ComfyUI-Whisper
+   0.1 seconds: /home/soraka/ComfyUI/custom_nodes/comfyui-kokoro
+   0.1 seconds: /home/soraka/ComfyUI/custom_nodes/comfyui-florence2
+   0.1 seconds: /home/soraka/ComfyUI/custom_nodes/comfyui-manager
+   0.2 seconds: /home/soraka/ComfyUI/custom_nodes/ComfyUI-Crystools
+   0.2 seconds: /home/soraka/ComfyUI/custom_nodes/comfyui-if_ai_wishperspeechnode
+   0.2 seconds: /home/soraka/ComfyUI/custom_nodes/comfyui_parlertts
+   0.3 seconds: /home/soraka/ComfyUI/custom_nodes/comfyui-hunyan3dwrapper
+   0.4 seconds: /home/soraka/ComfyUI/custom_nodes/was-node-suite-comfyui
+
+WARNING: Found example workflow folder 'examples' for custom node 'comfyui_ttp_toolset', consider renaming it to 'example_workflows'
+Starting server
+
+To see the GUI go to: http://127.0.0.1:8188
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/model-list.json
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/alter-list.json
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/github-stats.json
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/extension-node-map.json
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/custom-node-list.json
+FETCH ComfyRegistry Data: 5/84
+FETCH ComfyRegistry Data: 10/84
+FETCH ComfyRegistry Data: 15/84
+FETCH ComfyRegistry Data: 20/84
+FETCH ComfyRegistry Data: 25/84
+FETCH ComfyRegistry Data: 30/84
+FETCH ComfyRegistry Data: 35/84
+FETCH ComfyRegistry Data: 40/84
+FETCH ComfyRegistry Data: 45/84
+FETCH ComfyRegistry Data: 50/84
+FETCH ComfyRegistry Data: 55/84
+FETCH ComfyRegistry Data: 60/84
+FETCH ComfyRegistry Data: 65/84
+FETCH ComfyRegistry Data: 70/84
+FETCH ComfyRegistry Data: 75/84
+FETCH ComfyRegistry Data: 80/84
+FETCH ComfyRegistry Data [DONE]
+[ComfyUI-Manager] default cache updated: https://api.comfy.org/nodes
+FETCH DATA from: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/custom-node-list.json [DONE]
+[ComfyUI-Manager] All startup tasks have been completed.
+got prompt
+Using split attention in VAE
+Using split attention in VAE
+VAE load device: cuda:0, offload device: cpu, dtype: torch.float32
+Requested to load AutoencodingEngine
+loaded completely 8881.178125 319.7467155456543 True
+Prompt executed in 2.72 seconds
+got prompt
+0 models unloaded.
+0 models unloaded.
+Prompt executed in 42.79 seconds
+```
+
+</details>
+
+Sometimes it doesn't find the GPU with this flag active
+
+<details>
+<summary>MIOPEN_FIND_MODE GPU not found</summary>
+
+```
+soraka@TowerOfBabel:~$ export MIOPEN_FIND_MODE=FAST
+soraka@TowerOfBabel:~$ python3 ComfyUI/main.py
 [START] Security scan
 [DONE] Security scan
 ## ComfyUI-Manager: installing dependencies done.
@@ -209,6 +355,7 @@ Traceback (most recent call last):
   File "/home/soraka/.local/lib/python3.10/site-packages/torch/cuda/__init__.py", line 314, in _lazy_init
     torch._C._cuda_init()
 RuntimeError: No HIP GPUs are available
+```
 </details>
 
 
