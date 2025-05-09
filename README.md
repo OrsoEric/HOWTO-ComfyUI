@@ -226,6 +226,8 @@ Model Links:
 
 [HiDream LLM](https://huggingface.co/Comfy-Org/HiDream-I1_ComfyUI/blob/main/split_files/text_encoders/llama_3.1_8b_instruct_fp8_scaled.safetensors)
 
+[HiDream VAE](https://huggingface.co/Comfy-Org/HiDream-I1_ComfyUI/tree/main/split_files/vae)
+
 ![Workflow](/workflows/txt2img-hidream.png)
 
 <details>
