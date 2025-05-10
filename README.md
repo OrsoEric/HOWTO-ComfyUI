@@ -50,7 +50,7 @@ If you are on the portable package you can run: update\update_comfyui.bat to sol
 To update, go into the folder, and install requirements. Not like the commandline suggested.
 
 
-```
+``` 
 cd ComfyUI/
 pip install -r requirements.txt
 ```
@@ -58,6 +58,7 @@ pip install -r requirements.txt
 <details>
 <summary>Output</summary>
 
+```
 soraka@TowerOfBabel:~$ cd ComfyUI/
 
 soraka@TowerOfBabel:~/ComfyUI$ pip install -r requirements.txt
@@ -126,6 +127,8 @@ Installing collected packages: comfyui-workflow-templates, comfyui-frontend-pack
     Uninstalling comfyui_frontend_package-1.14.5:
       Successfully uninstalled comfyui_frontend_package-1.14.5
 Successfully installed comfyui-frontend-package-1.18.6 comfyui-workflow-templates-0.1.3
+```
+
 </details>
 
 ## BUG: VAE defaults to FP32 instead of BF16
