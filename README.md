@@ -453,6 +453,18 @@ HiDream seems to have superior prompt adherence
 ![Workflow](/workflows/txt2img-hidream.png)
 
 <details>
+<summary>Hidream Settings</summary>
+I tried Q4, Q5 and Q8 quants and all work on my 7900XTX
+LCM/normal works
+DEIS/SGM is slower but has much better results
+LCM/simple, Euler and other combination give unimpressive details
+
+For generation times I'm around 160s for first generation and 100s for second generation using around 19GB of VRAM
+
+Having fixed the VAE issue, I can now directly generate 2048px images directly! Perhaps higher.
+</details>
+
+<details>
 <summary>Hidream Model Download Links</summary>
 
 [HiDream Dev Q4](https://huggingface.co/city96/HiDream-I1-Dev-gguf/tree/main)
