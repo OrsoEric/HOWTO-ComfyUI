@@ -535,8 +535,12 @@ It understood black roses, but lost the elf ears, it's a different look, more ph
 
 </details>
 
+## img2img - Flux
 
-# TXT2IMG, IMG2IMG: Hidream
+![Workflow](/workflows/img2img-flux.png)
+*PNG workflow. Drag and Drop to ComfyUI to load the workflow. Download links inside the workflow*
+
+# txt2img: Hidream
 
 HiDream seems to have superior prompt adherence
 
