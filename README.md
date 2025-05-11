@@ -29,7 +29,6 @@ Move outputs to Host
 cp /ComfyUI/output /mnt/f/downloads
 ```
 
-
 ## Front End
 
 When updating Comfy UI, front end is not updated automatically
@@ -361,18 +360,67 @@ RuntimeError: No HIP GPUs are available
 ```
 </details>
 
+# Quantization
+
+Models exist in a variety of quants
+
+- FP16/BF16: two bytes per parameter, uncompressed, undistilled
+- FP8: one byte per parameter. 7900XTX seems to not support it, promoting it to BF16, but it will still run a lot faster than FP16
+- NF4: half a byte per parameter. 7900XTX will refuse to run it at all
+- Q8: GGUF models one byte per parameter
+- Q4KS: GGUF model, half a byte per parameter. the 7900XTX will run it.
+
+# IMAGE MODELS
+
+- SD15 Stable Diffusion 1.5: 512px model 2s rendering time
+- SDXL-Turbo: 768px model 6s rendering time
+- Flux: high performance model capable of text, 60s rendering time
+- HiDream: High performance model, 90s renering time
+
 # TXT2IMG, IMG2IMG: FLUX
 
-## Flux FP8
+Flux is a 12B parameter model. There are quants available. It is composed of a model, two clips, and the VAE.
 
-High performance model from for Forests Labs
+### Difference beween quants
+
+There are quants for the model, quants for the text encoder
+
+- FP8 quant will run at around 60/45s at 1024px with 20GB used
+- FP16 quant will run at around 90/70s at 1024px with 20GB used
+- NF4 quant will not run at all
+
+>!!! Exception during processing !!! 'NoneType' object has no attribute 'cdequantize_blockwise_bf16_nf4'
+
+<details>
+<summary>Flux NF4 Workflow</summary>
+
+![Workflow](/workflows/FLUX-NF4-txt2img.png)
+*PNG workflow for FLUX-txt2img. Drag and Drop to ComfyUI to load the workflow*
+
+Model Links:
+- [Flux NF4 lllyasviel](https://huggingface.co/lllyasviel/flux1-dev-bnb-nf4/tree/main)
+- [VAE](https://huggingface.co/black-forest-labs/FLUX.1-schnell/blob/main/ae.safetensors)
+</details>
+
+
+## txt2img Flux FP16
+
+Highest performance and processing.
+
+![Workflow](/workflows/txt2img-flux-fp16.png)
+*PNG workflow. Drag and Drop to ComfyUI to load the workflow. Download links inside the workflow*
+
+## txt2img Flux FP8
+
+Combining the Flux FP8 model with the FP16 text encoder seems to give the best results. The text encoder helps make a better image and better rendered texts while losing no speed.
+
+![FLUX-txt2img](/workflows/txt2img-flux-fp8.png)
+*PNG workflow for FLUX-txt2img. Drag and Drop to ComfyUI to load the workflow*
 
 <details>
 <summary>Workflow+Sample Image+CMD Output</summary>
 
-![FLUX-txt2img](/workflows/FLUX-txt2img.png)
-*PNG workflow for FLUX-txt2img. Drag and Drop to CpomfyUI to load the workflow*
-
+FP8 model FP8 text encoder, default MIOPEN_FIND_MODE 
 ```
 got prompt
 model weight dtype torch.float8_e4m3fn, manual cast: torch.bfloat16
@@ -407,13 +455,75 @@ loaded completely 3662.3070312500004 319.7467155456543 True
 [Tiled VAE]: Done in 1.088s, max VRAM alloc 10879.680 MB
 Prompt executed in 44.08 seconds
 ```
+FP8 model FP16 text encoder, MIOPEN_FIND_MODE=2
+```
+got prompt
+Using split attention in VAE
+Using split attention in VAE
+VAE load device: cuda:0, offload device: cpu, dtype: torch.float32
+Requested to load FluxClipModel_
+loaded completely 9.5367431640625e+25 9319.23095703125 True
+CLIP/text encoder model load device: cuda:0, offload device: cpu, current: cuda:0, dtype: torch.float16
+clip missing: ['text_projection.weight']
+Warning, This is not a checkpoint file, trying to load it as a diffusion model only.
+model weight dtype torch.bfloat16, manual cast: None
+model_type FLUX
+WARNING: No VAE weights detected, VAE not initalized.
+Requested to load Flux
+loaded partially 8782.539824218751 8777.140747070312 0
+100%|███████████████████████████████████████████████████████████████████████████████| 20/20 [01:19<00:00,  3.95s/it]
+Requested to load AutoencodingEngine
+0 models unloaded.
+loaded completely 3676.5796875 319.7467155456543 True
+Prompt executed in 109.48 seconds
+got prompt
+loaded partially 10044.137480468751 10037.293090820312 0
+100%|███████████████████████████████████████████████████████████████████████████████| 20/20 [01:10<00:00,  3.54s/it]
+Requested to load AutoencodingEngine
+0 models unloaded.
+loaded completely 3647.0281250000003 319.7467155456543 True
+Prompt executed in 70.80 seconds
+got prompt
+Using split attention in VAE
+Using split attention in VAE
+VAE load device: cuda:0, offload device: cpu, dtype: torch.float32
+CLIP/text encoder model load device: cuda:0, offload device: cpu, current: cpu, dtype: torch.float16
+clip missing: ['text_projection.weight']
+Requested to load FluxClipModel_
+loaded completely 12782.8859375 9319.23095703125 True
+model weight dtype torch.float8_e4m3fn, manual cast: torch.bfloat16
+model_type FLUX
+Using split attention in VAE
+Using split attention in VAE
+VAE load device: cuda:0, offload device: cpu, dtype: torch.float32
+CLIP/text encoder model load device: cuda:0, offload device: cpu, current: cpu, dtype: torch.float16
+Requested to load Flux
+loaded partially 6707.31326171875 6707.133850097656 0
+100%|███████████████████████████████████████████████████████████████████████████████| 20/20 [00:50<00:00,  2.54s/it]
+Requested to load AutoencodingEngine
+loaded completely 4315.430273437501 319.7467155456543 True
+Prompt executed in 66.36 seconds
+got prompt
+loaded partially 10663.866545410157 10663.591857910156 0
+100%|███████████████████████████████████████████████████████████████████████████████| 20/20 [00:41<00:00,  2.06s/it]
+Requested to load AutoencodingEngine
+0 models unloaded.
+loaded completely 2551.1234375000004 319.7467155456543 True
+Prompt executed in 42.56 seconds
+```
 
 </details>
 
 NOTE: I have a 16.8GB fp8 model but I can't find the source,now fp8 models seems to be around 12GB.
 
+## txt2img - Flux GGUF
 
-## TXT TO IMG - Flux UNET GGUF
+This model uses the gguf loader instead of the safetensor loader. There are a number of quants, starting Q8 and going lower.
+
+It understood black roses, but lost the elf ears, it's a different look, more photorealistic, and about same speed as FP8 model.
+
+![Workflow](/workflows/txt2img-flux-gguf-q8.png)
+*PNG workflow. Drag and Drop to ComfyUI to load the workflow. Download links inside the workflow*
 
 <details>
 <summary>Flux UNET GGUF Workflow</summary>
@@ -423,28 +533,8 @@ NOTE: I have a 16.8GB fp8 model but I can't find the source,now fp8 models seems
 - [Flux Text Encoder - default](https://huggingface.co/comfyanonymous/flux_text_encoders/blob/main/t5xxl_fp8_e4m3fn.safetensors)
 - [Flux VAE - default](https://huggingface.co/black-forest-labs/FLUX.1-dev/blob/main/ae.safetensors)
 
-
-![](/workflows/FLUX-gguf-txt2img.png)
-
 </details>
 
-## TXT TO IMG - Flux NF4 Quantization
-
->!!! Exception during processing !!! 'NoneType' object has no attribute 'cdequantize_blockwise_bf16_nf4'
-
-7900XTX does not support NF4 quantization
-
-<details>
-<summary>Flux NF4 Workflow</summary>
-
-Model Links:
-- [Flux NF4 lllyasviel](https://huggingface.co/lllyasviel/flux1-dev-bnb-nf4/tree/main)
-- [VAE](https://huggingface.co/black-forest-labs/FLUX.1-schnell/blob/main/ae.safetensors)
-
-
-![](/workflows/FLUX-NF4-txt2img.png)
-
-</details>
 
 # TXT2IMG, IMG2IMG: Hidream
 
