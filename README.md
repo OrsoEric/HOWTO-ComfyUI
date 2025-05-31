@@ -46,6 +46,8 @@ This error is happening because the ComfyUI frontend is no longer shipped as par
 If you are on the portable package you can run: update\update_comfyui.bat to solve this problem
 ```
 
+#### Update Frontend with no Virtual Environment
+
 To update, go into the folder, and install requirements. Not like the commandline suggested.
 
 
@@ -127,6 +129,47 @@ Installing collected packages: comfyui-workflow-templates, comfyui-frontend-pack
       Successfully uninstalled comfyui_frontend_package-1.14.5
 Successfully installed comfyui-frontend-package-1.18.6 comfyui-workflow-templates-0.1.3
 ```
+
+</details>
+
+
+
+#### Update Frontend with Virtual Environment
+
+Now I'm using sh scripts, this way when I have to redo it, I can use the lesson learned in the scripts. I do use a constraint file to enforce use of the correct ROCm binaries, preventing it to be bricked
+
+``` 
+#!/bin/bash
+#	sudo chmod +x update_comfyui_frontend.sh
+#	./update_comfyui_frontend.sh
+#setup safety
+set -euo pipefail
+#go into ComfyUI
+cd
+cd ComfyUI
+#Activate UV
+source Dreamy/bin/activate
+#Install ROCm xformers
+uv pip install -r requirements.txt --constraint $HOME/ComfyUI/constraint.txt
+#Return
+cd 
+```
+
+<details>
+<summary>Update frontend log</summary>
+
+eridia@TowerOfBabel:~/ComfyUI$ sudo chmod +x update_comfyui_frontend.sh
+[sudo] password for meridia:
+meridia@TowerOfBabel:~/ComfyUI$ ./update_comfyui_frontend.sh
+Using Python 3.12.10 environment at: Dreamy
+Resolved 56 packages in 472ms
+Prepared 2 packages in 11.13s
+Uninstalled 2 packages in 13ms
+Installed 2 packages in 27ms
+ - comfyui-frontend-package==1.19.9
+ + comfyui-frontend-package==1.20.7
+ - comfyui-workflow-templates==0.1.14
+ + comfyui-workflow-templates==0.1.22
 
 </details>
 
