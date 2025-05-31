@@ -149,7 +149,7 @@ cd
 cd ComfyUI
 #Activate UV
 source Dreamy/bin/activate
-#Install ROCm xformers
+#Install ComfyUI requirements, along frontend that is a requirement
 uv pip install -r requirements.txt --constraint $HOME/ComfyUI/constraint.txt
 #Return
 cd 
