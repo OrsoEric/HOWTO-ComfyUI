@@ -662,6 +662,17 @@ Example Output
 
 ![](/images/Candle-3D-good.png)
 
+## D&D Miniature
+
+I used Hunyuan to make a prize for one of my PC. It took about two hours as I went back and forth with various poses and tried different geometries.
+
+The thin mantle took some care to get right, it requires a really nice starting image that helps Hunyuan do it.
+
+![](/stl/2025-04-14_KJho-Victorious.jpg)
+
+[Download STL](/stl/2025-04-14-KJho-Victorious.stl)
+
+
 <details>
 <summary>Hunyuan 3D Workflow</summary>
 
@@ -722,7 +733,7 @@ Added a section in the workflow to improve background removal, as it sometime it
 
 ![](/images/2025-04-14b-candle-geometry-error.png)
 
-[Download STL](/stl/Candle-geometry-damaged.stl.stl)
+[Download STL](/stl/Candle-geometry-damaged.stl)
 
 ## VAE dmc error
 
