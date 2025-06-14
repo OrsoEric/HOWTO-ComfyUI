@@ -620,6 +620,11 @@ It understood black roses, but lost the elf ears, it's a different look, more ph
 ![Workflow](/workflows/img2img-flux.png)
 *PNG workflow. Drag and Drop to ComfyUI to load the workflow. Download links inside the workflow*
 
+## Control Net Flux Depth
+
+![Workflow](/workflows/img2img-flux-depth.png)
+
+
 # txt2img: Hidream
 
 HiDream seems to have superior prompt adherence
