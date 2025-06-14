@@ -426,7 +426,7 @@ It's an old model that is very fast and small 2GB. It's not very good at followi
 
 Being small, it can run easily on smaller cards, it's easier to fine tune and it's easier to run control nets and tiled upscale workflows, it can be worth it depending on the task.
 
-## Control Net: Depth
+## Control Net: SD1.5 Depth
 
 Depth starts with generating a depth map of the input image, then using that as guidance to create an output image that conforms to the depth map.
 
@@ -437,7 +437,24 @@ This is useful to create images that have the same structure as the input image,
 Example: convert an image to black and white ink drawing
 
 ![Input](/images/img2img-sd15-depth-in.jpg)
-![Input](/images/img2img-sd15-depth-out.png)
+![Output](/images/img2img-sd15-depth-out.png)
+
+# TXT2IMG, IMG2IMG: SDXL
+
+It's the architecture after SD1.5, is't a 7GB model that is more capable, and there are turbo variants that converge a lot faster. It's a step up from SD1.5, with bigger training image.
+
+It is divided in two, a base model, and a refiner model, default is to do 20 step of base, and 5 step of refiner.
+
+## Control Net: SDXL Depth
+
+Like for SD1.5 there are depth control nets that works the same. You use the same depth map generation, but use a SDXL depth control net.
+
+![Workflow](/workflows/img2img-sdxl-depth.png)
+
+![Input](/images/img2img-sd15-depth-in.jpg)
+![Output](/images/img2img-sdxl-depth-out.png)
+
+
 
 
 # TXT2IMG, IMG2IMG: FLUX
