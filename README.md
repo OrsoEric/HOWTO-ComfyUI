@@ -420,6 +420,26 @@ Models exist in a variety of quants
 - Flux: high performance model capable of text, 60s rendering time
 - HiDream: High performance model, 90s renering time
 
+# TXT2IMG, IMG2IMG: SD1.5
+
+It's an old model that is very fast and small 2GB. It's not very good at following prompts, it has a base sampling of 512px, meaning on large images it tends to create warped mirrored prompts.
+
+Being small, it can run easily on smaller cards, it's easier to fine tune and it's easier to run control nets and tiled upscale workflows, it can be worth it depending on the task.
+
+## Control Net: Depth
+
+Depth starts with generating a depth map of the input image, then using that as guidance to create an output image that conforms to the depth map.
+
+This is useful to create images that have the same structure as the input image, but completely different styles and colors.
+
+![Workflow](/workflows/img2img-sd15-depth.png)
+
+Example: convert an image to black and white ink drawing
+
+![Input](/images/img2img-sd15-depth-in.jpg)
+![Input](/images/img2img-sd15-depth-out.png)
+
+
 # TXT2IMG, IMG2IMG: FLUX
 
 Flux is a 12B parameter model. There are quants available. It is composed of a model, two clips, and the VAE.
