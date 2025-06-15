@@ -691,6 +691,19 @@ Prompt executed in 165.04 seconds
 
 </details>
 
+# IMG TO IMG - OUTPAINT
+
+## Flux Oupaint
+
+Flux has a specially trained model to do outpaint, instead of using control net, it's the same model used for inpaint
+
+![workflow](/workflows/img2img-flux-dev-outpaint.png)
+
+Extending image:
+![input](/images/elf-raven.jpg)
+![output](/images/elf-raven-outpaint.png)
+
+
 # IMG TO STL - 3D WORKFLOW HUNYUAN
 
 This workflow generate printable stl from images.
