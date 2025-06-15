@@ -622,7 +622,12 @@ It understood black roses, but lost the elf ears, it's a different look, more ph
 
 ## Control Net Flux Depth
 
-![Workflow](/workflows/img2img-flux-depth.png)
+![Workflow](/workflows/img2img-flux-depth-c.png)
+
+PROMPT: Ink drawing. Leonardo Da Vinci.
+
+![Input](/images/img2img-sd15-depth-in.jpg)
+![Output](/images/img2img-flux-depth-out.png)
 
 
 # txt2img: Hidream
