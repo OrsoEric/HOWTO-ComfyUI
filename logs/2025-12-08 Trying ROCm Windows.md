@@ -329,13 +329,16 @@ To see the GUI go to: http://127.0.0.1:8188
 
 ### Custom Node Manager
 
-If you want to do anything, you'll need the node manager extension
+If you want to do anything, you'll need the node manager extension.
+
+**NOTE:** It'll make opening ComfyUI much slower, it needs to load the custom nodes that take time. It's worth it because it can detect missing custom nodes.
 
 ```
 cd custom_nodes/
 git clone https://github.com/ltdrdata/ComfyUI-Manager comfyui-manager
 cd ..
 ```
+
 <details>
 <summary>CMD Line Output</summary>
 
@@ -486,14 +489,64 @@ FETCH DATA from: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main
 </details>
 
 
+### EXPORT PNG
+
+This allows exporting the workflow as png that can be imported as workflow
+
+<details>
+<summary>CMD Line Output</summary>
+
+```cmd
+[ComfyUI-Manager] default cache updated: https://api.comfy.org/nodes
+FETCH DATA from: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/custom-node-list.json [DONE]
+[ComfyUI-Manager] broken item:{'author': 'rjgoif', 'title': 'Img Label Tools', 'id': 'Img-Label-Tools', 'reference': 'https://github.com/rjgoif/ComfyUI-Img-Label-Tools', 'install_type': 'git-clone', 'description': 'Tools to help annotate images for sharing on Reddit, Discord, etc.'}
+[ComfyUI-Manager] All startup tasks have been completed.
+[DEPRECATION WARNING] Detected import of deprecated legacy API: /scripts/ui.js. This is likely caused by a custom node extension using outdated APIs. Please update your extensions or contact the extension author for an updated version.
+[DEPRECATION WARNING] Detected import of deprecated legacy API: /extensions/core/groupNode.js. This is likely caused by a custom node extension using outdated APIs. Please update your extensions or contact the extension author for an updated version.
+[DEPRECATION WARNING] Detected import of deprecated legacy API: /scripts/ui/components/buttonGroup.js. This is likely caused by a custom node extension using outdated APIs. Please update your extensions or contact the extension author for an updated version.
+[DEPRECATION WARNING] Detected import of deprecated legacy API: /scripts/ui/components/button.js. This is likely caused by a custom node extension using outdated APIs. Please update your extensions or contact the extension author for an updated version.
+[ComfyUI-Manager] The ComfyRegistry cache update is still in progress, so an outdated cache is being used.
+FETCH DATA from: F:\ComfyUI-Windows\user\__manager\cache\1514988643_custom-node-list.json [DONE]
+[ComfyUI-Manager] broken item:{'author': 'rjgoif', 'description': 'Tools to help annotate images for sharing on Reddit, Discord, etc.', 'id': 'Img-Label-Tools', 'install_type': 'git-clone', 'reference': 'https://github.com/rjgoif/ComfyUI-Img-Label-Tools', 'title': 'Img Label Tools'}
+FETCH DATA from: F:\ComfyUI-Windows\user\__manager\cache\746607195_github-stats.json [DONE]
+FETCH DATA from: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/extras.json [DONE]
+FETCH DATA from: F:\ComfyUI-Windows\user\__manager\cache\1742899825_extension-node-map.json [DONE]
+100%|█████████████████████████████████████████████████████████████████████████████| 24.2k/24.2k [00:00<00:00, 1.41MB/s]
+Extracted zip file to F:\ComfyUI-Windows\custom_nodes\minimal-workflow-image
+
+[ComfyUI-Manager] Queued works are completed.
+{'install': 1}
+
+After restarting ComfyUI, please refresh the browser.
+
+Restarting... [Legacy Mode]
+
+```
+
+</details>
+
+### ComfyLiterals
+
+This custom node has numbers nodes, it's convenient to set resolution and such
+
+https://github.com/M1kep/ComfyLiterals
+
+
 ## Models
 
-### SD1.5
+Time to see what ROCm 7.1 is made off
+
+This prompt stresses hand generation, pose generation and ability to retain many different elements in the image with different colors.
+
+```
+Realistic, masterpiece. A sorrowful elf girl with white braided hair. She is wearing a tattered white dress and a red blindfold fully covering her eyes. She is kneeling at an ancient stone altar in a field of black roses. She is weaving a long tapestry with runes. Sunny blue sky, wind tousling her long hair
+```
+
+### SD1.5 512x512px
 
 The hello world of Comfy UI
 
-**SD1.5 512px**
-
+![Workflow](/workflows/2025-12-08-txt2img-SD15.png)
 
 ```cmd
 got prompt
@@ -517,15 +570,117 @@ got prompt
 Prompt executed in 1.40 seconds
 ```
 
-Time to see what ROCm is made off
-
 ![](/images/2025-12-08-T1101%20SD15%20Utilization.png)
 
 ![](/images/2025-12-08-T1101%20SD15%20UOutput.png)
 
-### Flux
+4.4s first run
+
+1.4s second run
+
+looks competent, I had listed 2s on previous build, it could be faster. but this is easy. The VAE decode is what ROCm really struggles with.
+
+### Flux Dev FP8
+
+I'm using a FP8 16.8GB dev safetensor with CLIP and VAE all in one, I don't remember the download link
+
+CONFIGURATION:
+- size: 1024 x 1024
+- sampler: euler
+- scheduler: simple
+- steps: 20
+
+PERFORMANCE:
+- First run: 50.7s
+- Second run: 33.01s
+- Max VRAM: 22 GB
+- Max power: 388 W
+
+
+<details>
+<summary>FLUX DETAILS</summary>
+
+
+Model, I'm not sure it's this one I used
+
+[Flux Dev FP8 CLIP+DIFFUSION+VAE](https://huggingface.co/wangkanai/flux-dev-fp8/blob/main/checkpoints/flux1-dev-fp8.safetensors)
+
+Place in the checkpoint folder
 
 ```
 F:\ComfyUI-Windows\models\checkpoints\Flux-dev-fp8-16G8.safetensors
+```
+
+Workflow
+
+![](/workflows/2025-12-08-T1157-FLUX-txt2img.png)
+
+Tiled VEA Decoding (shouldn't be needed if you can make VAE work properly)
 
 ```
+got prompt
+model weight dtype torch.float8_e4m3fn, manual cast: torch.bfloat16
+model_type FLUX
+Using split attention in VAE
+Using split attention in VAE
+VAE load device: cuda:0, offload device: cpu, dtype: torch.bfloat16
+Requested to load FluxClipModel_
+loaded completely; 95367431640625005117571072.00 MB usable, 4777.54 MB loaded, full load: True
+CLIP/text encoder model load device: cuda:0, offload device: cpu, current: cuda:0, dtype: torch.float16
+Requested to load Flux
+loaded completely; 15881.25 MB usable, 11350.07 MB loaded, full load: True
+100%|██████████████████████████████████████████████████████████████████████████████████| 20/20 [00:28<00:00,  1.41s/it]
+Requested to load AutoencodingEngine
+Unloaded partially: 511.32 MB freed, 10838.79 MB remains loaded, 27.01 MB buffer reserved, lowvram patches: 0
+loaded completely; 5118.21 MB usable, 159.87 MB loaded, full load: True
+Prompt executed in 50.27 seconds
+got prompt
+invalid prompt: {'type': 'invalid_prompt', 'message': 'Cannot execute because a node is missing the class_type property.', 'details': "Node ID '#96'", 'extra_info': {}}
+got prompt
+loaded completely; 15293.81 MB usable, 11350.07 MB loaded, full load: True
+100%|██████████████████████████████████████████████████████████████████████████████████| 20/20 [00:27<00:00,  1.38s/it]
+Requested to load AutoencodingEngine
+Unloaded partially: 565.34 MB freed, 10784.77 MB remains loaded, 27.01 MB buffer reserved, lowvram patches: 0
+loaded completely; 5131.04 MB usable, 159.87 MB loaded, full load: True
+Prompt executed in 33.01 seconds
+```
+
+VAE Decoding
+
+```
+got prompt
+Requested to load FluxClipModel_
+loaded completely; 22537.17 MB usable, 4777.54 MB loaded, full load: True
+Requested to load Flux
+loaded completely; 15739.81 MB usable, 11350.07 MB loaded, full load: True
+100%|██████████████████████████████████████████████████████████████████████████████████| 20/20 [00:27<00:00,  1.36s/it]
+Requested to load AutoencodingEngine
+Unloaded partially: 247.23 MB freed, 11102.87 MB remains loaded, 9.00 MB buffer reserved, lowvram patches: 0
+loaded completely; 5111.80 MB usable, 159.87 MB loaded, full load: True
+Prompt executed in 35.25 seconds
+got prompt
+loaded completely; 15545.81 MB usable, 11350.07 MB loaded, full load: True
+100%|██████████████████████████████████████████████████████████████████████████████████| 20/20 [00:27<00:00,  1.38s/it]
+Requested to load AutoencodingEngine
+Unloaded partially: 247.23 MB freed, 11102.87 MB remains loaded, 9.00 MB buffer reserved, lowvram patches: 0
+loaded completely; 5111.80 MB usable, 159.87 MB loaded, full load: True
+Prompt executed in 30.20 seconds
+```
+
+![](/outputs/2025-12-08-T1152-FLUX-T2I-DEMO.png)
+
+</details>
+
+
+# EOL
+
+<details>
+<summary>CMD Line Output</summary>
+
+```
+
+```
+
+</details>
+
+EOL
