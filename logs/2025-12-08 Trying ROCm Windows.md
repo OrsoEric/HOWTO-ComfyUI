@@ -531,8 +531,9 @@ This custom node has numbers nodes, it's convenient to set resolution and such
 
 https://github.com/M1kep/ComfyLiterals
 
+---
 
-## Models
+# GENERATIONS
 
 Time to see what ROCm 7.1 is made off
 
@@ -542,9 +543,12 @@ This prompt stresses hand generation, pose generation and ability to retain many
 Realistic, masterpiece. A sorrowful elf girl with white braided hair. She is wearing a tattered white dress and a red blindfold fully covering her eyes. She is kneeling at an ancient stone altar in a field of black roses. She is weaving a long tapestry with runes. Sunny blue sky, wind tousling her long hair
 ```
 
-### SD1.5 512x512px
+## SD1.5 512x512px
 
 The hello world of Comfy UI
+
+<details>
+<summary>SD1.5 DETAILS</summary>
 
 ![Workflow](/workflows/2025-12-08-txt2img-SD15.png)
 
@@ -574,27 +578,29 @@ Prompt executed in 1.40 seconds
 
 ![](/images/2025-12-08-T1101%20SD15%20UOutput.png)
 
+</details>
+
+
 4.4s first run
 
 1.4s second run
 
 looks competent, I had listed 2s on previous build, it could be faster. but this is easy. The VAE decode is what ROCm really struggles with.
 
-### Flux Dev FP8
+## Flux Dev FP8
 
 I'm using a FP8 16.8GB dev safetensor with CLIP and VAE all in one, I don't remember the download link
 
-CONFIGURATION:
-- size: 1024 x 1024
-- sampler: euler
-- scheduler: simple
-- steps: 20
-
-PERFORMANCE:
-- First run: 50.7s
-- Second run: 33.01s
-- Max VRAM: 22 GB
-- Max power: 388 W
+| Field        | FLUX        |
+|--------------|-------------|
+| Size         | 1024 x 1024 |
+| Sampler      | euler       |
+| Scheduler    | simple      |
+| Steps        | 20          |
+| First run    | 50.7s       |
+| Second run   | 33.01s      |
+| Max VRAM     | 22 GB       |
+| Max power    | 388 W       |
 
 
 <details>
@@ -669,7 +675,15 @@ Prompt executed in 30.20 seconds
 
 ![](/outputs/2025-12-08-T1152-FLUX-T2I-DEMO.png)
 
+PERFORMANCE
+
+![](/images/2025-12-08-T1138%20Flux%20Dev%201024.png)
+
 </details>
+
+
+## HiDream
+
 
 
 # EOL
