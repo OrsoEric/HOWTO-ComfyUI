@@ -1,7 +1,5 @@
 # Research Links
 
-
-
 https://rocm.docs.amd.com/projects/radeon-ryzen/en/latest/docs/install/installrad/windows/install-pytorch.html
 
 
@@ -964,6 +962,51 @@ This prompt stresses hand generation, pose generation and ability to retain many
 ```
 Realistic, masterpiece. A sorrowful elf girl with white braided hair. She is wearing a tattered white dress and a red blindfold fully covering her eyes. She is kneeling at an ancient stone altar in a field of black roses. She is weaving a long tapestry with runes. Sunny blue sky, wind tousling her long hair
 ```
+
+## VAE DECODE BUG (seems fixed in 7.11)
+
+This workflow is the minimal example to test the VAE decode issue that was faced in ROCm 6.2 and 6.4. It has a VAE encode and VAE decode from Flux at 2048 pixels, which causes timeout and crashes.
+
+I am happy to report that it is a lot faster, without the fix executes in 15s even if it uses the whole VRAM
+
+| Configuration | Workaround           | Size        | Max VRAM | Time  | Result  |
+|---------------|----------------------|-------------|----------|-------|---------|
+| 6.3.4 WSL     | —                    | 1024 × 1024 | 10.2 GB  | N.A.  | SUCCESS |
+| 6.3.4 WSL     | —                    | 1536 × 1536 | 23.3 GB  | N.A.  | CRASH   |
+| 6.3.4 WSL     | MIOPEN_FIND_MODE=2   | 2048 × 2048 | 18.5 GB  | 42.3s | SUCCESS |
+| 6.3.4 WSL     | MIOPEN_FIND_MODE=3   | 1536 × 1536 | N.A.     | N.A.  | SUCCESS |
+| 6.3.4 WSL     | MIOPEN_FIND_MODE=3   | 2048 × 2048 | 19 GB    | N.A.  | CRASH   |
+| 7.11          | —                    | 2048 × 2048 | 23GB     | 15.0s | SUCCESS |
+
+[Github bug discussion](https://github.com/ROCm/ROCm/issues/4729)
+
+<details>
+<summary>DETAILS</summary>
+
+**WORKFLOW** 
+
+![](/workflows/2025-12-08-T1731-VAE%20Decode%20bug.png)
+
+**CMD LINE OUTPUT**
+
+```cmd
+got prompt
+Using split attention in VAE
+Using split attention in VAE
+VAE load device: cuda:0, offload device: cpu, dtype: torch.bfloat16
+Requested to load AutoencodingEngine
+0 models unloaded.
+loaded completely; 9764.51 MB usable, 159.87 MB loaded, full load: True
+0 models unloaded.
+Prompt executed in 15.00 seconds
+```
+
+**RESOURCE MONITOR**
+
+![](/images/2025-12-08-T1730%20VAE%20decode%202048%20pixel.png)
+
+</details>
+
 
 ## SD1.5
 
