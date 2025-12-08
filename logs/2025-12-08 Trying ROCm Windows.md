@@ -1144,7 +1144,7 @@ The new kid on the block, as a turbo model it's trained to converge a lot faster
 - text_encoders: qwen3_4b_7G8.safetensors
 - vae: z_image_turbo_vae_0G3.safetensors
 
-| Field        | Z Image Turbo | Notes |
+|             | Z Image Turbo | Notes |
 |--------------|-------------|-|
 | Size         | 1024 x 1024 | |
 | Shift        | 3 |  high: focus on composition, low focus on details |
@@ -1211,28 +1211,165 @@ There are strong models to remove background and do segmentation of images and m
 
 [Custom Node](https://github.com/1038lab/ComfyUI-RMBG/tree/main)
 
+|             | RMBG2 | Notes |
+|--------------|-------------|-|
+| Size         | 1024 x 1024 | |
+| Time         | 2.69s | |
+
 ![](/workflows/2025-12-08-T1528-background-img2img.png)
 
 <details>
 <summary>DETAILS</summary>
 
 ```cmd
+(.venv) f:\ComfyUI-Windows>python main.py
+[START] Security scan
+[ComfyUI-Manager] `python -m pip` not available. Falling back to `uv`.
+[ComfyUI-Manager] Using `uv` as Python module for pip operations.
+[DONE] Security scan
+## ComfyUI-Manager: installing dependencies done.
+** ComfyUI startup time: 2025-12-08 15:37:51.727
+** Platform: Windows
+** Python version: 3.12.10 (main, Apr  9 2025, 04:06:22) [MSC v.1943 64 bit (AMD64)]
+** Python executable: F:\ComfyUI-Windows\.venv\Scripts\python.exe
+** ComfyUI Path: f:\ComfyUI-Windows
+** ComfyUI Base Folder Path: f:\ComfyUI-Windows
+** User directory: F:\ComfyUI-Windows\user
+** ComfyUI-Manager config path: F:\ComfyUI-Windows\user\__manager\config.ini
+** Log path: F:\ComfyUI-Windows\user\comfyui.log
+
+Prestartup times for custom nodes:
+   0.5 seconds: F:\ComfyUI-Windows\custom_nodes\comfyui-manager
+
+Checkpoint files will always be loaded safely.
+Total VRAM 24560 MB, total RAM 65367 MB
+pytorch version: 2.9.0+rocmsdk20251116
+Set: torch.backends.cudnn.enabled = False for better AMD performance.
+AMD arch: gfx1100
+ROCm version: (7, 1)
+Set vram state to: NORMAL_VRAM
+Device: cuda:0 AMD Radeon RX 7900 XTX : native
+Enabled pinned memory 29414.0
+Using sub quadratic optimization for attention, if you have memory or speed issues try using: --use-split-cross-attention
+Python version: 3.12.10 (main, Apr  9 2025, 04:06:22) [MSC v.1943 64 bit (AMD64)]
+ComfyUI version: 0.3.76
+ComfyUI frontend version: 1.33.10
+[Prompt Server] web root: F:\ComfyUI-Windows\.venv\Lib\site-packages\comfyui_frontend_package\static
+Total VRAM 24560 MB, total RAM 65367 MB
+pytorch version: 2.9.0+rocmsdk20251116
+Set: torch.backends.cudnn.enabled = False for better AMD performance.
+AMD arch: gfx1100
+ROCm version: (7, 1)
+Set vram state to: NORMAL_VRAM
+Device: cuda:0 AMD Radeon RX 7900 XTX : native
+Enabled pinned memory 29414.0
+Failed to find comfy root automatically, please copy the folder F:\ComfyUI-Windows\custom_nodes\ComfyLiterals\web manually in the web/extensions folder of ComfyUI
+### Loading: ComfyUI-Manager (V3.38.1)
+[ComfyUI-Manager] network_mode: public
+### ComfyUI Version: v0.3.76-47-gfd271ded | Released on '2025-12-08'
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/model-list.json
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/github-stats.json
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/extension-node-map.json
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/custom-node-list.json
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/alter-list.json
+F:\ComfyUI-Windows\.venv\Lib\site-packages\timm\models\layers\__init__.py:48: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+Error loading AILab_SAM3Segment.py: No module named 'triton'
+Warning: diffusers/transformers not available. SDMatte functionality will be limited.
+[ComfyUI-RMBG] v2.9.4 | 32 nodes Loaded
+Skip F:\ComfyUI-Windows\custom_nodes\minimal-workflow-image module for custom nodes due to the lack of NODE_CLASS_MAPPINGS or NODES_LIST (need one).
+
+Import times for custom nodes:
+   0.0 seconds: F:\ComfyUI-Windows\custom_nodes\websocket_image_save.py
+   0.0 seconds (IMPORT FAILED): F:\ComfyUI-Windows\custom_nodes\minimal-workflow-image
+   0.0 seconds: F:\ComfyUI-Windows\custom_nodes\ComfyLiterals
+   0.3 seconds: F:\ComfyUI-Windows\custom_nodes\comfyui-manager
+   0.8 seconds: F:\ComfyUI-Windows\custom_nodes\comfyui-rmbg
+
+Context impl SQLiteImpl.
+Will assume non-transactional DDL.
+No target revision found.
+Starting server
+
+To see the GUI go to: http://127.0.0.1:8188
+FETCH ComfyRegistry Data: 5/110
+FETCH ComfyRegistry Data: 10/110
+FETCH ComfyRegistry Data: 15/110
+FETCH ComfyRegistry Data: 20/110
+FETCH ComfyRegistry Data: 25/110
+FETCH ComfyRegistry Data: 30/110
+FETCH ComfyRegistry Data: 35/110
+FETCH ComfyRegistry Data: 40/110
+FETCH ComfyRegistry Data: 45/110
+FETCH ComfyRegistry Data: 50/110
+FETCH ComfyRegistry Data: 55/110
+FETCH ComfyRegistry Data: 60/110
+FETCH ComfyRegistry Data: 65/110
+FETCH ComfyRegistry Data: 70/110
+FETCH ComfyRegistry Data: 75/110
+FETCH ComfyRegistry Data: 80/110
+FETCH ComfyRegistry Data: 85/110
+FETCH ComfyRegistry Data: 90/110
+FETCH ComfyRegistry Data: 95/110
+FETCH ComfyRegistry Data: 100/110
+FETCH ComfyRegistry Data: 105/110
+FETCH ComfyRegistry Data: 110/110
+FETCH ComfyRegistry Data [DONE]
+[ComfyUI-Manager] default cache updated: https://api.comfy.org/nodes
+FETCH DATA from: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/custom-node-list.json [DONE]
+[DEPRECATION WARNING] Detected import of deprecated legacy API: /scripts/ui.js. This is likely caused by a custom node extension using outdated APIs. Please update your extensions or contact the extension author for an updated version.
+[DEPRECATION WARNING] Detected import of deprecated legacy API: /extensions/core/groupNode.js. This is likely caused by a custom node extension using outdated APIs. Please update your extensions or contact the extension author for an updated version.
+[ComfyUI-Manager] broken item:{'author': 'rjgoif', 'title': 'Img Label Tools', 'id': 'Img-Label-Tools', 'reference': 'https://github.com/rjgoif/ComfyUI-Img-Label-Tools', 'install_type': 'git-clone', 'description': 'Tools to help annotate images for sharing on Reddit, Discord, etc.'}
+[ComfyUI-Manager] All startup tasks have been completed.
+[DEPRECATION WARNING] Detected import of deprecated legacy API: /scripts/ui/components/buttonGroup.js. This is likely caused by a custom node extension using outdated APIs. Please update your extensions or contact the extension author for an updated version.
+[DEPRECATION WARNING] Detected import of deprecated legacy API: /scripts/ui/components/button.js. This is likely caused by a custom node extension using outdated APIs. Please update your extensions or contact the extension author for an updated version.
 got prompt
-Cache check: Missing model files: config.json, model.safetensors, birefnet.py, BiRefNet_config.py
-Downloading required model files...
-Downloading RMBG-2.0 model files...
-Downloading config.json...
-Downloading model.safetensors...
-Xet Storage is enabled for this repo, but the 'hf_xet' package is not installed. Falling back to regular HTTP download. For better performance, install the package with: `pip install huggingface_hub[hf_xet]` or `pip install hf_xet`
-Xet Storage is enabled for this repo, but the 'hf_xet' package is not installed. Falling back to regular HTTP download. For better performance, install the package with: `pip install huggingface_hub[hf_xet]` or `pip install hf_xet`
-Downloading birefnet.py...
-Downloading BiRefNet_config.py...
-Model files downloaded successfully
-Prompt executed in 96.50 seconds
+F:\ComfyUI-Windows\.venv\Lib\site-packages\timm\models\registry.py:4: FutureWarning: Importing from timm.models.registry is deprecated, please import via timm.models
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.models", FutureWarning)
+F:\ComfyUI-Windows\.venv\Lib\site-packages\torch\__init__.py:1617: UserWarning: Please use the new API settings to control TF32 behavior, such as torch.backends.cudnn.conv.fp32_precision = 'tf32' or torch.backends.cuda.matmul.fp32_precision = 'ieee'. Old settings, e.g, torch.backends.cuda.matmul.allow_tf32 = True, torch.backends.cudnn.allow_tf32 = True, allowTF32CuDNN() and allowTF32CuBLAS() will be deprecated after Pytorch 2.9. Please see https://pytorch.org/docs/main/notes/cuda.html#tensorfloat-32-tf32-on-ampere-and-later-devices (Triggered internally at C:/b/pytorch/aten/src/ATen/Context.cpp:85.)
+  _C._set_float32_matmul_precision(precision)
+Prompt executed in 2.69 seconds
 ```
 
 </details>
 
+
+## HUNYUAN 3D 2.1 IMAGE TO STL 
+
+This model can convert images into stl models. I upgraded to 2.1 version.
+
+Generation STL is around 500MB in size, Creality can optimize the model to around 80MB
+
+RULES:
+- generate as square 1024 pixel
+- generate as a clean image with the subject in the foreground
+- do background removal and fill the background with solid color with high contrast
+- avoid loose hair and thingies as much as possible
+
+![](/stl/2025-12-08-T1631%20Schiettino%20Squirrel%20Spy.png)
+
+| Field        | FLUX        |
+|--------------|-------------|
+| Size         | 1024 x 1024 |
+| Sampler      | euler       |
+| Scheduler    | normal      |
+| Steps        | 15          |
+| Run          | 218s        |
+| Max VRAM     | 18 GB       |
+| Max power    | 380 W       |
+
+<details>
+<summary>DETAILS</summary>
+
+```cmd
+got prompt
+100%|██████████████████████████████████████████████████████████████████████████████████| 15/15 [00:13<00:00,  1.09it/s]
+Volume Decoding: 100%|███████████████████████████████████████████████████████████| 4501/4501 [00:03<00:00, 1242.47it/s]
+Prompt executed in 212.19 seconds
+moving 'F:\ComfyUI-Windows\user\default\workflows\ZZZBAD2_H3D2v1_img2stl.json' -> 'F:\ComfyUI-Windows\user\default\workflows\H3D2v1_img2stl.json'
+```
+
+</details>
 
 
 
@@ -1255,6 +1392,8 @@ xxx
 **CMD LINE OUTPUT**
 
 **RESOURCE MONITOR**
+
+
 
 </details>
 
