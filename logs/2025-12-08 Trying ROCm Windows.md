@@ -543,14 +543,36 @@ This prompt stresses hand generation, pose generation and ability to retain many
 Realistic, masterpiece. A sorrowful elf girl with white braided hair. She is wearing a tattered white dress and a red blindfold fully covering her eyes. She is kneeling at an ancient stone altar in a field of black roses. She is weaving a long tapestry with runes. Sunny blue sky, wind tousling her long hair
 ```
 
-## SD1.5 512x512px
+## SD1.5
+
+SD1.5 is an old model it is wonky on anatomy, and doesn't have good prompt adherence. It is very fast, and has control nets. Kernel is 512px in size, it creates mirroring artefact when trying to make bigger images.
+
+| Field        | SD1.5       |
+|--------------|-------------|
+| Size         | 512 x 512   |
+| Sampler      | euler       |
+| Scheduler    | simple      |
+| Steps        | 20          |
+| Cfg          | 8.0         |
+| First run    | 4.41        |
+| Second run   | 1.40        |
+| Max VRAM     | 9 GB        |
+| Max power    | 388 W       |
 
 The hello world of Comfy UI
 
 <details>
 <summary>SD1.5 DETAILS</summary>
 
+**WORKFLOW**
+
 ![Workflow](/workflows/2025-12-08-txt2img-SD15.png)
+
+**IMAGE OUTPUT (best of 2)**
+
+![](/outputs/2025-12-08-T1214-SD15-txt2img-benchmark.png)
+
+**CMD LINE OUTPUT**
 
 ```cmd
 got prompt
@@ -574,9 +596,9 @@ got prompt
 Prompt executed in 1.40 seconds
 ```
 
-![](/images/2025-12-08-T1101%20SD15%20Utilization.png)
+**RESOURCE MONITOR**
 
-![](/images/2025-12-08-T1101%20SD15%20UOutput.png)
+![](/images/2025-12-08-T1101%20SD15%20Utilization.png)
 
 </details>
 
@@ -588,6 +610,8 @@ Prompt executed in 1.40 seconds
 looks competent, I had listed 2s on previous build, it could be faster. but this is easy. The VAE decode is what ROCm really struggles with.
 
 ## Flux Dev FP8
+
+Flux Dev has been a solid model for many months, it has good prompt adherence, good image output.
 
 I'm using a FP8 16.8GB dev safetensor with CLIP and VAE all in one, I don't remember the download link
 
@@ -607,6 +631,8 @@ I'm using a FP8 16.8GB dev safetensor with CLIP and VAE all in one, I don't reme
 <summary>FLUX DETAILS</summary>
 
 
+**WORKFLOW**
+
 Model, I'm not sure it's this one I used
 
 [Flux Dev FP8 CLIP+DIFFUSION+VAE](https://huggingface.co/wangkanai/flux-dev-fp8/blob/main/checkpoints/flux1-dev-fp8.safetensors)
@@ -617,9 +643,14 @@ Place in the checkpoint folder
 F:\ComfyUI-Windows\models\checkpoints\Flux-dev-fp8-16G8.safetensors
 ```
 
-Workflow
-
 ![](/workflows/2025-12-08-T1157-FLUX-txt2img.png)
+
+
+**IMAGE OUTPUT (best of 2)**
+
+![](/outputs/2025-12-08-T1152-FLUX-T2I-DEMO.png)
+
+**CMD LINE OUTPUT**
 
 Tiled VEA Decoding (shouldn't be needed if you can make VAE work properly)
 
@@ -673,9 +704,7 @@ loaded completely; 5111.80 MB usable, 159.87 MB loaded, full load: True
 Prompt executed in 30.20 seconds
 ```
 
-![](/outputs/2025-12-08-T1152-FLUX-T2I-DEMO.png)
-
-PERFORMANCE
+**RESOURCE MONITOR**
 
 ![](/images/2025-12-08-T1138%20Flux%20Dev%201024.png)
 
@@ -685,16 +714,101 @@ PERFORMANCE
 ## HiDream
 
 
+## Z Image Turbo
+
+The new kid on the block, as a turbo model it's trained to converge a lot faster, so the steps are more expensive, but there are fewer of them
+
+- diffusion_models: z_image_turbo_bf16_12G0.safetensors
+- text_encoders: qwen3_4b_7G8.safetensors
+- vae: z_image_turbo_vae_0G3.safetensors
+
+| Field        | Z Image Turbo | Notes |
+|--------------|-------------|-|
+| Size         | 1024 x 1024 | |
+| Shift        | 3 |  high: focus on composition, low focus on details |
+| Sampler      | res_sample  | |
+| Scheduler    | simple      ||
+| Steps        | 9          ||
+| First run    | 64.7s       ||
+| Second run   | 37.59s      ||
+| Max VRAM     | 23 GB       ||
+| Max power    | 280 W       | This workflow drinks less juice then Flux|
+
+Holy Glob this model is strong! 
+
+<details>
+<summary>DETAILS</summary>
+
+**WORKFLOW** 
+
+![](/workflows/2025-12-08-T1309-zit-txt2img.png)
+
+**IMAGE OUTPUT (best of 2)**
+
+![](/outputs/2025-12-08-T1238-ZIT-txt2img.png.png)
+
+**CMD LINE OUTPUT**
+
+```cmd
+got prompt
+Using split attention in VAE
+Using split attention in VAE
+VAE load device: cuda:0, offload device: cpu, dtype: torch.bfloat16
+CLIP/text encoder model load device: cuda:0, offload device: cpu, current: cpu, dtype: torch.float16
+Requested to load ZImageTEModel_
+loaded completely; 22469.61 MB usable, 7672.25 MB loaded, full load: True
+model weight dtype torch.bfloat16, manual cast: None
+model_type FLOW
+unet missing: ['norm_final.weight']
+Requested to load Lumina2
+Unloaded partially: 6170.37 MB freed, 1501.88 MB remains loaded, 47.50 MB buffer reserved, lowvram patches: 0
+loaded completely; 17117.77 MB usable, 11739.55 MB loaded, full load: True
+100%|████████████████████████████████████████████████████████████████████████████████████| 9/9 [00:35<00:00,  3.89s/it]
+Requested to load AutoencodingEngine
+Unloaded partially: 1895.80 MB freed, 9843.77 MB remains loaded, 75.00 MB buffer reserved, lowvram patches: 0
+loaded completely; 5584.32 MB usable, 159.87 MB loaded, full load: True
+Prompt executed in 53.94 seconds
+got prompt
+loaded completely; 18769.76 MB usable, 11739.55 MB loaded, full load: True
+100%|████████████████████████████████████████████████████████████████████████████████████| 9/9 [00:09<00:00,  1.04s/it]
+Unloaded partially: 714.55 MB freed, 11025.02 MB remains loaded, 28.12 MB buffer reserved, lowvram patches: 0
+Prompt executed in 11.94 seconds
+```
+
+**RESOURCE MONITOR**
+
+![](/images/2025-12-08-T1239.png)
+
+</details>
+
+
+
+
+
+
+
+
+
+
+ ---
+
+xxx
 
 # EOL
 
+
 <details>
-<summary>CMD Line Output</summary>
+<summary>DETAILS</summary>
 
-```
+**WORKFLOW** 
 
-```
+**IMAGE OUTPUT (best of 2)**
+
+**CMD LINE OUTPUT**
+
+**RESOURCE MONITOR**
 
 </details>
+
 
 EOL
