@@ -2,6 +2,24 @@
 
 The scope of this repository is to document how to run Comfy UI with ROCm acceleration with a AMD 7900XTX under Windows.
 
+## Value Proposition
+
+Nvidia and CUDA works better. But Nvidia makes you pay a significant premium for VRAM, and VRAM is critical to machine learning.
+
+When choosing how to upgrade in 2025-01 my choices were
+- AMD 7900XTX 24GB: 940€
+- Nvidia 3090 24GB 4 years old used: 750€
+- Nvidia 4090 24GB: 2500 €
+- Nvidia 5090 32GB: 3500 €
+
+Initially I wasn't very happy, it's cheaper but it took me six months and a dozen rebuilds to find a stack that consistently accelerates ROCm. I helped debug some workaround for issues like [OOM with VAE decode](https://github.com/ROCm/ROCm/issues/4729)
+
+A year later, I'm feeling better and better about the purchase. Finally AMD has released windows drivers for ROCm, and ComfyUI works for me without issues, I even rebuilt with this instruction and it worked instantly. I guess I experienced the "fine wine" AMD is famous for.
+
+In my region the 7900XTX still goes for 850€ to 950€ at the time of update 2025-12-09, and in my opinion this is amazing value to accelerate ComfyUI generation and local LLMs.
+
+16GB cards are more affordable, but those 8GB go a long way in machine learning.
+
 ## Hardware 
 
 - AMD RX 7900 XTX 24GB <--- The GOAT
