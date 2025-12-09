@@ -95,7 +95,7 @@ git clone https://github.com/ltdrdata/ComfyUI-Manager comfyui-manager
 Set-Location ..
 
 # Install ComfyUI requirements
-uv pip install -r requirements.txt
+uv pip install -r "requirements.txt"
 
 # Run ComfyUI
 uv run main.py
