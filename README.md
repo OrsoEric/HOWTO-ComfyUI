@@ -32,13 +32,20 @@ In my region the 7900XTX still goes for 850€ to 950€ at the time of update 2
 - [Adrenaline preview driver 25.20.01.17](https://github.com/ROCm/ROCm/issues/4729)
 - ROCm 7.11
 
+[ROCm 7.10.0 Preview Compatibility Matrix](https://rocm.docs.amd.com/en/7.10.0-preview/compatibility/compatibility-matrix.html)
+
+[ROCm 7.10.0 Preview Installation](https://rocm.docs.amd.com/en/7.10.0-preview/install/rocm.html)
+
+This is wrong, I need to use UV for this to have any chance of working, the env will brick a lot, and if I use a system python this is hopeless
+
+
 # INSTALLATION
 
 Try this at your own risk and danger, tough I'm a lot more confident and it worked painlessly for me.
 
 ## Compatibility Matricies
 
-[Compatibility Matricies](https://rocm.docs.amd.com/projects/radeon-ryzen/en/latest/docs/compatibility/compatibilityrad/windows/windows_compatibility.html)
+[Compatibility Matricies 7.1.1](https://rocm.docs.amd.com/projects/radeon-ryzen/en/latest/docs/compatibility/compatibilityrad/windows/windows_compatibility.html)
 
 My 7900XTX is called GFX1100 and is supported under windows, so I can progress
 
