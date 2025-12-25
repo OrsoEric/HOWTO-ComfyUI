@@ -1,0 +1,345 @@
+Microsoft Windows [Version 10.0.22631.4602]
+(c) Microsoft Corporation. All rights reserved.
+
+F:\ComfyUI-Windows>git fetch origin
+remote: Enumerating objects: 1019, done.
+remote: Counting objects: 100% (698/698), done.
+remote: Compressing objects: 100% (54/54), done.
+remote: Total 1019 (delta 673), reused 653 (delta 644), pack-reused 321 (from 3)
+Receiving objects: 100% (1019/1019), 389.00 KiB | 5.26 MiB/s, done.
+Resolving deltas: 100% (694/694), completed with 336 local objects.
+From https://github.com/comfyanonymous/ComfyUI
+   fd271ded..5ac3b26a  master                  -> origin/master
+ * [new branch]        assets-redo             -> origin/assets-redo
+ * [new branch]        christian-byrne-patch-2 -> origin/christian-byrne-patch-2
+   f19a2b53..334e74b9  portable-manager-update -> origin/portable-manager-update
+ * [new branch]        temp_pr                 -> origin/temp_pr
+   ebb466d4..b1b1429b  v3-improvements         -> origin/v3-improvements
+ * [new tag]           v0.4.0                  -> v0.4.0
+
+F:\ComfyUI-Windows>uv run comfyui
+error: Failed to spawn: `comfyui`
+  Caused by: program not found
+
+F:\ComfyUI-Windows>uv run main.py
+[START] Security scan
+[ComfyUI-Manager] `python -m pip` not available. Falling back to `uv`.
+[ComfyUI-Manager] Using `uv` as Python module for pip operations.
+[DONE] Security scan
+## ComfyUI-Manager: installing dependencies done.
+** ComfyUI startup time: 2025-12-14 13:02:48.865
+** Platform: Windows
+** Python version: 3.12.10 (main, Apr  9 2025, 04:06:22) [MSC v.1943 64 bit (AMD64)]
+** Python executable: F:\ComfyUI-Windows\.venv\Scripts\python.exe
+** ComfyUI Path: F:\ComfyUI-Windows
+** ComfyUI Base Folder Path: F:\ComfyUI-Windows
+** User directory: F:\ComfyUI-Windows\user
+** ComfyUI-Manager config path: F:\ComfyUI-Windows\user\__manager\config.ini
+** Log path: F:\ComfyUI-Windows\user\comfyui.log
+
+Prestartup times for custom nodes:
+   0.7 seconds: F:\ComfyUI-Windows\custom_nodes\comfyui-manager
+
+Checkpoint files will always be loaded safely.
+Total VRAM 24560 MB, total RAM 65367 MB
+pytorch version: 2.9.0+rocmsdk20251116
+Set: torch.backends.cudnn.enabled = False for better AMD performance.
+AMD arch: gfx1100
+ROCm version: (7, 1)
+Set vram state to: NORMAL_VRAM
+Device: cuda:0 AMD Radeon RX 7900 XTX : native
+Enabled pinned memory 29414.0
+Using sub quadratic optimization for attention, if you have memory or speed issues try using: --use-split-cross-attention
+Python version: 3.12.10 (main, Apr  9 2025, 04:06:22) [MSC v.1943 64 bit (AMD64)]
+ComfyUI version: 0.3.76
+ComfyUI frontend version: 1.33.10
+[Prompt Server] web root: F:\ComfyUI-Windows\.venv\Lib\site-packages\comfyui_frontend_package\static
+Total VRAM 24560 MB, total RAM 65367 MB
+pytorch version: 2.9.0+rocmsdk20251116
+Set: torch.backends.cudnn.enabled = False for better AMD performance.
+AMD arch: gfx1100
+ROCm version: (7, 1)
+Set vram state to: NORMAL_VRAM
+Device: cuda:0 AMD Radeon RX 7900 XTX : native
+Enabled pinned memory 29414.0
+Failed to find comfy root automatically, please copy the folder F:\ComfyUI-Windows\custom_nodes\ComfyLiterals\web manually in the web/extensions folder of ComfyUI
+### Loading: ComfyUI-Manager (V3.38.1)
+[ComfyUI-Manager] network_mode: public
+### ComfyUI Version: v0.3.76-47-gfd271ded | Released on '2025-12-08'
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/alter-list.json
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/model-list.json
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/github-stats.json
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/extension-node-map.json
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/custom-node-list.json
+F:\ComfyUI-Windows\.venv\Lib\site-packages\timm\models\layers\__init__.py:48: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+Error loading AILab_SAM3Segment.py: No module named 'triton'
+Warning: diffusers/transformers not available. SDMatte functionality will be limited.
+[ComfyUI-RMBG] v2.9.4 | 32 nodes Loaded
+Skip F:\ComfyUI-Windows\custom_nodes\minimal-workflow-image module for custom nodes due to the lack of NODE_CLASS_MAPPINGS or NODES_LIST (need one).
+
+Import times for custom nodes:
+   0.0 seconds: F:\ComfyUI-Windows\custom_nodes\websocket_image_save.py
+   0.0 seconds (IMPORT FAILED): F:\ComfyUI-Windows\custom_nodes\minimal-workflow-image
+   0.0 seconds: F:\ComfyUI-Windows\custom_nodes\ComfyLiterals
+   0.3 seconds: F:\ComfyUI-Windows\custom_nodes\comfyui-manager
+   1.1 seconds: F:\ComfyUI-Windows\custom_nodes\comfyui-rmbg
+
+Context impl SQLiteImpl.
+Will assume non-transactional DDL.
+No target revision found.
+Starting server
+
+To see the GUI go to: http://127.0.0.1:8188
+FETCH ComfyRegistry Data: 5/112
+FETCH ComfyRegistry Data: 10/112
+FETCH ComfyRegistry Data: 15/112
+FETCH ComfyRegistry Data: 20/112
+FETCH ComfyRegistry Data: 25/112
+FETCH ComfyRegistry Data: 30/112
+FETCH ComfyRegistry Data: 35/112
+FETCH ComfyRegistry Data: 40/112
+FETCH ComfyRegistry Data: 45/112
+FETCH ComfyRegistry Data: 50/112
+FETCH ComfyRegistry Data: 55/112
+FETCH ComfyRegistry Data: 60/112
+FETCH ComfyRegistry Data: 65/112
+FETCH ComfyRegistry Data: 70/112
+FETCH ComfyRegistry Data: 75/112
+FETCH ComfyRegistry Data: 80/112
+FETCH ComfyRegistry Data: 85/112
+FETCH ComfyRegistry Data: 90/112
+FETCH ComfyRegistry Data: 95/112
+FETCH ComfyRegistry Data: 100/112
+FETCH ComfyRegistry Data: 105/112
+FETCH ComfyRegistry Data: 110/112
+FETCH ComfyRegistry Data [DONE]
+[ComfyUI-Manager] default cache updated: https://api.comfy.org/nodes
+FETCH DATA from: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/custom-node-list.json [DONE]
+[ComfyUI-Manager] All startup tasks have been completed.
+[DEPRECATION WARNING] Detected import of deprecated legacy API: /scripts/ui.js. This is likely caused by a custom node extension using outdated APIs. Please update your extensions or contact the extension author for an updated version.
+[DEPRECATION WARNING] Detected import of deprecated legacy API: /extensions/core/groupNode.js. This is likely caused bya custom node extension using outdated APIs. Please update your extensions or contact the extension author for an updated version.
+[DEPRECATION WARNING] Detected import of deprecated legacy API: /scripts/ui/components/buttonGroup.js. This is likely caused by a custom node extension using outdated APIs. Please update your extensions or contact the extension author for an updated version.
+[DEPRECATION WARNING] Detected import of deprecated legacy API: /scripts/ui/components/button.js. This is likely causedby a custom node extension using outdated APIs. Please update your extensions or contact the extension author for an updated version.
+[ComfyUI-Manager] Updating ComfyUI: v0.3.76-47-gfd271ded -> v0.4.0
+Install: pip packages
+Line is comment...skipping
+ComfyUI is updated to latest stable version.
+
+[ComfyUI-Manager] Queued works are completed.
+{'update-comfyui': 1}
+
+After restarting ComfyUI, please refresh the browser.
+
+Restarting... [Legacy Mode]
+
+
+Command: ['"F:\\ComfyUI-Windows\\.venv\\Scripts\\python.exe"', '"main.py"']
+
+F:\ComfyUI-Windows>[START] Security scan
+[ComfyUI-Manager] `python -m pip` not available. Falling back to `uv`.
+[ComfyUI-Manager] Using `uv` as Python module for pip operations.
+[DONE] Security scan
+## ComfyUI-Manager: installing dependencies done.
+** ComfyUI startup time: 2025-12-14 13:05:35.469
+** Platform: Windows
+** Python version: 3.12.10 (main, Apr  9 2025, 04:06:22) [MSC v.1943 64 bit (AMD64)]
+** Python executable: F:\ComfyUI-Windows\.venv\Scripts\python.exe
+** ComfyUI Path: F:\ComfyUI-Windows
+** ComfyUI Base Folder Path: F:\ComfyUI-Windows
+** User directory: F:\ComfyUI-Windows\user
+** ComfyUI-Manager config path: F:\ComfyUI-Windows\user\__manager\config.ini
+** Log path: F:\ComfyUI-Windows\user\comfyui.log
+
+#######################################################################
+[ComfyUI-Manager] Starting dependency installation/(de)activation for the extension
+
+
+## ComfyUI-Manager: EXECUTE => ['F:\\ComfyUI-Windows\\.venv\\Scripts\\python.exe', '-m', 'uv', 'pip', 'install', 'comfyui-frontend-package==1.33.13']
+
+## Execute management script for 'F:\ComfyUI-Windows'
+[!] Resolved 1 package in 370ms
+[!] Downloading comfyui-frontend-package (18.0MiB)
+[!]  Downloaded comfyui-frontend-package
+[!] Prepared 1 package in 1.76s
+[!] Uninstalled 1 package in 19ms
+[!] warning: Failed to hardlink files; falling back to full copy. This may lead to degraded performance.
+[!]          If the cache and target directories are on different filesystems, hardlinking may not be supported.
+[!]          If this is intentional, set `export UV_LINK_MODE=copy` or use `--link-mode=copy` to suppress this warning.
+[!] Installed 1 package in 64ms
+[!]  - comfyui-frontend-package==1.33.10
+[!]  + comfyui-frontend-package==1.33.13
+
+## ComfyUI-Manager: EXECUTE => ['F:\\ComfyUI-Windows\\.venv\\Scripts\\python.exe', '-m', 'uv', 'pip', 'install', 'comfyui-workflow-templates==0.7.54']
+
+## Execute management script for 'F:\ComfyUI-Windows'
+[!] Resolved 6 packages in 143ms
+[!] Downloading comfyui-workflow-templates-media-image (9.3MiB)
+[!] Downloading comfyui-workflow-templates-media-video (34.0MiB)
+[!] Downloading comfyui-workflow-templates-media-other (10.8MiB)
+[!] Downloading comfyui-workflow-templates-media-api (42.6MiB)
+[!]  Downloaded comfyui-workflow-templates-media-image
+[!]  Downloaded comfyui-workflow-templates-media-other
+[!]  Downloaded comfyui-workflow-templates-media-video
+[!]  Downloaded comfyui-workflow-templates-media-api
+[!] Prepared 6 packages in 9.63s
+[!] Uninstalled 6 packages in 25ms
+[!] warning: Failed to hardlink files; falling back to full copy. This may lead to degraded performance.
+[!]          If the cache and target directories are on different filesystems, hardlinking may not be supported.
+[!]          If this is intentional, set `export UV_LINK_MODE=copy` or use `--link-mode=copy` to suppress this warning.
+[!] Installed 6 packages in 55ms
+[!]  - comfyui-workflow-templates==0.7.51
+[!]  + comfyui-workflow-templates==0.7.54
+[!]  - comfyui-workflow-templates-core==0.3.23
+[!]  + comfyui-workflow-templates-core==0.3.27
+[!]  - comfyui-workflow-templates-media-api==0.3.19
+[!]  + comfyui-workflow-templates-media-api==0.3.20
+[!]  - comfyui-workflow-templates-media-image==0.3.26
+[!]  + comfyui-workflow-templates-media-image==0.3.27
+[!]  - comfyui-workflow-templates-media-other==0.3.37
+[!]  + comfyui-workflow-templates-media-other==0.3.40
+[!]  - comfyui-workflow-templates-media-video==0.3.13
+[!]  + comfyui-workflow-templates-media-video==0.3.15
+
+## ComfyUI-Manager: EXECUTE => ['F:\\ComfyUI-Windows\\.venv\\Scripts\\python.exe', '-m', 'uv', 'pip', 'install', 'comfyui-embedded-docs==0.3.1']
+
+## Execute management script for 'F:\ComfyUI-Windows'
+[!] Audited 1 package in 4ms
+[SKIP] Downgrading pip package isn't allowed: numpy (cur=2.2.6)
+[SKIP] Downgrading pip package isn't allowed: transformers (cur=4.57.3)
+[SKIP] Downgrading pip package isn't allowed: tokenizers (cur=0.22.1)
+[SKIP] Downgrading pip package isn't allowed: safetensors (cur=0.7.0)
+[SKIP] Downgrading pip package isn't allowed: aiohttp (cur=3.13.2)
+[SKIP] Downgrading pip package isn't allowed: yarl (cur=1.22.0)
+[SKIP] Downgrading pip package isn't allowed: av (cur=16.0.1)
+[SKIP] Downgrading pip package isn't allowed: kornia (cur=0.8.2)
+
+## ComfyUI-Manager: EXECUTE => ['F:\\ComfyUI-Windows\\.venv\\Scripts\\python.exe', '-m', 'uv', 'pip', 'install', 'pydantic-settings~=2.0']
+
+## Execute management script for 'F:\ComfyUI-Windows'
+[!] Audited 1 package in 6ms
+
+[ComfyUI-Manager] Startup script completed.
+#######################################################################
+
+[ComfyUI-Manager] Restarting to reapply dependency installation.
+Command: ['"F:\\ComfyUI-Windows\\.venv\\Scripts\\python.exe"', '"main.py"']
+--------------------------------------------------------------------------
+
+[START] Security scan
+[ComfyUI-Manager] `python -m pip` not available. Falling back to `uv`.
+[ComfyUI-Manager] Using `uv` as Python module for pip operations.
+[DONE] Security scan
+## ComfyUI-Manager: installing dependencies done.
+** ComfyUI startup time: 2025-12-14 13:05:48.385
+** Platform: Windows
+** Python version: 3.12.10 (main, Apr  9 2025, 04:06:22) [MSC v.1943 64 bit (AMD64)]
+** Python executable: F:\ComfyUI-Windows\.venv\Scripts\python.exe
+** ComfyUI Path: F:\ComfyUI-Windows
+** ComfyUI Base Folder Path: F:\ComfyUI-Windows
+** User directory: F:\ComfyUI-Windows\user
+** ComfyUI-Manager config path: F:\ComfyUI-Windows\user\__manager\config.ini
+** Log path: F:\ComfyUI-Windows\user\comfyui.log
+
+Prestartup times for custom nodes:
+   0.5 seconds: F:\ComfyUI-Windows\custom_nodes\comfyui-manager
+
+Checkpoint files will always be loaded safely.
+Total VRAM 24560 MB, total RAM 65367 MB
+pytorch version: 2.9.0+rocmsdk20251116
+Set: torch.backends.cudnn.enabled = False for better AMD performance.
+AMD arch: gfx1100
+ROCm version: (7, 1)
+Set vram state to: NORMAL_VRAM
+Device: cuda:0 AMD Radeon RX 7900 XTX : native
+Enabled pinned memory 29414.0
+Using sub quadratic optimization for attention, if you have memory or speed issues try using: --use-split-cross-attention
+Python version: 3.12.10 (main, Apr  9 2025, 04:06:22) [MSC v.1943 64 bit (AMD64)]
+ComfyUI version: 0.4.0
+ComfyUI frontend version: 1.33.13
+[Prompt Server] web root: F:\ComfyUI-Windows\.venv\Lib\site-packages\comfyui_frontend_package\static
+Total VRAM 24560 MB, total RAM 65367 MB
+pytorch version: 2.9.0+rocmsdk20251116
+Set: torch.backends.cudnn.enabled = False for better AMD performance.
+AMD arch: gfx1100
+ROCm version: (7, 1)
+Set vram state to: NORMAL_VRAM
+Device: cuda:0 AMD Radeon RX 7900 XTX : native
+Enabled pinned memory 29414.0
+Failed to find comfy root automatically, please copy the folder F:\ComfyUI-Windows\custom_nodes\ComfyLiterals\web manually in the web/extensions folder of ComfyUI
+### Loading: ComfyUI-Manager (V3.38.1)
+[ComfyUI-Manager] network_mode: public
+### ComfyUI Revision: 4356 [fc657f47] *DETACHED | Released on '2025-12-09'
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/model-list.json
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/alter-list.json
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/github-stats.json
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/extension-node-map.json
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/custom-node-list.json
+F:\ComfyUI-Windows\.venv\Lib\site-packages\timm\models\layers\__init__.py:48: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+Error loading AILab_SAM3Segment.py: No module named 'triton'
+Warning: diffusers/transformers not available. SDMatte functionality will be limited.
+[ComfyUI-RMBG] v2.9.4 | 32 nodes Loaded
+Skip F:\ComfyUI-Windows\custom_nodes\minimal-workflow-image module for custom nodes due to the lack of NODE_CLASS_MAPPINGS or NODES_LIST (need one).
+
+Import times for custom nodes:
+   0.0 seconds: F:\ComfyUI-Windows\custom_nodes\websocket_image_save.py
+   0.0 seconds (IMPORT FAILED): F:\ComfyUI-Windows\custom_nodes\minimal-workflow-image
+   0.0 seconds: F:\ComfyUI-Windows\custom_nodes\ComfyLiterals
+   0.2 seconds: F:\ComfyUI-Windows\custom_nodes\comfyui-manager
+   0.8 seconds: F:\ComfyUI-Windows\custom_nodes\comfyui-rmbg
+
+Context impl SQLiteImpl.
+Will assume non-transactional DDL.
+No target revision found.
+Starting server
+
+To see the GUI go to: http://127.0.0.1:8188
+FETCH ComfyRegistry Data: 5/112
+FETCH ComfyRegistry Data: 10/112
+FETCH ComfyRegistry Data: 15/112
+FETCH ComfyRegistry Data: 20/112
+FETCH ComfyRegistry Data: 25/112
+FETCH ComfyRegistry Data: 30/112
+FETCH ComfyRegistry Data: 35/112
+FETCH ComfyRegistry Data: 40/112
+FETCH ComfyRegistry Data: 45/112
+FETCH ComfyRegistry Data: 50/112
+FETCH ComfyRegistry Data: 55/112
+FETCH ComfyRegistry Data: 60/112
+FETCH ComfyRegistry Data: 65/112
+FETCH ComfyRegistry Data: 70/112
+FETCH ComfyRegistry Data: 75/112
+FETCH ComfyRegistry Data: 80/112
+FETCH ComfyRegistry Data: 85/112
+FETCH ComfyRegistry Data: 90/112
+FETCH ComfyRegistry Data: 95/112
+FETCH ComfyRegistry Data: 100/112
+FETCH ComfyRegistry Data: 105/112
+FETCH ComfyRegistry Data: 110/112
+FETCH ComfyRegistry Data [DONE]
+[ComfyUI-Manager] default cache updated: https://api.comfy.org/nodes
+FETCH DATA from: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/custom-node-list.json [DONE]
+[ComfyUI-Manager] All startup tasks have been completed.
+[DEPRECATION WARNING] Detected import of deprecated legacy API: /scripts/ui.js. This is likely caused by a custom node extension using outdated APIs. Please update your extensions or contact the extension author for an updated version.
+[DEPRECATION WARNING] Detected import of deprecated legacy API: /extensions/core/groupNode.js. This is likely caused bya custom node extension using outdated APIs. Please update your extensions or contact the extension author for an updated version.
+[DEPRECATION WARNING] Detected import of deprecated legacy API: /scripts/ui/components/buttonGroup.js. This is likely caused by a custom node extension using outdated APIs. Please update your extensions or contact the extension author for an updated version.
+[DEPRECATION WARNING] Detected import of deprecated legacy API: /scripts/ui/components/button.js. This is likely causedby a custom node extension using outdated APIs. Please update your extensions or contact the extension author for an updated version.
+got prompt
+model weight dtype torch.float16, manual cast: None
+model_type EPS
+Using split attention in VAE
+Using split attention in VAE
+VAE load device: cuda:0, offload device: cpu, dtype: torch.bfloat16
+CLIP/text encoder model load device: cuda:0, offload device: cpu, current: cpu, dtype: torch.float16
+Requested to load SD1ClipModel
+loaded completely; 22892.08 MB usable, 235.84 MB loaded, full load: True
+Requested to load BaseModel
+loaded completely; 22406.89 MB usable, 1639.41 MB loaded, full load: True
+100%|██████████████████████████████████████████████████████████████████████████████████| 20/20 [00:01<00:00, 11.16it/s]
+Requested to load AutoencoderKL
+loaded completely; 18535.00 MB usable, 159.56 MB loaded, full load: True
+Prompt executed in 5.04 seconds
+got prompt
+100%|██████████████████████████████████████████████████████████████████████████████████| 20/20 [00:01<00:00, 16.74it/s]
+Prompt executed in 1.37 seconds

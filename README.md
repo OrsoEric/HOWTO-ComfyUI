@@ -121,4 +121,6 @@ uv run main.py
 
 This take
 
+## UPDATE COMFYUI 
+
 
