@@ -131,3 +131,51 @@ This take
 ## UPDATE COMFYUI 
 
 
+
+## EXTERNAL MODEL FOLDER
+
+The environment can brick easily. 
+
+It is convenient to move the models outside the ComfyUI folder, so that when I rebuild, the models are all there. This also allows multiple local env to all access models without duplication.
+
+
+```extra_model_paths.yaml```
+
+```yaml
+comfyui:
+    # Go up to the parent folder, and look for the model folder there
+    base_path: ..\ComfyUI-Models
+    # Model Folder
+    checkpoints: checkpoints\
+    clip: clip\
+    clip_vision: clip_vision\
+    text_encoders: text_encoders\
+    configs: configs\
+    controlnet: controlnet\
+    diffusion_models: |
+                diffusion_models
+                unet
+    embeddings: embeddings\
+    loras: loras\
+    upscale_models: upscale_models\
+    vae: vae\
+    # custom vibevoice node dumps here
+    vibevoice: vibevoice\
+```
+
+## Workflow
+
+Workflows are stored in ```\user\default\workflows```
+
+
+
+# EOL
+
+<details>
+<summary>CMD Line Output</summary>
+
+```cmd
+xxx
+```
+
+</details>
