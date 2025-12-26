@@ -1,0 +1,450 @@
+uv already installed.
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint:
+hint:   git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint:   git branch -m <name>
+hint:
+hint: Disable this message with "git config set advice.defaultBranchName false"
+Initialized empty Git repository in F:/ComfyUI-Wondows-2025-12-24/.git/
+remote: Enumerating objects: 29051, done.
+remote: Counting objects: 100% (28/28), done.
+remote: Compressing objects: 100% (23/23), done.
+remote: Total 29051 (delta 16), reused 6 (delta 5), pack-reused 29023 (from 3)
+Receiving objects: 100% (29051/29051), 69.33 MiB | 10.45 MiB/s, done.
+Resolving deltas: 100% (19716/19716), done.
+From https://github.com/comfyanonymous/ComfyUI
+ * [new branch]        annoate_get_input_info  -> origin/annoate_get_input_info
+ * [new branch]        asset-management        -> origin/asset-management
+ * [new branch]        assets-redo             -> origin/assets-redo
+ * [new branch]        base-path-env-var       -> origin/base-path-env-var
+ * [new branch]        cache-index-json-locales -> origin/cache-index-json-locales
+ * [new branch]        chore/update-frontend-1.29.3 -> origin/chore/update-frontend-1.29.3
+ * [new branch]        christian-byrne-patch-1 -> origin/christian-byrne-patch-1
+ * [new branch]        christian-byrne-patch-2 -> origin/christian-byrne-patch-2
+ * [new branch]        combo-output-fix        -> origin/combo-output-fix
+ * [new branch]        dd                      -> origin/dd
+ * [new branch]        deprecation-warning-adjust -> origin/deprecation-warning-adjust
+ * [new branch]        desktop-release-apr222025 -> origin/desktop-release-apr222025
+ * [new branch]        desktop-release-apr242025 -> origin/desktop-release-apr242025
+ * [new branch]        desktop-release-may062025 -> origin/desktop-release-may062025
+ * [new branch]        desktop-release-may292025 -> origin/desktop-release-may292025
+ * [new branch]        fix-context-window-slicing -> origin/fix-context-window-slicing
+ * [new branch]        flipflop-stream         -> origin/flipflop-stream
+ * [new branch]        huchenlei-patch-1       -> origin/huchenlei-patch-1
+ * [new branch]        js/drafts/async_nodes   -> origin/js/drafts/async_nodes
+ * [new branch]        js/drafts/async_nodes_v2 -> origin/js/drafts/async_nodes_v2
+ * [new branch]        js/progress-crossover-fix -> origin/js/progress-crossover-fix
+ * [new branch]        lora-node-refactor      -> origin/lora-node-refactor
+ * [new branch]        master                  -> origin/master
+ * [new branch]        model-paths-helper      -> origin/model-paths-helper
+ * [new branch]        model_management        -> origin/model_management
+ * [new branch]        model_manager           -> origin/model_manager
+ * [new branch]        node-memory-reserve     -> origin/node-memory-reserve
+ * [new branch]        openapi-spec            -> origin/openapi-spec
+ * [new branch]        ops-changes             -> origin/ops-changes
+ * [new branch]        portable-manager-update -> origin/portable-manager-update
+ * [new branch]        pysssss-model-db        -> origin/pysssss-model-db
+ * [new branch]        release/v0.3.77         -> origin/release/v0.3.77
+ * [new branch]        required_frontend_ver   -> origin/required_frontend_ver
+ * [new branch]        rh-uvtest               -> origin/rh-uvtest
+ * [new branch]        si/sync-test            -> origin/si/sync-test
+ * [new branch]        sortblock               -> origin/sortblock
+ * [new branch]        template-static-iter    -> origin/template-static-iter
+ * [new branch]        update-templates-3      -> origin/update-templates-3
+ * [new branch]        v3-improvements         -> origin/v3-improvements
+ * [new branch]        v3-match-type           -> origin/v3-match-type
+ * [new branch]        v3-nodes                -> origin/v3-nodes
+ * [new branch]        v3-process-isolation    -> origin/v3-process-isolation
+ * [new branch]        venv-management         -> origin/venv-management
+ * [new branch]        video_output            -> origin/video_output
+ * [new branch]        weight-zipper           -> origin/weight-zipper
+ * [new branch]        worksplit-multigpu      -> origin/worksplit-multigpu
+ * [new branch]        worksplit-multigpu-loaders -> origin/worksplit-multigpu-loaders
+ * [new branch]        yo-add-precommit        -> origin/yo-add-precommit
+ * [new branch]        yo-lora-trainer         -> origin/yo-lora-trainer
+ * [new branch]        yoland68-more-owner-updates -> origin/yoland68-more-owner-updates
+ * [new branch]        yoland68-patch-1        -> origin/yoland68-patch-1
+ * [new branch]        yoland68-patch-2        -> origin/yoland68-patch-2
+ * [new branch]        yoland68-patch-3        -> origin/yoland68-patch-3
+ * [new branch]        yoland68-patch-4        -> origin/yoland68-patch-4
+ * [new branch]        yoland68-patch-5        -> origin/yoland68-patch-5
+ * [new tag]           v0.3.77                 -> v0.3.77
+ * [new tag]           latest                  -> latest
+ * [new tag]           v0.0.1                  -> v0.0.1
+ * [new tag]           v0.0.2                  -> v0.0.2
+ * [new tag]           v0.0.4                  -> v0.0.4
+ * [new tag]           v0.0.5                  -> v0.0.5
+ * [new tag]           v0.0.6                  -> v0.0.6
+ * [new tag]           v0.0.7                  -> v0.0.7
+ * [new tag]           v0.0.8                  -> v0.0.8
+ * [new tag]           v0.1.0                  -> v0.1.0
+ * [new tag]           v0.1.1                  -> v0.1.1
+ * [new tag]           v0.1.2                  -> v0.1.2
+ * [new tag]           v0.1.3                  -> v0.1.3
+ * [new tag]           v0.2.0                  -> v0.2.0
+ * [new tag]           v0.2.1                  -> v0.2.1
+ * [new tag]           v0.2.2                  -> v0.2.2
+ * [new tag]           v0.2.3                  -> v0.2.3
+ * [new tag]           v0.2.4                  -> v0.2.4
+ * [new tag]           v0.2.5                  -> v0.2.5
+ * [new tag]           v0.2.6                  -> v0.2.6
+ * [new tag]           v0.2.7                  -> v0.2.7
+ * [new tag]           v0.3.0                  -> v0.3.0
+ * [new tag]           v0.3.1                  -> v0.3.1
+ * [new tag]           v0.3.10                 -> v0.3.10
+ * [new tag]           v0.3.11                 -> v0.3.11
+ * [new tag]           v0.3.12                 -> v0.3.12
+ * [new tag]           v0.3.13                 -> v0.3.13
+ * [new tag]           v0.3.14                 -> v0.3.14
+ * [new tag]           v0.3.15                 -> v0.3.15
+ * [new tag]           v0.3.16                 -> v0.3.16
+ * [new tag]           v0.3.17                 -> v0.3.17
+ * [new tag]           v0.3.18                 -> v0.3.18
+ * [new tag]           v0.3.19                 -> v0.3.19
+ * [new tag]           v0.3.2                  -> v0.3.2
+ * [new tag]           v0.3.20                 -> v0.3.20
+ * [new tag]           v0.3.21                 -> v0.3.21
+ * [new tag]           v0.3.22                 -> v0.3.22
+ * [new tag]           v0.3.23                 -> v0.3.23
+ * [new tag]           v0.3.24                 -> v0.3.24
+ * [new tag]           v0.3.25                 -> v0.3.25
+ * [new tag]           v0.3.26                 -> v0.3.26
+ * [new tag]           v0.3.27                 -> v0.3.27
+ * [new tag]           v0.3.28                 -> v0.3.28
+ * [new tag]           v0.3.29                 -> v0.3.29
+ * [new tag]           v0.3.3                  -> v0.3.3
+ * [new tag]           v0.3.30                 -> v0.3.30
+ * [new tag]           v0.3.31                 -> v0.3.31
+ * [new tag]           v0.3.32                 -> v0.3.32
+ * [new tag]           v0.3.33                 -> v0.3.33
+ * [new tag]           v0.3.34                 -> v0.3.34
+ * [new tag]           v0.3.35                 -> v0.3.35
+ * [new tag]           v0.3.36                 -> v0.3.36
+ * [new tag]           v0.3.37                 -> v0.3.37
+ * [new tag]           v0.3.38                 -> v0.3.38
+ * [new tag]           v0.3.39                 -> v0.3.39
+ * [new tag]           v0.3.4                  -> v0.3.4
+ * [new tag]           v0.3.40                 -> v0.3.40
+ * [new tag]           v0.3.41                 -> v0.3.41
+ * [new tag]           v0.3.42                 -> v0.3.42
+ * [new tag]           v0.3.43                 -> v0.3.43
+ * [new tag]           v0.3.44                 -> v0.3.44
+ * [new tag]           v0.3.45                 -> v0.3.45
+ * [new tag]           v0.3.46                 -> v0.3.46
+ * [new tag]           v0.3.47                 -> v0.3.47
+ * [new tag]           v0.3.48                 -> v0.3.48
+ * [new tag]           v0.3.49                 -> v0.3.49
+ * [new tag]           v0.3.5                  -> v0.3.5
+ * [new tag]           v0.3.50                 -> v0.3.50
+ * [new tag]           v0.3.51                 -> v0.3.51
+ * [new tag]           v0.3.52                 -> v0.3.52
+ * [new tag]           v0.3.53                 -> v0.3.53
+ * [new tag]           v0.3.54                 -> v0.3.54
+ * [new tag]           v0.3.55                 -> v0.3.55
+ * [new tag]           v0.3.56                 -> v0.3.56
+ * [new tag]           v0.3.57                 -> v0.3.57
+ * [new tag]           v0.3.58                 -> v0.3.58
+ * [new tag]           v0.3.59                 -> v0.3.59
+ * [new tag]           v0.3.6                  -> v0.3.6
+ * [new tag]           v0.3.60                 -> v0.3.60
+ * [new tag]           v0.3.61                 -> v0.3.61
+ * [new tag]           v0.3.62                 -> v0.3.62
+ * [new tag]           v0.3.63                 -> v0.3.63
+ * [new tag]           v0.3.64                 -> v0.3.64
+ * [new tag]           v0.3.65                 -> v0.3.65
+ * [new tag]           v0.3.66                 -> v0.3.66
+ * [new tag]           v0.3.67                 -> v0.3.67
+ * [new tag]           v0.3.68                 -> v0.3.68
+ * [new tag]           v0.3.69                 -> v0.3.69
+ * [new tag]           v0.3.7                  -> v0.3.7
+ * [new tag]           v0.3.70                 -> v0.3.70
+ * [new tag]           v0.3.71                 -> v0.3.71
+ * [new tag]           v0.3.72                 -> v0.3.72
+ * [new tag]           v0.3.73                 -> v0.3.73
+ * [new tag]           v0.3.74                 -> v0.3.74
+ * [new tag]           v0.3.75                 -> v0.3.75
+ * [new tag]           v0.3.76                 -> v0.3.76
+ * [new tag]           v0.3.8                  -> v0.3.8
+ * [new tag]           v0.3.9                  -> v0.3.9
+ * [new tag]           v0.4.0                  -> v0.4.0
+ * [new tag]           v0.5.0                  -> v0.5.0
+ * [new tag]           v0.5.1                  -> v0.5.1
+ * [new tag]           v0.6.0                  -> v0.6.0
+branch 'master' set up to track 'origin/master'.
+Already on 'master'
+Using CPython 3.12.10
+Creating virtual environment at: .venv
+Activate with: .venv\Scripts\activate
+Resolved 4 packages in 494ms
+      Built rocm @ https://repo.radeon.com/rocm/windows/rocm-rel-7.1.1/rocm-0.1.dev0.tar.gz
+Prepared 4 packages in 5m 27s
+░░░░░░░░░░░░░░░░░░░░ [0/4] Installing wheels...warning: Failed to hardlink files; falling back to full copy. This may lead to degraded performance.
+         If the cache and target directories are on different filesystems, hardlinking may not be supported.
+         If this is intentional, set `export UV_LINK_MODE=copy` or use `--link-mode=copy` to suppress this warning.
+Installed 4 packages in 5.21s
+ + rocm==0.1.dev0 (from https://repo.radeon.com/rocm/windows/rocm-rel-7.1.1/rocm-0.1.dev0.tar.gz)
+ + rocm-sdk-core==0.1.dev0 (from https://repo.radeon.com/rocm/windows/rocm-rel-7.1.1/rocm_sdk_core-0.1.dev0-py3-none-win_amd64.whl)
+ + rocm-sdk-devel==0.1.dev0 (from https://repo.radeon.com/rocm/windows/rocm-rel-7.1.1/rocm_sdk_devel-0.1.dev0-py3-none-win_amd64.whl)
+ + rocm-sdk-libraries-custom==0.1.dev0 (from https://repo.radeon.com/rocm/windows/rocm-rel-7.1.1/rocm_sdk_libraries_custom-0.1.dev0-py3-none-win_amd64.whl)
+Resolved 17 packages in 836ms
+Prepared 14 packages in 1m 14s
+░░░░░░░░░░░░░░░░░░░░ [0/14] Installing wheels...warning: Failed to hardlink files; falling back to full copy. This may lead to degraded performance.
+         If the cache and target directories are on different filesystems, hardlinking may not be supported.
+         If this is intentional, set `export UV_LINK_MODE=copy` or use `--link-mode=copy` to suppress this warning.
+Installed 14 packages in 2.88s
+ + filelock==3.20.1
+ + fsspec==2025.12.0
+ + jinja2==3.1.6
+ + markupsafe==3.0.3
+ + mpmath==1.3.0
+ + networkx==3.6.1
+ + numpy==2.4.0
+ + pillow==12.0.0
+ + setuptools==80.9.0
+ + sympy==1.14.0
+ + torch==2.9.0+rocmsdk20251116 (from https://repo.radeon.com/rocm/windows/rocm-rel-7.1.1/torch-2.9.0+rocmsdk20251116-cp312-cp312-win_amd64.whl)
+ + torchaudio==2.9.0+rocmsdk20251116 (from https://repo.radeon.com/rocm/windows/rocm-rel-7.1.1/torchaudio-2.9.0+rocmsdk20251116-cp312-cp312-win_amd64.whl)
+ + torchvision==0.24.0+rocmsdk20251116 (from https://repo.radeon.com/rocm/windows/rocm-rel-7.1.1/torchvision-0.24.0+rocmsdk20251116-cp312-cp312-win_amd64.whl)
+ + typing-extensions==4.15.0
+Torch import: Success
+CUDA available: True
+Device name: AMD Radeon RX 7900 XTX
+<frozen runpy>:128: RuntimeWarning: 'torch.utils.collect_env' found in sys.modules after import of package 'torch.utils', but prior to execution of 'torch.utils.collect_env'; this may result in unpredictable behaviour
+Collecting environment information...
+PyTorch version: 2.9.0+rocmsdk20251116
+Is debug build: False
+CUDA used to build PyTorch: N/A
+ROCM used to build PyTorch: 7.1.52802-561cc400e1
+
+OS: Microsoft Windows 11 Pro (10.0.22631 64-bit)
+GCC version: Could not collect
+Clang version: 19.0.0git (git@github.amd.com:Compute-Mirrors/llvm-project 5353ca3e0e5ae54a31eeebe223da212fa405567a)
+CMake version: version 4.2.1
+Libc version: N/A
+
+Python version: 3.12.10 (main, Apr  9 2025, 04:06:22) [MSC v.1943 64 bit (AMD64)] (64-bit runtime)
+Python platform: Windows-11-10.0.22631-SP0
+Is CUDA available: True
+CUDA runtime version: Could not collect
+CUDA_MODULE_LOADING set to:
+GPU models and configuration: AMD Radeon RX 7900 XTX (gfx1100)
+Nvidia driver version: Could not collect
+cuDNN version: Could not collect
+Is XPU available: False
+HIP runtime version: 7.1.52802
+MIOpen runtime version: 3.5.1
+Is XNNPACK available: True
+
+CPU:
+Name: 13th Gen Intel(R) Core(TM) i7-13700F
+Manufacturer: GenuineIntel
+Family: 198
+Architecture: 9
+ProcessorType: 3
+DeviceID: CPU0
+CurrentClockSpeed: 2100
+MaxClockSpeed: 2100
+L2CacheSize: 24576
+L2CacheSpeed: None
+Revision: None
+
+Versions of relevant libraries:
+[pip3] Could not collect
+[conda] Could not collect
+Cloning into 'comfyui-manager'...
+remote: Enumerating objects: 27337, done.
+remote: Counting objects: 100% (263/263), done.
+remote: Compressing objects: 100% (123/123), done.
+remote: Total 27337 (delta 208), reused 140 (delta 140), pack-reused 27074 (from 3)
+Receiving objects: 100% (27337/27337), 119.86 MiB | 10.30 MiB/s, done.
+Resolving deltas: 100% (20258/20258), done.
+Resolved 67 packages in 1.03s
+Prepared 4 packages in 2.05s
+░░░░░░░░░░░░░░░░░░░░ [0/50] Installing wheels...warning: Failed to hardlink files; falling back to full copy. This may lead to degraded performance.
+         If the cache and target directories are on different filesystems, hardlinking may not be supported.
+         If this is intentional, set `export UV_LINK_MODE=copy` or use `--link-mode=copy` to suppress this warning.
+Installed 50 packages in 1.96s
+ + aiohappyeyeballs==2.6.1
+ + aiohttp==3.13.2
+ + aiosignal==1.4.0
+ + alembic==1.17.2
+ + annotated-types==0.7.0
+ + attrs==25.4.0
+ + av==16.0.1
+ + certifi==2025.11.12
+ + charset-normalizer==3.4.4
+ + colorama==0.4.6
+ + comfyui-embedded-docs==0.3.1
+ + comfyui-frontend-package==1.35.9
+ + comfyui-workflow-templates==0.7.63
+ + comfyui-workflow-templates-core==0.3.58
+ + comfyui-workflow-templates-media-api==0.3.31
+ + comfyui-workflow-templates-media-image==0.3.43
+ + comfyui-workflow-templates-media-other==0.3.61
+ + comfyui-workflow-templates-media-video==0.3.22
+ + einops==0.8.1
+ + frozenlist==1.8.0
+ + greenlet==3.3.0
+ + huggingface-hub==0.36.0
+ + idna==3.11
+ + kornia==0.8.2
+ + kornia-rs==0.1.10
+ + mako==1.3.10
+ + multidict==6.7.0
+ + packaging==25.0
+ + propcache==0.4.1
+ + psutil==7.2.0
+ + pydantic==2.12.5
+ + pydantic-core==2.41.5
+ + pydantic-settings==2.12.0
+ + python-dotenv==1.2.1
+ + pyyaml==6.0.3
+ + regex==2025.11.3
+ + requests==2.32.5
+ + safetensors==0.7.0
+ + scipy==1.16.3
+ + sentencepiece==0.2.1
+ + spandrel==0.4.1
+ + sqlalchemy==2.0.45
+ + tokenizers==0.22.1
+ + torchsde==0.2.6
+ + tqdm==4.67.1
+ + trampoline==0.1.2
+ + transformers==4.57.3
+ + typing-inspection==0.4.2
+ + urllib3==2.6.2
+ + yarl==1.22.0
+[START] Security scan
+[ComfyUI-Manager] `python -m pip` not available. Falling back to `uv`.
+[ComfyUI-Manager] Using standalone `uv` for pip operations.
+[DONE] Security scan
+## ComfyUI-Manager: installing dependencies. (GitPython)
+Resolved 59 packages in 492ms
+Prepared 4 packages in 2.28s
+░░░░░░░░░░░░░░░░░░░░ [0/33] Installing wheels...
+warning: Failed to hardlink files; falling back to full copy. This may lead to degraded performance.
+         If the cache and target directories are on different filesystems, hardlinking may not be supported.
+         If this is intentional, set `export UV_LINK_MODE=copy` or use `--link-mode=copy` to suppress this warning.
+Installed 33 packages in 165ms
+ + aiofiles==24.1.0
+ + aiohttp-socks==0.11.0
+ + cffi==2.0.0
+ + chardet==5.2.0
+ + click==8.3.1
+ + cryptography==46.0.3
+ + gitdb==4.0.12
+ + gitpython==3.1.45
+ + h11==0.16.0
+ + h2==4.3.0
+ + hpack==4.1.0
+ + hyperframe==6.1.0
+ + jsonschema==4.25.1
+ + jsonschema-specifications==2025.9.1
+ + markdown-it-py==4.0.0
+ + matrix-nio==0.25.2
+ + mdurl==0.1.2
+ + pycparser==2.23
+ + pycryptodome==3.23.0
+ + pygithub==2.8.1
+ + pygments==2.19.2
+ + pyjwt==2.10.1
+ + pynacl==1.6.1
+ + python-socks==2.8.0
+ + referencing==0.37.0
+ + rich==14.2.0
+ + rpds-py==0.30.0
+ + shellingham==1.5.4
+ + smmap==5.0.2
+ + toml==0.10.2
+ + typer==0.20.1
+ + unpaddedbase64==2.1.0
+ + uv==0.9.18
+## ComfyUI-Manager: installing dependencies done.
+** ComfyUI startup time: 2025-12-24 16:14:20.531
+** Platform: Windows
+** Python version: 3.12.10 (main, Apr  9 2025, 04:06:22) [MSC v.1943 64 bit (AMD64)]
+** Python executable: F:\ComfyUI-Wondows-2025-12-24\.venv\Scripts\python.exe
+** ComfyUI Path: F:\ComfyUI-Wondows-2025-12-24
+** ComfyUI Base Folder Path: F:\ComfyUI-Wondows-2025-12-24
+** User directory: F:\ComfyUI-Wondows-2025-12-24\user
+** ComfyUI-Manager config path: F:\ComfyUI-Wondows-2025-12-24\user\__manager\config.ini
+** Log path: F:\ComfyUI-Wondows-2025-12-24\user\comfyui.log
+
+Prestartup times for custom nodes:
+   3.7 seconds: F:\ComfyUI-Wondows-2025-12-24\custom_nodes\comfyui-manager
+
+Checkpoint files will always be loaded safely.
+Total VRAM 24560 MB, total RAM 65367 MB
+pytorch version: 2.9.0+rocmsdk20251116
+Set: torch.backends.cudnn.enabled = False for better AMD performance.
+AMD arch: gfx1100
+ROCm version: (7, 1)
+Set vram state to: NORMAL_VRAM
+Device: cuda:0 AMD Radeon RX 7900 XTX : native
+Enabled pinned memory 29414.0
+Using sub quadratic optimization for attention, if you have memory or speed issues try using: --use-split-cross-attention
+Python version: 3.12.10 (main, Apr  9 2025, 04:06:22) [MSC v.1943 64 bit (AMD64)]
+ComfyUI version: 0.6.0
+ComfyUI frontend version: 1.35.9
+[Prompt Server] web root: F:\ComfyUI-Wondows-2025-12-24\.venv\Lib\site-packages\comfyui_frontend_package\static
+Total VRAM 24560 MB, total RAM 65367 MB
+pytorch version: 2.9.0+rocmsdk20251116
+Set: torch.backends.cudnn.enabled = False for better AMD performance.
+AMD arch: gfx1100
+ROCm version: (7, 1)
+Set vram state to: NORMAL_VRAM
+Device: cuda:0 AMD Radeon RX 7900 XTX : native
+Enabled pinned memory 29414.0
+### Loading: ComfyUI-Manager (V3.39)
+[ComfyUI-Manager] network_mode: public
+[ComfyUI-Manager] ComfyUI per-queue preview override detected (PR #11261). Manager's preview method feature is disabled. Use ComfyUI's --preview-method CLI option or 'Settings > Execution > Live preview method'.
+### ComfyUI Version: v0.6.0-1-g650e716d | Released on '2025-12-23'
+
+Import times for custom nodes:
+   0.0 seconds: F:\ComfyUI-Wondows-2025-12-24\custom_nodes\websocket_image_save.py
+   0.5 seconds: F:\ComfyUI-Wondows-2025-12-24\custom_nodes\comfyui-manager
+
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/model-list.json
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/alter-list.json
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/github-stats.json
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/custom-node-list.json
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/extension-node-map.json
+Context impl SQLiteImpl.
+Will assume non-transactional DDL.
+No target revision found.
+Starting server
+
+To see the GUI go to: http://127.0.0.1:8188
+FETCH ComfyRegistry Data: 5/115
+FETCH ComfyRegistry Data: 10/115
+FETCH ComfyRegistry Data: 15/115
+FETCH ComfyRegistry Data: 20/115
+FETCH ComfyRegistry Data: 25/115
+FETCH ComfyRegistry Data: 30/115
+FETCH ComfyRegistry Data: 35/115
+FETCH ComfyRegistry Data: 40/115
+FETCH ComfyRegistry Data: 45/115
+FETCH ComfyRegistry Data: 50/115
+FETCH ComfyRegistry Data: 55/115
+FETCH ComfyRegistry Data: 60/115
+FETCH ComfyRegistry Data: 65/115
+FETCH ComfyRegistry Data: 70/115
+FETCH ComfyRegistry Data: 75/115
+FETCH ComfyRegistry Data: 80/115
+FETCH ComfyRegistry Data: 85/115
+FETCH ComfyRegistry Data: 90/115
+FETCH ComfyRegistry Data: 95/115
+FETCH ComfyRegistry Data: 100/115
+FETCH ComfyRegistry Data: 105/115
+FETCH ComfyRegistry Data: 110/115
+FETCH ComfyRegistry Data: 115/115
+FETCH ComfyRegistry Data [DONE]
+[ComfyUI-Manager] default cache updated: https://api.comfy.org/nodes
+FETCH DATA from: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/custom-node-list.json [DONE]
+[ComfyUI-Manager] All startup tasks have been completed.

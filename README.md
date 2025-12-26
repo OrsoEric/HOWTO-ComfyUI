@@ -128,7 +128,12 @@ uv run main.py
 
 This take
 
+
+
 ## UPDATE COMFYUI 
+
+
+
 
 
 
@@ -162,6 +167,44 @@ comfyui:
     # custom vibevoice node dumps here
     vibevoice: vibevoice\
 ```
+
+
+# Comfy UI Custom Nodes
+
+## [EXPORT PNG](https://github.com/fuselayer/comfyui-minimal-workflow-image)
+
+This allows exporting the workflow as png that can be imported as workflow
+
+<details>
+<summary>CMD Line Output</summary>
+
+```cmd
+[ComfyUI-Manager] default cache updated: https://api.comfy.org/nodes
+FETCH DATA from: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/custom-node-list.json [DONE]
+[ComfyUI-Manager] broken item:{'author': 'rjgoif', 'title': 'Img Label Tools', 'id': 'Img-Label-Tools', 'reference': 'https://github.com/rjgoif/ComfyUI-Img-Label-Tools', 'install_type': 'git-clone', 'description': 'Tools to help annotate images for sharing on Reddit, Discord, etc.'}
+[ComfyUI-Manager] All startup tasks have been completed.
+[DEPRECATION WARNING] Detected import of deprecated legacy API: /scripts/ui.js. This is likely caused by a custom node extension using outdated APIs. Please update your extensions or contact the extension author for an updated version.
+[DEPRECATION WARNING] Detected import of deprecated legacy API: /extensions/core/groupNode.js. This is likely caused by a custom node extension using outdated APIs. Please update your extensions or contact the extension author for an updated version.
+[DEPRECATION WARNING] Detected import of deprecated legacy API: /scripts/ui/components/buttonGroup.js. This is likely caused by a custom node extension using outdated APIs. Please update your extensions or contact the extension author for an updated version.
+[DEPRECATION WARNING] Detected import of deprecated legacy API: /scripts/ui/components/button.js. This is likely caused by a custom node extension using outdated APIs. Please update your extensions or contact the extension author for an updated version.
+[ComfyUI-Manager] The ComfyRegistry cache update is still in progress, so an outdated cache is being used.
+FETCH DATA from: F:\ComfyUI-Windows\user\__manager\cache\1514988643_custom-node-list.json [DONE]
+[ComfyUI-Manager] broken item:{'author': 'rjgoif', 'description': 'Tools to help annotate images for sharing on Reddit, Discord, etc.', 'id': 'Img-Label-Tools', 'install_type': 'git-clone', 'reference': 'https://github.com/rjgoif/ComfyUI-Img-Label-Tools', 'title': 'Img Label Tools'}
+FETCH DATA from: F:\ComfyUI-Windows\user\__manager\cache\746607195_github-stats.json [DONE]
+FETCH DATA from: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/extras.json [DONE]
+FETCH DATA from: F:\ComfyUI-Windows\user\__manager\cache\1742899825_extension-node-map.json [DONE]
+100%|█████████████████████████████████████████████████████████████████████████████| 24.2k/24.2k [00:00<00:00, 1.41MB/s]
+Extracted zip file to F:\ComfyUI-Windows\custom_nodes\minimal-workflow-image
+
+[ComfyUI-Manager] Queued works are completed.
+{'install': 1}
+
+After restarting ComfyUI, please refresh the browser.
+
+Restarting... [Legacy Mode]
+```
+
+</details>
 
 ## Workflow
 
