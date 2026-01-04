@@ -1,0 +1,195 @@
+{
+  "last_node_id": 5,
+  "last_link_id": 4,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "HunyuanConfig",
+      "pos": [50, 50],
+      "size": [350, 130],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "config",
+          "type": "HUNYUAN_CONFIG",
+          "links": [1],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "HunyuanConfig"
+      },
+      "widgets_values": [
+        "YOUR_SECRET_ID",
+        "YOUR_SECRET_KEY",
+        "ap-singapore"
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 2,
+      "type": "HunyuanBatchImageTo3D",
+      "pos": [450, 50],
+      "size": [400, 380],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "config",
+          "type": "HUNYUAN_CONFIG",
+          "link": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "batch_summary",
+          "type": "STRING",
+          "links": [2],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "model_paths",
+          "type": "STRING",
+          "links": [3],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "HunyuanBatchImageTo3D"
+      },
+      "widgets_values": [
+        "input",
+        "batch_output",
+        "*.png",
+        false,
+        500000,
+        "Normal",
+        "triangle",
+        600,
+        10
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 3,
+      "type": "ShowText|pysssss",
+      "pos": [900, 50],
+      "size": [400, 300],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "Batch Processing Summary"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "HunyuanBatchPreview",
+      "pos": [900, 380],
+      "size": [400, 300],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model_paths",
+          "type": "STRING",
+          "link": 3
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model_path",
+          "type": "STRING",
+          "links": [4],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "HunyuanBatchPreview"
+      },
+      "widgets_values": [
+        "",
+        0
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 5,
+      "type": "Preview3D",
+      "pos": [1350, 380],
+      "size": [400, 400],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mesh",
+          "type": "STRING",
+          "link": 4
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Preview3D"
+      },
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 6,
+      "type": "Note",
+      "pos": [50, 470],
+      "size": [800, 340],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "╔══════════════════════════════════════════════════════════════════════════════╗\n║       HUNYUAN3D AUTOMATIC BATCH PROCESSING - Yöntem 3 (En Kolay!)          ║\n╚══════════════════════════════════════════════════════════════════════════════╝\n\n🎯 SUPER KOLAY KULLANIM:\n\n1️⃣ API BİLGİLERİNİ GİRİN (HunyuanConfig node)\n   • Secret ID ve Secret Key\n\n2️⃣ İMAGE'LARI HAZIRLAYIP YÜKLEYIN\n   • ComfyUI/input/ klasörüne image'larınızı koyun\n   • Veya alt klasör oluşturun: ComfyUI/input/my_products/\n\n3️⃣ BATCH AYARLARINI YAPIN\n   • folder_path: \"input\" (veya alt klasör adı)\n   • file_pattern: \"*.png\" (veya \"product_*.jpg\")\n   • max_images: 10 (kaç image işlensin)\n\n4️⃣ QUEUE PROMPT'A BASIN - HEPSI BU! 🚀\n   • Tek tuşla TÜM image'lar işlenir!\n   • Console'dan ilerlemeyi izleyin\n   • Sonuçları ShowText'te görün\n\n📊 AYARLAR:\n• enable_pbr: false (hızlı) / true (kaliteli)\n• face_count: 500000 (dengeli) / 1500000 (detaylı)\n• generate_type: Normal (default) / LowPoly (oyun)\n• max_wait_time: 600 saniye (10 dakika)\n• max_images: 10 (aynı anda işlenecek maksimum)\n\n💾 ÇIKTI:\n• Tüm modeller: ComfyUI/models/3d_models/\n• İsim formatı: imagename_3d.glb\n\n⏱️ SÜRE: ~3 dakika x image sayısı\n💰 MALİYET: ~$0.10-0.60 x image sayısı\n\n✨ AVANTAJLAR:\n✅ Tek Queue Prompt ile tüm batch\n✅ Otomatik dosya bulma\n✅ İlerleme takibi\n✅ Hata yönetimi\n✅ Detaylı özet rapor\n\n🔥 Bu en kolay yöntem - tek tıkla batch işleme!"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    }
+  ],
+  "links": [
+    [1, 1, 0, 2, 0, "HUNYUAN_CONFIG"],
+    [2, 2, 0, 3, 0, "STRING"],
+    [3, 2, 1, 4, 0, "STRING"],
+    [4, 4, 0, 5, 0, "STRING"]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}

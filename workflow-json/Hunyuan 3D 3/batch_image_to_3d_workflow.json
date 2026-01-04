@@ -1,0 +1,184 @@
+{
+  "last_node_id": 11,
+  "last_link_id": 11,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "LoadImage",
+      "pos": [50, 50],
+      "size": [320, 314],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [1],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "example001.png",
+        "image"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 2,
+      "type": "HunyuanConfig",
+      "pos": [50, 400],
+      "size": [320, 130],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "config",
+          "type": "HUNYUAN_CONFIG",
+          "links": [2],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "HunyuanConfig"
+      },
+      "widgets_values": [
+        "YOUR_SECRET_ID",
+        "YOUR_SECRET_KEY",
+        "ap-singapore"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "HunyuanImageTo3D",
+      "pos": [420, 50],
+      "size": [340, 290],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "config",
+          "type": "HUNYUAN_CONFIG",
+          "link": 2
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model_path",
+          "type": "STRING",
+          "links": [3, 10],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "HunyuanImageTo3D"
+      },
+      "widgets_values": [
+        false,
+        500000,
+        "Normal",
+        "triangle",
+        600
+      ]
+    },
+    {
+      "id": 4,
+      "type": "ShowText|pysssss",
+      "pos": [810, 50],
+      "size": [320, 150],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 3
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "Model saved path"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "Preview3D",
+      "pos": [810, 250],
+      "size": [400, 400],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mesh",
+          "type": "STRING",
+          "link": 10
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Preview3D"
+      },
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 5,
+      "type": "Note",
+      "pos": [50, 580],
+      "size": [700, 180],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "╔══════════════════════════════════════════════════════════╗\n║       MANUAL BATCH WORKFLOW - METHOD 2 (Sequential)     ║\n╚══════════════════════════════════════════════════════════╝\n\n📋 QUICK START:\n1. Set API credentials in HunyuanConfig node\n2. In LoadImage node, select first image (example001.png)\n3. Click 'Queue Prompt' button\n4. Change image to example002.png and Queue again\n5. Repeat for all images\n\n⚡ FAST BATCH METHOD:\n• Name images sequentially: img001.png, img002.png, img003.png\n• Select img001.png → Click Queue Prompt\n• Press UP ARROW key → Select img002.png\n• Click Queue Prompt again\n• Repeat for all images\n\n💾 OUTPUT:\n• All models saved to: ComfyUI/models/3d_models/\n• Files named: image_to_3d_TIMESTAMP.glb\n\n⚙️ SETTINGS:\n• Enable PBR: Realistic materials (slower, better quality)\n• Face Count: 500K = balanced, 1.5M = high detail\n• Generate Type: Normal (default), LowPoly (game assets)\n\n💡 TIP: For fully automatic batch processing, use Method 3:\n    examples/auto_batch_workflow.json\n    (One-click processing with custom output folders!)\n\n⏱️  Processing time: ~2-5 minutes per image"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    }
+  ],
+  "links": [
+    [1, 1, 0, 3, 1, "IMAGE"],
+    [2, 2, 0, 3, 0, "HUNYUAN_CONFIG"],
+    [3, 3, 0, 4, 0, "STRING"],
+    [10, 3, 0, 10, 0, "STRING"]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}

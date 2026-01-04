@@ -1,0 +1,106 @@
+{
+  "last_node_id": 3,
+  "last_link_id": 2,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "HunyuanConfig",
+      "pos": [100, 100],
+      "size": [400, 200],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "config",
+          "type": "HUNYUAN_CONFIG",
+          "links": [1],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "HunyuanConfig"
+      },
+      "widgets_values": [
+        "YOUR_SECRET_ID",
+        "YOUR_SECRET_KEY",
+        "ap-singapore"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "HunyuanTextTo3D",
+      "pos": [600, 100],
+      "size": [500, 300],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "config",
+          "type": "HUNYUAN_CONFIG",
+          "link": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "3d_model_path",
+          "type": "STRING",
+          "links": [2]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "HunyuanTextTo3D"
+      },
+      "widgets_values": [
+        "A simple red cube",
+        false,
+        500000,
+        "Normal",
+        "triangle",
+        600
+      ]
+    },
+    {
+      "id": 3,
+      "type": "Preview3D",
+      "pos": [1200, 100],
+      "size": [600, 500],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model_file",
+          "type": "STRING",
+          "link": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Preview3D"
+      },
+      "widgets_values": []
+    }
+  ],
+  "links": [
+    [1, 1, 0, 2, 0, "HUNYUAN_CONFIG"],
+    [2, 2, 0, 3, 0, "STRING"]
+  ],
+  "groups": [
+    {
+      "title": "Text-to-3D Generation with Preview",
+      "bounding": [50, 20, 1850, 650],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 1.0,
+      "offset": [0, 0]
+    }
+  },
+  "version": 0.4
+}
