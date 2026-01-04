@@ -36,6 +36,8 @@ In my region the 7900XTX still goes for 850€ to 950€ at the time of update 2
 
 [ROCm 7.10.0 Preview Installation](https://rocm.docs.amd.com/en/7.10.0-preview/install/rocm.html)
 
+[ROCm 7.1.1 Preview Installation](https://rocm.docs.amd.com/projects/radeon-ryzen/en/latest/docs/install/installrad/windows/install-pytorch.html)
+
 This is wrong, I need to use UV for this to have any chance of working, the env will brick a lot, and if I use a system python this is hopeless
 
 

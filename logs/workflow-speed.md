@@ -32,7 +32,7 @@ There is quite the variance in speed
 I have been trying a few samplers
 - 
 
-
+```
 got prompt
 Using split attention in VAE
 Using split attention in VAE
@@ -146,3 +146,59 @@ loaded completely; 18064.10 MB usable, 11739.55 MB loaded, full load: True
 100%|████████████████████████████████████████████████████████████████████████████████████| 9/9 [00:32<00:00,  3.66s/it]
 Unloaded partially: 658.30 MB freed, 11081.27 MB remains loaded, 28.12 MB buffer reserved, lowvram patches: 0
 Prompt executed in 36.55 seconds
+```
+
+
+# 2025-12-29
+
+```
+got prompt
+Requested to load AutoencodingEngine
+loaded completely; 5762.52 MB usable, 159.87 MB loaded, full load: True
+Requested to load ZImageTEModel_
+loaded completely; 9330.58 MB usable, 7672.25 MB loaded, full load: True
+Unloaded partially: 3130.37 MB freed, 4541.88 MB remains loaded, 142.50 MB buffer reserved, lowvram patches: 0
+100%|████████████████████████████████████████████████████████████████████████████████████| 9/9 [00:45<00:00,  5.09s/it]
+Requested to load AutoencodingEngine
+Unloaded partially: 1282.50 MB freed, 3259.38 MB remains loaded, 142.50 MB buffer reserved, lowvram patches: 0
+loaded completely; 3094.22 MB usable, 159.87 MB loaded, full load: True
+Prompt executed in 54.74 seconds
+got prompt
+100%|████████████████████████████████████████████████████████████████████████████████████| 9/9 [00:22<00:00,  2.53s/it]
+Prompt executed in 26.64 seconds
+got prompt
+loaded completely; 9312.33 MB usable, 7672.25 MB loaded, full load: True
+Unloaded partially: 3130.37 MB freed, 4541.88 MB remains loaded, 142.50 MB buffer reserved, lowvram patches: 0
+100%|████████████████████████████████████████████████████████████████████████████████████| 9/9 [00:55<00:00,  6.18s/it]
+Requested to load AutoencodingEngine
+Unloaded partially: 1282.50 MB freed, 3259.38 MB remains loaded, 142.50 MB buffer reserved, lowvram patches: 0
+loaded completely; 3094.22 MB usable, 159.87 MB loaded, full load: True
+Prompt executed in 64.01 seconds
+got prompt
+100%|████████████████████████████████████████████████████████████████████████████████████| 9/9 [00:06<00:00,  1.41it/s]
+Prompt executed in 9.29 seconds
+```
+
+
+Zimage 1536x1536 9 step
+```
+got prompt
+Using split attention in VAE
+Using split attention in VAE
+VAE load device: cuda:0, offload device: cpu, dtype: torch.bfloat16
+Requested to load AutoencodingEngine
+loaded completely; 9599.35 MB usable, 159.87 MB loaded, full load: True
+CLIP/text encoder model load device: cuda:0, offload device: cpu, current: cpu, dtype: torch.float16
+Requested to load ZImageTEModel_
+loaded completely; 22323.17 MB usable, 7672.25 MB loaded, full load: True
+model weight dtype torch.bfloat16, manual cast: None
+model_type FLOW
+unet missing: ['norm_final.weight']
+Requested to load Lumina2
+loaded completely; 12241.17 MB usable, 11739.55 MB loaded, full load: True
+100%|████████████████████████████████████████████████████████████████████████████████████| 9/9 [07:14<00:00, 48.29s/it]
+Requested to load AutoencodingEngine
+0 models unloaded.
+loaded completely; 9599.35 MB usable, 159.87 MB loaded, full load: True
+Prompt executed in 475.64 seconds
+```
