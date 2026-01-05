@@ -130,14 +130,13 @@ uv run main.py
 
 This take
 
+## Wheels
 
+[Wheels](https://repo.radeon.com/rocm/windows/rocm-rel-7.1.1/)
 
 ## UPDATE COMFYUI 
 
-
-
-
-
+xxx
 
 ## EXTERNAL MODEL FOLDER
 
@@ -210,6 +209,8 @@ Restarting... [Legacy Mode]
 
 # Launch Script
 
+doesn't work
+
 ```cmd
 set MIOPEN_ENABLE_LOGGING=1
 set MIOPEN_ENABLE_LOGGING_CMD=1
@@ -218,6 +219,15 @@ set MIOPEN_LOG_LEVEL=6
 uv run main.py
 ```
 
+```
+if __name__ == "__main__":
+    #NOTE: These do not do anything on core ComfyUI, they are for custom nodes.
+    os.environ['HF_HUB_DISABLE_TELEMETRY'] = '1'
+    os.environ['DO_NOT_TRACK'] = '1'
+    os.environ['MIOPEN_ENABLE_LOGGING'] = '1'
+    os.environ['MIOPEN_ENABLE_LOGGING_CMD'] = '1'
+    os.environ['MIOPEN_LOG_LEVEL'] = '6'
+```
 
 ## Workflow
 
