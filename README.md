@@ -208,9 +208,22 @@ Restarting... [Legacy Mode]
 
 </details>
 
+# Launch Script
+
+```cmd
+set MIOPEN_ENABLE_LOGGING=1
+set MIOPEN_ENABLE_LOGGING_CMD=1
+set MIOPEN_LOG_LEVEL=6
+
+uv run main.py
+```
+
+
 ## Workflow
 
 Workflows are stored in ```\user\default\workflows```
+
+
 
 
 

@@ -41,9 +41,18 @@ Write-Host "CUDA available:" (python -c "import torch; print(torch.cuda.is_avail
 Write-Host "Device name:" (python -c "import torch; print(torch.cuda.get_device_name(0))")
 python -m torch.utils.collect_env
 
-# Install ComfyUI custom node manager
+#Instull useful custom nodes
 Set-Location custom_nodes
+
+# Install ComfyUI custom node manager
 git clone https://github.com/ltdrdata/ComfyUI-Manager comfyui-manager
+
+# nodes useful to hold numbers
+git clone https://github.com/M1kep/ComfyLiterals
+
+# Export workflow as PNG
+git clone https://github.com/fuselayer/comfyui-minimal-workflow-image
+
 Set-Location ..
 
 # Install ComfyUI requirements
