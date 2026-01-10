@@ -125,7 +125,7 @@ Set-Location ..
 uv pip install -r "requirements.txt"
 
 # Run ComfyUI
-uv run main.py
+uv run main.py  --use-pytorch-cross-attention
 ```
 
 This take
