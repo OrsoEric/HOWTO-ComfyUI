@@ -110,3 +110,5 @@ Unloaded partially: 1461.14 MB freed, 18022.85 MB remains loaded, 45.01 MB buffe
 loaded completely; 2189.60 MB usable, 242.03 MB loaded, full load: True
 Prompt executed in 463.89 seconds
 ```
+
+[VAE Decode Issue with Qwen Image VAE in repeated Executions](https://github.com/ROCm/ROCm/issues/4729#issuecomment-3734264324)
