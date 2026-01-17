@@ -454,6 +454,218 @@ loaded completely; 2191.53 MB usable, 242.03 MB loaded, full load: True
 Prompt executed in 160.30 seconds
 ```
 
+# DISABLE --disable-pinned-memory
+
+This increases consistency of execution
+
+### Qwen Edit 2511
+```
+Prompt executed in 498.90 seconds
+Prompt executed in 141.94 seconds
+Prompt executed in 142.00 seconds
+```
+
+
+
+
+<details>
+<summary>Qwen Image Edit 2511 GGUF Q8</summary>
+
+```cmd
+F:\ComfyUI-Windows-P313-T210-2026-01-11>uv run main.py  --use-pytorch-cross-attention --async-offload --disable-pinned-memory
+Adding extra search path checkpoints F:\ComfyUI-Models\checkpoints
+Adding extra search path clip F:\ComfyUI-Models\clip
+Adding extra search path clip_vision F:\ComfyUI-Models\clip_vision
+Adding extra search path text_encoders F:\ComfyUI-Models\text_encoders
+Adding extra search path configs F:\ComfyUI-Models\configs
+Adding extra search path controlnet F:\ComfyUI-Models\controlnet
+Adding extra search path diffusion_models F:\ComfyUI-Models\diffusion_models
+Adding extra search path diffusion_models F:\ComfyUI-Models\unet
+Adding extra search path embeddings F:\ComfyUI-Models\embeddings
+Adding extra search path loras F:\ComfyUI-Models\loras
+Adding extra search path upscale_models F:\ComfyUI-Models\upscale_models
+Adding extra search path vae F:\ComfyUI-Models\vae
+Adding extra search path vibevoice F:\ComfyUI-Models\vibevoice
+Adding extra search path Janus-Pro F:\ComfyUI-Models\Janus-Pro
+[START] Security scan
+[ComfyUI-Manager] `python -m pip` not available. Falling back to `uv`.
+[ComfyUI-Manager] Using `uv` as Python module for pip operations.
+[DONE] Security scan
+## ComfyUI-Manager: installing dependencies done.
+** ComfyUI startup time: 2026-01-17 14:44:01.492
+** Platform: Windows
+** Python version: 3.13.3 (main, Apr  9 2025, 04:04:49) [MSC v.1943 64 bit (AMD64)]
+** Python executable: F:\ComfyUI-Windows-P313-T210-2026-01-11\.venv\Scripts\python.exe
+** ComfyUI Path: F:\ComfyUI-Windows-P313-T210-2026-01-11
+** ComfyUI Base Folder Path: F:\ComfyUI-Windows-P313-T210-2026-01-11
+** User directory: F:\ComfyUI-Windows-P313-T210-2026-01-11\user
+** ComfyUI-Manager config path: F:\ComfyUI-Windows-P313-T210-2026-01-11\user\__manager\config.ini
+** Log path: F:\ComfyUI-Windows-P313-T210-2026-01-11\user\comfyui.log
+
+Prestartup times for custom nodes:
+   0.4 seconds: F:\ComfyUI-Windows-P313-T210-2026-01-11\custom_nodes\ComfyUI-Manager
+
+Checkpoint files will always be loaded safely.
+Total VRAM 24560 MB, total RAM 65367 MB
+pytorch version: 2.10.0a0+rocm7.10.0a20251120
+Set: torch.backends.cudnn.enabled = False for better AMD performance.
+AMD arch: gfx1100
+ROCm version: (7, 10)
+Set vram state to: NORMAL_VRAM
+Device: cuda:0 AMD Radeon RX 7900 XTX : native
+Using async weight offloading with 2 streams
+Found comfy_kitchen backend eager: {'available': True, 'disabled': False, 'unavailable_reason': None, 'capabilities': ['apply_rope', 'apply_rope1', 'dequantize_nvfp4', 'dequantize_per_tensor_fp8', 'quantize_nvfp4', 'quantize_per_tensor_fp8', 'scaled_mm_nvfp4']}
+Found comfy_kitchen backend triton: {'available': False, 'disabled': True, 'unavailable_reason': "ImportError: No module named 'triton'", 'capabilities': []}
+Found comfy_kitchen backend cuda: {'available': True, 'disabled': True, 'unavailable_reason': None, 'capabilities': ['apply_rope', 'apply_rope1', 'dequantize_nvfp4', 'dequantize_per_tensor_fp8', 'quantize_nvfp4', 'quantize_per_tensor_fp8']}
+Using pytorch attention
+Python version: 3.13.3 (main, Apr  9 2025, 04:04:49) [MSC v.1943 64 bit (AMD64)]
+ComfyUI version: 0.9.2
+ComfyUI frontend version: 1.36.14
+[Prompt Server] web root: F:\ComfyUI-Windows-P313-T210-2026-01-11\.venv\Lib\site-packages\comfyui_frontend_package\static
+Failed to find comfy root automatically, please copy the folder F:\ComfyUI-Windows-P313-T210-2026-01-11\custom_nodes\ComfyLiterals\web manually in the web/extensions folder of ComfyUI
+ComfyUI-GGUF: Allowing full torch compile
+### Loading: ComfyUI-Manager (V3.39.2)
+[ComfyUI-Manager] network_mode: public
+[ComfyUI-Manager] ComfyUI per-queue preview override detected (PR #11261). Manager's preview method feature is disabled. Use ComfyUI's --preview-method CLI option or 'Settings > Execution > Live preview method'.
+### ComfyUI Revision: 4551 [8f40b43e] *DETACHED | Released on '2026-01-15'
+Skip F:\ComfyUI-Windows-P313-T210-2026-01-11\custom_nodes\minimal-workflow-image module for custom nodes due to the lack of NODE_CLASS_MAPPINGS or NODES_LIST (need one).
+[INFO] ComfyUI-GGUF not found, using our implementation
+[ROCm Ninodes] Successfully loaded from rocm_nodes package
+
+Import times for custom nodes:
+   0.0 seconds: F:\ComfyUI-Windows-P313-T210-2026-01-11\custom_nodes\websocket_image_save.py
+   0.0 seconds: F:\ComfyUI-Windows-P313-T210-2026-01-11\custom_nodes\comfyui-image-compare
+   0.0 seconds: F:\ComfyUI-Windows-P313-T210-2026-01-11\custom_nodes\ComfyLiterals
+   0.0 seconds (IMPORT FAILED): F:\ComfyUI-Windows-P313-T210-2026-01-11\custom_nodes\minimal-workflow-image
+   0.0 seconds: F:\ComfyUI-Windows-P313-T210-2026-01-11\custom_nodes\rocm-ninodes
+   0.0 seconds: F:\ComfyUI-Windows-P313-T210-2026-01-11\custom_nodes\ComfyUI-GGUF
+   0.1 seconds: F:\ComfyUI-Windows-P313-T210-2026-01-11\custom_nodes\ComfyUI-Manager
+
+Context impl SQLiteImpl.
+Will assume non-transactional DDL.
+Assets scan(roots=['models']) completed in 0.021s (created=0, skipped_existing=43, total_seen=43)
+Starting server
+
+To see the GUI go to: http://127.0.0.1:8188
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/alter-list.json
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/model-list.json
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/github-stats.json
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/custom-node-list.json
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/extension-node-map.json
+FETCH ComfyRegistry Data: 5/120
+FETCH ComfyRegistry Data: 10/120
+FETCH ComfyRegistry Data: 15/120
+FETCH ComfyRegistry Data: 20/120
+FETCH ComfyRegistry Data: 25/120
+FETCH ComfyRegistry Data: 30/120
+FETCH ComfyRegistry Data: 35/120
+FETCH ComfyRegistry Data: 40/120
+FETCH ComfyRegistry Data: 45/120
+FETCH ComfyRegistry Data: 50/120
+FETCH ComfyRegistry Data: 55/120
+FETCH ComfyRegistry Data: 60/120
+FETCH ComfyRegistry Data: 65/120
+FETCH ComfyRegistry Data: 70/120
+FETCH ComfyRegistry Data: 75/120
+FETCH ComfyRegistry Data: 80/120
+FETCH ComfyRegistry Data: 85/120
+FETCH ComfyRegistry Data: 90/120
+FETCH ComfyRegistry Data: 95/120
+FETCH ComfyRegistry Data: 100/120
+FETCH ComfyRegistry Data: 105/120
+FETCH ComfyRegistry Data: 110/120
+FETCH ComfyRegistry Data: 115/120
+FETCH ComfyRegistry Data: 120/120
+FETCH ComfyRegistry Data [DONE]
+[ComfyUI-Manager] default cache updated: https://api.comfy.org/nodes
+FETCH DATA from: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/custom-node-list.json [DONE]
+[ComfyUI-Manager] All startup tasks have been completed.
+[DEPRECATION WARNING] Detected import of deprecated legacy API: /scripts/ui.js. This is likely caused by a custom node extension using outdated APIs. Please update your extensions or contact the extension author for an updated version.
+[DEPRECATION WARNING] Detected import of deprecated legacy API: /extensions/core/groupNode.js. This is likely caused by a custom node extension using outdated APIs. Please update your extensions or contact the extension author for an updated version.
+[DEPRECATION WARNING] Detected import of deprecated legacy API: /scripts/ui/components/buttonGroup.js. This is likely caused by a custom node extension using outdated APIs. Please update your extensions or contact the extension author for an updated version.
+[DEPRECATION WARNING] Detected import of deprecated legacy API: /scripts/ui/components/button.js. This is likely caused by a custom node extension using outdated APIs. Please update your extensions or contact the extension author for an updated version.
+got prompt
+Using split attention in VAE
+Using split attention in VAE
+VAE load device: cuda:0, offload device: cpu, dtype: torch.bfloat16
+Requested to load WanVAE
+loaded completely; 20711.28 MB usable, 242.03 MB loaded, full load: True
+gguf qtypes: Q8_0 (198), F32 (141)
+Dequantizing token_embd.weight to prevent runtime OOM.
+Attenpting to find mmproj file for text encoder...
+Using mmproj 'qwen2.5-vl-7b-instruct-q8_0-mmproj-fp16.gguf' for text encoder 'qwen2.5-vl-7b-instruct-q8_0.gguf'.
+gguf qtypes: F32 (291), F16 (228)
+CLIP/text encoder model load device: cuda:0, offload device: cpu, current: cpu, dtype: torch.float16
+Requested to load QwenImageTEModel_
+loaded completely; 22533.88 MB usable, 8946.75 MB loaded, full load: True
+gguf qtypes: F32 (1088), BF16 (6), Q8_0 (840)
+model weight dtype torch.bfloat16, manual cast: None
+model_type FLUX
+Requested to load QwenImage
+loaded completely; 21585.02 MB usable, 20861.48 MB loaded, full load: True
+100%|███████████████████████████████████████████████████████████████████████████████████| 4/4 [07:02<00:00, 105.65s/it]
+Requested to load WanVAE
+Unloaded partially: 3095.54 MB freed, 17765.98 MB remains loaded, 67.72 MB buffer reserved, lowvram patches: 319
+loaded completely; 2294.88 MB usable, 242.03 MB loaded, full load: True
+Prompt executed in 498.90 seconds
+got prompt
+loaded completely; 21033.01 MB usable, 20861.48 MB loaded, full load: True
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [02:09<00:00, 32.39s/it]
+Requested to load WanVAE
+Unloaded partially: 2913.63 MB freed, 17947.89 MB remains loaded, 67.72 MB buffer reserved, lowvram patches: 619
+loaded completely; 2218.62 MB usable, 242.03 MB loaded, full load: True
+Prompt executed in 141.94 seconds
+got prompt
+loaded completely; 21022.26 MB usable, 20861.48 MB loaded, full load: True
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [02:10<00:00, 32.72s/it]
+Requested to load WanVAE
+Unloaded partially: 2913.63 MB freed, 17947.89 MB remains loaded, 67.72 MB buffer reserved, lowvram patches: 919
+loaded completely; 2218.62 MB usable, 242.03 MB loaded, full load: True
+Prompt executed in 142.00 seconds
+```
+
+</details>
+
+### Zimage
+```
+Prompt executed in 30.86 seconds
+Prompt executed in 11.27 seconds
+Prompt executed in 11.16 seconds
+```
+
+
+<details>
+<summary>Zimage Details</summary>
+
+```cmd
+got prompt
+Using split attention in VAE
+Using split attention in VAE
+VAE load device: cuda:0, offload device: cpu, dtype: torch.bfloat16
+gguf qtypes: F32 (145), Q8_0 (253)
+Dequantizing token_embd.weight to prevent runtime OOM.
+CLIP/text encoder model load device: cuda:0, offload device: cpu, current: cpu, dtype: torch.float16
+Requested to load ZImageTEModel_
+loaded completely; 22450.99 MB usable, 4424.19 MB loaded, full load: True
+gguf qtypes: F32 (245), F16 (24), Q8_0 (180), BF16 (4)
+model weight dtype torch.bfloat16, manual cast: None
+model_type FLOW
+Requested to load Lumina2
+loaded completely; 17825.68 MB usable, 6973.32 MB loaded, full load: True
+100%|████████████████████████████████████████████████████████████████████████████████████| 9/9 [00:10<00:00,  1.15s/it]
+Requested to load AutoencodingEngine
+Unloaded partially: 1133.64 MB freed, 3290.55 MB remains loaded, 176.64 MB buffer reserved, lowvram patches: 0
+loaded completely; 5184.25 MB usable, 159.87 MB loaded, full load: True
+Prompt executed in 30.86 seconds
+got prompt
+100%|████████████████████████████████████████████████████████████████████████████████████| 9/9 [00:10<00:00,  1.15s/it]
+Prompt executed in 11.27 seconds
+got prompt
+100%|████████████████████████████████████████████████████████████████████████████████████| 9/9 [00:10<00:00,  1.15s/it]
+Prompt executed in 11.16 seconds
+```
+</details>
+
 # EOL
 
 <details>
