@@ -429,9 +429,30 @@ Prompt executed in 55.01 seconds
 
 # Flag --async-offload
 
+I don't notice effects
 
+# Performance
 
-
+```cmd
+got prompt
+gguf qtypes: F32 (1088), BF16 (6), Q8_0 (840)
+model weight dtype torch.bfloat16, manual cast: None
+model_type FLUX
+Requested to load QwenImage
+loaded completely; 21495.77 MB usable, 20861.48 MB loaded, full load: True
+100%|███████████████████████████████████████████████████████████████████████████████| 4/4 [08:00<00:00, 120.00s/it]
+Requested to load WanVAE
+Unloaded partially: 3095.54 MB freed, 17765.98 MB remains loaded, 67.72 MB buffer reserved, lowvram patches: 319
+loaded completely; 2137.18 MB usable, 242.03 MB loaded, full load: True
+Prompt executed in 546.49 seconds
+got prompt
+loaded partially; 20638.76 MB usable, 20590.34 MB loaded, 271.14 MB offloaded, 67.72 MB buffer reserved, lowvram patches: 0
+100%|████████████████████████████████████████████████████████████████████████████████| 4/4 [02:28<00:00, 37.11s/it]
+Requested to load WanVAE
+Unloaded partially: 2977.58 MB freed, 17612.75 MB remains loaded, 67.72 MB buffer reserved, lowvram patches: 630
+loaded completely; 2191.53 MB usable, 242.03 MB loaded, full load: True
+Prompt executed in 160.30 seconds
+```
 
 # EOL
 
