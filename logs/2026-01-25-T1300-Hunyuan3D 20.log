@@ -1,0 +1,1146 @@
+(.venv) F:\comfyui-rocm72-p312-2026-01-24>uv pip install trimesh
+Resolved 2 packages in 422ms
+Prepared 1 package in 102ms
+░░░░░░░░░░░░░░░░░░░░ [0/1] Installing wheels...                                                                         warning: Failed to hardlink files; falling back to full copy. This may lead to degraded performance.
+         If the cache and target directories are on different filesystems, hardlinking may not be supported.
+         If this is intentional, set `export UV_LINK_MODE=copy` or use `--link-mode=copy` to suppress this warning.
+Installed 1 package in 34ms
+ + trimesh==4.11.1
+
+(.venv) F:\comfyui-rocm72-p312-2026-01-24>dir
+ Volume in drive F is Data
+ Volume Serial Number is 8AC9-D6F0
+
+ Directory of F:\comfyui-rocm72-p312-2026-01-24
+
+2026-01-25  09:53    <DIR>          .
+2026-01-24  13:06    <DIR>          .ci
+2026-01-24  13:06               115 .gitattributes
+2026-01-24  13:06    <DIR>          .github
+2026-01-24  13:06               408 .gitignore
+2026-01-24  13:13    <DIR>          .venv
+2026-01-24  13:06             3,314 alembic.ini
+2026-01-24  13:14    <DIR>          alembic_db
+2026-01-24  13:13    <DIR>          api_server
+2026-01-24  13:13    <DIR>          app
+2026-01-24  13:06    <DIR>          blueprints
+2026-01-24  13:06                49 CODEOWNERS
+2026-01-24  13:13    <DIR>          comfy
+2026-01-24  13:06               131 comfyui_version.py
+2026-01-24  13:13    <DIR>          comfy_api
+2026-01-24  13:13    <DIR>          comfy_api_nodes
+2026-01-24  13:13    <DIR>          comfy_config
+2026-01-24  13:13    <DIR>          comfy_execution
+2026-01-24  13:13    <DIR>          comfy_extras
+2026-01-24  13:06             1,923 CONTRIBUTING.md
+2026-01-24  13:06             3,842 cuda_malloc.py
+2026-01-25  09:52    <DIR>          custom_nodes
+2026-01-24  13:06            53,971 execution.py
+2025-12-25  15:01               610 extra_model_paths.yaml
+2026-01-24  13:06             1,941 extra_model_paths.yaml.example
+2026-01-24  13:06            19,069 folder_paths.py
+2026-01-24  13:06               383 hook_breaker_ac10a0.py
+2026-01-25  09:39    <DIR>          input
+2026-01-24  13:41             2,834 install-comfyui-rocm72-p312.bat
+2026-01-24  13:06             5,901 latent_preview.py
+2026-01-24  13:06            35,823 LICENSE
+2026-01-24  13:06            16,748 main.py
+2026-01-24  13:06                24 manager_requirements.txt
+2026-01-24  13:13    <DIR>          middleware
+2026-01-25  09:41    <DIR>          models
+2026-01-24  13:06             1,296 new_updater.py
+2026-01-24  13:06           105,282 nodes.py
+2026-01-24  13:06             1,744 node_helpers.py
+2026-01-25  09:49    <DIR>          output
+2026-01-24  13:06               136 protocol.py
+2026-01-24  13:06             2,092 pyproject.toml
+2026-01-24  13:06               236 pytest.ini
+2026-01-24  13:06             7,862 QUANTIZATION.md
+2026-01-24  13:06            29,281 README.md
+2026-01-24  13:06               462 requirements.txt
+2026-01-25  09:24               173 run_comfyui_rocm72_p312.bat
+2026-01-24  13:06    <DIR>          script_examples
+2026-01-24  13:06            53,138 server.py
+2026-01-25  09:53    <DIR>          temp
+2026-01-24  13:06    <DIR>          tests
+2026-01-24  13:06    <DIR>          tests-unit
+2026-01-25  09:52    <DIR>          user
+2026-01-24  13:13    <DIR>          utils
+2026-01-24  13:13               128 uv.lock
+2026-01-24  14:52    <DIR>          __pycache__
+              29 File(s)        348,916 bytes
+              26 Dir(s)  873,541,816,320 bytes free
+
+(.venv) F:\comfyui-rocm72-p312-2026-01-24>run_comfyui_rocm72_p312.bat
+
+(.venv) F:\comfyui-rocm72-p312-2026-01-24>echo "===================START==================="
+"===================START==================="
+
+(.venv) F:\comfyui-rocm72-p312-2026-01-24>uv run main.py --windows-standalone-build --disable-smart-memory
+Adding extra search path checkpoints F:\ComfyUI-Models\checkpoints
+Adding extra search path clip F:\ComfyUI-Models\clip
+Adding extra search path clip_vision F:\ComfyUI-Models\clip_vision
+Adding extra search path text_encoders F:\ComfyUI-Models\text_encoders
+Adding extra search path configs F:\ComfyUI-Models\configs
+Adding extra search path controlnet F:\ComfyUI-Models\controlnet
+Adding extra search path diffusion_models F:\ComfyUI-Models\diffusion_models
+Adding extra search path diffusion_models F:\ComfyUI-Models\unet
+Adding extra search path embeddings F:\ComfyUI-Models\embeddings
+Adding extra search path loras F:\ComfyUI-Models\loras
+Adding extra search path upscale_models F:\ComfyUI-Models\upscale_models
+Adding extra search path vae F:\ComfyUI-Models\vae
+Adding extra search path vibevoice F:\ComfyUI-Models\vibevoice
+Adding extra search path Janus-Pro F:\ComfyUI-Models\Janus-Pro
+[START] Security scan
+[DONE] Security scan
+## ComfyUI-Manager: installing dependencies done.
+** ComfyUI startup time: 2026-01-25 09:54:35.409
+** Platform: Windows
+** Python version: 3.12.10 (main, Apr  9 2025, 04:06:22) [MSC v.1943 64 bit (AMD64)]
+** Python executable: F:\comfyui-rocm72-p312-2026-01-24\.venv\Scripts\python.exe
+** ComfyUI Path: F:\comfyui-rocm72-p312-2026-01-24
+** ComfyUI Base Folder Path: F:\comfyui-rocm72-p312-2026-01-24
+** User directory: F:\comfyui-rocm72-p312-2026-01-24\user
+** ComfyUI-Manager config path: F:\comfyui-rocm72-p312-2026-01-24\user\__manager\config.ini
+** Log path: F:\comfyui-rocm72-p312-2026-01-24\user\comfyui.log
+
+Prestartup times for custom nodes:
+   1.3 seconds: F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\ComfyUI-Manager
+
+Checkpoint files will always be loaded safely.
+Total VRAM 24560 MB, total RAM 65367 MB
+pytorch version: 2.9.1+rocmsdk20260116
+Set: torch.backends.cudnn.enabled = False for better AMD performance.
+AMD arch: gfx1100
+ROCm version: (7, 2)
+Set vram state to: NORMAL_VRAM
+Disabling smart memory management
+Device: cuda:0 AMD Radeon RX 7900 XTX : native
+Using async weight offloading with 2 streams
+Enabled pinned memory 29414.0
+Found comfy_kitchen backend triton: {'available': False, 'disabled': True, 'unavailable_reason': "ImportError: No module named 'triton'", 'capabilities': []}
+Found comfy_kitchen backend cuda: {'available': True, 'disabled': True, 'unavailable_reason': None, 'capabilities': ['apply_rope', 'apply_rope1', 'dequantize_nvfp4', 'dequantize_per_tensor_fp8', 'quantize_nvfp4', 'quantize_per_tensor_fp8']}
+Found comfy_kitchen backend eager: {'available': True, 'disabled': False, 'unavailable_reason': None, 'capabilities': ['apply_rope', 'apply_rope1', 'dequantize_nvfp4', 'dequantize_per_tensor_fp8', 'quantize_nvfp4', 'quantize_per_tensor_fp8', 'scaled_mm_nvfp4']}
+Using pytorch attention
+Python version: 3.12.10 (main, Apr  9 2025, 04:06:22) [MSC v.1943 64 bit (AMD64)]
+ComfyUI version: 0.10.0
+ComfyUI frontend version: 1.37.11
+[Prompt Server] web root: F:\comfyui-rocm72-p312-2026-01-24\.venv\Lib\site-packages\comfyui_frontend_package\static
+Failed to find comfy root automatically, please copy the folder F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\ComfyLiterals\web manually in the web/extensions folder of ComfyUI
+ComfyUI-GGUF: Allowing full torch compile
+### Loading: ComfyUI-Manager (V3.39.2)
+[ComfyUI-Manager] network_mode: public
+[ComfyUI-Manager] ComfyUI per-queue preview override detected (PR #11261). Manager's preview method feature is disabled. Use ComfyUI's --preview-method CLI option or 'Settings > Execution > Live preview method'.
+### ComfyUI Version: v0.10.0-29-g4e6a1b66 | Released on '2026-01-23'
+Skip F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\comfyui-minimal-workflow-image module for custom nodes due to the lack of NODE_CLASS_MAPPINGS or NODES_LIST (need one).
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/alter-list.json
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/model-list.json
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/github-stats.json
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/extension-node-map.json
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/custom-node-list.json
+F:\comfyui-rocm72-p312-2026-01-24\.venv\Lib\site-packages\timm\models\layers\__init__.py:49: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+Error loading F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\comfyui-rmbg\py\AILab_SAM3Segment.py: No module named 'triton'
+Error loading F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\comfyui-rmbg\py\AILab_SAM3Segment.py: No module named 'triton'
+[ComfyUI-RMBG] v3.0.0 | 42 nodes Loaded
+Traceback (most recent call last):
+  File "F:\comfyui-rocm72-p312-2026-01-24\nodes.py", line 2215, in load_custom_node
+    module_spec.loader.exec_module(module)
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\ComfyUI-Voxels\__init__.py", line 9, in <module>
+    from .nodes.VoxelizeMesh import *
+  File "F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\ComfyUI-Voxels\nodes\VoxelizeMesh.py", line 7, in <module>
+    import pyvista as pv
+ModuleNotFoundError: No module named 'pyvista'
+
+Cannot import F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\ComfyUI-Voxels module for custom nodes: No module named 'pyvista'
+
+Import times for custom nodes:
+   0.0 seconds: F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\websocket_image_save.py
+   0.0 seconds (IMPORT FAILED): F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\comfyui-minimal-workflow-image
+   0.0 seconds: F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\ComfyLiterals
+   0.0 seconds: F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\ComfyUI-GGUF
+   0.3 seconds: F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\ComfyUI-Manager
+   0.4 seconds (IMPORT FAILED): F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\ComfyUI-Voxels
+   1.1 seconds: F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\comfyui-rmbg
+
+Context impl SQLiteImpl.
+Will assume non-transactional DDL.
+Assets scan(roots=['models']) completed in 0.018s (created=0, skipped_existing=50, total_seen=50)
+Starting server
+
+To see the GUI go to: http://127.0.0.1:8188
+[DEPRECATION WARNING] Detected import of deprecated legacy API: /scripts/ui.js. This is likely caused by a custom node extension using outdated APIs. Please update your extensions or contact the extension author for an updated version.
+[DEPRECATION WARNING] Detected import of deprecated legacy API: /extensions/core/groupNode.js. This is likely caused by a custom node extension using outdated APIs. Please update your extensions or contact the extension author for an updated version.
+[DEPRECATION WARNING] Detected import of deprecated legacy API: /scripts/ui/components/buttonGroup.js. This is likely caused by a custom node extension using outdated APIs. Please update your extensions or contact the extension author for an updated version.
+[DEPRECATION WARNING] Detected import of deprecated legacy API: /scripts/ui/components/button.js. This is likely caused by a custom node extension using outdated APIs. Please update your extensions or contact the extension author for an updated version.
+FETCH ComfyRegistry Data: 5/121
+FETCH ComfyRegistry Data: 10/121
+FETCH ComfyRegistry Data: 15/121
+
+Stopped server
+Cannot connect to comfyregistry.
+FETCH DATA from: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/custom-node-list.json[ComfyUI-Manager] Due to a network error, switching to local mode.
+=> custom-node-list.json
+=> cannot schedule new futures after shutdown
+FETCH DATA from: F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\ComfyUI-Manager\custom-node-list.json [DONE]
+[ComfyUI-Manager] All startup tasks have been completed.
+Terminate batch job (Y/N)? y
+
+(.venv) F:\comfyui-rocm72-p312-2026-01-24>uv pip install pyuvista
+  x No solution found when resolving dependencies:
+  `-> Because pyuvista was not found in the package registry and you require pyuvista, we can conclude that your
+      requirements are unsatisfiable.
+
+(.venv) F:\comfyui-rocm72-p312-2026-01-24>uv pip install pyvista
+Resolved 22 packages in 374ms
+Prepared 3 packages in 6.24s
+░░░░░░░░░░░░░░░░░░░░ [0/4] Installing wheels...                                                                         warning: Failed to hardlink files; falling back to full copy. This may lead to degraded performance.
+         If the cache and target directories are on different filesystems, hardlinking may not be supported.
+         If this is intentional, set `export UV_LINK_MODE=copy` or use `--link-mode=copy` to suppress this warning.
+Installed 4 packages in 143ms
+ + pooch==1.8.2
+ + pyvista==0.46.5
+ + scooby==0.11.0
+ + vtk==9.5.2
+
+(.venv) F:\comfyui-rocm72-p312-2026-01-24>run_comfyui_rocm72_p312.bat
+
+(.venv) F:\comfyui-rocm72-p312-2026-01-24>echo "===================START==================="
+"===================START==================="
+
+(.venv) F:\comfyui-rocm72-p312-2026-01-24>uv run main.py --windows-standalone-build --disable-smart-memory
+Adding extra search path checkpoints F:\ComfyUI-Models\checkpoints
+Adding extra search path clip F:\ComfyUI-Models\clip
+Adding extra search path clip_vision F:\ComfyUI-Models\clip_vision
+Adding extra search path text_encoders F:\ComfyUI-Models\text_encoders
+Adding extra search path configs F:\ComfyUI-Models\configs
+Adding extra search path controlnet F:\ComfyUI-Models\controlnet
+Adding extra search path diffusion_models F:\ComfyUI-Models\diffusion_models
+Adding extra search path diffusion_models F:\ComfyUI-Models\unet
+Adding extra search path embeddings F:\ComfyUI-Models\embeddings
+Adding extra search path loras F:\ComfyUI-Models\loras
+Adding extra search path upscale_models F:\ComfyUI-Models\upscale_models
+Adding extra search path vae F:\ComfyUI-Models\vae
+Adding extra search path vibevoice F:\ComfyUI-Models\vibevoice
+Adding extra search path Janus-Pro F:\ComfyUI-Models\Janus-Pro
+[START] Security scan
+[DONE] Security scan
+## ComfyUI-Manager: installing dependencies done.
+** ComfyUI startup time: 2026-01-25 09:55:17.379
+** Platform: Windows
+** Python version: 3.12.10 (main, Apr  9 2025, 04:06:22) [MSC v.1943 64 bit (AMD64)]
+** Python executable: F:\comfyui-rocm72-p312-2026-01-24\.venv\Scripts\python.exe
+** ComfyUI Path: F:\comfyui-rocm72-p312-2026-01-24
+** ComfyUI Base Folder Path: F:\comfyui-rocm72-p312-2026-01-24
+** User directory: F:\comfyui-rocm72-p312-2026-01-24\user
+** ComfyUI-Manager config path: F:\comfyui-rocm72-p312-2026-01-24\user\__manager\config.ini
+** Log path: F:\comfyui-rocm72-p312-2026-01-24\user\comfyui.log
+
+Prestartup times for custom nodes:
+   1.3 seconds: F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\ComfyUI-Manager
+
+Checkpoint files will always be loaded safely.
+Total VRAM 24560 MB, total RAM 65367 MB
+pytorch version: 2.9.1+rocmsdk20260116
+Set: torch.backends.cudnn.enabled = False for better AMD performance.
+AMD arch: gfx1100
+ROCm version: (7, 2)
+Set vram state to: NORMAL_VRAM
+Disabling smart memory management
+Device: cuda:0 AMD Radeon RX 7900 XTX : native
+Using async weight offloading with 2 streams
+Enabled pinned memory 29414.0
+Found comfy_kitchen backend eager: {'available': True, 'disabled': False, 'unavailable_reason': None, 'capabilities': ['apply_rope', 'apply_rope1', 'dequantize_nvfp4', 'dequantize_per_tensor_fp8', 'quantize_nvfp4', 'quantize_per_tensor_fp8', 'scaled_mm_nvfp4']}
+Found comfy_kitchen backend triton: {'available': False, 'disabled': True, 'unavailable_reason': "ImportError: No module named 'triton'", 'capabilities': []}
+Found comfy_kitchen backend cuda: {'available': True, 'disabled': True, 'unavailable_reason': None, 'capabilities': ['apply_rope', 'apply_rope1', 'dequantize_nvfp4', 'dequantize_per_tensor_fp8', 'quantize_nvfp4', 'quantize_per_tensor_fp8']}
+Using pytorch attention
+Python version: 3.12.10 (main, Apr  9 2025, 04:06:22) [MSC v.1943 64 bit (AMD64)]
+ComfyUI version: 0.10.0
+ComfyUI frontend version: 1.37.11
+[Prompt Server] web root: F:\comfyui-rocm72-p312-2026-01-24\.venv\Lib\site-packages\comfyui_frontend_package\static
+Failed to find comfy root automatically, please copy the folder F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\ComfyLiterals\web manually in the web/extensions folder of ComfyUI
+ComfyUI-GGUF: Allowing full torch compile
+### Loading: ComfyUI-Manager (V3.39.2)
+[ComfyUI-Manager] network_mode: public
+[ComfyUI-Manager] ComfyUI per-queue preview override detected (PR #11261). Manager's preview method feature is disabled. Use ComfyUI's --preview-method CLI option or 'Settings > Execution > Live preview method'.
+### ComfyUI Version: v0.10.0-29-g4e6a1b66 | Released on '2026-01-23'
+Skip F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\comfyui-minimal-workflow-image module for custom nodes due to the lack of NODE_CLASS_MAPPINGS or NODES_LIST (need one).
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/model-list.json
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/alter-list.json
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/github-stats.json
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/extension-node-map.json
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/custom-node-list.json
+F:\comfyui-rocm72-p312-2026-01-24\.venv\Lib\site-packages\timm\models\layers\__init__.py:49: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+Error loading F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\comfyui-rmbg\py\AILab_SAM3Segment.py: No module named 'triton'
+Error loading F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\comfyui-rmbg\py\AILab_SAM3Segment.py: No module named 'triton'
+[ComfyUI-RMBG] v3.0.0 | 42 nodes Loaded
+
+Import times for custom nodes:
+   0.0 seconds: F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\websocket_image_save.py
+   0.0 seconds (IMPORT FAILED): F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\comfyui-minimal-workflow-image
+   0.0 seconds: F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\ComfyLiterals
+   0.0 seconds: F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\ComfyUI-GGUF
+   0.3 seconds: F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\ComfyUI-Manager
+   0.6 seconds: F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\ComfyUI-Voxels
+   1.2 seconds: F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\comfyui-rmbg
+
+Context impl SQLiteImpl.
+Will assume non-transactional DDL.
+Assets scan(roots=['models']) completed in 0.018s (created=0, skipped_existing=50, total_seen=50)
+Starting server
+
+To see the GUI go to: http://127.0.0.1:8188
+[DEPRECATION WARNING] Detected import of deprecated legacy API: /scripts/ui.js. This is likely caused by a custom node extension using outdated APIs. Please update your extensions or contact the extension author for an updated version.
+[DEPRECATION WARNING] Detected import of deprecated legacy API: /extensions/core/groupNode.js. This is likely caused by a custom node extension using outdated APIs. Please update your extensions or contact the extension author for an updated version.
+[DEPRECATION WARNING] Detected import of deprecated legacy API: /scripts/ui/components/buttonGroup.js. This is likely caused by a custom node extension using outdated APIs. Please update your extensions or contact the extension author for an updated version.
+[DEPRECATION WARNING] Detected import of deprecated legacy API: /scripts/ui/components/button.js. This is likely caused by a custom node extension using outdated APIs. Please update your extensions or contact the extension author for an updated version.
+FETCH ComfyRegistry Data: 5/121
+FETCH ComfyRegistry Data: 10/121
+FETCH ComfyRegistry Data: 15/121
+FETCH ComfyRegistry Data: 20/121
+FETCH ComfyRegistry Data: 25/121
+FETCH ComfyRegistry Data: 30/121
+FETCH ComfyRegistry Data: 35/121
+FETCH ComfyRegistry Data: 40/121
+FETCH ComfyRegistry Data: 45/121
+FETCH ComfyRegistry Data: 50/121
+FETCH ComfyRegistry Data: 55/121
+FETCH ComfyRegistry Data: 60/121
+FETCH ComfyRegistry Data: 65/121
+FETCH ComfyRegistry Data: 70/121
+FETCH ComfyRegistry Data: 75/121
+FETCH ComfyRegistry Data: 80/121
+[ComfyUI-Manager] The ComfyRegistry cache update is still in progress, so an outdated cache is being used.
+FETCH DATA from: F:\comfyui-rocm72-p312-2026-01-24\user\__manager\cache\1514988643_custom-node-list.json [DONE]
+FETCH DATA from: F:\comfyui-rocm72-p312-2026-01-24\user\__manager\cache\746607195_github-stats.json [DONE]
+FETCH DATA from: F:\comfyui-rocm72-p312-2026-01-24\user\__manager\cache\832903789_extras.json [DONE]
+FETCH DATA from: F:\comfyui-rocm72-p312-2026-01-24\user\__manager\cache\1742899825_extension-node-map.json [DONE]
+FETCH ComfyRegistry Data: 85/121
+FETCH ComfyRegistry Data: 90/121
+FETCH ComfyRegistry Data: 95/121
+FETCH ComfyRegistry Data: 100/121
+FETCH ComfyRegistry Data: 105/121
+FETCH ComfyRegistry Data: 110/121
+FETCH ComfyRegistry Data: 115/121
+FETCH ComfyRegistry Data: 120/121
+FETCH ComfyRegistry Data [DONE]
+[ComfyUI-Manager] default cache updated: https://api.comfy.org/nodes
+FETCH DATA from: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/custom-node-list.json [DONE]
+[ComfyUI-Manager] All startup tasks have been completed.
+[ComfyUI-Manager] The ComfyRegistry cache update is still in progress, so an outdated cache is being used.
+FETCH DATA from: F:\comfyui-rocm72-p312-2026-01-24\user\__manager\cache\1514988643_custom-node-list.json [DONE]
+FETCH DATA from: F:\comfyui-rocm72-p312-2026-01-24\user\__manager\cache\746607195_github-stats.json [DONE]
+FETCH DATA from: F:\comfyui-rocm72-p312-2026-01-24\user\__manager\cache\832903789_extras.json [DONE]
+FETCH DATA from: F:\comfyui-rocm72-p312-2026-01-24\user\__manager\cache\1742899825_extension-node-map.json [DONE]
+got prompt
+Failed to validate prompt for output 93:
+* (prompt):
+  - Required input is missing: voxel_block
+* VoxelViewer 93:
+  - Required input is missing: voxel_block
+Output will be ignored
+model weight dtype torch.float16, manual cast: None
+model_type FLOW
+VAE load device: cuda:0, offload device: cpu, dtype: torch.float16
+Requested to load Dinov2Model
+loaded completely; 21852.66 MB usable, 577.86 MB loaded, full load: True
+Requested to load Hunyuan3Dv2_1
+Interrupting prompt 94a3aeac-56ea-415c-9ad0-741d5b56450e
+loaded completely; 21724.41 MB usable, 5818.86 MB loaded, full load: True
+  0%|                                                                                           | 0/50 [00:00<?, ?it/s]
+Processing interrupted
+Prompt executed in 9.39 seconds
+got prompt
+WARNING: VoxelViewer.IS_CHANGED() got multiple values for argument 'voxel_block'
+WARNING: VoxelizeMesh.IS_CHANGED() got an unexpected keyword argument 'voxel_size'
+Requested to load Hunyuan3Dv2_1
+loaded completely; 21724.41 MB usable, 5818.86 MB loaded, full load: True
+100%|██████████████████████████████████████████████████████████████████████████████████| 50/50 [00:44<00:00,  1.11it/s]
+Requested to load ShapeVAE
+loaded completely; 21652.35 MB usable, 624.88 MB loaded, full load: True
+Volume Decoding: 100%|███████████████████████████████████████████████████████████| 2283/2283 [00:00<00:00, 2930.09it/s]
+!!! Exception during processing !!! Input mesh is not a valid Trimesh object.
+Traceback (most recent call last):
+  File "F:\comfyui-rocm72-p312-2026-01-24\execution.py", line 518, in execute
+    output_data, output_ui, has_subgraph, has_pending_tasks = await get_output_data(prompt_id, unique_id, obj, input_data_all, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)
+                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\comfyui-rocm72-p312-2026-01-24\execution.py", line 329, in get_output_data
+    return_values = await _async_map_node_over_list(prompt_id, unique_id, obj, input_data_all, obj.FUNCTION, allow_interrupt=True, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\comfyui-rocm72-p312-2026-01-24\execution.py", line 303, in _async_map_node_over_list
+    await process_inputs(input_dict, i)
+  File "F:\comfyui-rocm72-p312-2026-01-24\execution.py", line 291, in process_inputs
+    result = f(**inputs)
+             ^^^^^^^^^^^
+  File "F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\ComfyUI-Voxels\nodes\VoxelizeMesh.py", line 37, in run
+    raise ValueError("Input mesh is not a valid Trimesh object.")
+ValueError: Input mesh is not a valid Trimesh object.
+
+Prompt executed in 127.73 seconds
+[ComfyUI-Manager] The ComfyRegistry cache update is still in progress, so an outdated cache is being used.
+FETCH DATA from: F:\comfyui-rocm72-p312-2026-01-24\user\__manager\cache\1514988643_custom-node-list.json [DONE]
+FETCH DATA from: F:\comfyui-rocm72-p312-2026-01-24\user\__manager\cache\746607195_github-stats.json [DONE]
+FETCH DATA from: F:\comfyui-rocm72-p312-2026-01-24\user\__manager\cache\832903789_extras.json [DONE]
+FETCH DATA from: F:\comfyui-rocm72-p312-2026-01-24\user\__manager\cache\1742899825_extension-node-map.json [DONE]
+[ComfyUI-Manager] An error occurred while deleting 'F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\ComfyUI-Voxels', so it has been scheduled for deletion upon restart.
+EXCEPTION: [WinError 5] Access is denied: 'F:\\comfyui-rocm72-p312-2026-01-24\\custom_nodes\\ComfyUI-Voxels\\.git\\objects\\pack\\pack-d2c743f6bc97122c90be1d6f8534ce47b61dff6b.idx'
+
+[ComfyUI-Manager] Queued works are completed.
+{'uninstall': 1}
+
+After restarting ComfyUI, please refresh the browser.
+
+Stopped server
+Terminate batch job (Y/N)? y
+
+(.venv) F:\comfyui-rocm72-p312-2026-01-24>run_comfyui_rocm72_p312.bat
+
+(.venv) F:\comfyui-rocm72-p312-2026-01-24>echo "===================START==================="
+"===================START==================="
+
+(.venv) F:\comfyui-rocm72-p312-2026-01-24>uv run main.py --windows-standalone-build --disable-smart-memory
+Adding extra search path checkpoints F:\ComfyUI-Models\checkpoints
+Adding extra search path clip F:\ComfyUI-Models\clip
+Adding extra search path clip_vision F:\ComfyUI-Models\clip_vision
+Adding extra search path text_encoders F:\ComfyUI-Models\text_encoders
+Adding extra search path configs F:\ComfyUI-Models\configs
+Adding extra search path controlnet F:\ComfyUI-Models\controlnet
+Adding extra search path diffusion_models F:\ComfyUI-Models\diffusion_models
+Adding extra search path diffusion_models F:\ComfyUI-Models\unet
+Adding extra search path embeddings F:\ComfyUI-Models\embeddings
+Adding extra search path loras F:\ComfyUI-Models\loras
+Adding extra search path upscale_models F:\ComfyUI-Models\upscale_models
+Adding extra search path vae F:\ComfyUI-Models\vae
+Adding extra search path vibevoice F:\ComfyUI-Models\vibevoice
+Adding extra search path Janus-Pro F:\ComfyUI-Models\Janus-Pro
+[START] Security scan
+[DONE] Security scan
+## ComfyUI-Manager: installing dependencies done.
+** ComfyUI startup time: 2026-01-25 10:03:25.379
+** Platform: Windows
+** Python version: 3.12.10 (main, Apr  9 2025, 04:06:22) [MSC v.1943 64 bit (AMD64)]
+** Python executable: F:\comfyui-rocm72-p312-2026-01-24\.venv\Scripts\python.exe
+** ComfyUI Path: F:\comfyui-rocm72-p312-2026-01-24
+** ComfyUI Base Folder Path: F:\comfyui-rocm72-p312-2026-01-24
+** User directory: F:\comfyui-rocm72-p312-2026-01-24\user
+** ComfyUI-Manager config path: F:\comfyui-rocm72-p312-2026-01-24\user\__manager\config.ini
+** Log path: F:\comfyui-rocm72-p312-2026-01-24\user\comfyui.log
+
+#######################################################################
+[ComfyUI-Manager] Starting dependency installation/(de)activation for the extension
+
+## ComfyUI-Manager: Failed to delete 'F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\ComfyUI-Voxels' ([WinError 5] Access is denied: 'F:\\comfyui-rocm72-p312-2026-01-24\\custom_nodes\\ComfyUI-Voxels\\.git\\objects\\pack\\pack-d2c743f6bc97122c90be1d6f8534ce47b61dff6b.idx')
+
+[ComfyUI-Manager] Startup script completed.
+#######################################################################
+
+[ComfyUI-Manager] Restarting to reapply dependency installation.
+Command: ['"F:\\comfyui-rocm72-p312-2026-01-24\\.venv\\Scripts\\python.exe"', '"main.py"', '--windows-standalone-build', '--disable-smart-memory']
+--------------------------------------------------------------------------
+
+
+(.venv) F:\comfyui-rocm72-p312-2026-01-24>echo "===================END==================="
+"===================END==================="
+
+(.venv) F:\comfyui-rocm72-p312-2026-01-24>pause
+Press any key to continue . . . Adding extra search path checkpoints F:\ComfyUI-Models\checkpoints
+Adding extra search path clip F:\ComfyUI-Models\clip
+Adding extra search path clip_vision F:\ComfyUI-Models\clip_vision
+Adding extra search path text_encoders F:\ComfyUI-Models\text_encoders
+Adding extra search path configs F:\ComfyUI-Models\configs
+Adding extra search path controlnet F:\ComfyUI-Models\controlnet
+Adding extra search path diffusion_models F:\ComfyUI-Models\diffusion_models
+Adding extra search path diffusion_models F:\ComfyUI-Models\unet
+Adding extra search path embeddings F:\ComfyUI-Models\embeddings
+Adding extra search path loras F:\ComfyUI-Models\loras
+Adding extra search path upscale_models F:\ComfyUI-Models\upscale_models
+Adding extra search path vae F:\ComfyUI-Models\vae
+Adding extra search path vibevoice F:\ComfyUI-Models\vibevoice
+Adding extra search path Janus-Pro F:\ComfyUI-Models\Janus-Pro
+[START] Security scan
+[DONE] Security scan
+## ComfyUI-Manager: installing dependencies done.
+** ComfyUI startup time: 2026-01-25 10:03:27.197
+** Platform: Windows
+** Python version: 3.12.10 (main, Apr  9 2025, 04:06:22) [MSC v.1943 64 bit (AMD64)]
+** Python executable: F:\comfyui-rocm72-p312-2026-01-24\.venv\Scripts\python.exe
+** ComfyUI Path: F:\comfyui-rocm72-p312-2026-01-24
+** ComfyUI Base Folder Path: F:\comfyui-rocm72-p312-2026-01-24
+** User directory: F:\comfyui-rocm72-p312-2026-01-24\user
+** ComfyUI-Manager config path: F:\comfyui-rocm72-p312-2026-01-24\user\__manager\config.ini
+** Log path: F:\comfyui-rocm72-p312-2026-01-24\user\comfyui.log
+
+Prestartup times for custom nodes:
+   1.4 seconds: F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\ComfyUI-Manager
+
+Checkpoint files will always be loaded safely.
+Total VRAM 24560 MB, total RAM 65367 MB
+pytorch version: 2.9.1+rocmsdk20260116
+Set: torch.backends.cudnn.enabled = False for better AMD performance.
+AMD arch: gfx1100
+ROCm version: (7, 2)
+Set vram state to: NORMAL_VRAM
+Disabling smart memory management
+Device: cuda:0 AMD Radeon RX 7900 XTX : native
+Using async weight offloading with 2 streams
+Enabled pinned memory 29414.0
+Found comfy_kitchen backend cuda: {'available': True, 'disabled': True, 'unavailable_reason': None, 'capabilities': ['apply_rope', 'apply_rope1', 'dequantize_nvfp4', 'dequantize_per_tensor_fp8', 'quantize_nvfp4', 'quantize_per_tensor_fp8']}
+Found comfy_kitchen backend eager: {'available': True, 'disabled': False, 'unavailable_reason': None, 'capabilities': ['apply_rope', 'apply_rope1', 'dequantize_nvfp4', 'dequantize_per_tensor_fp8', 'quantize_nvfp4', 'quantize_per_tensor_fp8', 'scaled_mm_nvfp4']}
+Found comfy_kitchen backend triton: {'available': False, 'disabled': True, 'unavailable_reason': "ImportError: No module named 'triton'", 'capabilities': []}
+Using pytorch attention
+Python version: 3.12.10 (main, Apr  9 2025, 04:06:22) [MSC v.1943 64 bit (AMD64)]
+ComfyUI version: 0.10.0
+ComfyUI frontend version: 1.37.11
+[Prompt Server] web root: F:\comfyui-rocm72-p312-2026-01-24\.venv\Lib\site-packages\comfyui_frontend_package\static
+Failed to find comfy root automatically, please copy the folder F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\ComfyLiterals\web manually in the web/extensions folder of ComfyUI
+ComfyUI-GGUF: Allowing full torch compile
+### Loading: ComfyUI-Manager (V3.39.2)
+[ComfyUI-Manager] network_mode: public
+[ComfyUI-Manager] ComfyUI per-queue preview override detected (PR #11261). Manager's preview method feature is disabled. Use ComfyUI's --preview-method CLI option or 'Settings > Execution > Live preview method'.
+### ComfyUI Version: v0.10.0-29-g4e6a1b66 | Released on '2026-01-23'
+Skip F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\comfyui-minimal-workflow-image module for custom nodes due to the lack of NODE_CLASS_MAPPINGS or NODES_LIST (need one).
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/alter-list.json
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/model-list.json
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/github-stats.json
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/extension-node-map.json
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/custom-node-list.json
+F:\comfyui-rocm72-p312-2026-01-24\.venv\Lib\site-packages\timm\models\layers\__init__.py:49: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+Error loading F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\comfyui-rmbg\py\AILab_SAM3Segment.py: No module named 'triton'
+Error loading F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\comfyui-rmbg\py\AILab_SAM3Segment.py: No module named 'triton'
+[ComfyUI-RMBG] v3.0.0 | 42 nodes Loaded
+
+Import times for custom nodes:
+   0.0 seconds: F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\websocket_image_save.py
+   0.0 seconds: F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\ComfyLiterals
+   0.0 seconds (IMPORT FAILED): F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\comfyui-minimal-workflow-image
+   0.0 seconds: F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\ComfyUI-GGUF
+   0.4 seconds: F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\ComfyUI-Manager
+   0.4 seconds: F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\ComfyUI-Voxels
+   1.2 seconds: F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\comfyui-rmbg
+
+Context impl SQLiteImpl.
+Will assume non-transactional DDL.
+Assets scan(roots=['models']) completed in 0.017s (created=0, skipped_existing=50, total_seen=50)
+Starting server
+
+To see the GUI go to: http://127.0.0.1:8188
+[DEPRECATION WARNING] Detected import of deprecated legacy API: /scripts/ui.js. This is likely caused by a custom node extension using outdated APIs. Please update your extensions or contact the extension author for an updated version.
+[DEPRECATION WARNING] Detected import of deprecated legacy API: /extensions/core/groupNode.js. This is likely caused by a custom node extension using outdated APIs. Please update your extensions or contact the extension author for an updated version.
+[DEPRECATION WARNING] Detected import of deprecated legacy API: /scripts/ui/components/buttonGroup.js. This is likely caused by a custom node extension using outdated APIs. Please update your extensions or contact the extension author for an updated version.
+[DEPRECATION WARNING] Detected import of deprecated legacy API: /scripts/ui/components/button.js. This is likely caused by a custom node extension using outdated APIs. Please update your extensions or contact the extension author for an updated version.
+FETCH ComfyRegistry Data: 5/121
+FETCH ComfyRegistry Data: 10/121
+FETCH ComfyRegistry Data: 15/121
+FETCH ComfyRegistry Data: 20/121
+
+Terminate batch job (Y/N)? ^C
+Stopped server
+
+
+(.venv) F:\comfyui-rocm72-p312-2026-01-24>Cannot connect to comfyregistry.
+FETCH DATA from: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/custom-node-list.json[ComfyUI-Manager] Due to a network error, switching to local mode.
+=> custom-node-list.json
+=> cannot schedule new futures after shutdown
+FETCH DATA from: F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\ComfyUI-Manager\custom-node-list.json [DONE]
+[ComfyUI-Manager] All startup tasks have been completed.
+run_comfyui_rocm72_p312.bat
+
+(.venv) F:\comfyui-rocm72-p312-2026-01-24>echo "===================START==================="
+"===================START==================="
+
+(.venv) F:\comfyui-rocm72-p312-2026-01-24>uv run main.py --windows-standalone-build --disable-smart-memory
+Adding extra search path checkpoints F:\ComfyUI-Models\checkpoints
+Adding extra search path clip F:\ComfyUI-Models\clip
+Adding extra search path clip_vision F:\ComfyUI-Models\clip_vision
+Adding extra search path text_encoders F:\ComfyUI-Models\text_encoders
+Adding extra search path configs F:\ComfyUI-Models\configs
+Adding extra search path controlnet F:\ComfyUI-Models\controlnet
+Adding extra search path diffusion_models F:\ComfyUI-Models\diffusion_models
+Adding extra search path diffusion_models F:\ComfyUI-Models\unet
+Adding extra search path embeddings F:\ComfyUI-Models\embeddings
+Adding extra search path loras F:\ComfyUI-Models\loras
+Adding extra search path upscale_models F:\ComfyUI-Models\upscale_models
+Adding extra search path vae F:\ComfyUI-Models\vae
+Adding extra search path vibevoice F:\ComfyUI-Models\vibevoice
+Adding extra search path Janus-Pro F:\ComfyUI-Models\Janus-Pro
+[START] Security scan
+[DONE] Security scan
+## ComfyUI-Manager: installing dependencies done.
+** ComfyUI startup time: 2026-01-25 10:04:02.615
+** Platform: Windows
+** Python version: 3.12.10 (main, Apr  9 2025, 04:06:22) [MSC v.1943 64 bit (AMD64)]
+** Python executable: F:\comfyui-rocm72-p312-2026-01-24\.venv\Scripts\python.exe
+** ComfyUI Path: F:\comfyui-rocm72-p312-2026-01-24
+** ComfyUI Base Folder Path: F:\comfyui-rocm72-p312-2026-01-24
+** User directory: F:\comfyui-rocm72-p312-2026-01-24\user
+** ComfyUI-Manager config path: F:\comfyui-rocm72-p312-2026-01-24\user\__manager\config.ini
+** Log path: F:\comfyui-rocm72-p312-2026-01-24\user\comfyui.log
+
+Prestartup times for custom nodes:
+   1.3 seconds: F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\ComfyUI-Manager
+
+Checkpoint files will always be loaded safely.
+Total VRAM 24560 MB, total RAM 65367 MB
+pytorch version: 2.9.1+rocmsdk20260116
+Set: torch.backends.cudnn.enabled = False for better AMD performance.
+AMD arch: gfx1100
+ROCm version: (7, 2)
+Set vram state to: NORMAL_VRAM
+Disabling smart memory management
+Device: cuda:0 AMD Radeon RX 7900 XTX : native
+Using async weight offloading with 2 streams
+Enabled pinned memory 29414.0
+Found comfy_kitchen backend eager: {'available': True, 'disabled': False, 'unavailable_reason': None, 'capabilities': ['apply_rope', 'apply_rope1', 'dequantize_nvfp4', 'dequantize_per_tensor_fp8', 'quantize_nvfp4', 'quantize_per_tensor_fp8', 'scaled_mm_nvfp4']}
+Found comfy_kitchen backend cuda: {'available': True, 'disabled': True, 'unavailable_reason': None, 'capabilities': ['apply_rope', 'apply_rope1', 'dequantize_nvfp4', 'dequantize_per_tensor_fp8', 'quantize_nvfp4', 'quantize_per_tensor_fp8']}
+Found comfy_kitchen backend triton: {'available': False, 'disabled': True, 'unavailable_reason': "ImportError: No module named 'triton'", 'capabilities': []}
+Using pytorch attention
+Python version: 3.12.10 (main, Apr  9 2025, 04:06:22) [MSC v.1943 64 bit (AMD64)]
+ComfyUI version: 0.10.0
+ComfyUI frontend version: 1.37.11
+[Prompt Server] web root: F:\comfyui-rocm72-p312-2026-01-24\.venv\Lib\site-packages\comfyui_frontend_package\static
+Failed to find comfy root automatically, please copy the folder F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\ComfyLiterals\web manually in the web/extensions folder of ComfyUI
+ComfyUI-GGUF: Allowing full torch compile
+### Loading: ComfyUI-Manager (V3.39.2)
+[ComfyUI-Manager] network_mode: public
+[ComfyUI-Manager] ComfyUI per-queue preview override detected (PR #11261). Manager's preview method feature is disabled. Use ComfyUI's --preview-method CLI option or 'Settings > Execution > Live preview method'.
+### ComfyUI Version: v0.10.0-29-g4e6a1b66 | Released on '2026-01-23'
+Skip F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\comfyui-minimal-workflow-image module for custom nodes due to the lack of NODE_CLASS_MAPPINGS or NODES_LIST (need one).
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/model-list.json
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/alter-list.json
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/github-stats.json
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/custom-node-list.json
+[ComfyUI-Manager] default cache updated: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/extension-node-map.json
+F:\comfyui-rocm72-p312-2026-01-24\.venv\Lib\site-packages\timm\models\layers\__init__.py:49: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
+Error loading F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\comfyui-rmbg\py\AILab_SAM3Segment.py: No module named 'triton'
+Error loading F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\comfyui-rmbg\py\AILab_SAM3Segment.py: No module named 'triton'
+[ComfyUI-RMBG] v3.0.0 | 42 nodes Loaded
+
+Import times for custom nodes:
+   0.0 seconds: F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\websocket_image_save.py
+   0.0 seconds: F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\ComfyLiterals
+   0.0 seconds (IMPORT FAILED): F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\comfyui-minimal-workflow-image
+   0.0 seconds: F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\ComfyUI-GGUF
+   0.3 seconds: F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\ComfyUI-Manager
+   1.1 seconds: F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\comfyui-rmbg
+
+Context impl SQLiteImpl.
+Will assume non-transactional DDL.
+Assets scan(roots=['models']) completed in 0.017s (created=0, skipped_existing=50, total_seen=50)
+Starting server
+
+To see the GUI go to: http://127.0.0.1:8188
+[DEPRECATION WARNING] Detected import of deprecated legacy API: /scripts/ui.js. This is likely caused by a custom node extension using outdated APIs. Please update your extensions or contact the extension author for an updated version.
+[DEPRECATION WARNING] Detected import of deprecated legacy API: /extensions/core/groupNode.js. This is likely caused by a custom node extension using outdated APIs. Please update your extensions or contact the extension author for an updated version.
+[DEPRECATION WARNING] Detected import of deprecated legacy API: /scripts/ui/components/buttonGroup.js. This is likely caused by a custom node extension using outdated APIs. Please update your extensions or contact the extension author for an updated version.
+[DEPRECATION WARNING] Detected import of deprecated legacy API: /scripts/ui/components/button.js. This is likely caused by a custom node extension using outdated APIs. Please update your extensions or contact the extension author for an updated version.
+FETCH ComfyRegistry Data: 5/121
+FETCH ComfyRegistry Data: 10/121
+FETCH ComfyRegistry Data: 15/121
+FETCH ComfyRegistry Data: 20/121
+FETCH ComfyRegistry Data: 25/121
+FETCH ComfyRegistry Data: 30/121
+FETCH ComfyRegistry Data: 35/121
+FETCH ComfyRegistry Data: 40/121
+FETCH ComfyRegistry Data: 45/121
+FETCH ComfyRegistry Data: 50/121
+FETCH ComfyRegistry Data: 55/121
+FETCH ComfyRegistry Data: 60/121
+FETCH ComfyRegistry Data: 65/121
+FETCH ComfyRegistry Data: 70/121
+FETCH ComfyRegistry Data: 75/121
+FETCH ComfyRegistry Data: 80/121
+FETCH ComfyRegistry Data: 85/121
+FETCH ComfyRegistry Data: 90/121
+FETCH ComfyRegistry Data: 95/121
+FETCH ComfyRegistry Data: 100/121
+FETCH ComfyRegistry Data: 105/121
+FETCH ComfyRegistry Data: 110/121
+FETCH ComfyRegistry Data: 115/121
+FETCH ComfyRegistry Data: 120/121
+FETCH ComfyRegistry Data [DONE]
+[ComfyUI-Manager] default cache updated: https://api.comfy.org/nodes
+FETCH DATA from: https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/custom-node-list.json [DONE]
+[ComfyUI-Manager] All startup tasks have been completed.
+[ComfyUI-Manager] The ComfyRegistry cache update is still in progress, so an outdated cache is being used.
+FETCH DATA from: F:\comfyui-rocm72-p312-2026-01-24\user\__manager\cache\1514988643_custom-node-list.json [DONE]
+FETCH DATA from: F:\comfyui-rocm72-p312-2026-01-24\user\__manager\cache\746607195_github-stats.json [DONE]
+FETCH DATA from: F:\comfyui-rocm72-p312-2026-01-24\user\__manager\cache\832903789_extras.json [DONE]
+FETCH DATA from: F:\comfyui-rocm72-p312-2026-01-24\user\__manager\cache\1742899825_extension-node-map.json [DONE]
+got prompt
+F:\comfyui-rocm72-p312-2026-01-24\.venv\Lib\site-packages\timm\models\registry.py:4: FutureWarning: Importing from timm.models.registry is deprecated, please import via timm.models
+  warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.models", FutureWarning)
+Prompt executed in 3.56 seconds
+got prompt
+model weight dtype torch.float16, manual cast: None
+model_type FLOW
+VAE load device: cuda:0, offload device: cpu, dtype: torch.float16
+Requested to load Dinov2Model
+loaded completely; 21852.66 MB usable, 577.86 MB loaded, full load: True
+Requested to load Hunyuan3Dv2_1
+loaded completely; 21724.41 MB usable, 5818.86 MB loaded, full load: True
+100%|██████████████████████████████████████████████████████████████████████████████████| 50/50 [00:44<00:00,  1.13it/s]
+Requested to load ShapeVAE
+loaded completely; 21652.35 MB usable, 624.88 MB loaded, full load: True
+Volume Decoding: 100%|███████████████████████████████████████████████████████████| 2283/2283 [00:00<00:00, 2652.59it/s]
+Prompt executed in 128.82 seconds
+got prompt
+Failed to validate prompt for output 38:
+* LoadImage 42:
+  - Custom validation failed for node: image - Invalid image file: legendary bow (1).jpg
+Output will be ignored
+invalid prompt: {'type': 'prompt_outputs_failed_validation', 'message': 'Prompt outputs failed validation', 'details': '', 'extra_info': {}}
+got prompt
+WARNING: [Errno 2] No such file or directory: 'F:\\comfyui-rocm72-p312-2026-01-24\\input\\legendary bow (1).jpg'
+Using split attention in VAE
+Using split attention in VAE
+VAE load device: cuda:0, offload device: cpu, dtype: torch.bfloat16
+Requested to load WanVAE
+loaded completely; 20323.12 MB usable, 242.03 MB loaded, full load: True
+gguf qtypes: Q8_0 (198), F32 (141)
+Dequantizing token_embd.weight to prevent runtime OOM.
+Attenpting to find mmproj file for text encoder...
+Using mmproj 'qwen2.5-vl-7b-instruct-q8_0-mmproj-fp16.gguf' for text encoder 'qwen2.5-vl-7b-instruct-q8_0.gguf'.
+gguf qtypes: F32 (291), F16 (228)
+CLIP/text encoder model load device: cuda:0, offload device: cpu, current: cpu, dtype: torch.float16
+Requested to load QwenImageTEModel_
+loaded completely; 22435.55 MB usable, 8946.75 MB loaded, full load: True
+gguf qtypes: F32 (1088), BF16 (6), Q8_0 (840)
+model weight dtype torch.bfloat16, manual cast: None
+model_type FLUX
+Requested to load QwenImage
+loaded completely; 22063.29 MB usable, 20861.48 MB loaded, full load: True
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [04:34<00:00, 68.73s/it]
+Requested to load WanVAE
+loaded completely; 18826.12 MB usable, 242.03 MB loaded, full load: True
+Prompt executed in 329.84 seconds
+got prompt
+model weight dtype torch.float16, manual cast: None
+model_type FLOW
+Missing VAE keys ['encoder.input_proj.weight', 'encoder.input_proj.bias', 'encoder.cross_attn.attn.c_q.weight', 'encoder.cross_attn.attn.c_kv.weight', 'encoder.cross_attn.attn.c_proj.weight', 'encoder.cross_attn.attn.c_proj.bias', 'encoder.cross_attn.attn.attention.q_norm.weight', 'encoder.cross_attn.attn.attention.q_norm.bias', 'encoder.cross_attn.attn.attention.k_norm.weight', 'encoder.cross_attn.attn.attention.k_norm.bias', 'encoder.cross_attn.ln_1.weight', 'encoder.cross_attn.ln_1.bias', 'encoder.cross_attn.ln_2.weight', 'encoder.cross_attn.ln_2.bias', 'encoder.cross_attn.ln_3.weight', 'encoder.cross_attn.ln_3.bias', 'encoder.cross_attn.mlp.c_fc.weight', 'encoder.cross_attn.mlp.c_fc.bias', 'encoder.cross_attn.mlp.c_proj.weight', 'encoder.cross_attn.mlp.c_proj.bias', 'encoder.self_attn.resblocks.0.attn.c_qkv.weight', 'encoder.self_attn.resblocks.0.attn.c_proj.weight', 'encoder.self_attn.resblocks.0.attn.c_proj.bias', 'encoder.self_attn.resblocks.0.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.0.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.0.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.0.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.0.ln_1.weight', 'encoder.self_attn.resblocks.0.ln_1.bias', 'encoder.self_attn.resblocks.0.mlp.c_fc.weight', 'encoder.self_attn.resblocks.0.mlp.c_fc.bias', 'encoder.self_attn.resblocks.0.mlp.c_proj.weight', 'encoder.self_attn.resblocks.0.mlp.c_proj.bias', 'encoder.self_attn.resblocks.0.ln_2.weight', 'encoder.self_attn.resblocks.0.ln_2.bias', 'encoder.self_attn.resblocks.1.attn.c_qkv.weight', 'encoder.self_attn.resblocks.1.attn.c_proj.weight', 'encoder.self_attn.resblocks.1.attn.c_proj.bias', 'encoder.self_attn.resblocks.1.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.1.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.1.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.1.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.1.ln_1.weight', 'encoder.self_attn.resblocks.1.ln_1.bias', 'encoder.self_attn.resblocks.1.mlp.c_fc.weight', 'encoder.self_attn.resblocks.1.mlp.c_fc.bias', 'encoder.self_attn.resblocks.1.mlp.c_proj.weight', 'encoder.self_attn.resblocks.1.mlp.c_proj.bias', 'encoder.self_attn.resblocks.1.ln_2.weight', 'encoder.self_attn.resblocks.1.ln_2.bias', 'encoder.self_attn.resblocks.2.attn.c_qkv.weight', 'encoder.self_attn.resblocks.2.attn.c_proj.weight', 'encoder.self_attn.resblocks.2.attn.c_proj.bias', 'encoder.self_attn.resblocks.2.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.2.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.2.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.2.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.2.ln_1.weight', 'encoder.self_attn.resblocks.2.ln_1.bias', 'encoder.self_attn.resblocks.2.mlp.c_fc.weight', 'encoder.self_attn.resblocks.2.mlp.c_fc.bias', 'encoder.self_attn.resblocks.2.mlp.c_proj.weight', 'encoder.self_attn.resblocks.2.mlp.c_proj.bias', 'encoder.self_attn.resblocks.2.ln_2.weight', 'encoder.self_attn.resblocks.2.ln_2.bias', 'encoder.self_attn.resblocks.3.attn.c_qkv.weight', 'encoder.self_attn.resblocks.3.attn.c_proj.weight', 'encoder.self_attn.resblocks.3.attn.c_proj.bias', 'encoder.self_attn.resblocks.3.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.3.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.3.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.3.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.3.ln_1.weight', 'encoder.self_attn.resblocks.3.ln_1.bias', 'encoder.self_attn.resblocks.3.mlp.c_fc.weight', 'encoder.self_attn.resblocks.3.mlp.c_fc.bias', 'encoder.self_attn.resblocks.3.mlp.c_proj.weight', 'encoder.self_attn.resblocks.3.mlp.c_proj.bias', 'encoder.self_attn.resblocks.3.ln_2.weight', 'encoder.self_attn.resblocks.3.ln_2.bias', 'encoder.self_attn.resblocks.4.attn.c_qkv.weight', 'encoder.self_attn.resblocks.4.attn.c_proj.weight', 'encoder.self_attn.resblocks.4.attn.c_proj.bias', 'encoder.self_attn.resblocks.4.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.4.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.4.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.4.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.4.ln_1.weight', 'encoder.self_attn.resblocks.4.ln_1.bias', 'encoder.self_attn.resblocks.4.mlp.c_fc.weight', 'encoder.self_attn.resblocks.4.mlp.c_fc.bias', 'encoder.self_attn.resblocks.4.mlp.c_proj.weight', 'encoder.self_attn.resblocks.4.mlp.c_proj.bias', 'encoder.self_attn.resblocks.4.ln_2.weight', 'encoder.self_attn.resblocks.4.ln_2.bias', 'encoder.self_attn.resblocks.5.attn.c_qkv.weight', 'encoder.self_attn.resblocks.5.attn.c_proj.weight', 'encoder.self_attn.resblocks.5.attn.c_proj.bias', 'encoder.self_attn.resblocks.5.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.5.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.5.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.5.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.5.ln_1.weight', 'encoder.self_attn.resblocks.5.ln_1.bias', 'encoder.self_attn.resblocks.5.mlp.c_fc.weight', 'encoder.self_attn.resblocks.5.mlp.c_fc.bias', 'encoder.self_attn.resblocks.5.mlp.c_proj.weight', 'encoder.self_attn.resblocks.5.mlp.c_proj.bias', 'encoder.self_attn.resblocks.5.ln_2.weight', 'encoder.self_attn.resblocks.5.ln_2.bias', 'encoder.self_attn.resblocks.6.attn.c_qkv.weight', 'encoder.self_attn.resblocks.6.attn.c_proj.weight', 'encoder.self_attn.resblocks.6.attn.c_proj.bias', 'encoder.self_attn.resblocks.6.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.6.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.6.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.6.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.6.ln_1.weight', 'encoder.self_attn.resblocks.6.ln_1.bias', 'encoder.self_attn.resblocks.6.mlp.c_fc.weight', 'encoder.self_attn.resblocks.6.mlp.c_fc.bias', 'encoder.self_attn.resblocks.6.mlp.c_proj.weight', 'encoder.self_attn.resblocks.6.mlp.c_proj.bias', 'encoder.self_attn.resblocks.6.ln_2.weight', 'encoder.self_attn.resblocks.6.ln_2.bias', 'encoder.self_attn.resblocks.7.attn.c_qkv.weight', 'encoder.self_attn.resblocks.7.attn.c_proj.weight', 'encoder.self_attn.resblocks.7.attn.c_proj.bias', 'encoder.self_attn.resblocks.7.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.7.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.7.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.7.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.7.ln_1.weight', 'encoder.self_attn.resblocks.7.ln_1.bias', 'encoder.self_attn.resblocks.7.mlp.c_fc.weight', 'encoder.self_attn.resblocks.7.mlp.c_fc.bias', 'encoder.self_attn.resblocks.7.mlp.c_proj.weight', 'encoder.self_attn.resblocks.7.mlp.c_proj.bias', 'encoder.self_attn.resblocks.7.ln_2.weight', 'encoder.self_attn.resblocks.7.ln_2.bias', 'encoder.ln_post.weight', 'encoder.ln_post.bias']
+VAE load device: cuda:0, offload device: cpu, dtype: torch.float16
+Requested to load Dinov2Model
+loaded completely; 22406.92 MB usable, 2163.65 MB loaded, full load: True
+Requested to load Hunyuan3Dv2
+loaded completely; 22408.92 MB usable, 2123.40 MB loaded, full load: True
+100%|██████████████████████████████████████████████████████████████████████████████████| 20/20 [00:16<00:00,  1.19it/s]
+Requested to load ShapeVAE
+loaded completely; 22406.92 MB usable, 624.88 MB loaded, full load: True
+Volume Decoding: 100%|███████████████████████████████████████████████████████████| 2122/2122 [00:00<00:00, 2818.62it/s]
+Prompt executed in 49.38 seconds
+got prompt
+Using split attention in VAE
+Using split attention in VAE
+VAE load device: cuda:0, offload device: cpu, dtype: torch.bfloat16
+Requested to load WanVAE
+loaded completely; 20226.12 MB usable, 242.03 MB loaded, full load: True
+gguf qtypes: Q6_K (29), F32 (141), Q4_K (169)
+Dequantizing token_embd.weight to prevent runtime OOM.
+Attenpting to find mmproj file for text encoder...
+Error: Can't find mmproj file for 'qwen25-vl-7B-instruct-q4.gguf' (matching:'qwen25-vl-7b-instruct-q4')! Qwen-Image-Edit will be broken!
+clip missing: ['visual.patch_embed.proj.weight', 'visual.blocks.0.norm1.weight', 'visual.blocks.0.norm2.weight', 'visual.blocks.0.attn.qkv.weight', 'visual.blocks.0.attn.proj.weight', 'visual.blocks.0.mlp.gate_proj.weight', 'visual.blocks.0.mlp.up_proj.weight', 'visual.blocks.0.mlp.down_proj.weight', 'visual.blocks.1.norm1.weight', 'visual.blocks.1.norm2.weight', 'visual.blocks.1.attn.qkv.weight', 'visual.blocks.1.attn.proj.weight', 'visual.blocks.1.mlp.gate_proj.weight', 'visual.blocks.1.mlp.up_proj.weight', 'visual.blocks.1.mlp.down_proj.weight', 'visual.blocks.2.norm1.weight', 'visual.blocks.2.norm2.weight', 'visual.blocks.2.attn.qkv.weight', 'visual.blocks.2.attn.proj.weight', 'visual.blocks.2.mlp.gate_proj.weight', 'visual.blocks.2.mlp.up_proj.weight', 'visual.blocks.2.mlp.down_proj.weight', 'visual.blocks.3.norm1.weight', 'visual.blocks.3.norm2.weight', 'visual.blocks.3.attn.qkv.weight', 'visual.blocks.3.attn.proj.weight', 'visual.blocks.3.mlp.gate_proj.weight', 'visual.blocks.3.mlp.up_proj.weight', 'visual.blocks.3.mlp.down_proj.weight', 'visual.blocks.4.norm1.weight', 'visual.blocks.4.norm2.weight', 'visual.blocks.4.attn.qkv.weight', 'visual.blocks.4.attn.proj.weight', 'visual.blocks.4.mlp.gate_proj.weight', 'visual.blocks.4.mlp.up_proj.weight', 'visual.blocks.4.mlp.down_proj.weight', 'visual.blocks.5.norm1.weight', 'visual.blocks.5.norm2.weight', 'visual.blocks.5.attn.qkv.weight', 'visual.blocks.5.attn.proj.weight', 'visual.blocks.5.mlp.gate_proj.weight', 'visual.blocks.5.mlp.up_proj.weight', 'visual.blocks.5.mlp.down_proj.weight', 'visual.blocks.6.norm1.weight', 'visual.blocks.6.norm2.weight', 'visual.blocks.6.attn.qkv.weight', 'visual.blocks.6.attn.proj.weight', 'visual.blocks.6.mlp.gate_proj.weight', 'visual.blocks.6.mlp.up_proj.weight', 'visual.blocks.6.mlp.down_proj.weight', 'visual.blocks.7.norm1.weight', 'visual.blocks.7.norm2.weight', 'visual.blocks.7.attn.qkv.weight', 'visual.blocks.7.attn.proj.weight', 'visual.blocks.7.mlp.gate_proj.weight', 'visual.blocks.7.mlp.up_proj.weight', 'visual.blocks.7.mlp.down_proj.weight', 'visual.blocks.8.norm1.weight', 'visual.blocks.8.norm2.weight', 'visual.blocks.8.attn.qkv.weight', 'visual.blocks.8.attn.proj.weight', 'visual.blocks.8.mlp.gate_proj.weight', 'visual.blocks.8.mlp.up_proj.weight', 'visual.blocks.8.mlp.down_proj.weight', 'visual.blocks.9.norm1.weight', 'visual.blocks.9.norm2.weight', 'visual.blocks.9.attn.qkv.weight', 'visual.blocks.9.attn.proj.weight', 'visual.blocks.9.mlp.gate_proj.weight', 'visual.blocks.9.mlp.up_proj.weight', 'visual.blocks.9.mlp.down_proj.weight', 'visual.blocks.10.norm1.weight', 'visual.blocks.10.norm2.weight', 'visual.blocks.10.attn.qkv.weight', 'visual.blocks.10.attn.proj.weight', 'visual.blocks.10.mlp.gate_proj.weight', 'visual.blocks.10.mlp.up_proj.weight', 'visual.blocks.10.mlp.down_proj.weight', 'visual.blocks.11.norm1.weight', 'visual.blocks.11.norm2.weight', 'visual.blocks.11.attn.qkv.weight', 'visual.blocks.11.attn.proj.weight', 'visual.blocks.11.mlp.gate_proj.weight', 'visual.blocks.11.mlp.up_proj.weight', 'visual.blocks.11.mlp.down_proj.weight', 'visual.blocks.12.norm1.weight', 'visual.blocks.12.norm2.weight', 'visual.blocks.12.attn.qkv.weight', 'visual.blocks.12.attn.proj.weight', 'visual.blocks.12.mlp.gate_proj.weight', 'visual.blocks.12.mlp.up_proj.weight', 'visual.blocks.12.mlp.down_proj.weight', 'visual.blocks.13.norm1.weight', 'visual.blocks.13.norm2.weight', 'visual.blocks.13.attn.qkv.weight', 'visual.blocks.13.attn.proj.weight', 'visual.blocks.13.mlp.gate_proj.weight', 'visual.blocks.13.mlp.up_proj.weight', 'visual.blocks.13.mlp.down_proj.weight', 'visual.blocks.14.norm1.weight', 'visual.blocks.14.norm2.weight', 'visual.blocks.14.attn.qkv.weight', 'visual.blocks.14.attn.proj.weight', 'visual.blocks.14.mlp.gate_proj.weight', 'visual.blocks.14.mlp.up_proj.weight', 'visual.blocks.14.mlp.down_proj.weight', 'visual.blocks.15.norm1.weight', 'visual.blocks.15.norm2.weight', 'visual.blocks.15.attn.qkv.weight', 'visual.blocks.15.attn.proj.weight', 'visual.blocks.15.mlp.gate_proj.weight', 'visual.blocks.15.mlp.up_proj.weight', 'visual.blocks.15.mlp.down_proj.weight', 'visual.blocks.16.norm1.weight', 'visual.blocks.16.norm2.weight', 'visual.blocks.16.attn.qkv.weight', 'visual.blocks.16.attn.proj.weight', 'visual.blocks.16.mlp.gate_proj.weight', 'visual.blocks.16.mlp.up_proj.weight', 'visual.blocks.16.mlp.down_proj.weight', 'visual.blocks.17.norm1.weight', 'visual.blocks.17.norm2.weight', 'visual.blocks.17.attn.qkv.weight', 'visual.blocks.17.attn.proj.weight', 'visual.blocks.17.mlp.gate_proj.weight', 'visual.blocks.17.mlp.up_proj.weight', 'visual.blocks.17.mlp.down_proj.weight', 'visual.blocks.18.norm1.weight', 'visual.blocks.18.norm2.weight', 'visual.blocks.18.attn.qkv.weight', 'visual.blocks.18.attn.proj.weight', 'visual.blocks.18.mlp.gate_proj.weight', 'visual.blocks.18.mlp.up_proj.weight', 'visual.blocks.18.mlp.down_proj.weight', 'visual.blocks.19.norm1.weight', 'visual.blocks.19.norm2.weight', 'visual.blocks.19.attn.qkv.weight', 'visual.blocks.19.attn.proj.weight', 'visual.blocks.19.mlp.gate_proj.weight', 'visual.blocks.19.mlp.up_proj.weight', 'visual.blocks.19.mlp.down_proj.weight', 'visual.blocks.20.norm1.weight', 'visual.blocks.20.norm2.weight', 'visual.blocks.20.attn.qkv.weight', 'visual.blocks.20.attn.proj.weight', 'visual.blocks.20.mlp.gate_proj.weight', 'visual.blocks.20.mlp.up_proj.weight', 'visual.blocks.20.mlp.down_proj.weight', 'visual.blocks.21.norm1.weight', 'visual.blocks.21.norm2.weight', 'visual.blocks.21.attn.qkv.weight', 'visual.blocks.21.attn.proj.weight', 'visual.blocks.21.mlp.gate_proj.weight', 'visual.blocks.21.mlp.up_proj.weight', 'visual.blocks.21.mlp.down_proj.weight', 'visual.blocks.22.norm1.weight', 'visual.blocks.22.norm2.weight', 'visual.blocks.22.attn.qkv.weight', 'visual.blocks.22.attn.proj.weight', 'visual.blocks.22.mlp.gate_proj.weight', 'visual.blocks.22.mlp.up_proj.weight', 'visual.blocks.22.mlp.down_proj.weight', 'visual.blocks.23.norm1.weight', 'visual.blocks.23.norm2.weight', 'visual.blocks.23.attn.qkv.weight', 'visual.blocks.23.attn.proj.weight', 'visual.blocks.23.mlp.gate_proj.weight', 'visual.blocks.23.mlp.up_proj.weight', 'visual.blocks.23.mlp.down_proj.weight', 'visual.blocks.24.norm1.weight', 'visual.blocks.24.norm2.weight', 'visual.blocks.24.attn.qkv.weight', 'visual.blocks.24.attn.proj.weight', 'visual.blocks.24.mlp.gate_proj.weight', 'visual.blocks.24.mlp.up_proj.weight', 'visual.blocks.24.mlp.down_proj.weight', 'visual.blocks.25.norm1.weight', 'visual.blocks.25.norm2.weight', 'visual.blocks.25.attn.qkv.weight', 'visual.blocks.25.attn.proj.weight', 'visual.blocks.25.mlp.gate_proj.weight', 'visual.blocks.25.mlp.up_proj.weight', 'visual.blocks.25.mlp.down_proj.weight', 'visual.blocks.26.norm1.weight', 'visual.blocks.26.norm2.weight', 'visual.blocks.26.attn.qkv.weight', 'visual.blocks.26.attn.proj.weight', 'visual.blocks.26.mlp.gate_proj.weight', 'visual.blocks.26.mlp.up_proj.weight', 'visual.blocks.26.mlp.down_proj.weight', 'visual.blocks.27.norm1.weight', 'visual.blocks.27.norm2.weight', 'visual.blocks.27.attn.qkv.weight', 'visual.blocks.27.attn.proj.weight', 'visual.blocks.27.mlp.gate_proj.weight', 'visual.blocks.27.mlp.up_proj.weight', 'visual.blocks.27.mlp.down_proj.weight', 'visual.blocks.28.norm1.weight', 'visual.blocks.28.norm2.weight', 'visual.blocks.28.attn.qkv.weight', 'visual.blocks.28.attn.proj.weight', 'visual.blocks.28.mlp.gate_proj.weight', 'visual.blocks.28.mlp.up_proj.weight', 'visual.blocks.28.mlp.down_proj.weight', 'visual.blocks.29.norm1.weight', 'visual.blocks.29.norm2.weight', 'visual.blocks.29.attn.qkv.weight', 'visual.blocks.29.attn.proj.weight', 'visual.blocks.29.mlp.gate_proj.weight', 'visual.blocks.29.mlp.up_proj.weight', 'visual.blocks.29.mlp.down_proj.weight', 'visual.blocks.30.norm1.weight', 'visual.blocks.30.norm2.weight', 'visual.blocks.30.attn.qkv.weight', 'visual.blocks.30.attn.proj.weight', 'visual.blocks.30.mlp.gate_proj.weight', 'visual.blocks.30.mlp.up_proj.weight', 'visual.blocks.30.mlp.down_proj.weight', 'visual.blocks.31.norm1.weight', 'visual.blocks.31.norm2.weight', 'visual.blocks.31.attn.qkv.weight', 'visual.blocks.31.attn.proj.weight', 'visual.blocks.31.mlp.gate_proj.weight', 'visual.blocks.31.mlp.up_proj.weight', 'visual.blocks.31.mlp.down_proj.weight', 'visual.merger.ln_q.weight', 'visual.merger.mlp.0.weight', 'visual.merger.mlp.2.weight']
+CLIP/text encoder model load device: cuda:0, offload device: cpu, current: cpu, dtype: torch.float16
+Requested to load QwenImageTEModel_
+loaded completely; 22406.92 MB usable, 7360.42 MB loaded, full load: True
+!!! Exception during processing !!! mat1 and mat2 shapes cannot be multiplied (784x1280 and 3840x1280)
+Traceback (most recent call last):
+  File "F:\comfyui-rocm72-p312-2026-01-24\execution.py", line 518, in execute
+    output_data, output_ui, has_subgraph, has_pending_tasks = await get_output_data(prompt_id, unique_id, obj, input_data_all, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)
+                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\comfyui-rocm72-p312-2026-01-24\execution.py", line 329, in get_output_data
+    return_values = await _async_map_node_over_list(prompt_id, unique_id, obj, input_data_all, obj.FUNCTION, allow_interrupt=True, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\comfyui-rocm72-p312-2026-01-24\execution.py", line 303, in _async_map_node_over_list
+    await process_inputs(input_dict, i)
+  File "F:\comfyui-rocm72-p312-2026-01-24\execution.py", line 291, in process_inputs
+    result = f(**inputs)
+             ^^^^^^^^^^^
+  File "F:\comfyui-rocm72-p312-2026-01-24\comfy_api\internal\__init__.py", line 149, in wrapped_func
+    return method(locked_class, **inputs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\comfyui-rocm72-p312-2026-01-24\comfy_api\latest\_io.py", line 1697, in EXECUTE_NORMALIZED
+    to_return = cls.execute(*args, **kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\comfyui-rocm72-p312-2026-01-24\comfy_extras\nodes_qwen.py", line 103, in execute
+    conditioning = clip.encode_from_tokens_scheduled(tokens)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\comfyui-rocm72-p312-2026-01-24\comfy\sd.py", line 208, in encode_from_tokens_scheduled
+    pooled_dict = self.encode_from_tokens(tokens, return_pooled=return_pooled, return_dict=True)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\comfyui-rocm72-p312-2026-01-24\comfy\sd.py", line 272, in encode_from_tokens
+    o = self.cond_stage_model.encode_token_weights(tokens)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\comfyui-rocm72-p312-2026-01-24\comfy\text_encoders\qwen_image.py", line 62, in encode_token_weights
+    out, pooled, extra = super().encode_token_weights(token_weight_pairs)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\comfyui-rocm72-p312-2026-01-24\comfy\sd1_clip.py", line 704, in encode_token_weights
+    out = getattr(self, self.clip).encode_token_weights(token_weight_pairs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\comfyui-rocm72-p312-2026-01-24\comfy\sd1_clip.py", line 45, in encode_token_weights
+    o = self.encode(to_encode)
+        ^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\comfyui-rocm72-p312-2026-01-24\comfy\sd1_clip.py", line 297, in encode
+    return self(tokens)
+           ^^^^^^^^^^^^
+  File "F:\comfyui-rocm72-p312-2026-01-24\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\comfyui-rocm72-p312-2026-01-24\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\comfyui-rocm72-p312-2026-01-24\comfy\sd1_clip.py", line 257, in forward
+    embeds, attention_mask, num_tokens, embeds_info = self.process_tokens(tokens, device)
+                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\comfyui-rocm72-p312-2026-01-24\comfy\sd1_clip.py", line 219, in process_tokens
+    emb, extra = self.transformer.preprocess_embed(emb, device=device)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\comfyui-rocm72-p312-2026-01-24\comfy\text_encoders\llama.py", line 715, in preprocess_embed
+    return self.visual(image.to(device, dtype=torch.float32), grid), grid
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\comfyui-rocm72-p312-2026-01-24\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\comfyui-rocm72-p312-2026-01-24\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\comfyui-rocm72-p312-2026-01-24\comfy\text_encoders\qwen_vl.py", line 425, in forward
+    hidden_states = block(hidden_states, position_embeddings, cu_seqlens_now, optimized_attention=optimized_attention)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\comfyui-rocm72-p312-2026-01-24\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\comfyui-rocm72-p312-2026-01-24\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\comfyui-rocm72-p312-2026-01-24\comfy\text_encoders\qwen_vl.py", line 252, in forward
+    hidden_states = self.attn(hidden_states, position_embeddings, cu_seqlens, optimized_attention)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\comfyui-rocm72-p312-2026-01-24\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\comfyui-rocm72-p312-2026-01-24\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\comfyui-rocm72-p312-2026-01-24\comfy\text_encoders\qwen_vl.py", line 195, in forward
+    qkv = self.qkv(hidden_states)
+          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\comfyui-rocm72-p312-2026-01-24\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\comfyui-rocm72-p312-2026-01-24\.venv\Lib\site-packages\torch\nn\modules\module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\comfyui-rocm72-p312-2026-01-24\comfy\ops.py", line 164, in forward
+    return self.forward_comfy_cast_weights(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\comfyui-rocm72-p312-2026-01-24\custom_nodes\ComfyUI-GGUF\ops.py", line 217, in forward_comfy_cast_weights
+    out = super().forward_comfy_cast_weights(input, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\comfyui-rocm72-p312-2026-01-24\comfy\ops.py", line 157, in forward_comfy_cast_weights
+    x = torch.nn.functional.linear(input, weight, bias)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: mat1 and mat2 shapes cannot be multiplied (784x1280 and 3840x1280)
+
+Prompt executed in 13.13 seconds
+got prompt
+gguf qtypes: Q8_0 (198), F32 (141)
+Dequantizing token_embd.weight to prevent runtime OOM.
+Attenpting to find mmproj file for text encoder...
+Using mmproj 'qwen2.5-vl-7b-instruct-q8_0-mmproj-fp16.gguf' for text encoder 'qwen2.5-vl-7b-instruct-q8_0.gguf'.
+gguf qtypes: F32 (291), F16 (228)
+CLIP/text encoder model load device: cuda:0, offload device: cpu, current: cpu, dtype: torch.float16
+Requested to load WanVAE
+loaded completely; 20226.12 MB usable, 242.03 MB loaded, full load: True
+Requested to load QwenImageTEModel_
+loaded completely; 22406.92 MB usable, 8946.75 MB loaded, full load: True
+gguf qtypes: F32 (1088), BF16 (6), Q6_K (258), Q8_0 (2), Q5_K (20), Q4_K (560)
+model weight dtype torch.bfloat16, manual cast: None
+model_type FLUX
+Requested to load QwenImage
+loaded completely; 22048.48 MB usable, 12738.98 MB loaded, full load: True
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:25<00:00,  6.31s/it]
+Requested to load WanVAE
+loaded completely; 18821.88 MB usable, 242.03 MB loaded, full load: True
+Prompt executed in 62.91 seconds
+got prompt
+Requested to load QwenImage
+loaded completely; 22044.23 MB usable, 12738.98 MB loaded, full load: True
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:25<00:00,  6.31s/it]
+Requested to load WanVAE
+loaded completely; 18821.88 MB usable, 242.03 MB loaded, full load: True
+Prompt executed in 33.15 seconds
+got prompt
+model weight dtype torch.float16, manual cast: None
+model_type FLOW
+Missing VAE keys ['encoder.input_proj.weight', 'encoder.input_proj.bias', 'encoder.cross_attn.attn.c_q.weight', 'encoder.cross_attn.attn.c_kv.weight', 'encoder.cross_attn.attn.c_proj.weight', 'encoder.cross_attn.attn.c_proj.bias', 'encoder.cross_attn.attn.attention.q_norm.weight', 'encoder.cross_attn.attn.attention.q_norm.bias', 'encoder.cross_attn.attn.attention.k_norm.weight', 'encoder.cross_attn.attn.attention.k_norm.bias', 'encoder.cross_attn.ln_1.weight', 'encoder.cross_attn.ln_1.bias', 'encoder.cross_attn.ln_2.weight', 'encoder.cross_attn.ln_2.bias', 'encoder.cross_attn.ln_3.weight', 'encoder.cross_attn.ln_3.bias', 'encoder.cross_attn.mlp.c_fc.weight', 'encoder.cross_attn.mlp.c_fc.bias', 'encoder.cross_attn.mlp.c_proj.weight', 'encoder.cross_attn.mlp.c_proj.bias', 'encoder.self_attn.resblocks.0.attn.c_qkv.weight', 'encoder.self_attn.resblocks.0.attn.c_proj.weight', 'encoder.self_attn.resblocks.0.attn.c_proj.bias', 'encoder.self_attn.resblocks.0.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.0.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.0.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.0.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.0.ln_1.weight', 'encoder.self_attn.resblocks.0.ln_1.bias', 'encoder.self_attn.resblocks.0.mlp.c_fc.weight', 'encoder.self_attn.resblocks.0.mlp.c_fc.bias', 'encoder.self_attn.resblocks.0.mlp.c_proj.weight', 'encoder.self_attn.resblocks.0.mlp.c_proj.bias', 'encoder.self_attn.resblocks.0.ln_2.weight', 'encoder.self_attn.resblocks.0.ln_2.bias', 'encoder.self_attn.resblocks.1.attn.c_qkv.weight', 'encoder.self_attn.resblocks.1.attn.c_proj.weight', 'encoder.self_attn.resblocks.1.attn.c_proj.bias', 'encoder.self_attn.resblocks.1.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.1.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.1.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.1.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.1.ln_1.weight', 'encoder.self_attn.resblocks.1.ln_1.bias', 'encoder.self_attn.resblocks.1.mlp.c_fc.weight', 'encoder.self_attn.resblocks.1.mlp.c_fc.bias', 'encoder.self_attn.resblocks.1.mlp.c_proj.weight', 'encoder.self_attn.resblocks.1.mlp.c_proj.bias', 'encoder.self_attn.resblocks.1.ln_2.weight', 'encoder.self_attn.resblocks.1.ln_2.bias', 'encoder.self_attn.resblocks.2.attn.c_qkv.weight', 'encoder.self_attn.resblocks.2.attn.c_proj.weight', 'encoder.self_attn.resblocks.2.attn.c_proj.bias', 'encoder.self_attn.resblocks.2.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.2.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.2.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.2.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.2.ln_1.weight', 'encoder.self_attn.resblocks.2.ln_1.bias', 'encoder.self_attn.resblocks.2.mlp.c_fc.weight', 'encoder.self_attn.resblocks.2.mlp.c_fc.bias', 'encoder.self_attn.resblocks.2.mlp.c_proj.weight', 'encoder.self_attn.resblocks.2.mlp.c_proj.bias', 'encoder.self_attn.resblocks.2.ln_2.weight', 'encoder.self_attn.resblocks.2.ln_2.bias', 'encoder.self_attn.resblocks.3.attn.c_qkv.weight', 'encoder.self_attn.resblocks.3.attn.c_proj.weight', 'encoder.self_attn.resblocks.3.attn.c_proj.bias', 'encoder.self_attn.resblocks.3.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.3.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.3.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.3.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.3.ln_1.weight', 'encoder.self_attn.resblocks.3.ln_1.bias', 'encoder.self_attn.resblocks.3.mlp.c_fc.weight', 'encoder.self_attn.resblocks.3.mlp.c_fc.bias', 'encoder.self_attn.resblocks.3.mlp.c_proj.weight', 'encoder.self_attn.resblocks.3.mlp.c_proj.bias', 'encoder.self_attn.resblocks.3.ln_2.weight', 'encoder.self_attn.resblocks.3.ln_2.bias', 'encoder.self_attn.resblocks.4.attn.c_qkv.weight', 'encoder.self_attn.resblocks.4.attn.c_proj.weight', 'encoder.self_attn.resblocks.4.attn.c_proj.bias', 'encoder.self_attn.resblocks.4.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.4.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.4.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.4.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.4.ln_1.weight', 'encoder.self_attn.resblocks.4.ln_1.bias', 'encoder.self_attn.resblocks.4.mlp.c_fc.weight', 'encoder.self_attn.resblocks.4.mlp.c_fc.bias', 'encoder.self_attn.resblocks.4.mlp.c_proj.weight', 'encoder.self_attn.resblocks.4.mlp.c_proj.bias', 'encoder.self_attn.resblocks.4.ln_2.weight', 'encoder.self_attn.resblocks.4.ln_2.bias', 'encoder.self_attn.resblocks.5.attn.c_qkv.weight', 'encoder.self_attn.resblocks.5.attn.c_proj.weight', 'encoder.self_attn.resblocks.5.attn.c_proj.bias', 'encoder.self_attn.resblocks.5.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.5.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.5.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.5.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.5.ln_1.weight', 'encoder.self_attn.resblocks.5.ln_1.bias', 'encoder.self_attn.resblocks.5.mlp.c_fc.weight', 'encoder.self_attn.resblocks.5.mlp.c_fc.bias', 'encoder.self_attn.resblocks.5.mlp.c_proj.weight', 'encoder.self_attn.resblocks.5.mlp.c_proj.bias', 'encoder.self_attn.resblocks.5.ln_2.weight', 'encoder.self_attn.resblocks.5.ln_2.bias', 'encoder.self_attn.resblocks.6.attn.c_qkv.weight', 'encoder.self_attn.resblocks.6.attn.c_proj.weight', 'encoder.self_attn.resblocks.6.attn.c_proj.bias', 'encoder.self_attn.resblocks.6.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.6.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.6.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.6.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.6.ln_1.weight', 'encoder.self_attn.resblocks.6.ln_1.bias', 'encoder.self_attn.resblocks.6.mlp.c_fc.weight', 'encoder.self_attn.resblocks.6.mlp.c_fc.bias', 'encoder.self_attn.resblocks.6.mlp.c_proj.weight', 'encoder.self_attn.resblocks.6.mlp.c_proj.bias', 'encoder.self_attn.resblocks.6.ln_2.weight', 'encoder.self_attn.resblocks.6.ln_2.bias', 'encoder.self_attn.resblocks.7.attn.c_qkv.weight', 'encoder.self_attn.resblocks.7.attn.c_proj.weight', 'encoder.self_attn.resblocks.7.attn.c_proj.bias', 'encoder.self_attn.resblocks.7.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.7.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.7.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.7.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.7.ln_1.weight', 'encoder.self_attn.resblocks.7.ln_1.bias', 'encoder.self_attn.resblocks.7.mlp.c_fc.weight', 'encoder.self_attn.resblocks.7.mlp.c_fc.bias', 'encoder.self_attn.resblocks.7.mlp.c_proj.weight', 'encoder.self_attn.resblocks.7.mlp.c_proj.bias', 'encoder.self_attn.resblocks.7.ln_2.weight', 'encoder.self_attn.resblocks.7.ln_2.bias', 'encoder.ln_post.weight', 'encoder.ln_post.bias']
+VAE load device: cuda:0, offload device: cpu, dtype: torch.float16
+Requested to load WanVAE
+loaded completely; 20221.88 MB usable, 242.03 MB loaded, full load: True
+Requested to load QwenImageTEModel_
+loaded completely; 22402.67 MB usable, 8946.75 MB loaded, full load: True
+Requested to load QwenImage
+loaded completely; 22404.67 MB usable, 12738.98 MB loaded, full load: True
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:16<00:00,  4.10s/it]
+!!! Exception during processing !!! 'str' object has no attribute 'decode'
+Traceback (most recent call last):
+  File "F:\comfyui-rocm72-p312-2026-01-24\execution.py", line 518, in execute
+    output_data, output_ui, has_subgraph, has_pending_tasks = await get_output_data(prompt_id, unique_id, obj, input_data_all, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)
+                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\comfyui-rocm72-p312-2026-01-24\execution.py", line 329, in get_output_data
+    return_values = await _async_map_node_over_list(prompt_id, unique_id, obj, input_data_all, obj.FUNCTION, allow_interrupt=True, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\comfyui-rocm72-p312-2026-01-24\execution.py", line 303, in _async_map_node_over_list
+    await process_inputs(input_dict, i)
+  File "F:\comfyui-rocm72-p312-2026-01-24\execution.py", line 291, in process_inputs
+    result = f(**inputs)
+             ^^^^^^^^^^^
+  File "F:\comfyui-rocm72-p312-2026-01-24\nodes.py", line 314, in decode
+    images = vae.decode(latent)
+             ^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'decode'. Did you mean: 'encode'?
+
+Prompt executed in 32.67 seconds
+got prompt
+Requested to load QwenImage
+loaded completely; 22404.67 MB usable, 12738.98 MB loaded, full load: True
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:16<00:00,  4.16s/it]
+Requested to load WanVAE
+loaded completely; 22121.88 MB usable, 242.03 MB loaded, full load: True
+Requested to load Dinov2Model
+loaded completely; 22402.67 MB usable, 2163.65 MB loaded, full load: True
+Requested to load Hunyuan3Dv2
+loaded completely; 22404.67 MB usable, 2123.40 MB loaded, full load: True
+100%|██████████████████████████████████████████████████████████████████████████████████| 20/20 [00:16<00:00,  1.20it/s]
+Requested to load ShapeVAE
+loaded completely; 22402.67 MB usable, 624.88 MB loaded, full load: True
+Volume Decoding: 100%|███████████████████████████████████████████████████████████| 2122/2122 [00:00<00:00, 2726.75it/s]
+Prompt executed in 70.64 seconds
+got prompt
+Requested to load WanVAE
+loaded completely; 18982.30 MB usable, 242.03 MB loaded, full load: True
+Requested to load QwenImageTEModel_
+loaded completely; 21221.10 MB usable, 8946.75 MB loaded, full load: True
+Requested to load QwenImage
+loaded completely; 20862.65 MB usable, 12738.98 MB loaded, full load: True
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:25<00:00,  6.32s/it]
+Requested to load WanVAE
+loaded completely; 17640.30 MB usable, 242.03 MB loaded, full load: True
+Requested to load Dinov2Model
+loaded completely; 21221.10 MB usable, 2163.65 MB loaded, full load: True
+Requested to load Hunyuan3Dv2
+loaded completely; 21221.10 MB usable, 2123.40 MB loaded, full load: True
+100%|██████████████████████████████████████████████████████████████████████████████████| 20/20 [00:16<00:00,  1.20it/s]
+Requested to load ShapeVAE
+loaded completely; 21221.10 MB usable, 624.88 MB loaded, full load: True
+Volume Decoding: 100%|███████████████████████████████████████████████████████████| 2122/2122 [00:00<00:00, 2830.51it/s]
+Prompt executed in 87.92 seconds
+got prompt
+Using split attention in VAE
+Using split attention in VAE
+VAE load device: cuda:0, offload device: cpu, dtype: torch.bfloat16
+CLIP/text encoder model load device: cuda:0, offload device: cpu, current: cpu, dtype: torch.float16
+Requested to load ZImageTEModel_
+loaded completely; 22072.67 MB usable, 7672.25 MB loaded, full load: True
+gguf qtypes: F32 (245), F16 (24), Q4_K (120), Q6_K (30), BF16 (4), Q5_K (30)
+model weight dtype torch.bfloat16, manual cast: None
+model_type FLOW
+Requested to load Lumina2
+loaded completely; 22306.37 MB usable, 4834.06 MB loaded, full load: True
+100%|████████████████████████████████████████████████████████████████████████████████████| 9/9 [00:12<00:00,  1.39s/it]
+Requested to load AutoencodingEngine
+loaded completely; 11330.00 MB usable, 159.87 MB loaded, full load: True
+Prompt executed in 29.26 seconds
+got prompt
+Using split attention in VAE
+Using split attention in VAE
+VAE load device: cuda:0, offload device: cpu, dtype: torch.bfloat16
+model weight dtype torch.float16, manual cast: None
+model_type FLOW
+Missing VAE keys ['encoder.input_proj.weight', 'encoder.input_proj.bias', 'encoder.cross_attn.attn.c_q.weight', 'encoder.cross_attn.attn.c_kv.weight', 'encoder.cross_attn.attn.c_proj.weight', 'encoder.cross_attn.attn.c_proj.bias', 'encoder.cross_attn.attn.attention.q_norm.weight', 'encoder.cross_attn.attn.attention.q_norm.bias', 'encoder.cross_attn.attn.attention.k_norm.weight', 'encoder.cross_attn.attn.attention.k_norm.bias', 'encoder.cross_attn.ln_1.weight', 'encoder.cross_attn.ln_1.bias', 'encoder.cross_attn.ln_2.weight', 'encoder.cross_attn.ln_2.bias', 'encoder.cross_attn.ln_3.weight', 'encoder.cross_attn.ln_3.bias', 'encoder.cross_attn.mlp.c_fc.weight', 'encoder.cross_attn.mlp.c_fc.bias', 'encoder.cross_attn.mlp.c_proj.weight', 'encoder.cross_attn.mlp.c_proj.bias', 'encoder.self_attn.resblocks.0.attn.c_qkv.weight', 'encoder.self_attn.resblocks.0.attn.c_proj.weight', 'encoder.self_attn.resblocks.0.attn.c_proj.bias', 'encoder.self_attn.resblocks.0.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.0.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.0.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.0.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.0.ln_1.weight', 'encoder.self_attn.resblocks.0.ln_1.bias', 'encoder.self_attn.resblocks.0.mlp.c_fc.weight', 'encoder.self_attn.resblocks.0.mlp.c_fc.bias', 'encoder.self_attn.resblocks.0.mlp.c_proj.weight', 'encoder.self_attn.resblocks.0.mlp.c_proj.bias', 'encoder.self_attn.resblocks.0.ln_2.weight', 'encoder.self_attn.resblocks.0.ln_2.bias', 'encoder.self_attn.resblocks.1.attn.c_qkv.weight', 'encoder.self_attn.resblocks.1.attn.c_proj.weight', 'encoder.self_attn.resblocks.1.attn.c_proj.bias', 'encoder.self_attn.resblocks.1.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.1.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.1.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.1.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.1.ln_1.weight', 'encoder.self_attn.resblocks.1.ln_1.bias', 'encoder.self_attn.resblocks.1.mlp.c_fc.weight', 'encoder.self_attn.resblocks.1.mlp.c_fc.bias', 'encoder.self_attn.resblocks.1.mlp.c_proj.weight', 'encoder.self_attn.resblocks.1.mlp.c_proj.bias', 'encoder.self_attn.resblocks.1.ln_2.weight', 'encoder.self_attn.resblocks.1.ln_2.bias', 'encoder.self_attn.resblocks.2.attn.c_qkv.weight', 'encoder.self_attn.resblocks.2.attn.c_proj.weight', 'encoder.self_attn.resblocks.2.attn.c_proj.bias', 'encoder.self_attn.resblocks.2.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.2.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.2.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.2.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.2.ln_1.weight', 'encoder.self_attn.resblocks.2.ln_1.bias', 'encoder.self_attn.resblocks.2.mlp.c_fc.weight', 'encoder.self_attn.resblocks.2.mlp.c_fc.bias', 'encoder.self_attn.resblocks.2.mlp.c_proj.weight', 'encoder.self_attn.resblocks.2.mlp.c_proj.bias', 'encoder.self_attn.resblocks.2.ln_2.weight', 'encoder.self_attn.resblocks.2.ln_2.bias', 'encoder.self_attn.resblocks.3.attn.c_qkv.weight', 'encoder.self_attn.resblocks.3.attn.c_proj.weight', 'encoder.self_attn.resblocks.3.attn.c_proj.bias', 'encoder.self_attn.resblocks.3.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.3.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.3.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.3.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.3.ln_1.weight', 'encoder.self_attn.resblocks.3.ln_1.bias', 'encoder.self_attn.resblocks.3.mlp.c_fc.weight', 'encoder.self_attn.resblocks.3.mlp.c_fc.bias', 'encoder.self_attn.resblocks.3.mlp.c_proj.weight', 'encoder.self_attn.resblocks.3.mlp.c_proj.bias', 'encoder.self_attn.resblocks.3.ln_2.weight', 'encoder.self_attn.resblocks.3.ln_2.bias', 'encoder.self_attn.resblocks.4.attn.c_qkv.weight', 'encoder.self_attn.resblocks.4.attn.c_proj.weight', 'encoder.self_attn.resblocks.4.attn.c_proj.bias', 'encoder.self_attn.resblocks.4.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.4.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.4.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.4.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.4.ln_1.weight', 'encoder.self_attn.resblocks.4.ln_1.bias', 'encoder.self_attn.resblocks.4.mlp.c_fc.weight', 'encoder.self_attn.resblocks.4.mlp.c_fc.bias', 'encoder.self_attn.resblocks.4.mlp.c_proj.weight', 'encoder.self_attn.resblocks.4.mlp.c_proj.bias', 'encoder.self_attn.resblocks.4.ln_2.weight', 'encoder.self_attn.resblocks.4.ln_2.bias', 'encoder.self_attn.resblocks.5.attn.c_qkv.weight', 'encoder.self_attn.resblocks.5.attn.c_proj.weight', 'encoder.self_attn.resblocks.5.attn.c_proj.bias', 'encoder.self_attn.resblocks.5.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.5.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.5.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.5.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.5.ln_1.weight', 'encoder.self_attn.resblocks.5.ln_1.bias', 'encoder.self_attn.resblocks.5.mlp.c_fc.weight', 'encoder.self_attn.resblocks.5.mlp.c_fc.bias', 'encoder.self_attn.resblocks.5.mlp.c_proj.weight', 'encoder.self_attn.resblocks.5.mlp.c_proj.bias', 'encoder.self_attn.resblocks.5.ln_2.weight', 'encoder.self_attn.resblocks.5.ln_2.bias', 'encoder.self_attn.resblocks.6.attn.c_qkv.weight', 'encoder.self_attn.resblocks.6.attn.c_proj.weight', 'encoder.self_attn.resblocks.6.attn.c_proj.bias', 'encoder.self_attn.resblocks.6.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.6.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.6.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.6.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.6.ln_1.weight', 'encoder.self_attn.resblocks.6.ln_1.bias', 'encoder.self_attn.resblocks.6.mlp.c_fc.weight', 'encoder.self_attn.resblocks.6.mlp.c_fc.bias', 'encoder.self_attn.resblocks.6.mlp.c_proj.weight', 'encoder.self_attn.resblocks.6.mlp.c_proj.bias', 'encoder.self_attn.resblocks.6.ln_2.weight', 'encoder.self_attn.resblocks.6.ln_2.bias', 'encoder.self_attn.resblocks.7.attn.c_qkv.weight', 'encoder.self_attn.resblocks.7.attn.c_proj.weight', 'encoder.self_attn.resblocks.7.attn.c_proj.bias', 'encoder.self_attn.resblocks.7.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.7.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.7.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.7.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.7.ln_1.weight', 'encoder.self_attn.resblocks.7.ln_1.bias', 'encoder.self_attn.resblocks.7.mlp.c_fc.weight', 'encoder.self_attn.resblocks.7.mlp.c_fc.bias', 'encoder.self_attn.resblocks.7.mlp.c_proj.weight', 'encoder.self_attn.resblocks.7.mlp.c_proj.bias', 'encoder.self_attn.resblocks.7.ln_2.weight', 'encoder.self_attn.resblocks.7.ln_2.bias', 'encoder.ln_post.weight', 'encoder.ln_post.bias']
+VAE load device: cuda:0, offload device: cpu, dtype: torch.float16
+gguf qtypes: Q8_0 (198), F32 (141)
+Dequantizing token_embd.weight to prevent runtime OOM.
+Attenpting to find mmproj file for text encoder...
+Using mmproj 'qwen2.5-vl-7b-instruct-q8_0-mmproj-fp16.gguf' for text encoder 'qwen2.5-vl-7b-instruct-q8_0.gguf'.
+gguf qtypes: F32 (291), F16 (228)
+CLIP/text encoder model load device: cuda:0, offload device: cpu, current: cpu, dtype: torch.float16
+Requested to load WanVAE
+loaded completely; 19357.98 MB usable, 242.03 MB loaded, full load: True
+Requested to load QwenImageTEModel_
+loaded completely; 21566.78 MB usable, 8946.75 MB loaded, full load: True
+gguf qtypes: F32 (1088), BF16 (6), Q6_K (258), Q8_0 (2), Q5_K (20), Q4_K (560)
+model weight dtype torch.bfloat16, manual cast: None
+model_type FLUX
+Requested to load QwenImage
+loaded completely; 21208.33 MB usable, 12738.98 MB loaded, full load: True
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:28<00:00,  7.06s/it]
+Requested to load WanVAE
+loaded completely; 17985.98 MB usable, 242.03 MB loaded, full load: True
+Requested to load Dinov2Model
+loaded completely; 21566.78 MB usable, 2163.65 MB loaded, full load: True
+Requested to load Hunyuan3Dv2
+loaded completely; 21566.78 MB usable, 2123.40 MB loaded, full load: True
+100%|██████████████████████████████████████████████████████████████████████████████████| 20/20 [00:16<00:00,  1.20it/s]
+Requested to load ShapeVAE
+loaded completely; 21566.78 MB usable, 624.88 MB loaded, full load: True
+Volume Decoding: 100%|███████████████████████████████████████████████████████████| 2122/2122 [00:00<00:00, 2707.57it/s]
+Prompt executed in 107.51 seconds
+got prompt
+Requested to load QwenImage
+loaded completely; 21206.33 MB usable, 12738.98 MB loaded, full load: True
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:25<00:00,  6.35s/it]
+Requested to load WanVAE
+loaded completely; 17985.98 MB usable, 242.03 MB loaded, full load: True
+Requested to load Dinov2Model
+loaded completely; 21566.78 MB usable, 2163.65 MB loaded, full load: True
+Requested to load Hunyuan3Dv2
+loaded completely; 21566.78 MB usable, 2123.40 MB loaded, full load: True
+100%|██████████████████████████████████████████████████████████████████████████████████| 30/30 [00:33<00:00,  1.12s/it]
+Requested to load ShapeVAE
+loaded completely; 21566.78 MB usable, 624.88 MB loaded, full load: True
+Volume Decoding: 100%|███████████████████████████████████████████████████████████| 2854/2854 [00:01<00:00, 2565.15it/s]
+Prompt executed in 157.71 seconds
+got prompt
+Requested to load QwenImage
+loaded completely; 21206.33 MB usable, 12738.98 MB loaded, full load: True
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:25<00:00,  6.34s/it]
+Requested to load WanVAE
+loaded completely; 17985.98 MB usable, 242.03 MB loaded, full load: True
+model weight dtype torch.float16, manual cast: None
+model_type FLOW
+Missing VAE keys ['encoder.input_proj.weight', 'encoder.input_proj.bias', 'encoder.cross_attn.attn.c_q.weight', 'encoder.cross_attn.attn.c_kv.weight', 'encoder.cross_attn.attn.c_proj.weight', 'encoder.cross_attn.attn.c_proj.bias', 'encoder.cross_attn.attn.attention.q_norm.weight', 'encoder.cross_attn.attn.attention.q_norm.bias', 'encoder.cross_attn.attn.attention.k_norm.weight', 'encoder.cross_attn.attn.attention.k_norm.bias', 'encoder.cross_attn.ln_1.weight', 'encoder.cross_attn.ln_1.bias', 'encoder.cross_attn.ln_2.weight', 'encoder.cross_attn.ln_2.bias', 'encoder.cross_attn.ln_3.weight', 'encoder.cross_attn.ln_3.bias', 'encoder.cross_attn.mlp.c_fc.weight', 'encoder.cross_attn.mlp.c_fc.bias', 'encoder.cross_attn.mlp.c_proj.weight', 'encoder.cross_attn.mlp.c_proj.bias', 'encoder.self_attn.resblocks.0.attn.c_qkv.weight', 'encoder.self_attn.resblocks.0.attn.c_proj.weight', 'encoder.self_attn.resblocks.0.attn.c_proj.bias', 'encoder.self_attn.resblocks.0.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.0.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.0.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.0.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.0.ln_1.weight', 'encoder.self_attn.resblocks.0.ln_1.bias', 'encoder.self_attn.resblocks.0.mlp.c_fc.weight', 'encoder.self_attn.resblocks.0.mlp.c_fc.bias', 'encoder.self_attn.resblocks.0.mlp.c_proj.weight', 'encoder.self_attn.resblocks.0.mlp.c_proj.bias', 'encoder.self_attn.resblocks.0.ln_2.weight', 'encoder.self_attn.resblocks.0.ln_2.bias', 'encoder.self_attn.resblocks.1.attn.c_qkv.weight', 'encoder.self_attn.resblocks.1.attn.c_proj.weight', 'encoder.self_attn.resblocks.1.attn.c_proj.bias', 'encoder.self_attn.resblocks.1.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.1.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.1.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.1.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.1.ln_1.weight', 'encoder.self_attn.resblocks.1.ln_1.bias', 'encoder.self_attn.resblocks.1.mlp.c_fc.weight', 'encoder.self_attn.resblocks.1.mlp.c_fc.bias', 'encoder.self_attn.resblocks.1.mlp.c_proj.weight', 'encoder.self_attn.resblocks.1.mlp.c_proj.bias', 'encoder.self_attn.resblocks.1.ln_2.weight', 'encoder.self_attn.resblocks.1.ln_2.bias', 'encoder.self_attn.resblocks.2.attn.c_qkv.weight', 'encoder.self_attn.resblocks.2.attn.c_proj.weight', 'encoder.self_attn.resblocks.2.attn.c_proj.bias', 'encoder.self_attn.resblocks.2.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.2.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.2.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.2.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.2.ln_1.weight', 'encoder.self_attn.resblocks.2.ln_1.bias', 'encoder.self_attn.resblocks.2.mlp.c_fc.weight', 'encoder.self_attn.resblocks.2.mlp.c_fc.bias', 'encoder.self_attn.resblocks.2.mlp.c_proj.weight', 'encoder.self_attn.resblocks.2.mlp.c_proj.bias', 'encoder.self_attn.resblocks.2.ln_2.weight', 'encoder.self_attn.resblocks.2.ln_2.bias', 'encoder.self_attn.resblocks.3.attn.c_qkv.weight', 'encoder.self_attn.resblocks.3.attn.c_proj.weight', 'encoder.self_attn.resblocks.3.attn.c_proj.bias', 'encoder.self_attn.resblocks.3.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.3.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.3.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.3.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.3.ln_1.weight', 'encoder.self_attn.resblocks.3.ln_1.bias', 'encoder.self_attn.resblocks.3.mlp.c_fc.weight', 'encoder.self_attn.resblocks.3.mlp.c_fc.bias', 'encoder.self_attn.resblocks.3.mlp.c_proj.weight', 'encoder.self_attn.resblocks.3.mlp.c_proj.bias', 'encoder.self_attn.resblocks.3.ln_2.weight', 'encoder.self_attn.resblocks.3.ln_2.bias', 'encoder.self_attn.resblocks.4.attn.c_qkv.weight', 'encoder.self_attn.resblocks.4.attn.c_proj.weight', 'encoder.self_attn.resblocks.4.attn.c_proj.bias', 'encoder.self_attn.resblocks.4.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.4.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.4.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.4.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.4.ln_1.weight', 'encoder.self_attn.resblocks.4.ln_1.bias', 'encoder.self_attn.resblocks.4.mlp.c_fc.weight', 'encoder.self_attn.resblocks.4.mlp.c_fc.bias', 'encoder.self_attn.resblocks.4.mlp.c_proj.weight', 'encoder.self_attn.resblocks.4.mlp.c_proj.bias', 'encoder.self_attn.resblocks.4.ln_2.weight', 'encoder.self_attn.resblocks.4.ln_2.bias', 'encoder.self_attn.resblocks.5.attn.c_qkv.weight', 'encoder.self_attn.resblocks.5.attn.c_proj.weight', 'encoder.self_attn.resblocks.5.attn.c_proj.bias', 'encoder.self_attn.resblocks.5.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.5.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.5.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.5.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.5.ln_1.weight', 'encoder.self_attn.resblocks.5.ln_1.bias', 'encoder.self_attn.resblocks.5.mlp.c_fc.weight', 'encoder.self_attn.resblocks.5.mlp.c_fc.bias', 'encoder.self_attn.resblocks.5.mlp.c_proj.weight', 'encoder.self_attn.resblocks.5.mlp.c_proj.bias', 'encoder.self_attn.resblocks.5.ln_2.weight', 'encoder.self_attn.resblocks.5.ln_2.bias', 'encoder.self_attn.resblocks.6.attn.c_qkv.weight', 'encoder.self_attn.resblocks.6.attn.c_proj.weight', 'encoder.self_attn.resblocks.6.attn.c_proj.bias', 'encoder.self_attn.resblocks.6.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.6.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.6.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.6.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.6.ln_1.weight', 'encoder.self_attn.resblocks.6.ln_1.bias', 'encoder.self_attn.resblocks.6.mlp.c_fc.weight', 'encoder.self_attn.resblocks.6.mlp.c_fc.bias', 'encoder.self_attn.resblocks.6.mlp.c_proj.weight', 'encoder.self_attn.resblocks.6.mlp.c_proj.bias', 'encoder.self_attn.resblocks.6.ln_2.weight', 'encoder.self_attn.resblocks.6.ln_2.bias', 'encoder.self_attn.resblocks.7.attn.c_qkv.weight', 'encoder.self_attn.resblocks.7.attn.c_proj.weight', 'encoder.self_attn.resblocks.7.attn.c_proj.bias', 'encoder.self_attn.resblocks.7.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.7.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.7.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.7.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.7.ln_1.weight', 'encoder.self_attn.resblocks.7.ln_1.bias', 'encoder.self_attn.resblocks.7.mlp.c_fc.weight', 'encoder.self_attn.resblocks.7.mlp.c_fc.bias', 'encoder.self_attn.resblocks.7.mlp.c_proj.weight', 'encoder.self_attn.resblocks.7.mlp.c_proj.bias', 'encoder.self_attn.resblocks.7.ln_2.weight', 'encoder.self_attn.resblocks.7.ln_2.bias', 'encoder.ln_post.weight', 'encoder.ln_post.bias']
+VAE load device: cuda:0, offload device: cpu, dtype: torch.float16
+Requested to load Dinov2Model
+loaded completely; 21566.78 MB usable, 2163.65 MB loaded, full load: True
+Requested to load Hunyuan3Dv2
+loaded completely; 21566.78 MB usable, 2125.91 MB loaded, full load: True
+100%|██████████████████████████████████████████████████████████████████████████████████| 30/30 [00:33<00:00,  1.12s/it]
+Requested to load ShapeVAE
+loaded completely; 21566.78 MB usable, 624.88 MB loaded, full load: True
+Volume Decoding: 100%|███████████████████████████████████████████████████████████| 2854/2854 [00:01<00:00, 2664.71it/s]
+Prompt executed in 160.30 seconds
+got prompt
+Requested to load QwenImage
+loaded completely; 21206.33 MB usable, 12738.98 MB loaded, full load: True
+100%|████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:25<00:00,  6.33s/it]
+Requested to load WanVAE
+loaded completely; 17985.98 MB usable, 242.03 MB loaded, full load: True
+Requested to load Dinov2Model
+loaded completely; 21566.78 MB usable, 2163.65 MB loaded, full load: True
+Requested to load Hunyuan3Dv2
+loaded completely; 21566.78 MB usable, 2125.91 MB loaded, full load: True
+100%|██████████████████████████████████████████████████████████████████████████████████| 30/30 [00:25<00:00,  1.16it/s]
+Requested to load ShapeVAE
+loaded completely; 21566.78 MB usable, 624.88 MB loaded, full load: True
+Volume Decoding: 100%|███████████████████████████████████████████████████████████| 2854/2854 [00:01<00:00, 2712.57it/s]
+Prompt executed in 136.86 seconds
+got prompt
+Requested to load Dinov2Model
+loaded completely; 21355.66 MB usable, 2163.65 MB loaded, full load: True
+Requested to load Hunyuan3Dv2
+loaded completely; 20639.31 MB usable, 2125.91 MB loaded, full load: True
+100%|██████████████████████████████████████████████████████████████████████████████████| 30/30 [00:32<00:00,  1.07s/it]
+Requested to load ShapeVAE
+loaded completely; 20639.31 MB usable, 624.88 MB loaded, full load: True
+Volume Decoding: 100%|███████████████████████████████████████████████████████████| 1698/1698 [00:00<00:00, 2665.88it/s]
+Prompt executed in 70.78 seconds
+got prompt
+Requested to load Hunyuan3Dv2
+loaded completely; 20639.31 MB usable, 2125.91 MB loaded, full load: True
+100%|██████████████████████████████████████████████████████████████████████████████████| 30/30 [00:31<00:00,  1.07s/it]
+Requested to load ShapeVAE
+loaded completely; 20639.31 MB usable, 624.88 MB loaded, full load: True
+Volume Decoding: 100%|███████████████████████████████████████████████████████████| 5707/5707 [00:01<00:00, 3122.90it/s]
+Prompt executed in 118.89 seconds
+got prompt
+Requested to load Hunyuan3Dv2
+loaded completely; 20639.31 MB usable, 2125.91 MB loaded, full load: True
+100%|██████████████████████████████████████████████████████████████████████████████████| 30/30 [00:32<00:00,  1.08s/it]
+Requested to load ShapeVAE
+loaded completely; 20639.31 MB usable, 624.88 MB loaded, full load: True
+Volume Decoding: 100%|███████████████████████████████████████████████████████████| 5707/5707 [00:01<00:00, 2891.30it/s]
+Prompt executed in 124.43 seconds
+got prompt
+Requested to load Hunyuan3Dv2
+loaded completely; 20639.31 MB usable, 2125.91 MB loaded, full load: True
+100%|██████████████████████████████████████████████████████████████████████████████████| 30/30 [00:33<00:00,  1.11s/it]
+Requested to load ShapeVAE
+loaded completely; 20639.31 MB usable, 624.88 MB loaded, full load: True
+Volume Decoding: 100%|███████████████████████████████████████████████████████████| 1132/1132 [00:00<00:00, 2769.59it/s]
+Prompt executed in 62.33 seconds
+got prompt
+Requested to load Hunyuan3Dv2
+loaded completely; 20639.31 MB usable, 2125.91 MB loaded, full load: True
+100%|█████████████████████████████████████████████████████████████████████████████████████████| 30/30 [00:52<00:00,  1.74s/it]
+Requested to load ShapeVAE
+loaded completely; 20639.31 MB usable, 624.88 MB loaded, full load: True
+Volume Decoding: 100%|██████████████████████████████████████████████████████████████████| 1698/1698 [00:00<00:00, 2828.30it/s]
+Prompt executed in 89.91 seconds
+got prompt
+model weight dtype torch.float16, manual cast: None
+model_type FLOW
+Missing VAE keys ['encoder.input_proj.weight', 'encoder.input_proj.bias', 'encoder.cross_attn.attn.c_q.weight', 'encoder.cross_attn.attn.c_kv.weight', 'encoder.cross_attn.attn.c_proj.weight', 'encoder.cross_attn.attn.c_proj.bias', 'encoder.cross_attn.attn.attention.q_norm.weight', 'encoder.cross_attn.attn.attention.q_norm.bias', 'encoder.cross_attn.attn.attention.k_norm.weight', 'encoder.cross_attn.attn.attention.k_norm.bias', 'encoder.cross_attn.ln_1.weight', 'encoder.cross_attn.ln_1.bias', 'encoder.cross_attn.ln_2.weight', 'encoder.cross_attn.ln_2.bias', 'encoder.cross_attn.ln_3.weight', 'encoder.cross_attn.ln_3.bias', 'encoder.cross_attn.mlp.c_fc.weight', 'encoder.cross_attn.mlp.c_fc.bias', 'encoder.cross_attn.mlp.c_proj.weight', 'encoder.cross_attn.mlp.c_proj.bias', 'encoder.self_attn.resblocks.0.attn.c_qkv.weight', 'encoder.self_attn.resblocks.0.attn.c_proj.weight', 'encoder.self_attn.resblocks.0.attn.c_proj.bias', 'encoder.self_attn.resblocks.0.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.0.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.0.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.0.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.0.ln_1.weight', 'encoder.self_attn.resblocks.0.ln_1.bias', 'encoder.self_attn.resblocks.0.mlp.c_fc.weight', 'encoder.self_attn.resblocks.0.mlp.c_fc.bias', 'encoder.self_attn.resblocks.0.mlp.c_proj.weight', 'encoder.self_attn.resblocks.0.mlp.c_proj.bias', 'encoder.self_attn.resblocks.0.ln_2.weight', 'encoder.self_attn.resblocks.0.ln_2.bias', 'encoder.self_attn.resblocks.1.attn.c_qkv.weight', 'encoder.self_attn.resblocks.1.attn.c_proj.weight', 'encoder.self_attn.resblocks.1.attn.c_proj.bias', 'encoder.self_attn.resblocks.1.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.1.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.1.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.1.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.1.ln_1.weight', 'encoder.self_attn.resblocks.1.ln_1.bias', 'encoder.self_attn.resblocks.1.mlp.c_fc.weight', 'encoder.self_attn.resblocks.1.mlp.c_fc.bias', 'encoder.self_attn.resblocks.1.mlp.c_proj.weight', 'encoder.self_attn.resblocks.1.mlp.c_proj.bias', 'encoder.self_attn.resblocks.1.ln_2.weight', 'encoder.self_attn.resblocks.1.ln_2.bias', 'encoder.self_attn.resblocks.2.attn.c_qkv.weight', 'encoder.self_attn.resblocks.2.attn.c_proj.weight', 'encoder.self_attn.resblocks.2.attn.c_proj.bias', 'encoder.self_attn.resblocks.2.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.2.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.2.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.2.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.2.ln_1.weight', 'encoder.self_attn.resblocks.2.ln_1.bias', 'encoder.self_attn.resblocks.2.mlp.c_fc.weight', 'encoder.self_attn.resblocks.2.mlp.c_fc.bias', 'encoder.self_attn.resblocks.2.mlp.c_proj.weight', 'encoder.self_attn.resblocks.2.mlp.c_proj.bias', 'encoder.self_attn.resblocks.2.ln_2.weight', 'encoder.self_attn.resblocks.2.ln_2.bias', 'encoder.self_attn.resblocks.3.attn.c_qkv.weight', 'encoder.self_attn.resblocks.3.attn.c_proj.weight', 'encoder.self_attn.resblocks.3.attn.c_proj.bias', 'encoder.self_attn.resblocks.3.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.3.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.3.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.3.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.3.ln_1.weight', 'encoder.self_attn.resblocks.3.ln_1.bias', 'encoder.self_attn.resblocks.3.mlp.c_fc.weight', 'encoder.self_attn.resblocks.3.mlp.c_fc.bias', 'encoder.self_attn.resblocks.3.mlp.c_proj.weight', 'encoder.self_attn.resblocks.3.mlp.c_proj.bias', 'encoder.self_attn.resblocks.3.ln_2.weight', 'encoder.self_attn.resblocks.3.ln_2.bias', 'encoder.self_attn.resblocks.4.attn.c_qkv.weight', 'encoder.self_attn.resblocks.4.attn.c_proj.weight', 'encoder.self_attn.resblocks.4.attn.c_proj.bias', 'encoder.self_attn.resblocks.4.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.4.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.4.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.4.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.4.ln_1.weight', 'encoder.self_attn.resblocks.4.ln_1.bias', 'encoder.self_attn.resblocks.4.mlp.c_fc.weight', 'encoder.self_attn.resblocks.4.mlp.c_fc.bias', 'encoder.self_attn.resblocks.4.mlp.c_proj.weight', 'encoder.self_attn.resblocks.4.mlp.c_proj.bias', 'encoder.self_attn.resblocks.4.ln_2.weight', 'encoder.self_attn.resblocks.4.ln_2.bias', 'encoder.self_attn.resblocks.5.attn.c_qkv.weight', 'encoder.self_attn.resblocks.5.attn.c_proj.weight', 'encoder.self_attn.resblocks.5.attn.c_proj.bias', 'encoder.self_attn.resblocks.5.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.5.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.5.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.5.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.5.ln_1.weight', 'encoder.self_attn.resblocks.5.ln_1.bias', 'encoder.self_attn.resblocks.5.mlp.c_fc.weight', 'encoder.self_attn.resblocks.5.mlp.c_fc.bias', 'encoder.self_attn.resblocks.5.mlp.c_proj.weight', 'encoder.self_attn.resblocks.5.mlp.c_proj.bias', 'encoder.self_attn.resblocks.5.ln_2.weight', 'encoder.self_attn.resblocks.5.ln_2.bias', 'encoder.self_attn.resblocks.6.attn.c_qkv.weight', 'encoder.self_attn.resblocks.6.attn.c_proj.weight', 'encoder.self_attn.resblocks.6.attn.c_proj.bias', 'encoder.self_attn.resblocks.6.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.6.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.6.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.6.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.6.ln_1.weight', 'encoder.self_attn.resblocks.6.ln_1.bias', 'encoder.self_attn.resblocks.6.mlp.c_fc.weight', 'encoder.self_attn.resblocks.6.mlp.c_fc.bias', 'encoder.self_attn.resblocks.6.mlp.c_proj.weight', 'encoder.self_attn.resblocks.6.mlp.c_proj.bias', 'encoder.self_attn.resblocks.6.ln_2.weight', 'encoder.self_attn.resblocks.6.ln_2.bias', 'encoder.self_attn.resblocks.7.attn.c_qkv.weight', 'encoder.self_attn.resblocks.7.attn.c_proj.weight', 'encoder.self_attn.resblocks.7.attn.c_proj.bias', 'encoder.self_attn.resblocks.7.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.7.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.7.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.7.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.7.ln_1.weight', 'encoder.self_attn.resblocks.7.ln_1.bias', 'encoder.self_attn.resblocks.7.mlp.c_fc.weight', 'encoder.self_attn.resblocks.7.mlp.c_fc.bias', 'encoder.self_attn.resblocks.7.mlp.c_proj.weight', 'encoder.self_attn.resblocks.7.mlp.c_proj.bias', 'encoder.self_attn.resblocks.7.ln_2.weight', 'encoder.self_attn.resblocks.7.ln_2.bias', 'encoder.ln_post.weight', 'encoder.ln_post.bias']
+VAE load device: cuda:0, offload device: cpu, dtype: torch.float16
+Requested to load Dinov2Model
+loaded completely; 20639.31 MB usable, 2163.65 MB loaded, full load: True
+Requested to load Hunyuan3Dv2
+loaded completely; 20639.31 MB usable, 2123.40 MB loaded, full load: True
+100%|█████████████████████████████████████████████████████████████████████████████████████████| 30/30 [00:51<00:00,  1.73s/it]
+Requested to load ShapeVAE
+loaded completely; 20639.31 MB usable, 624.88 MB loaded, full load: True
+Volume Decoding: 100%|██████████████████████████████████████████████████████████████████| 1698/1698 [00:00<00:00, 2808.87it/s]
+Prompt executed in 95.00 seconds
+got prompt
+Requested to load Hunyuan3Dv2
+loaded completely; 20639.31 MB usable, 2123.40 MB loaded, full load: True
+100%|█████████████████████████████████████████████████████████████████████████████████████████| 30/30 [00:33<00:00,  1.12s/it]
+Requested to load ShapeVAE
+loaded completely; 20639.31 MB usable, 624.88 MB loaded, full load: True
+Volume Decoding: 100%|██████████████████████████████████████████████████████████████████| 1698/1698 [00:00<00:00, 2736.74it/s]
+Prompt executed in 64.79 seconds
+got prompt
+model weight dtype torch.float16, manual cast: None
+model_type FLOW
+Missing VAE keys ['encoder.input_proj.weight', 'encoder.input_proj.bias', 'encoder.cross_attn.attn.c_q.weight', 'encoder.cross_attn.attn.c_kv.weight', 'encoder.cross_attn.attn.c_proj.weight', 'encoder.cross_attn.attn.c_proj.bias', 'encoder.cross_attn.attn.attention.q_norm.weight', 'encoder.cross_attn.attn.attention.q_norm.bias', 'encoder.cross_attn.attn.attention.k_norm.weight', 'encoder.cross_attn.attn.attention.k_norm.bias', 'encoder.cross_attn.ln_1.weight', 'encoder.cross_attn.ln_1.bias', 'encoder.cross_attn.ln_2.weight', 'encoder.cross_attn.ln_2.bias', 'encoder.cross_attn.ln_3.weight', 'encoder.cross_attn.ln_3.bias', 'encoder.cross_attn.mlp.c_fc.weight', 'encoder.cross_attn.mlp.c_fc.bias', 'encoder.cross_attn.mlp.c_proj.weight', 'encoder.cross_attn.mlp.c_proj.bias', 'encoder.self_attn.resblocks.0.attn.c_qkv.weight', 'encoder.self_attn.resblocks.0.attn.c_proj.weight', 'encoder.self_attn.resblocks.0.attn.c_proj.bias', 'encoder.self_attn.resblocks.0.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.0.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.0.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.0.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.0.ln_1.weight', 'encoder.self_attn.resblocks.0.ln_1.bias', 'encoder.self_attn.resblocks.0.mlp.c_fc.weight', 'encoder.self_attn.resblocks.0.mlp.c_fc.bias', 'encoder.self_attn.resblocks.0.mlp.c_proj.weight', 'encoder.self_attn.resblocks.0.mlp.c_proj.bias', 'encoder.self_attn.resblocks.0.ln_2.weight', 'encoder.self_attn.resblocks.0.ln_2.bias', 'encoder.self_attn.resblocks.1.attn.c_qkv.weight', 'encoder.self_attn.resblocks.1.attn.c_proj.weight', 'encoder.self_attn.resblocks.1.attn.c_proj.bias', 'encoder.self_attn.resblocks.1.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.1.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.1.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.1.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.1.ln_1.weight', 'encoder.self_attn.resblocks.1.ln_1.bias', 'encoder.self_attn.resblocks.1.mlp.c_fc.weight', 'encoder.self_attn.resblocks.1.mlp.c_fc.bias', 'encoder.self_attn.resblocks.1.mlp.c_proj.weight', 'encoder.self_attn.resblocks.1.mlp.c_proj.bias', 'encoder.self_attn.resblocks.1.ln_2.weight', 'encoder.self_attn.resblocks.1.ln_2.bias', 'encoder.self_attn.resblocks.2.attn.c_qkv.weight', 'encoder.self_attn.resblocks.2.attn.c_proj.weight', 'encoder.self_attn.resblocks.2.attn.c_proj.bias', 'encoder.self_attn.resblocks.2.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.2.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.2.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.2.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.2.ln_1.weight', 'encoder.self_attn.resblocks.2.ln_1.bias', 'encoder.self_attn.resblocks.2.mlp.c_fc.weight', 'encoder.self_attn.resblocks.2.mlp.c_fc.bias', 'encoder.self_attn.resblocks.2.mlp.c_proj.weight', 'encoder.self_attn.resblocks.2.mlp.c_proj.bias', 'encoder.self_attn.resblocks.2.ln_2.weight', 'encoder.self_attn.resblocks.2.ln_2.bias', 'encoder.self_attn.resblocks.3.attn.c_qkv.weight', 'encoder.self_attn.resblocks.3.attn.c_proj.weight', 'encoder.self_attn.resblocks.3.attn.c_proj.bias', 'encoder.self_attn.resblocks.3.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.3.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.3.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.3.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.3.ln_1.weight', 'encoder.self_attn.resblocks.3.ln_1.bias', 'encoder.self_attn.resblocks.3.mlp.c_fc.weight', 'encoder.self_attn.resblocks.3.mlp.c_fc.bias', 'encoder.self_attn.resblocks.3.mlp.c_proj.weight', 'encoder.self_attn.resblocks.3.mlp.c_proj.bias', 'encoder.self_attn.resblocks.3.ln_2.weight', 'encoder.self_attn.resblocks.3.ln_2.bias', 'encoder.self_attn.resblocks.4.attn.c_qkv.weight', 'encoder.self_attn.resblocks.4.attn.c_proj.weight', 'encoder.self_attn.resblocks.4.attn.c_proj.bias', 'encoder.self_attn.resblocks.4.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.4.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.4.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.4.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.4.ln_1.weight', 'encoder.self_attn.resblocks.4.ln_1.bias', 'encoder.self_attn.resblocks.4.mlp.c_fc.weight', 'encoder.self_attn.resblocks.4.mlp.c_fc.bias', 'encoder.self_attn.resblocks.4.mlp.c_proj.weight', 'encoder.self_attn.resblocks.4.mlp.c_proj.bias', 'encoder.self_attn.resblocks.4.ln_2.weight', 'encoder.self_attn.resblocks.4.ln_2.bias', 'encoder.self_attn.resblocks.5.attn.c_qkv.weight', 'encoder.self_attn.resblocks.5.attn.c_proj.weight', 'encoder.self_attn.resblocks.5.attn.c_proj.bias', 'encoder.self_attn.resblocks.5.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.5.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.5.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.5.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.5.ln_1.weight', 'encoder.self_attn.resblocks.5.ln_1.bias', 'encoder.self_attn.resblocks.5.mlp.c_fc.weight', 'encoder.self_attn.resblocks.5.mlp.c_fc.bias', 'encoder.self_attn.resblocks.5.mlp.c_proj.weight', 'encoder.self_attn.resblocks.5.mlp.c_proj.bias', 'encoder.self_attn.resblocks.5.ln_2.weight', 'encoder.self_attn.resblocks.5.ln_2.bias', 'encoder.self_attn.resblocks.6.attn.c_qkv.weight', 'encoder.self_attn.resblocks.6.attn.c_proj.weight', 'encoder.self_attn.resblocks.6.attn.c_proj.bias', 'encoder.self_attn.resblocks.6.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.6.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.6.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.6.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.6.ln_1.weight', 'encoder.self_attn.resblocks.6.ln_1.bias', 'encoder.self_attn.resblocks.6.mlp.c_fc.weight', 'encoder.self_attn.resblocks.6.mlp.c_fc.bias', 'encoder.self_attn.resblocks.6.mlp.c_proj.weight', 'encoder.self_attn.resblocks.6.mlp.c_proj.bias', 'encoder.self_attn.resblocks.6.ln_2.weight', 'encoder.self_attn.resblocks.6.ln_2.bias', 'encoder.self_attn.resblocks.7.attn.c_qkv.weight', 'encoder.self_attn.resblocks.7.attn.c_proj.weight', 'encoder.self_attn.resblocks.7.attn.c_proj.bias', 'encoder.self_attn.resblocks.7.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.7.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.7.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.7.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.7.ln_1.weight', 'encoder.self_attn.resblocks.7.ln_1.bias', 'encoder.self_attn.resblocks.7.mlp.c_fc.weight', 'encoder.self_attn.resblocks.7.mlp.c_fc.bias', 'encoder.self_attn.resblocks.7.mlp.c_proj.weight', 'encoder.self_attn.resblocks.7.mlp.c_proj.bias', 'encoder.self_attn.resblocks.7.ln_2.weight', 'encoder.self_attn.resblocks.7.ln_2.bias', 'encoder.ln_post.weight', 'encoder.ln_post.bias']
+VAE load device: cuda:0, offload device: cpu, dtype: torch.float16
+Requested to load Dinov2Model
+loaded completely; 20639.31 MB usable, 2163.65 MB loaded, full load: True
+Requested to load Hunyuan3Dv2
+loaded completely; 20639.31 MB usable, 2125.91 MB loaded, full load: True
+100%|█████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:10<00:00,  1.07s/it]
+Requested to load ShapeVAE
+loaded completely; 20639.31 MB usable, 624.88 MB loaded, full load: True
+Volume Decoding: 100%|██████████████████████████████████████████████████████████████████| 1698/1698 [00:00<00:00, 2557.22it/s]
+Prompt executed in 47.45 seconds
+got prompt
+model weight dtype torch.float16, manual cast: None
+model_type FLOW
+Missing VAE keys ['encoder.input_proj.weight', 'encoder.input_proj.bias', 'encoder.cross_attn.attn.c_q.weight', 'encoder.cross_attn.attn.c_kv.weight', 'encoder.cross_attn.attn.c_proj.weight', 'encoder.cross_attn.attn.c_proj.bias', 'encoder.cross_attn.attn.attention.q_norm.weight', 'encoder.cross_attn.attn.attention.q_norm.bias', 'encoder.cross_attn.attn.attention.k_norm.weight', 'encoder.cross_attn.attn.attention.k_norm.bias', 'encoder.cross_attn.ln_1.weight', 'encoder.cross_attn.ln_1.bias', 'encoder.cross_attn.ln_2.weight', 'encoder.cross_attn.ln_2.bias', 'encoder.cross_attn.ln_3.weight', 'encoder.cross_attn.ln_3.bias', 'encoder.cross_attn.mlp.c_fc.weight', 'encoder.cross_attn.mlp.c_fc.bias', 'encoder.cross_attn.mlp.c_proj.weight', 'encoder.cross_attn.mlp.c_proj.bias', 'encoder.self_attn.resblocks.0.attn.c_qkv.weight', 'encoder.self_attn.resblocks.0.attn.c_proj.weight', 'encoder.self_attn.resblocks.0.attn.c_proj.bias', 'encoder.self_attn.resblocks.0.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.0.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.0.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.0.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.0.ln_1.weight', 'encoder.self_attn.resblocks.0.ln_1.bias', 'encoder.self_attn.resblocks.0.mlp.c_fc.weight', 'encoder.self_attn.resblocks.0.mlp.c_fc.bias', 'encoder.self_attn.resblocks.0.mlp.c_proj.weight', 'encoder.self_attn.resblocks.0.mlp.c_proj.bias', 'encoder.self_attn.resblocks.0.ln_2.weight', 'encoder.self_attn.resblocks.0.ln_2.bias', 'encoder.self_attn.resblocks.1.attn.c_qkv.weight', 'encoder.self_attn.resblocks.1.attn.c_proj.weight', 'encoder.self_attn.resblocks.1.attn.c_proj.bias', 'encoder.self_attn.resblocks.1.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.1.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.1.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.1.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.1.ln_1.weight', 'encoder.self_attn.resblocks.1.ln_1.bias', 'encoder.self_attn.resblocks.1.mlp.c_fc.weight', 'encoder.self_attn.resblocks.1.mlp.c_fc.bias', 'encoder.self_attn.resblocks.1.mlp.c_proj.weight', 'encoder.self_attn.resblocks.1.mlp.c_proj.bias', 'encoder.self_attn.resblocks.1.ln_2.weight', 'encoder.self_attn.resblocks.1.ln_2.bias', 'encoder.self_attn.resblocks.2.attn.c_qkv.weight', 'encoder.self_attn.resblocks.2.attn.c_proj.weight', 'encoder.self_attn.resblocks.2.attn.c_proj.bias', 'encoder.self_attn.resblocks.2.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.2.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.2.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.2.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.2.ln_1.weight', 'encoder.self_attn.resblocks.2.ln_1.bias', 'encoder.self_attn.resblocks.2.mlp.c_fc.weight', 'encoder.self_attn.resblocks.2.mlp.c_fc.bias', 'encoder.self_attn.resblocks.2.mlp.c_proj.weight', 'encoder.self_attn.resblocks.2.mlp.c_proj.bias', 'encoder.self_attn.resblocks.2.ln_2.weight', 'encoder.self_attn.resblocks.2.ln_2.bias', 'encoder.self_attn.resblocks.3.attn.c_qkv.weight', 'encoder.self_attn.resblocks.3.attn.c_proj.weight', 'encoder.self_attn.resblocks.3.attn.c_proj.bias', 'encoder.self_attn.resblocks.3.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.3.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.3.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.3.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.3.ln_1.weight', 'encoder.self_attn.resblocks.3.ln_1.bias', 'encoder.self_attn.resblocks.3.mlp.c_fc.weight', 'encoder.self_attn.resblocks.3.mlp.c_fc.bias', 'encoder.self_attn.resblocks.3.mlp.c_proj.weight', 'encoder.self_attn.resblocks.3.mlp.c_proj.bias', 'encoder.self_attn.resblocks.3.ln_2.weight', 'encoder.self_attn.resblocks.3.ln_2.bias', 'encoder.self_attn.resblocks.4.attn.c_qkv.weight', 'encoder.self_attn.resblocks.4.attn.c_proj.weight', 'encoder.self_attn.resblocks.4.attn.c_proj.bias', 'encoder.self_attn.resblocks.4.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.4.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.4.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.4.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.4.ln_1.weight', 'encoder.self_attn.resblocks.4.ln_1.bias', 'encoder.self_attn.resblocks.4.mlp.c_fc.weight', 'encoder.self_attn.resblocks.4.mlp.c_fc.bias', 'encoder.self_attn.resblocks.4.mlp.c_proj.weight', 'encoder.self_attn.resblocks.4.mlp.c_proj.bias', 'encoder.self_attn.resblocks.4.ln_2.weight', 'encoder.self_attn.resblocks.4.ln_2.bias', 'encoder.self_attn.resblocks.5.attn.c_qkv.weight', 'encoder.self_attn.resblocks.5.attn.c_proj.weight', 'encoder.self_attn.resblocks.5.attn.c_proj.bias', 'encoder.self_attn.resblocks.5.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.5.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.5.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.5.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.5.ln_1.weight', 'encoder.self_attn.resblocks.5.ln_1.bias', 'encoder.self_attn.resblocks.5.mlp.c_fc.weight', 'encoder.self_attn.resblocks.5.mlp.c_fc.bias', 'encoder.self_attn.resblocks.5.mlp.c_proj.weight', 'encoder.self_attn.resblocks.5.mlp.c_proj.bias', 'encoder.self_attn.resblocks.5.ln_2.weight', 'encoder.self_attn.resblocks.5.ln_2.bias', 'encoder.self_attn.resblocks.6.attn.c_qkv.weight', 'encoder.self_attn.resblocks.6.attn.c_proj.weight', 'encoder.self_attn.resblocks.6.attn.c_proj.bias', 'encoder.self_attn.resblocks.6.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.6.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.6.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.6.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.6.ln_1.weight', 'encoder.self_attn.resblocks.6.ln_1.bias', 'encoder.self_attn.resblocks.6.mlp.c_fc.weight', 'encoder.self_attn.resblocks.6.mlp.c_fc.bias', 'encoder.self_attn.resblocks.6.mlp.c_proj.weight', 'encoder.self_attn.resblocks.6.mlp.c_proj.bias', 'encoder.self_attn.resblocks.6.ln_2.weight', 'encoder.self_attn.resblocks.6.ln_2.bias', 'encoder.self_attn.resblocks.7.attn.c_qkv.weight', 'encoder.self_attn.resblocks.7.attn.c_proj.weight', 'encoder.self_attn.resblocks.7.attn.c_proj.bias', 'encoder.self_attn.resblocks.7.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.7.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.7.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.7.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.7.ln_1.weight', 'encoder.self_attn.resblocks.7.ln_1.bias', 'encoder.self_attn.resblocks.7.mlp.c_fc.weight', 'encoder.self_attn.resblocks.7.mlp.c_fc.bias', 'encoder.self_attn.resblocks.7.mlp.c_proj.weight', 'encoder.self_attn.resblocks.7.mlp.c_proj.bias', 'encoder.self_attn.resblocks.7.ln_2.weight', 'encoder.self_attn.resblocks.7.ln_2.bias', 'encoder.ln_post.weight', 'encoder.ln_post.bias']
+VAE load device: cuda:0, offload device: cpu, dtype: torch.float16
+Requested to load Dinov2Model
+loaded completely; 20639.31 MB usable, 2163.65 MB loaded, full load: True
+Requested to load Hunyuan3Dv2
+loaded completely; 20639.31 MB usable, 2123.40 MB loaded, full load: True
+100%|█████████████████████████████████████████████████████████████████████████████████████████| 25/25 [00:27<00:00,  1.11s/it]
+Requested to load ShapeVAE
+loaded completely; 20639.31 MB usable, 624.88 MB loaded, full load: True
+Volume Decoding: 100%|██████████████████████████████████████████████████████████████████| 1698/1698 [00:00<00:00, 2827.52it/s]
+Prompt executed in 63.83 seconds
+got prompt
+model weight dtype torch.float16, manual cast: None
+model_type FLOW
+Missing VAE keys ['encoder.input_proj.weight', 'encoder.input_proj.bias', 'encoder.cross_attn.attn.c_q.weight', 'encoder.cross_attn.attn.c_kv.weight', 'encoder.cross_attn.attn.c_proj.weight', 'encoder.cross_attn.attn.c_proj.bias', 'encoder.cross_attn.attn.attention.q_norm.weight', 'encoder.cross_attn.attn.attention.q_norm.bias', 'encoder.cross_attn.attn.attention.k_norm.weight', 'encoder.cross_attn.attn.attention.k_norm.bias', 'encoder.cross_attn.ln_1.weight', 'encoder.cross_attn.ln_1.bias', 'encoder.cross_attn.ln_2.weight', 'encoder.cross_attn.ln_2.bias', 'encoder.cross_attn.ln_3.weight', 'encoder.cross_attn.ln_3.bias', 'encoder.cross_attn.mlp.c_fc.weight', 'encoder.cross_attn.mlp.c_fc.bias', 'encoder.cross_attn.mlp.c_proj.weight', 'encoder.cross_attn.mlp.c_proj.bias', 'encoder.self_attn.resblocks.0.attn.c_qkv.weight', 'encoder.self_attn.resblocks.0.attn.c_proj.weight', 'encoder.self_attn.resblocks.0.attn.c_proj.bias', 'encoder.self_attn.resblocks.0.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.0.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.0.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.0.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.0.ln_1.weight', 'encoder.self_attn.resblocks.0.ln_1.bias', 'encoder.self_attn.resblocks.0.mlp.c_fc.weight', 'encoder.self_attn.resblocks.0.mlp.c_fc.bias', 'encoder.self_attn.resblocks.0.mlp.c_proj.weight', 'encoder.self_attn.resblocks.0.mlp.c_proj.bias', 'encoder.self_attn.resblocks.0.ln_2.weight', 'encoder.self_attn.resblocks.0.ln_2.bias', 'encoder.self_attn.resblocks.1.attn.c_qkv.weight', 'encoder.self_attn.resblocks.1.attn.c_proj.weight', 'encoder.self_attn.resblocks.1.attn.c_proj.bias', 'encoder.self_attn.resblocks.1.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.1.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.1.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.1.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.1.ln_1.weight', 'encoder.self_attn.resblocks.1.ln_1.bias', 'encoder.self_attn.resblocks.1.mlp.c_fc.weight', 'encoder.self_attn.resblocks.1.mlp.c_fc.bias', 'encoder.self_attn.resblocks.1.mlp.c_proj.weight', 'encoder.self_attn.resblocks.1.mlp.c_proj.bias', 'encoder.self_attn.resblocks.1.ln_2.weight', 'encoder.self_attn.resblocks.1.ln_2.bias', 'encoder.self_attn.resblocks.2.attn.c_qkv.weight', 'encoder.self_attn.resblocks.2.attn.c_proj.weight', 'encoder.self_attn.resblocks.2.attn.c_proj.bias', 'encoder.self_attn.resblocks.2.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.2.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.2.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.2.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.2.ln_1.weight', 'encoder.self_attn.resblocks.2.ln_1.bias', 'encoder.self_attn.resblocks.2.mlp.c_fc.weight', 'encoder.self_attn.resblocks.2.mlp.c_fc.bias', 'encoder.self_attn.resblocks.2.mlp.c_proj.weight', 'encoder.self_attn.resblocks.2.mlp.c_proj.bias', 'encoder.self_attn.resblocks.2.ln_2.weight', 'encoder.self_attn.resblocks.2.ln_2.bias', 'encoder.self_attn.resblocks.3.attn.c_qkv.weight', 'encoder.self_attn.resblocks.3.attn.c_proj.weight', 'encoder.self_attn.resblocks.3.attn.c_proj.bias', 'encoder.self_attn.resblocks.3.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.3.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.3.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.3.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.3.ln_1.weight', 'encoder.self_attn.resblocks.3.ln_1.bias', 'encoder.self_attn.resblocks.3.mlp.c_fc.weight', 'encoder.self_attn.resblocks.3.mlp.c_fc.bias', 'encoder.self_attn.resblocks.3.mlp.c_proj.weight', 'encoder.self_attn.resblocks.3.mlp.c_proj.bias', 'encoder.self_attn.resblocks.3.ln_2.weight', 'encoder.self_attn.resblocks.3.ln_2.bias', 'encoder.self_attn.resblocks.4.attn.c_qkv.weight', 'encoder.self_attn.resblocks.4.attn.c_proj.weight', 'encoder.self_attn.resblocks.4.attn.c_proj.bias', 'encoder.self_attn.resblocks.4.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.4.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.4.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.4.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.4.ln_1.weight', 'encoder.self_attn.resblocks.4.ln_1.bias', 'encoder.self_attn.resblocks.4.mlp.c_fc.weight', 'encoder.self_attn.resblocks.4.mlp.c_fc.bias', 'encoder.self_attn.resblocks.4.mlp.c_proj.weight', 'encoder.self_attn.resblocks.4.mlp.c_proj.bias', 'encoder.self_attn.resblocks.4.ln_2.weight', 'encoder.self_attn.resblocks.4.ln_2.bias', 'encoder.self_attn.resblocks.5.attn.c_qkv.weight', 'encoder.self_attn.resblocks.5.attn.c_proj.weight', 'encoder.self_attn.resblocks.5.attn.c_proj.bias', 'encoder.self_attn.resblocks.5.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.5.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.5.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.5.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.5.ln_1.weight', 'encoder.self_attn.resblocks.5.ln_1.bias', 'encoder.self_attn.resblocks.5.mlp.c_fc.weight', 'encoder.self_attn.resblocks.5.mlp.c_fc.bias', 'encoder.self_attn.resblocks.5.mlp.c_proj.weight', 'encoder.self_attn.resblocks.5.mlp.c_proj.bias', 'encoder.self_attn.resblocks.5.ln_2.weight', 'encoder.self_attn.resblocks.5.ln_2.bias', 'encoder.self_attn.resblocks.6.attn.c_qkv.weight', 'encoder.self_attn.resblocks.6.attn.c_proj.weight', 'encoder.self_attn.resblocks.6.attn.c_proj.bias', 'encoder.self_attn.resblocks.6.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.6.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.6.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.6.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.6.ln_1.weight', 'encoder.self_attn.resblocks.6.ln_1.bias', 'encoder.self_attn.resblocks.6.mlp.c_fc.weight', 'encoder.self_attn.resblocks.6.mlp.c_fc.bias', 'encoder.self_attn.resblocks.6.mlp.c_proj.weight', 'encoder.self_attn.resblocks.6.mlp.c_proj.bias', 'encoder.self_attn.resblocks.6.ln_2.weight', 'encoder.self_attn.resblocks.6.ln_2.bias', 'encoder.self_attn.resblocks.7.attn.c_qkv.weight', 'encoder.self_attn.resblocks.7.attn.c_proj.weight', 'encoder.self_attn.resblocks.7.attn.c_proj.bias', 'encoder.self_attn.resblocks.7.attn.attention.q_norm.weight', 'encoder.self_attn.resblocks.7.attn.attention.q_norm.bias', 'encoder.self_attn.resblocks.7.attn.attention.k_norm.weight', 'encoder.self_attn.resblocks.7.attn.attention.k_norm.bias', 'encoder.self_attn.resblocks.7.ln_1.weight', 'encoder.self_attn.resblocks.7.ln_1.bias', 'encoder.self_attn.resblocks.7.mlp.c_fc.weight', 'encoder.self_attn.resblocks.7.mlp.c_fc.bias', 'encoder.self_attn.resblocks.7.mlp.c_proj.weight', 'encoder.self_attn.resblocks.7.mlp.c_proj.bias', 'encoder.self_attn.resblocks.7.ln_2.weight', 'encoder.self_attn.resblocks.7.ln_2.bias', 'encoder.ln_post.weight', 'encoder.ln_post.bias']
+VAE load device: cuda:0, offload device: cpu, dtype: torch.float16
+Requested to load Dinov2Model
+loaded completely; 20639.31 MB usable, 2163.65 MB loaded, full load: True
+Requested to load Hunyuan3Dv2
+loaded completely; 20639.31 MB usable, 2125.91 MB loaded, full load: True
+100%|█████████████████████████████████████████████████████████████████████████████████████████| 15/15 [00:15<00:00,  1.06s/it]
+Requested to load ShapeVAE
+loaded completely; 20639.31 MB usable, 624.88 MB loaded, full load: True
+Volume Decoding: 100%|██████████████████████████████████████████████████████████████████| 1698/1698 [00:00<00:00, 2661.89it/s]
+Prompt executed in 51.85 seconds
