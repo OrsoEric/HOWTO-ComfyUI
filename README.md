@@ -34,7 +34,9 @@ The achille's heel of AMD card, is the stack. It's bad. As of 2026-01-25 ROCm ha
 
 Launching ComfyUI needs two extra flags,
 
-```uv run main.py  --windows-standalone-build  --use-pytorch-cross-attention```
+- ```--windows-standalone-build``` fundamental flag for performance
+- ```--use-pytorch-cross-attention```
+- ```--disable-smart-memory```
 
 
 ## EXTERNAL MODEL FOLDER
@@ -70,15 +72,29 @@ comfyui:
 
 # WORKFLOWS
 
+## Test VAE Decode
+
+
+
+![](/workflow-png/ZTEST-VAE-DECODE.png)
+
 ## Zimage 
 
 Strong fast model, it works amazingly well
 
+```uv run main.py --windows-standalone-build --disable-smart-memory```
 - First execution: 29s
 - Repeat with changed prompt: 19s
 - Repeat: 16s
 
+```uv run main.py --windows-standalone-build --use-pytorch-cross-attention```
+- First execution: 32s
+- Repeat: 18s
+
 ![](/workflow-png/Zimage-txt2img-gguf.png)
+
+
+
 
 <details>
 <summary>Performance</summary>
@@ -133,11 +149,12 @@ Prompt executed in 19.17 seconds
 
 Strong model that is very good at executing edit instructions and taking multiple reference images.
 
-- First execution: 60s
-- Repeat: 46s
-
 ![](/workflow-png/QWENEDIT-img2img-gguf.png)
 
+
+```uv run main.py --windows-standalone-build --disable-smart-memory```
+- First execution: 60s
+- Repeat: 46s
 
 <details>
 <summary>Performance</summary>
@@ -191,6 +208,57 @@ Prompt executed in 44.29 seconds
 
 </details>
 
+```uv run main.py --windows-standalone-build --use-pytorch-cross-attention```
+- First execution: 98s
+- Repeat: 32s
+
+<details>
+<summary>Performance</summary>
+
+```cmd
+got prompt
+100%|███████████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:35<00:00,  8.79s/it]
+Requested to load WanVAE
+0 models unloaded.
+loaded partially; 0.00 MB usable, 0.00 MB loaded, 242.00 MB offloaded, 22.78 MB buffer reserved, lowvram patches: 0
+Prompt executed in 98.22 seconds
+Requested to load QwenImage
+0 models unloaded.
+loaded partially; 0.00 MB usable, 0.00 MB loaded, 12738.98 MB offloaded, 224.60 MB buffer reserved, lowvram patches: 0
+100%|███████████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:31<00:00,  7.82s/it]
+Requested to load WanVAE
+0 models unloaded.
+loaded partially; 0.00 MB usable, 0.00 MB loaded, 242.00 MB offloaded, 22.78 MB buffer reserved, lowvram patches: 0
+Prompt executed in 31.98 seconds
+Requested to load QwenImage
+0 models unloaded.
+loaded partially; 0.00 MB usable, 0.00 MB loaded, 12738.98 MB offloaded, 224.60 MB buffer reserved, lowvram patches: 0
+100%|███████████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:31<00:00,  7.80s/it]
+Requested to load WanVAE
+0 models unloaded.
+loaded partially; 0.00 MB usable, 0.00 MB loaded, 242.00 MB offloaded, 22.78 MB buffer reserved, lowvram patches: 0
+Prompt executed in 31.91 seconds
+Requested to load QwenImage
+0 models unloaded.
+loaded partially; 0.00 MB usable, 0.00 MB loaded, 12738.98 MB offloaded, 224.60 MB buffer reserved, lowvram patches: 0
+100%|███████████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:31<00:00,  7.84s/it]
+Requested to load WanVAE
+0 models unloaded.
+loaded partially; 0.00 MB usable, 0.00 MB loaded, 242.00 MB offloaded, 22.78 MB buffer reserved, lowvram patches: 0
+Prompt executed in 32.06 seconds
+Requested to load QwenImage
+0 models unloaded.
+loaded partially; 0.00 MB usable, 0.00 MB loaded, 12738.98 MB offloaded, 224.60 MB buffer reserved, lowvram patches: 0
+100%|███████████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:31<00:00,  7.83s/it]
+Requested to load WanVAE
+0 models unloaded.
+loaded partially; 0.00 MB usable, 0.00 MB loaded, 242.00 MB offloaded, 22.78 MB buffer reserved, lowvram patches: 0
+Prompt executed in 32.02 seconds
+```
+
+</details>
+
+
 
 ## Hunyuan 3D 2.0 MV
 
@@ -206,7 +274,7 @@ This workflow uses A background removal model, followed by Qwen Edit Q4 to gener
 # EOL
 
 <details>
-<summary>CMD Line Output</summary>
+<summary>Performance</summary>
 
 ```cmd
 xxx
