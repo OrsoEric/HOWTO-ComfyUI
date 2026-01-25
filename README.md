@@ -70,9 +70,71 @@ comfyui:
 
 # WORKFLOWS
 
+## Zimage 
+
+Strong fast model, it works amazingly well
+
+- First execution: 29s
+- Repeat with changed prompt: 19s
+- Repeat: 16s
+
+![](/workflow-png/Zimage-txt2img-gguf.png)
+
+<details>
+<summary>Performance</summary>
+
+```cmd
+got prompt
+Using split attention in VAE
+Using split attention in VAE
+VAE load device: cuda:0, offload device: cpu, dtype: torch.bfloat16
+CLIP/text encoder model load device: cuda:0, offload device: cpu, current: cpu, dtype: torch.float16
+Requested to load ZImageTEModel_
+loaded completely; 22392.36 MB usable, 7672.25 MB loaded, full load: True
+gguf qtypes: F32 (245), F16 (24), Q4_K (120), Q6_K (30), BF16 (4), Q5_K (30)
+model weight dtype torch.bfloat16, manual cast: None
+model_type FLOW
+Requested to load Lumina2
+loaded completely; 22296.06 MB usable, 4834.06 MB loaded, full load: True
+100%|███████████████████████████████████████████████████████████████████████████████████████████| 9/9 [00:12<00:00,  1.39s/it]
+Requested to load AutoencodingEngine
+loaded completely; 11319.68 MB usable, 159.87 MB loaded, full load: True
+Prompt executed in 28.92 seconds
+got prompt
+Requested to load ZImageTEModel_
+loaded completely; 22392.36 MB usable, 7672.25 MB loaded, full load: True
+Requested to load Lumina2
+loaded completely; 22296.06 MB usable, 4834.06 MB loaded, full load: True
+100%|███████████████████████████████████████████████████████████████████████████████████████████| 9/9 [00:12<00:00,  1.40s/it]
+Requested to load AutoencodingEngine
+loaded completely; 11319.68 MB usable, 159.87 MB loaded, full load: True
+Prompt executed in 19.32 seconds
+got prompt
+Requested to load Lumina2
+loaded completely; 22296.06 MB usable, 4834.06 MB loaded, full load: True
+100%|███████████████████████████████████████████████████████████████████████████████████████████| 9/9 [00:12<00:00,  1.41s/it]
+Requested to load AutoencodingEngine
+loaded completely; 11319.68 MB usable, 159.87 MB loaded, full load: True
+Prompt executed in 15.71 seconds
+got prompt
+Requested to load ZImageTEModel_
+loaded completely; 22392.36 MB usable, 7672.25 MB loaded, full load: True
+Requested to load Lumina2
+loaded completely; 22296.06 MB usable, 4834.06 MB loaded, full load: True
+100%|███████████████████████████████████████████████████████████████████████████████████████████| 9/9 [00:12<00:00,  1.40s/it]
+Requested to load AutoencodingEngine
+loaded completely; 11319.68 MB usable, 159.87 MB loaded, full load: True
+Prompt executed in 19.17 seconds
+```
+
+</details>
+
 ## Qwen Edit
 
 Strong model that is very good at executing edit instructions and taking multiple reference images.
+
+- First execution: 60s
+- Repeat: 46s
 
 ![](/workflow-png/QWENEDIT-img2img-gguf.png)
 
@@ -139,10 +201,6 @@ This workflow uses A background removal model, followed by Qwen Edit Q4 to gener
 ![](/workflow-png/HY20MV-QE-img2stl.png)
 
 [Logs](/logs/2026-01-25-T1300-Hunyuan3D%2020.log)
-
-
-
-
 
 
 # EOL
