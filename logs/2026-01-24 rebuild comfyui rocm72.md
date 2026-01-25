@@ -312,6 +312,49 @@ loaded completely; 18868.81 MB usable, 242.03 MB loaded, full load: True
 Prompt executed in 470.84 seconds
 ```
 
+## Flux FP8 disable custom nodes
+
+```.\python_embeded\python.exe -s ComfyUI\main.py --windows-standalone-build --disable-smart-memory --disable-all-custom-nodes```
+
+```cmd
+got prompt
+Using split attention in VAE
+Using split attention in VAE
+VAE load device: cuda:0, offload device: cpu, dtype: torch.bfloat16
+clip missing: ['text_projection.weight']
+CLIP/text encoder model load device: cuda:0, offload device: cpu, current: cpu, dtype: torch.float16
+Requested to load FluxClipModel_
+loaded completely; 22892.08 MB usable, 9319.23 MB loaded, full load: True
+model weight dtype torch.float8_e4m3fn, manual cast: torch.bfloat16
+model_type FLUX
+Using split attention in VAE
+Using split attention in VAE
+VAE load device: cuda:0, offload device: cpu, dtype: torch.bfloat16
+Requested to load FluxClipModel_
+loaded completely;  4777.54 MB loaded, full load: True
+CLIP/text encoder model load device: cuda:0, offload device: cpu, current: cuda:0, dtype: torch.float16
+Requested to load Flux
+loaded completely; 22492.00 MB usable, 11350.07 MB loaded, full load: True
+100%|██████████████████████████████████████████████████████████████████████████████████| 20/20 [00:27<00:00,  1.40s/it]
+Requested to load AutoencodingEngine
+loaded completely; 11512.43 MB usable, 159.87 MB loaded, full load: True
+Prompt executed in 65.21 seconds
+got prompt
+Requested to load Flux
+loaded completely; 22343.50 MB usable, 11350.07 MB loaded, full load: True
+100%|██████████████████████████████████████████████████████████████████████████████████| 20/20 [00:28<00:00,  1.42s/it]
+Requested to load AutoencodingEngine
+loaded completely; 11465.43 MB usable, 159.87 MB loaded, full load: True
+Prompt executed in 35.58 seconds
+got prompt
+Requested to load Flux
+loaded completely; 22343.50 MB usable, 11350.07 MB loaded, full load: True
+100%|██████████████████████████████████████████████████████████████████████████████████| 20/20 [00:27<00:00,  1.39s/it]
+Requested to load AutoencodingEngine
+loaded completely; 11465.43 MB usable, 159.87 MB loaded, full load: True
+Prompt executed in 34.99 seconds
+```
+
 
 # ComfyUI from PIP
 
@@ -949,6 +992,81 @@ Versions of relevant libraries:
 
 
 
+```install-comfyui-rocm72-p312.bat```
+
+```
+:: --- Clone ComfyUI ---
+git init
+git remote add origin https://github.com/comfyanonymous/ComfyUI.git
+git fetch
+git checkout -t origin/master
+
+:: --- Create venv with UV ---
+uv venv .venv --python 3.12
+call .venv\Scripts\activate.bat
+
+:: --- CHECK PYTHON VERSION ---
+echo === Verifying local Python ===
+for /f "delims=" %%V in ('python --version') do set PYVER=%%V
+echo %PYVER% | findstr "3.12" >nul || (
+    echo ERROR: Python 3.12 not found. UV is incompetently designed, and will install the wrong python if it doesn't find the right one, so install the right python.exe on system then relaunch.
+    exit /b 1
+)
+
+:: --- Install ROCm SDK components (UV works fine here) ---
+uv pip install --no-cache-dir https://repo.radeon.com/rocm/windows/rocm-rel-7.2/rocm_sdk_core-7.2.0.dev0-py3-none-win_amd64.whl --link-mode=copy
+uv pip install --no-cache-dir https://repo.radeon.com/rocm/windows/rocm-rel-7.2/rocm_sdk_devel-7.2.0.dev0-py3-none-win_amd64.whl --link-mode=copy
+uv pip install --no-cache-dir https://repo.radeon.com/rocm/windows/rocm-rel-7.2/rocm_sdk_libraries_custom-7.2.0.dev0-py3-none-win_amd64.whl --link-mode=copy
+uv pip install --no-cache-dir https://repo.radeon.com/rocm/windows/rocm-rel-7.2/rocm-7.2.0.dev0.tar.gz --link-mode=copy
+
+:: UV is incompetently designed, and there is no way to work around version name enforcement for experimental wheels
+:: install pip and use that
+python -m ensurepip
+python -m pip install --upgrade pip
+:: --- Install ROCm PyTorch wheels (UV cannot parse these; use pip directly) ---
+python -m pip install --no-cache-dir https://repo.radeon.com/rocm/windows/rocm-rel-7.2/torch-2.9.1+rocmsdk20260116-cp312-cp312-win_amd64.whl
+python -m pip install --no-cache-dir https://repo.radeon.com/rocm/windows/rocm-rel-7.2/torchaudio-2.9.1+rocmsdk20260116-cp312-cp312-win_amd64.whl
+python -m pip install --no-cache-dir https://repo.radeon.com/rocm/windows/rocm-rel-7.2/torchvision-0.24.1+rocmsdk20260116-cp312-cp312-win_amd64.whl
+
+:: --- Install ComfyUI dependencies ---
+uv pip install -r requirements.txt --link-mode=copy
+
+:: --- Install custom nodes ---
+cd custom_nodes
+
+:: How is the manager not a core component of ComfyUI?
+git clone https://github.com/Comfy-Org/ComfyUI-Manager.git
+
+:: This is convenient for node with types
+git clone https://github.com/M1kep/ComfyLiterals
+
+:: This saves workflows as PNG, it has issue with image preview
+git clone https://github.com/fuselayer/comfyui-minimal-workflow-image
+
+:: GGUF nodes are godsends, they play much better with 7900XTX INT8 ALUs than FP8
+git clone https://github.com/city96/ComfyUI-GGUF.git
+uv pip install gguf --link-mode=copy
+
+cd ..
+
+:: --- Verify ROCm and Torch ---
+
+echo === Torch ===
+python -c "import torch" 2>nul && echo Success || echo Failure
+
+echo === CUDA ===
+python -c "import torch; print(torch.cuda.is_available())"
+
+echo === GPU ===
+python -c "import torch; print(f'device name [0]:', torch.cuda.get_device_name(0))"
+
+echo === ENV ===
+python -m torch.utils.collect_env
+
+:: --- Launch ComfyUI ---
+uv run main.py --use-pytorch-cross-attention
+```
+
 
 
 UV was installing P3.13
@@ -1467,6 +1585,35 @@ Requested to load WanVAE
 Unloaded partially: 3095.54 MB freed, 17765.98 MB remains loaded, 67.72 MB buffer reserved, lowvram patches: 1266
 loaded completely; 2377.81 MB usable, 242.03 MB loaded, full load: True
 Prompt executed in 288.45 seconds
+```
+
+Flux dev FP8 also works a lot worse
+
+```
+got prompt
+Using split attention in VAE
+Using split attention in VAE
+VAE load device: cuda:0, offload device: cpu, dtype: torch.bfloat16
+clip missing: ['text_projection.weight']
+CLIP/text encoder model load device: cuda:0, offload device: cpu, current: cpu, dtype: torch.float16
+Requested to load FluxClipModel_
+loaded completely; 22892.08 MB usable, 9319.23 MB loaded, full load: True
+model weight dtype torch.float8_e4m3fn, manual cast: torch.bfloat16
+model_type FLUX
+Using split attention in VAE
+Using split attention in VAE
+VAE load device: cuda:0, offload device: cpu, dtype: torch.bfloat16
+Requested to load FluxClipModel_
+loaded completely;  4777.54 MB loaded, full load: True
+CLIP/text encoder model load device: cuda:0, offload device: cpu, current: cuda:0, dtype: torch.float16
+Requested to load Flux
+Unloaded partially: 515.86 MB freed, 8803.38 MB remains loaded, 160.00 MB buffer reserved, lowvram patches: 0
+loaded completely; 13685.75 MB usable, 11350.07 MB loaded, full load: True
+100%|██████████████████████████████████████████████████████████████████████████████████| 20/20 [04:28<00:00, 13.44s/it]
+Requested to load AutoencodingEngine
+Unloaded partially: 673.37 MB freed, 10676.73 MB remains loaded, 135.04 MB buffer reserved, lowvram patches: 0
+loaded completely; 5181.26 MB usable, 159.87 MB loaded, full load: True
+Prompt executed in 304.13 seconds
 ```
 
 
