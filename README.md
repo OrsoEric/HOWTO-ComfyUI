@@ -70,6 +70,66 @@ comfyui:
 
 # WORKFLOWS
 
+## Qwen Edit
+
+Strong model that is very good at executing edit instructions and taking multiple reference images.
+
+![](/workflow-png/QWENEDIT-img2img-gguf.png)
+
+
+<details>
+<summary>Performance</summary>
+
+```cmd
+got prompt
+Using split attention in VAE
+Using split attention in VAE
+VAE load device: cuda:0, offload device: cpu, dtype: torch.bfloat16
+gguf qtypes: Q8_0 (198), F32 (141)
+Dequantizing token_embd.weight to prevent runtime OOM.
+Attenpting to find mmproj file for text encoder...
+Using mmproj 'qwen2.5-vl-7b-instruct-q8_0-mmproj-fp16.gguf' for text encoder 'qwen2.5-vl-7b-instruct-q8_0.gguf'.
+gguf qtypes: F32 (291), F16 (228)
+CLIP/text encoder model load device: cuda:0, offload device: cpu, current: cpu, dtype: torch.float16
+Requested to load WanVAE
+loaded completely; 20161.56 MB usable, 242.03 MB loaded, full load: True
+Requested to load QwenImageTEModel_
+loaded completely; 22392.36 MB usable, 8946.75 MB loaded, full load: True
+gguf qtypes: F32 (1088), BF16 (6), Q6_K (258), Q8_0 (2), Q5_K (20), Q4_K (560)
+model weight dtype torch.bfloat16, manual cast: None
+model_type FLUX
+Requested to load QwenImage
+loaded completely; 22033.91 MB usable, 12738.98 MB loaded, full load: True
+100%|███████████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:25<00:00,  6.31s/it]
+Requested to load WanVAE
+loaded completely; 18811.56 MB usable, 242.03 MB loaded, full load: True
+Prompt executed in 58.36 seconds
+got prompt
+Requested to load QwenImage
+loaded completely; 22033.91 MB usable, 12738.98 MB loaded, full load: True
+100%|███████████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:24<00:00,  6.24s/it]
+Requested to load WanVAE
+loaded completely; 18811.56 MB usable, 242.03 MB loaded, full load: True
+Prompt executed in 45.39 seconds
+got prompt
+Requested to load QwenImage
+loaded completely; 22033.91 MB usable, 12738.98 MB loaded, full load: True
+100%|███████████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:25<00:00,  6.29s/it]
+Requested to load WanVAE
+loaded completely; 18811.56 MB usable, 242.03 MB loaded, full load: True
+Prompt executed in 43.96 seconds
+got prompt
+Requested to load QwenImage
+loaded completely; 22033.91 MB usable, 12738.98 MB loaded, full load: True
+100%|███████████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:25<00:00,  6.29s/it]
+Requested to load WanVAE
+loaded completely; 18811.56 MB usable, 242.03 MB loaded, full load: True
+Prompt executed in 44.29 seconds
+```
+
+</details>
+
+
 ## Hunyuan 3D 2.0 MV
 
 This workflow uses A background removal model, followed by Qwen Edit Q4 to generate the back, followed by Hunyuan 2.0 multiview to generate the 3D model
