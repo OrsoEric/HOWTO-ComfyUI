@@ -203,7 +203,7 @@ echo === ENV ===
 python -m torch.utils.collect_env
 
 :: --- Launch ComfyUI ---
-uv run main.py --use-pytorch-cross-attention
+uv run main.py  --windows-standalone-build  --use-pytorch-cross-attention
 ```
 
 Without flag --use-pytorch-cross-attention it's really bad, but with it it works competently mostly.
