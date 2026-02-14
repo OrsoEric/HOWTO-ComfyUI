@@ -472,11 +472,6 @@ Prompt executed in 4.52 seconds
 </details>
 
 
-
-
-
-</details>
-
 ```
 python.exe -m pip install "transformers==4.46.3"
 
