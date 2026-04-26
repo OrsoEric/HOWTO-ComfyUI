@@ -291,6 +291,13 @@ This workflow uses A background removal model, followed by Qwen Edit Q4 to gener
 [Logs](/logs/2026-01-25-T1300-Hunyuan3D%2020.log)
 
 
+## https://github.com/OrsoEric/comfyui-orso-character-sheet-generator
+
+My first custom node for D&D 5E character sheet cards
+
+![](workflow-png/WORKFLOW-orso-character-sheet-generator.png)
+
+
 # EOL
 
 <details>
