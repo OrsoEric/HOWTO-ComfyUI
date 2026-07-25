@@ -85,9 +85,20 @@ Documentation listing [ROCm Version History](https://rocm.docs.amd.com/en/latest
 As of 2026-04-06 Preview wheels use ROCm 7.10
 
 
-# RUN
+## RUN
 
 uv run main.py 
+
+# PORTABLE 
+
+It's very convenient, but it works somewhat different
+
+### ComfyUI manager
+
+```cmd
+
+```
+
 
 
 # WORKFLOWS
