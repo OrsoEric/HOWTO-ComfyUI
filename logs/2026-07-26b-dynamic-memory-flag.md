@@ -179,4 +179,11 @@ F:\ComfyUI_windows_portable_amd\ComfyUI\comfy\ops.py:60: UserWarning: Using AOTr
 
 ![](/logs/Screenshot%202026-07-26%20113516%20krea2%20mimode%202.png)
 
+# Conclusions
 
+| NOTE | First Run [s] | Second Run [s] | Third Run with prompt change [s] | VRAM | Driver Crash? |
+|-|-|-|-|-|-|
+| --enable-dynamic-vram | 30.82 | 27.57 | fail | 24GB+ | 3° run |
+|  | 34.27 | fail | fail | 24GB+ | 2° run |
+|  --disable-smart-memory  | 83.60 | 43.33| 38.54 | 18.9GB | no crash |
+| MIOPEN_FIND_MODE=2  --disable-smart-memory  | 38.61 | 28.37 | 30.73 | 18.9GB |  no crash |
