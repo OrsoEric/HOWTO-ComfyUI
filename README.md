@@ -302,6 +302,15 @@ This workflow uses A background removal model, followed by Qwen Edit Q4 to gener
 [Logs](/logs/2026-01-25-T1300-Hunyuan3D%2020.log)
 
 
+## LLM Image/Text safetensor
+
+This uses ComfyUI LLM inference, with the same LLM Clip Krea2 uses. It's pragmatic as it's already loaded. ```Qwen 3 VL 4B FP8 safetensor```
+
+Performance is horrible. It does 1/4 of the speed that LM Studio does on ```Qwen 3.5 9B Q4 gguf```.
+
+![](/workflow-png/LLM-Prompt-Enchance.png)
+
+
 ## https://github.com/OrsoEric/comfyui-orso-character-sheet-generator
 
 My first custom node for D&D 5E character sheet cards
