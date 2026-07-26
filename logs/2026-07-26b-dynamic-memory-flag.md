@@ -69,3 +69,112 @@ F:\ComfyUI_windows_portable_amd\ComfyUI\comfy\ops.py:60: UserWarning: Using AOTr
 ```
 
 first run work, second collapses
+
+![](/logs/Screenshot%202026-07-26%20103529%20krea%202%20driver%20timeout%20on%20third%20run.png)
+
+## Github Issue
+
+https://github.com/Comfy-Org/ComfyUI/issues/14658
+
+
+# --disable-smart-memory 
+
+This no longer crashes, but degrades performance
+
+```.\python_embeded\python.exe -s ComfyUI\main.py --windows-standalone-build --disable-smart-memory --disable-api-nodes```
+
+```cmd
+[INFO] got prompt
+[INFO] Using split attention in VAE
+[INFO] Using split attention in VAE
+[INFO] VAE load device: cuda:0, offload device: cpu, dtype: torch.bfloat16
+[INFO] Found quantization metadata version 1
+[INFO] Using MixedPrecisionOps for text encoder
+[INFO] CLIP/text encoder model load device: cuda:0, offload device: cpu, current: cpu, dtype: torch.float16
+[INFO] Requested to load Krea2TEModel_
+[INFO] loaded completely; 22892.08 MB usable, 4999.47 MB loaded, full load: True
+F:\ComfyUI_windows_portable_amd\ComfyUI\comfy\ops.py:60: UserWarning: Using AOTriton backend for Efficient Attention forward... (Triggered internally at C:/b/pytorch/aten/src/ATen/native/transformers/hip/attention.hip:1452.)
+  return torch.nn.functional.scaled_dot_product_attention(q, k, v, *args, **kwargs)
+[INFO] Found quantization metadata version 1
+[INFO] Detected mixed precision quantization
+[INFO] Using mixed precision operations
+[INFO] Native ops: int8_tensorwise , emulated ops: mxfp8, nvfp4, float8_e4m3fn, float8_e5m2
+[INFO] model weight dtype torch.bfloat16, manual cast: torch.bfloat16
+[INFO] model_type FLUX
+[INFO] Requested to load Krea2
+[INFO] loaded completely; 22712.61 MB usable, 12532.86 MB loaded, full load: True
+100%|████████████████████████████████████████████████████████████████████████████████████| 8/8 [00:19<00:00,  2.42s/it]
+[INFO] Requested to load WanVAE
+[INFO] loaded completely; 19010.25 MB usable, 242.03 MB loaded, full load: True
+[INFO] Prompt executed in 83.60 seconds
+[INFO] got prompt
+[INFO] Requested to load Krea2
+[INFO] loaded completely; 22566.61 MB usable, 12532.86 MB loaded, full load: True
+100%|████████████████████████████████████████████████████████████████████████████████████| 8/8 [00:19<00:00,  2.38s/it]
+[INFO] Requested to load WanVAE
+[INFO] loaded completely; 18983.81 MB usable, 242.03 MB loaded, full load: True
+[INFO] Prompt executed in 43.33 seconds
+[INFO] got prompt
+[INFO] Requested to load Krea2TEModel_
+[INFO] loaded completely; 22564.61 MB usable, 4999.47 MB loaded, full load: True
+[INFO] Requested to load Krea2
+[INFO] loaded completely; 22566.61 MB usable, 12532.86 MB loaded, full load: True
+100%|████████████████████████████████████████████████████████████████████████████████████| 8/8 [00:18<00:00,  2.36s/it]
+[INFO] Requested to load WanVAE
+[INFO] loaded completely; 18983.81 MB usable, 242.03 MB loaded, full load: True
+[INFO] Prompt executed in 38.54 seconds
+```
+
+# Try to add find mode like the old fix
+
+works better, it's even faster and pegs at 18.5GB
+
+```cmd
+set COMFYUI_ENABLE_MIOPEN=1
+set MIOPEN_FIND_MODE=2
+.\python_embeded\python.exe -s ComfyUI\main.py --windows-standalone-build --disable-smart-memory --disable-api-nodes
+```
+
+```cmd
+[INFO] got prompt
+[INFO] Using split attention in VAE
+[INFO] Using split attention in VAE
+[INFO] VAE load device: cuda:0, offload device: cpu, dtype: torch.bfloat16
+[INFO] Found quantization metadata version 1
+[INFO] Using MixedPrecisionOps for text encoder
+[INFO] CLIP/text encoder model load device: cuda:0, offload device: cpu, current: cpu, dtype: torch.float16
+[INFO] Requested to load Krea2TEModel_
+[INFO] loaded completely; 22892.08 MB usable, 4999.47 MB loaded, full load: True
+F:\ComfyUI_windows_portable_amd\ComfyUI\comfy\ops.py:60: UserWarning: Using AOTriton backend for Efficient Attention forward... (Triggered internally at C:/b/pytorch/aten/src/ATen/native/transformers/hip/attention.hip:1452.)
+  return torch.nn.functional.scaled_dot_product_attention(q, k, v, *args, **kwargs)
+[INFO] Found quantization metadata version 1
+[INFO] Detected mixed precision quantization
+[INFO] Using mixed precision operations
+[INFO] Native ops: int8_tensorwise , emulated ops: float8_e4m3fn, nvfp4, float8_e5m2, mxfp8
+[INFO] model weight dtype torch.bfloat16, manual cast: torch.bfloat16
+[INFO] model_type FLUX
+[INFO] Requested to load Krea2
+[INFO] loaded completely; 22712.61 MB usable, 12532.86 MB loaded, full load: True
+100%|████████████████████████████████████████████████████████████████████████████████████| 8/8 [00:19<00:00,  2.42s/it]
+[INFO] Requested to load WanVAE
+[INFO] loaded completely; 19010.25 MB usable, 242.03 MB loaded, full load: True
+[INFO] Prompt executed in 38.61 seconds
+[INFO] got prompt
+[INFO] Requested to load Krea2
+[INFO] loaded completely; 22534.61 MB usable, 12532.86 MB loaded, full load: True
+100%|████████████████████████████████████████████████████████████████████████████████████| 8/8 [00:19<00:00,  2.38s/it]
+[INFO] Requested to load WanVAE
+[INFO] loaded completely; 18951.81 MB usable, 242.03 MB loaded, full load: True
+[INFO] Prompt executed in 28.37 seconds
+[INFO] got prompt
+[INFO] Requested to load Krea2TEModel_
+[INFO] loaded completely; 22532.61 MB usable, 4999.47 MB loaded, full load: True
+[INFO] Requested to load Krea2
+[INFO] loaded completely; 22534.61 MB usable, 12532.86 MB loaded, full load: True
+100%|████████████████████████████████████████████████████████████████████████████████████| 8/8 [00:19<00:00,  2.38s/it]
+[INFO] Requested to load WanVAE
+[INFO] loaded completely; 18951.81 MB usable, 242.03 MB loaded, full load: True
+[INFO] Prompt executed in 30.73 seconds
+```
+
+![](/logs/Screenshot%202026-07-26%20113516%20krea2%20mimode%202.png)

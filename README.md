@@ -63,38 +63,6 @@ comfyui:
     vibevoice: vibevoice\
 ```
 
-### FLAGS
-
-```--windows-standalone-build``` core flag to make ROCm work
-
-```--disable-api-nodes``` remove the useless node that need cloud APIs to work
-
-```--enable-dynamic-vram``` weird interaction with ROCm
-
-```--enable-manager``` core flag to enable the manager. can omit it to load somewhat faster
-
-```--use-pytorch-cross-attention```
-
-```--disable-smart-memory```
-
-### LAUNCH COMBINATIONS
-
-#### ```.\python_embeded\python.exe -s ComfyUI\main.py --windows-standalone-build --enable-dynamic-vram --enable-manager``` 
-
-The Manager needs the API to run
-
-#### ```.\python_embeded\python.exe -s ComfyUI\main.py --windows-standalone-build --enable-dynamic-vram --disable-api-nodes``` 
-
-This will hide the API nodes from Comfy UI, but won't have the manager if you need to change nodes
-
-
-## Adrenaline Driver Timeout
-
-ROCm cannot handle memory properly
-
-
-
-
 # INSTALLATION
 
 AMD Driver, 
@@ -125,7 +93,49 @@ It's very convenient, but it works somewhat different
 
 ```
 
+## LAUNCH ARGUMENTS
 
+ROCm cannot handle memory properly, there need to be mitigations [2026-07-26 testing](/logs/2026-07-26b-dynamic-memory-flag.md)
+
+
+### FLAGS
+
+```--windows-standalone-build``` core flag to make ROCm work
+
+```--disable-api-nodes``` remove the useless node that need cloud APIs to work
+
+```--enable-dynamic-vram``` weird interaction with ROCm, on big models cause timeouts
+
+```--enable-manager``` core flag to enable the manager. can omit it to load somewhat faster
+
+```--use-pytorch-cross-attention``` ??? I think it's not needed as it's already inside
+
+```--disable-smart-memory``` Important
+
+
+## Launch without Manager
+
+Remove API nodes, but disables the manager
+
+Uses ROCm workaround that prevent driver crashes
+
+```cmd
+set COMFYUI_ENABLE_MIOPEN=1
+set MIOPEN_FIND_MODE=2
+.\python_embeded\python.exe -s ComfyUI\main.py --windows-standalone-build --disable-smart-memory --disable-api-nodes
+```
+
+## Launch with Manager
+
+The Manager needs the API to run
+
+Uses ROCm workaround that prevent driver crashes
+
+```cmd
+set COMFYUI_ENABLE_MIOPEN=1
+set MIOPEN_FIND_MODE=2
+.\python_embeded\python.exe -s ComfyUI\main.py --windows-standalone-build --disable-smart-memory --enable-manager
+```
 
 # WORKFLOWS
 
