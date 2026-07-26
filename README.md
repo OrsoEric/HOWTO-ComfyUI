@@ -69,6 +69,16 @@ comfyui:
     vibevoice: vibevoice\
 ```
 
+### FLAGS
+
+```--windows-standalone-build``` core flag to make ROCm work
+
+```--disable-api-nodes``` remove the useless node that need cloud APIs to work
+
+```--enable-dynamic-vram``` weird interaction with ROCm
+
+```--enable-manager``` core flag to enable the manager. can omit it to load somewhat faster
+
 # INSTALLATION
 
 AMD Driver, 
