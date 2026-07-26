@@ -32,12 +32,6 @@ The achille's heel of AMD card, is the stack. It's bad. As of 2026-01-25 ROCm ha
 
 [Building it pip works better for me, as I can build with ROCm 7.2](/install-comfyui-adrenaline26_1_1-rocm7_2-p3_12.bat.bat). Read the script and what it does.
 
-Launching ComfyUI needs two extra flags,
-
-- ```--windows-standalone-build``` fundamental flag for performance
-- ```--use-pytorch-cross-attention```
-- ```--disable-smart-memory```
-
 ## EXTERNAL MODEL FOLDER
 
 The environment can brick easily. 
@@ -78,6 +72,28 @@ comfyui:
 ```--enable-dynamic-vram``` weird interaction with ROCm
 
 ```--enable-manager``` core flag to enable the manager. can omit it to load somewhat faster
+
+```--use-pytorch-cross-attention```
+
+```--disable-smart-memory```
+
+### LAUNCH COMBINATIONS
+
+#### ```.\python_embeded\python.exe -s ComfyUI\main.py --windows-standalone-build --enable-dynamic-vram --enable-manager``` 
+
+The Manager needs the API to run
+
+#### ```.\python_embeded\python.exe -s ComfyUI\main.py --windows-standalone-build --enable-dynamic-vram --disable-api-nodes``` 
+
+This will hide the API nodes from Comfy UI, but won't have the manager if you need to change nodes
+
+
+## Adrenaline Driver Timeout
+
+ROCm cannot handle memory properly
+
+
+
 
 # INSTALLATION
 
@@ -320,6 +336,12 @@ Performance is horrible. It does 1/4 of the speed that LM Studio does on ```Qwen
 
 ![](/workflow-png/LLM-Prompt-Enchance.png)
 
+
+## Background Removal
+
+It's a small model native to ComfyUI now, doesn't need third party packages
+
+![](/workflow-png/Remove-Background-IMG2IMG.png)
 
 ## https://github.com/OrsoEric/comfyui-orso-character-sheet-generator
 
