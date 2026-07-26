@@ -179,6 +179,51 @@ F:\ComfyUI_windows_portable_amd\ComfyUI\comfy\ops.py:60: UserWarning: Using AOTr
 
 ![](/logs/Screenshot%202026-07-26%20113516%20krea2%20mimode%202.png)
 
+# --use-pytorch-cross-attention
+
+```cmd
+set COMFYUI_ENABLE_MIOPEN=1
+set MIOPEN_FIND_MODE=2
+.\python_embeded\python.exe -s ComfyUI\main.py --windows-standalone-build --disable-smart-memory --disable-api-nodes --use-pytorch-cross-attention
+```
+
+```cmd
+[INFO] got prompt
+[INFO] Found quantization metadata version 1
+[INFO] Using MixedPrecisionOps for text encoder
+[INFO] CLIP/text encoder model load device: cuda:0, offload device: cpu, current: cpu, dtype: torch.float16
+[INFO] Requested to load Krea2TEModel_
+[INFO] loaded completely; 22380.36 MB usable, 4999.47 MB loaded, full load: True
+[INFO] Found quantization metadata version 1
+[INFO] Detected mixed precision quantization
+[INFO] Using mixed precision operations
+[INFO] Native ops: int8_tensorwise , emulated ops: float8_e5m2, mxfp8, float8_e4m3fn, nvfp4
+[INFO] model weight dtype torch.bfloat16, manual cast: torch.bfloat16
+[INFO] model_type FLUX
+[INFO] Requested to load Krea2
+[INFO] loaded completely; 22382.36 MB usable, 12532.86 MB loaded, full load: True
+100%|████████████████████████████████████████████████████████████████████████████████████| 8/8 [00:18<00:00,  2.36s/it]
+[INFO] Requested to load WanVAE
+[INFO] loaded completely; 18799.56 MB usable, 242.03 MB loaded, full load: True
+[INFO] Prompt executed in 47.31 seconds
+[INFO] got prompt
+[INFO] Requested to load Krea2
+[INFO] loaded completely; 22382.36 MB usable, 12532.86 MB loaded, full load: True
+100%|████████████████████████████████████████████████████████████████████████████████████| 8/8 [00:18<00:00,  2.34s/it]
+[INFO] Requested to load WanVAE
+[INFO] loaded completely; 18799.56 MB usable, 242.03 MB loaded, full load: True
+[INFO] Prompt executed in 28.19 seconds
+[INFO] got prompt
+[INFO] Requested to load Krea2TEModel_
+[INFO] loaded completely; 22380.36 MB usable, 4999.47 MB loaded, full load: True
+[INFO] Requested to load Krea2
+[INFO] loaded completely; 22382.36 MB usable, 12532.86 MB loaded, full load: True
+100%|████████████████████████████████████████████████████████████████████████████████████| 8/8 [00:19<00:00,  2.39s/it]
+[INFO] Requested to load WanVAE
+[INFO] loaded completely; 18799.56 MB usable, 242.03 MB loaded, full load: True
+[INFO] Prompt executed in 31.04 seconds
+```
+
 # Conclusions
 
 | NOTE | First Run [s] | Second Run [s] | Third Run with prompt change [s] | VRAM | Driver Crash? |
@@ -186,4 +231,5 @@ F:\ComfyUI_windows_portable_amd\ComfyUI\comfy\ops.py:60: UserWarning: Using AOTr
 | --enable-dynamic-vram | 30.82 | 27.57 | fail | 24GB+ | 3° run |
 |  | 34.27 | fail | fail | 24GB+ | 2° run |
 |  --disable-smart-memory  | 83.60 | 43.33| 38.54 | 18.9GB | no crash |
-| MIOPEN_FIND_MODE=2  --disable-smart-memory  | 38.61 | 28.37 | 30.73 | 18.9GB |  no crash |
+| MIOPEN_FIND_MODE=2 --disable-smart-memory  | 38.61 | 28.37 | 30.73 | 18.9GB |  no crash |
+| MIOPEN_FIND_MODE=2 --disable-smart-memory --use-pytorch-cross-attention | 47.31 | 28.19  | 31.04 | 20.4GB |  no crash |
