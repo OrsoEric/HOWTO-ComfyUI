@@ -16,3 +16,6 @@
 | Second [s] | 23.55s                     |                            |
 | Speed [TPS]| 13.7                       | 51.5                       |
 |------------|----------------------------|----------------------------|
+
+
+I tested the gguf clip loader and it doesn't understand images, and it's slower at 10TPS thinking has to be diesable via ```/no_think```.
