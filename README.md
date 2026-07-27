@@ -325,6 +325,19 @@ Prompt executed in 32.02 seconds
 
 </details>
 
+## Krea 2
+
+| NOTE | First Run [s] | Second Run [s] | Third Run with prompt change [s] | VRAM | Driver Crash? |
+|-|-|-|-|-|-|
+| --enable-dynamic-vram | 30.82 | 27.57 | fail | 24GB+ | 3° run |
+|  | 34.27 | fail | fail | 24GB+ | 2° run |
+|  --disable-smart-memory  | 83.60 | 43.33| 38.54 | 18.9GB | no crash |
+| MIOPEN_FIND_MODE=2 --disable-smart-memory  | 38.61 | 28.37 | 30.73 | 18.9GB |  no crash |
+| MIOPEN_FIND_MODE=2 --disable-smart-memory --use-pytorch-cross-attention | 47.31 | 28.19  | 31.04 | 20.4GB |  no crash |
+
+
+
+
 
 
 ## Hunyuan 3D 2.0 MV
