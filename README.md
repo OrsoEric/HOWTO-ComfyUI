@@ -337,7 +337,19 @@ Prompt executed in 32.02 seconds
 | MIOPEN_FIND_MODE=2 --disable-smart-memory --use-pytorch-cross-attention | 47.31 | 28.19  | 31.04 | 20.4GB |  no crash |
 
 
+| MODEL | CLIP | VAE | First Load [s] | Second Repeat [s] | Third Change Prompt [s] | NOTE |
+|-|-|-|-|-|-|-|
+| FP8 SAFETENSOR | FP8 SAFETENSOR | SAFETENSOR | 39.96 | 28.37 | 29.84 | |
+| Q4 GGUF | FP8 SAFETENSOR | SAFETENSOR | 35.19s | 30.38 | 32.75 | |
+| Q4 GGUF | FP8 SAFETENSOR | SAFETENSOR | N.A. | N.A. | N.A. | mismatch dimensions? |
 
+SAFETENSOR
+
+![](/workflow-png/Krea2-txt2img-safetensor.png)
+
+GGUF
+
+![](/workflow-png/Krea2-txt2img-gguf.png)
 
 
 
