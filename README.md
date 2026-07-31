@@ -149,18 +149,19 @@ set MIOPEN_FIND_MODE=2
 
 Strong fast model, it works amazingly well
 
-```uv run main.py --windows-standalone-build --disable-smart-memory```
-- First execution: 29s
-- Repeat with changed prompt: 19s
-- Repeat: 16s
+| MODEL | CLIP | VAE | First Load [s] | Second Repeat [s] | Third Change Prompt [s] |
+|-|-|-|-|-|-|
+| Q4 GGUF | Q4 GGUF | SAFETENSOR | 30s | 16s | 18s |
+| INT8 CONVROT SAFETENSOR | INT8 CONVROT SAFETENSOR | SAFETENSOR | N.A. | N.A. | N.A. |
 
-```uv run main.py --windows-standalone-build --use-pytorch-cross-attention```
-- First execution: 32s
-- Repeat: 18s
+
+GGUF
 
 ![](/workflow-png/Zimage-txt2img-gguf.png)
 
+SAFETENSOR INT8 CONVROT
 
+![](/workflow-png/Zimage-txt2img-safetensor.png)
 
 
 <details>
