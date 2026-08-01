@@ -343,15 +343,19 @@ Prompt executed in 32.02 seconds
 | Q4 GGUF | FP8 SAFETENSOR | SAFETENSOR | 35.19s | 30.38 | 32.75 | |
 | Q4 GGUF | FP8 SAFETENSOR | SAFETENSOR | N.A. | N.A. | N.A. | mismatch dimensions? |
 
-SAFETENSOR
-
-![](/workflow-png/Krea2-txt2img-safetensor.png)
-
-GGUF
+#### GGUF
 
 ![](/workflow-png/Krea2-txt2img-gguf.png)
 
+#### FP8 SAFETENSOR
 
+![](/workflow-png/Krea2-txt2img-fp8-safetensor.png)
+
+#### INT8 CONVROT
+
+Right now (2026-08-01) doesn't work under windows ROCm it crashes the runtime
+
+![](/workflow-png/Krea2-txt2img-int8-convrot-safetensor.png)
 
 ## Hunyuan 3D 2.0 MV
 
@@ -364,23 +368,15 @@ This workflow uses A background removal model, followed by Qwen Edit Q4 to gener
 [Logs](/logs/2026-01-25-T1300-Hunyuan3D%2020.log)
 
 
-## LLM Image/Text safetensor
-
-This uses ComfyUI LLM inference, with the same LLM Clip Krea2 uses. It's pragmatic as it's already loaded. ```Qwen 3 VL 4B FP8 safetensor```
-
-Performance is horrible. It does 1/4 of the speed that LM Studio does on ```Qwen 3.5 9B Q4 gguf```.
-
-![](/workflow-png/LLM-Prompt-Enchance.png)
-
 ## PROMPT GENERATION
 
 The text encoder is Qwen 3 VL, with a prompt you can reliably make json prompts
 
-IMAGE => PROMPT
+#### IMAGE => PROMPT
 
 ![](/workflow-png/LLM-Image-Description.png)
 
-PROMPT => IMAGE
+#### PROMPT => IMAGE
 
 ![](/workflow-png/Krea2-txt2img-gguf-otter.png)
 

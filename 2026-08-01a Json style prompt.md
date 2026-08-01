@@ -546,3 +546,59 @@ OUTPUT: [Strict JSON only]
 }
 ```
 
+## PERFORMANCE
+
+```
+[INFO] got prompt
+[INFO] Found quantization metadata version 1
+[INFO] Using MixedPrecisionOps for text encoder
+[INFO] Requested to load Krea2TEModel_
+[INFO] loaded completely;  4999.47 MB loaded, full load: True
+[INFO] CLIP/text encoder model load device: cuda:0, offload device: cpu, current: cuda:0, dtype: torch.float16
+[INFO] Found quantization metadata version 1
+[INFO] Detected mixed precision quantization
+[INFO] Using mixed precision operations
+[INFO] Native ops: int8_tensorwise, convrot_w4a4 , emulated ops: float8_e5m2, nvfp4, mxfp8, float8_e4m3fn
+[INFO] model weight dtype torch.bfloat16, manual cast: torch.bfloat16
+[INFO] model_type FLUX
+[INFO] Requested to load Krea2
+[INFO] loaded completely; 22419.99 MB usable, 12532.86 MB loaded, full load: True
+100%|████████████████████████████████████████████████████████████████████████████████████| 8/8 [00:21<00:00,  2.74s/it]
+[INFO] Requested to load WanVAE
+[INFO] loaded completely; 18837.19 MB usable, 242.03 MB loaded, full load: True
+[INFO] Prompt executed in 45.72 seconds
+[INFO] got prompt
+[INFO] Requested to load Krea2TEModel_
+[INFO] loaded completely; 22417.99 MB usable, 4999.47 MB loaded, full load: True
+[INFO] Requested to load Krea2
+[INFO] loaded completely; 22419.99 MB usable, 12532.86 MB loaded, full load: True
+100%|████████████████████████████████████████████████████████████████████████████████████| 8/8 [00:25<00:00,  3.19s/it]
+[INFO] Requested to load WanVAE
+[INFO] loaded completely; 18837.19 MB usable, 242.03 MB loaded, full load: True
+[INFO] Prompt executed in 35.45 seconds
+[INFO] got prompt
+[INFO] Requested to load Krea2
+[INFO] loaded completely; 22419.99 MB usable, 12532.86 MB loaded, full load: True
+100%|████████████████████████████████████████████████████████████████████████████████████| 8/8 [00:25<00:00,  3.21s/it]
+[INFO] Requested to load WanVAE
+[INFO] loaded completely; 18837.19 MB usable, 242.03 MB loaded, full load: True
+[INFO] Prompt executed in 31.57 seconds
+```
+
+```
+|            | 2026-08-01                 |
+|------------|----------------------------|
+| GPU        | 7900XTX (gfx1100)          |
+| OS         | Windows-11                 |
+| Driver     | Adrenaline 26.6.4          |
+| Pytorch    | 2.9.1+rocm7.2.1            |
+|------------|----------------------------|
+| FLAG       |  --disable-smart-memory    |
+| QUANTS     | FP8 safetensor             |
+|------------|----------------------------|
+| Size [px]  | 1024 x 1024                |
+| First [s]  | 45.72                      |
+| Second [s] | 31.57                      |
+| Third [s]  | 34.89                      | 
+|------------|----------------------------|
+```
