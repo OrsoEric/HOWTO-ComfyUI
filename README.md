@@ -357,6 +357,15 @@ Right now (2026-08-01) doesn't work under windows ROCm it crashes the runtime
 
 ![](/workflow-png/Krea2-txt2img-int8-convrot-safetensor.png)
 
+### IMAGE CLIP
+
+Qwen3VL is mighty and can accept image input. So you can feed image as prompt, this without filling  latent VAE encode and encodes structural informations about the image.
+
+This isn't IMG2IMG is still TXT2IMG bur the coordinates of the image are the latents decoded by the VL model.
+
+![](/workflow-png/Krea2Turbo_Image_clip.png)
+
+
 ## Hunyuan 3D 2.0 MV
 
 This workflow uses A background removal model, followed by Qwen Edit Q4 to generate the back, followed by Hunyuan 2.0 multiview to generate the 3D model
@@ -529,6 +538,7 @@ It's a small model native to ComfyUI now, doesn't need third party packages
 My first custom node for D&D 5E character sheet cards
 
 ![](workflow-png/WORKFLOW-orso-character-sheet-generator.png)
+
 
 
 # EOL
