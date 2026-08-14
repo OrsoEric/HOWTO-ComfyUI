@@ -228,13 +228,32 @@ It's a small model native to ComfyUI now, doesn't need third party packages
 
 [Zimage](/README-Zimage.md)
 
-## Qwen Edit
+## Qwen Edit 2511
+
+Editing models are great at complying with editing instructions.
+
+Qwen Edit 2511 Relies on an older Qwen 2.5 LLM as CLIP
+
+| | BF16 Safetensor | INT8 SAFETENSOR | Q8 GGUF | Q4 GGUF |
+|-|-|-|-|-|
+| Diffusion Model | | | [Qwen Image Edit 2511](https://huggingface.co/unsloth/Qwen-Image-Edit-2511-GGUF/resolve/main/qwen-image-edit-2511-Q8_0.gguf) |  ||
+| Turbo Lora | [4 Step Turbo Lora BF16](https://huggingface.co/lightx2v/Qwen-Image-Edit-2511-Lightning/resolve/main/Qwen-Image-Edit-2511-Lightning-4steps-V1.0-bf16.safetensors) | |
+| CLIP | | | [Qwen 2.5 VL 7B](https://huggingface.co/lmstudio-community/Qwen2.5-VL-7B-Instruct-GGUF/resolve/main/Qwen2.5-VL-7B-Instruct-Q8_0.gguf) | [Qwen 2.5 V -7B](https://huggingface.co/PatataAliena/Qwen2.5-VL-7B-Instruct-Q4_K_M-GGUF/resolve/main/qwen2.5-vl-7b-instruct-q4_k_m.gguf)|
+| VAE | [Qwen Image VAE](https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/vae/qwen_image_vae.safetensors) | | |
 
 [Qwen Edit](/README-QwenEdit.md)
 
 ## Krea 2
 
-[Krea 2](/README-Krea2.md)
+
+
+| | BF16 Safetensor | FP8 Saferensor | INT8 Safetensor | Q8 GGUF | Q2 GGUF |
+| - | - | - | - | - | - |
+| Model | . | [Krea Turbo FP8 12.8 GB](https://huggingface.co/Abiray/Krea-2-Turbo-FP8-NVFP4/resolve/main/krea2_turbo_fp8_scaled.safetensors?download=true) | . | . | [Krea 2 Turbo 4.55 GB](https://huggingface.co/vantagewithai/Krea-2-Turbo-GGUF/resolve/800cc2c83658fdb0fcb33577d546143dc42cb5bb/krea2_turbo-Q2_K.gguf?download=true) |
+| [CLIP](https://huggingface.co/Comfy-Org/Qwen3-VL/tree/main/text_encoders) | . | [Qwen 3 VL 4B 5.1 GB](https://huggingface.co/Comfy-Org/Qwen3-VL/resolve/8bb77f7ad334bc594cd68c0c48e868abd1e0f719/text_encoders/qwen3vl_4b_fp8_scaled.safetensors) | . | . | . |
+| VAE | [Qwen Image VAE 254 MB](https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/blob/main/split_files/vae/qwen_image_vae.safetensors) | . | . | . | . |
+
+### [>>>Krea 2 Workflows<<<](/README-Krea2.md)
 
 
 ## Hunyuan 3D
@@ -243,11 +262,13 @@ It's a small model native to ComfyUI now, doesn't need third party packages
 
 ## D&D NPC Card Node 
 
-[My first custom node for D&D 5E character sheet cards](https://github.com/OrsoEric/comfyui-orso-character-sheet-generator)
+Sample
 
-![](workflow-png/WORKFLOW-orso-character-sheet-generator.png)
+[D&D Workflows](/README-DnD-Workflows.md)
 
 # EOL
+
+
 
 <details>
 <summary>Performance</summary>
@@ -255,5 +276,11 @@ It's a small model native to ComfyUI now, doesn't need third party packages
 ```cmd
 xxx
 ```
+
+| | BF16 Safetensor | FP8 Saferensor | INT8 Safetensor | Q8 GGUF | Q4 GGUF |
+| - | - | - | - | - | - |
+| Model | . | . | . | . | . |
+| CLIP | . | . | . | . | . |
+| VAE | . | . | . | . | . |
 
 </details>
