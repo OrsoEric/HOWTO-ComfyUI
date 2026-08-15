@@ -195,3 +195,56 @@ This works really well. It works thanks to feeding image to CLIP directly so it 
 ![](/workflow-png/Krea2-upscale-tiled.png)
 
 ![](/outputs/2026-08-15-T1018%20Krea2%20Tiled%20Upscale.png)
+
+<details>
+<summary>LOGS</summary>
+
+```cmd
+[INFO] got prompt
+[INFO] Using split attention in VAE
+[INFO] Using split attention in VAE
+[INFO] VAE load device: cuda:0, offload device: cpu, dtype: torch.bfloat16
+[INFO] GLSL shader executed in 32.5ms (1 batch, 1536x1024)
+[INFO] Requested to load WanVAE
+[INFO] loaded completely; 21820.91 MB usable, 242.03 MB loaded, full load: True
+[INFO] Found quantization metadata version 1
+[INFO] Using MixedPrecisionOps for text encoder
+[INFO] CLIP/text encoder model load device: cuda:0, offload device: cpu, current: cpu, dtype: torch.float16
+[INFO] Requested to load Krea2TEModel_
+[INFO] loaded completely; 22372.80 MB usable, 4999.47 MB loaded, full load: True
+[INFO] Found quantization metadata version 1
+[INFO] Detected mixed precision quantization
+[INFO] Using mixed precision operations
+[INFO] Native ops: convrot_w4a4, int8_tensorwise, asym_w4a8_int8 , emulated ops: float8_e4m3fn, float8_e5m2, mxfp8, nvfp4
+[INFO] model weight dtype torch.bfloat16, manual cast: torch.bfloat16
+[INFO] model_type FLUX
+[INFO] Requested to load Krea2
+[INFO] loaded completely; 22150.94 MB usable, 12532.86 MB loaded, full load: True
+100%|████████████████████████████████████████████████████████████████████████████████████| 8/8 [00:14<00:00,  1.87s/it]
+[INFO] Requested to load WanVAE
+[INFO] loaded completely; 21245.81 MB usable, 242.03 MB loaded, full load: True
+[INFO] Requested to load Krea2TEModel_
+[INFO] loaded completely; 22437.55 MB usable, 4999.47 MB loaded, full load: True
+[INFO] Requested to load Krea2
+[INFO] loaded completely; 22215.69 MB usable, 12532.86 MB loaded, full load: True
+100%|████████████████████████████████████████████████████████████████████████████████████| 8/8 [00:14<00:00,  1.87s/it]
+[INFO] Requested to load WanVAE
+[INFO] loaded completely; 21245.81 MB usable, 242.03 MB loaded, full load: True
+[INFO] Requested to load Krea2TEModel_
+[INFO] loaded completely; 22437.55 MB usable, 4999.47 MB loaded, full load: True
+[INFO] Requested to load Krea2
+[INFO] loaded completely; 22215.69 MB usable, 12532.86 MB loaded, full load: True
+100%|████████████████████████████████████████████████████████████████████████████████████| 8/8 [00:14<00:00,  1.87s/it]
+[INFO] Requested to load WanVAE
+[INFO] loaded completely; 21245.81 MB usable, 242.03 MB loaded, full load: True
+[INFO] Requested to load Krea2TEModel_
+[INFO] loaded completely; 22437.55 MB usable, 4999.47 MB loaded, full load: True
+[INFO] Requested to load Krea2
+[INFO] loaded completely; 22215.69 MB usable, 12532.86 MB loaded, full load: True
+100%|████████████████████████████████████████████████████████████████████████████████████| 8/8 [00:15<00:00,  1.89s/it]
+[INFO] Requested to load WanVAE
+[INFO] loaded completely; 21245.81 MB usable, 242.03 MB loaded, full load: True
+[INFO] Prompt executed in 108.28 seconds
+```
+
+</details>
