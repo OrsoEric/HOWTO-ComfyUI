@@ -257,6 +257,9 @@ Qwen Edit 2511 Relies on an older Qwen 2.5 LLM as CLIP
 | [CLIP](https://huggingface.co/Comfy-Org/Qwen3-VL/tree/main/text_encoders) | . | . | [Qwen 3 VL 4B 5.1 GB](https://huggingface.co/Comfy-Org/Qwen3-VL/resolve/8bb77f7ad334bc594cd68c0c48e868abd1e0f719/text_encoders/qwen3vl_4b_fp8_scaled.safetensors) | . | . | . |
 | VAE | [Wan 2.1 VAE 508 MB](https://huggingface.co/Kijai/WanVideo_comfy/blob/main/Wan2_1_VAE_fp32.safetensors) | [Qwen Image VAE 254 MB](https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/blob/main/split_files/vae/qwen_image_vae.safetensors) | . | . | . | . |
 
+- txt2img: 
+- clip-img2img
+
 ### [>>>Krea 2 Workflows<<<](/README-Krea2.md)
 
 ## Minimax 3 Music

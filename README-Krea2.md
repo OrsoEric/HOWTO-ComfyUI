@@ -1,5 +1,5 @@
 
-
+# txt2img
 
 | NOTE | First Run [s] | Second Run [s] | Third Run with prompt change [s] | VRAM | Driver Crash? |
 |-|-|-|-|-|-|
@@ -30,7 +30,7 @@ Right now (2026-08-01) doesn't work under windows ROCm it crashes the runtime
 
 ![](/workflow-png/Krea2-txt2img-int8-convrot-safetensor.png)
 
-### IMAGE CLIP
+### CLIP-IMG2IMG
 
 Qwen3VL is mighty and can accept image input. So you can feed image as prompt, this without filling  latent VAE encode and encodes structural informations about the image.
 
@@ -185,3 +185,13 @@ OUTPUT: [Strict JSON only]
 ```
 
 </details>
+
+---
+
+# UPSCALE
+
+This works really well. It works thanks to feeding image to CLIP directly so it undrestands and enrich the structure of the image.
+
+![](/workflow-png/Krea2-upscale-tiled.png)
+
+![](/outputs/2026-08-15-T1018%20Krea2%20Tiled%20Upscale.png)
