@@ -211,6 +211,12 @@ It's a small model native to ComfyUI now, doesn't need third party packages
 
 ![](/workflow-png/Remove-Background-IMG2IMG.png)
 
+## Tiling and Untiling
+
+It's a workflow to upscale and split an image in four tiles and remerge the tiles. It's meant to allow diffusion models to do diffusion upscale.
+
+![](/workflow-png/img2img-tile-untile.png)
+
 
 ## Zimage
 
