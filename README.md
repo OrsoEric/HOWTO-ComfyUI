@@ -102,26 +102,28 @@ You still need to do some work to install the manager, and add extensions to the
 
 It is convenient to move the models outside the ComfyUI folder, so that when I rebuild, the models are all there. This also allows multiple local env to all access models without duplication.
 
+It is convenient to remap checkpoints, diffusion_models and unet to a single folder, and clip, text_encoders to clip, so you don't need to find what folders the node needs. 
+
 ```extra_model_paths.yaml```
 
 ```yaml
 comfyui:
     # Go up to the parent folder, and look for the model folder there
-    base_path: ..\ComfyUI-Models
+    base_path: ..\..\ComfyUI-Models
     # Model Folder
-    checkpoints: checkpoints\
+    checkpoints: models\
     clip: clip\
     clip_vision: clip_vision\
-    text_encoders: text_encoders\
+    text_encoders: clip\
     configs: configs\
     controlnet: controlnet\
-    diffusion_models: |
-                diffusion_models
-                unet
+    diffusion_models: models\
     embeddings: embeddings\
     loras: loras\
     upscale_models: upscale_models\
     vae: vae\
+    background_removal: background_removal\
+    unet: models\
     # custom vibevoice node dumps here
     vibevoice: vibevoice\
 ```
