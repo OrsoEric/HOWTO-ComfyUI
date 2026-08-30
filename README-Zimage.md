@@ -65,3 +65,38 @@ Prompt executed in 19.17 seconds
 ```
 
 </details>
+
+## INT8 Convrot
+
+Now int8convrot models work
+
+```cmd
+[INFO] got prompt
+[INFO] Using split attention in VAE
+[INFO] Using split attention in VAE
+[INFO] VAE load device: cuda:0, offload device: cpu, dtype: torch.bfloat16
+[INFO] Found quantization metadata version 1
+[INFO] Using MixedPrecisionOps for text encoder
+[INFO] CLIP/text encoder model load device: cuda:0, offload device: cpu, current: cpu, dtype: torch.float16
+[INFO] Requested to load ZImageTEModel_
+[INFO] loaded completely; 21656.09 MB usable, 4303.51 MB loaded, full load: True
+[INFO] Found quantization metadata version 1
+[INFO] Detected mixed precision quantization
+[INFO] Using mixed precision operations
+[INFO] Native ops: convrot_w4a4, asym_w4a8_int8, int8_tensorwise , emulated ops: float8_e5m2, float8_e4m3fn, mxfp8, nvfp4
+[INFO] model weight dtype torch.bfloat16, manual cast: torch.bfloat16
+[INFO] model_type FLOW
+[INFO] Requested to load Lumina2
+[INFO] loaded completely; 21559.79 MB usable, 6007.20 MB loaded, full load: True
+100%|████████████████████████████████████████████████████████████████████████████████████| 9/9 [00:09<00:00,  1.04s/it]
+[INFO] Requested to load AutoencodingEngine
+[INFO] loaded completely; 10583.41 MB usable, 159.87 MB loaded, full load: True
+[INFO] Prompt executed in 26.35 seconds
+[INFO] got prompt
+[INFO] Requested to load Lumina2
+[INFO] loaded completely; 21617.13 MB usable, 6007.20 MB loaded, full load: True
+100%|████████████████████████████████████████████████████████████████████████████████████| 9/9 [00:09<00:00,  1.05s/it]
+[INFO] Requested to load AutoencodingEngine
+[INFO] loaded completely; 11326.66 MB usable, 159.87 MB loaded, full load: True
+[INFO] Prompt executed in 12.91 seconds
+```

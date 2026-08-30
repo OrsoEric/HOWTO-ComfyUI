@@ -1,4 +1,13 @@
 
+# TXT2IMG
+
+This isn't why the model exist but you can diffuse txt2img
+
+![](/workflow-png/QWENEDIT-TXT2IMG-gguf.png)
+
+
+# IMGEDIT2IMG
+
 Strong model that is very good at executing edit instructions and taking multiple reference images.
 
 ![](/workflow-png/QWENEDIT-img2img-gguf.png)

@@ -222,6 +222,8 @@ It's a workflow to upscale and split an image in four tiles and remerge the tile
 
 ## Zimage
 
+![](/images/Zimage/2026-08-30b%20Zimage.jpg)
+
 | MODEL | SIZE |
 |-|-|
 | [qwen_3_4b.safetensors](https://huggingface.co/Comfy-Org/z_image_turbo/resolve/main/split_files/text_encoders/qwen_3_4b.safetensors) | |
@@ -238,6 +240,8 @@ It's a workflow to upscale and split an image in four tiles and remerge the tile
 
 ## Qwen Edit 2511
 
+![](/images/QwenEdit/2026-08-30%20QwenEdit.jpg)
+
 Editing models are great at complying with editing instructions.
 
 Qwen Edit 2511 Relies on an older Qwen 2.5 LLM as CLIP
@@ -253,6 +257,8 @@ Qwen Edit 2511 Relies on an older Qwen 2.5 LLM as CLIP
 
 ## Krea 2
 
+![](/images/Krea2/Krea2%20(1).jpg)
+
 | | FP32 Saferensor | BF16 Safetensor | FP8 Saferensor | INT8 Safetensor | Q8 GGUF | Q2 GGUF |
 | - | - | - | - | - | - | - |
 | Model  | . | . | [Krea Turbo FP8 12.8 GB](https://huggingface.co/Abiray/Krea-2-Turbo-FP8-NVFP4/resolve/main/krea2_turbo_fp8_scaled.safetensors?download=true) | . | . | [Krea 2 Turbo 4.55 GB](https://huggingface.co/vantagewithai/Krea-2-Turbo-GGUF/resolve/800cc2c83658fdb0fcb33577d546143dc42cb5bb/krea2_turbo-Q2_K.gguf?download=true) |
@@ -263,6 +269,19 @@ Qwen Edit 2511 Relies on an older Qwen 2.5 LLM as CLIP
 - clip-img2img
 
 ### [>>>Krea 2 Workflows<<<](/README-Krea2.md)
+
+## Ideogram 4
+
+![](/images/Ideogram4/Ideogram4%20(5).jpg)
+
+| | FP32 Safetensor | BF16 Safetensor | FP8 Saferensor | INT8 Safetensor | Q8 GGUF | Q4 GGUF |
+| - | - | - | - | - | - | - |
+| CLIP | . | . | [Qwen3VL 8B (10.4GB)](https://huggingface.co/Comfy-Org/Qwen3-VL/resolve/main/text_encoders/qwen3vl_8b_fp8_scaled.safetensors) | . | . | . |
+| Model 1 | . | . | [Ideogram4 (9.1GB)](https://huggingface.co/Comfy-Org/Ideogram-4/resolve/main/diffusion_models/ideogram4_fp8_scaled.safetensors) | . | . | . |
+| Model 2 | . | . | [Ideogram4U (9.1GB)](https://huggingface.co/Comfy-Org/Ideogram-4/resolve/main/diffusion_models/ideogram4_unconditional_fp8_scaled.safetensors) | . | . | . |
+| VAE | [Flux2 FP32 (336MB)](https://huggingface.co/Comfy-Org/flux2-dev/resolve/main/split_files/vae/flux2-vae.safetensors) | . | . | . | . | . |
+
+### [>>>Ideogram4 Workflows<<<](/README-Ideogram4.md)
 
 ## Minimax 3 Music
 
@@ -291,10 +310,10 @@ Sample
 xxx
 ```
 
-| | BF16 Safetensor | FP8 Saferensor | INT8 Safetensor | Q8 GGUF | Q4 GGUF |
-| - | - | - | - | - | - |
-| Model | . | . | . | . | . |
-| CLIP | . | . | . | . | . |
-| VAE | . | . | . | . | . |
+| | FP32 Safetensor | BF16 Safetensor | FP8 Saferensor | INT8 Safetensor | Q8 GGUF | Q4 GGUF |
+| - | - | - | - | - | - | - |
+| Model | . | . | . | . | . | . |
+| CLIP | . | . | . | . | . | . |
+| VAE | . | . | . | . | . | . |
 
 </details>
