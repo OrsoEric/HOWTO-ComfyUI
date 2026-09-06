@@ -293,6 +293,20 @@ Qwen Edit 2511 Relies on an older Qwen 2.5 LLM as CLIP
 
 [Hunyuan 3D](/README-Hunyuan3D.md)
 
+## Trellis 2
+
+Finally ROCm supports Trellis 2!
+
+TODO: I should look for multiview conditioning as the models have hard time with the back.
+TODO: I think mesh refinent before upscale could do good
+TODO: Ideally I would have a toggle for fast and high resolution
+
+![](/workflow-png/Trellis2-img2stl-geometry-only.png)
+
+## Pixal3D
+
+![](/workflow-png/Pixal3D-img2stl-geometry-only.png)
+
 ## D&D NPC Card Node 
 
 Sample
